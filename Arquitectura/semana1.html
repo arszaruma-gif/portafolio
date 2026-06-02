@@ -28,7 +28,7 @@
     <div class="s-subject-label">Arquitectura de Software</div>
     <h1>Semana <span class="accent">01</span></h1>
     <div class="semana-meta">
-      Angelo Joel Vera Bravo &nbsp;·&nbsp; 5to "A" &nbsp;·&nbsp; IST YAVIRAC &nbsp;·&nbsp; 2025-2026
+      Alex Robinson Zaruma Suntasig &nbsp;·&nbsp; 5to "A" &nbsp;·&nbsp; IST YAVIRAC &nbsp;·&nbsp; 2025-2026
     </div>
   </div>
 
@@ -86,14 +86,13 @@
         <div class="c-section-body">
           <div class="ev-grid">
             <div class="ev-item">
-              <img src="../imagenes/img1.png" alt="Herramientas de modelado"/>
+              <img src="../imagenes/img1.png" alt="Herramientas de modelado" onclick="abrirLightbox(this.src)"/>
               <div class="ev-caption">Herramientas de modelado</div>
             </div>
           </div>
         </div>
       </div>
 
-     
       <!-- Ejemplo Trade-off -->
       <div class="c-section">
         <div class="c-section-header">
@@ -103,42 +102,40 @@
         <div class="c-section-body">
           <div class="ev-grid">
             <div class="ev-item">
-              <img src="../imagenes/img2.png" alt="Ejemplo de Trade-off"/>
+              <img src="../imagenes/img2.png" alt="Ejemplo de Trade-off" onclick="abrirLightbox(this.src)"/>
               <div class="ev-caption">Ejemplo de Trade-off</div>
             </div>
           </div>
         </div>
       </div>
 
- <!-- Atributos de calidad  -->
+      <!-- Atributos de calidad -->
       <div class="c-section">
         <div class="c-section-header">
           <div class="c-icon ic-blue">🛠️</div>
-          <span class="c-section-title">Atributos de Calidad(ASRs)</span>
+          <span class="c-section-title">Atributos de Calidad (ASRs)</span>
         </div>
         <div class="c-section-body">
           <div class="ev-grid">
             <div class="ev-item">
-              <img src="../imagenes/img3.png" alt="Atributos de Calidad"/>
+              <img src="../imagenes/img3.png" alt="Atributos de Calidad" onclick="abrirLightbox(this.src)"/>
               <div class="ev-caption">Atributos de Calidad</div>
-             
             </div>
           </div>
         </div>
       </div>
 
- <!-- Disponibilidad  -->
+      <!-- Disponibilidad -->
       <div class="c-section">
         <div class="c-section-header">
           <div class="c-icon ic-blue">🛠️</div>
-          <span class="c-section-title">Disponibilidad(Availability)</span>
+          <span class="c-section-title">Disponibilidad (Availability)</span>
         </div>
         <div class="c-section-body">
           <div class="ev-grid">
             <div class="ev-item">
-              <img src="../imagenes/img4.png" alt="Disponibilidad"/>
+              <img src="../imagenes/img4.png" alt="Disponibilidad" onclick="abrirLightbox(this.src)"/>
               <div class="ev-caption">Disponibilidad</div>
-             
             </div>
           </div>
         </div>
@@ -159,22 +156,16 @@
         </div>
       </div>
 
-      
-
-      
-
     </div><!-- fin tema-block 1 -->
 
 
     <!-- ══════════════════════════════
          TEMA 2 — (Por completar)
-         Copia este bloque para cada tema nuevo
     ══════════════════════════════ -->
     <div class="tema-block">
       <div class="tema-number">TEMA 02</div>
       <div class="tema-title">Nombre del tema 2</div>
 
-      <!-- Contenido -->
       <div class="c-section">
         <div class="c-section-header">
           <div class="c-icon ic-purple">🎯</div>
@@ -185,7 +176,6 @@
         </div>
       </div>
 
-      <!-- Actividades -->
       <div class="c-section">
         <div class="c-section-header">
           <div class="c-icon ic-green">✅</div>
@@ -199,7 +189,6 @@
         </div>
       </div>
 
-      <!-- Evidencias -->
       <div class="c-section">
         <div class="c-section-header">
           <div class="c-icon ic-pink">🖼️</div>
@@ -208,14 +197,13 @@
         <div class="c-section-body">
           <div class="ev-grid">
             <div class="ev-item">
-              <img src="../imagenes/NOMBRE_IMAGEN.png" alt="Evidencia tema 2"/>
+              <img src="../imagenes/NOMBRE_IMAGEN.png" alt="Evidencia tema 2" onclick="abrirLightbox(this.src)"/>
               <div class="ev-caption">Descripción de la imagen</div>
             </div>
           </div>
         </div>
       </div>
-      
-      <!-- Conclusión -->
+
       <div class="c-section">
         <div class="c-section-header">
           <div class="c-icon ic-orange">💡</div>
@@ -226,7 +214,6 @@
         </div>
       </div>
 
-      <!-- Bibliografía -->
       <div class="c-section">
         <div class="c-section-header">
           <div class="c-icon ic-blue">🔗</div>
@@ -249,6 +236,36 @@
     </div>
 
   </div><!-- fin semana-wrap -->
+
+
+  <!-- ══ LIGHTBOX ══ -->
+  <div id="lightbox" onclick="cerrarLightbox()"
+       style="display:none; position:fixed; inset:0; z-index:1000;
+              background:rgba(0,0,0,0.92); align-items:center;
+              justify-content:center; padding:1.5rem; cursor:zoom-out;">
+    <img id="lb-img" src="" alt=""
+         style="max-width:90vw; max-height:90vh; border-radius:10px; object-fit:contain;"/>
+    <button onclick="cerrarLightbox()"
+            style="position:fixed; top:1rem; right:1rem; width:36px; height:36px;
+                   border-radius:50%; background:#1A1A25; border:1px solid #2A2A3A;
+                   color:#E8E8F0; font-size:18px; cursor:pointer;
+                   display:flex; align-items:center; justify-content:center;">×</button>
+  </div>
+
+  <script>
+    function abrirLightbox(src) {
+      document.getElementById('lb-img').src = src;
+      const lb = document.getElementById('lightbox');
+      lb.style.display = 'flex';
+    }
+    function cerrarLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+    // Cerrar con tecla ESC
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') cerrarLightbox();
+    });
+  </script>
 
 </body>
 </html>
