@@ -1,173 +1,254 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>MATERIA1 - Semana 1</title>
-<link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arquitectura de Software · Semana 1</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-<div class="contenido">
-<h1>Arquitectura - Semana 1</h1>
 
-<h2>Tema</h2>
-<p> ARQUITECTURA DE SOFTWARE.</p>
+  <!-- TOP BAR -->
+  <div class="page-topbar">
+    <div class="crumb">
+      <a href="../index.html">Inicio</a>
+      <span class="sep">/</span>
+      <a href="../index.html">Arquitectura de Software</a>
+      <span class="sep">/</span>
+      <span class="current">Semana 1</span>
+    </div>
+    <div class="page-nav">
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana2.html">Sem 2 →</a>
+    </div>
+  </div>
 
+  <!-- HERO -->
+  <div class="semana-hero">
+    <div class="s-subject-label">Arquitectura de Software</div>
+    <h1>Semana <span class="accent">01</span></h1>
+    <div class="semana-meta">
+      Angelo Joel Vera Bravo &nbsp;·&nbsp; 5to "A" &nbsp;·&nbsp; IST YAVIRAC &nbsp;·&nbsp; 2025-2026
+    </div>
+  </div>
 
-<h2>¿Qué es la Arquitectura?</h2>
-<p>Imagina que vas a construir un edificio. La "programación" es poner los ladrillos y el cemento. Pero la "Arquitectura" es decidir si ese edificio será un hospital, una discoteca o una casa.
-<p>-Si es un hospital, necesitas que la electricidad nunca falle (Disponibilidad).</p>
-<p>-Si es una discoteca, necesitas que el suelo aguante a mil personas saltando (Escalabilidad).</p>
-<p>-Si es una casa, quizás lo más importante sea que sea barata y acogedora (Costo/Mantenibilidad).</p>
-<p>En Software: La arquitectura es el conjunto de decisiones que son difíciles de cambiar después. No se trata de qué colores usar, sino de cómo se comportará el sistema bajo presión.
-</p>
+  <!-- CONTENIDO -->
+  <div class="semana-wrap">
 
-<h2>Herramientas de modelos </h2>
-<p><img src="../imagenes/img1.png" alt="Imagen de evidencia"></p>
+    <!-- ══════════════════════════════
+         TEMA 1 — Arquitectura de Software
+    ══════════════════════════════ -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 01</div>
+      <div class="tema-title">Arquitectura de Software</div>
 
+      <!-- ¿Qué es la Arquitectura? -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🎯</div>
+          <span class="c-section-title">¿Qué es la Arquitectura de Software?</span>
+        </div>
+        <div class="c-section-body">
+          <p>Imagina que vas a construir un edificio. La <strong>"programación"</strong> es poner los ladrillos y el cemento. Pero la <strong>"Arquitectura"</strong> es decidir si ese edificio será un hospital, una discoteca o una casa.</p>
+          <ul>
+            <li>Si es un hospital, necesitas que la electricidad nunca falle <strong>(Disponibilidad)</strong>.</li>
+            <li>Si es una discoteca, necesitas que el suelo aguante a mil personas saltando <strong>(Escalabilidad)</strong>.</li>
+            <li>Si es una casa, quizás lo más importante sea que sea barata y acogedora <strong>(Costo / Mantenibilidad)</strong>.</li>
+          </ul>
+          <p style="margin-top:0.75rem">En Software: La arquitectura es el <strong>conjunto de decisiones que son difíciles de cambiar después</strong>. No se trata de qué colores usar, sino de cómo se comportará el sistema bajo presión.</p>
+        </div>
+      </div>
 
-<h2>El Gran Dilema:El "Trade-off"(Sacrifios)</h2>
-<p> <ul>
-<li>1.-Infinitamente rápido.</li>
-<li>2.-100% seguro.</li>
-<li>3.-Totalmente gratis.</li>
-<li>4.-Muy fácil de programar.</li>
-</ul></p>
-<p>Regla de oro: Para ganar algo, siempre hay que sacrificar otra cosa.</p>
+      <!-- El Gran Dilema -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">⚖️</div>
+          <span class="c-section-title">El Gran Dilema: El "Trade-off" (Sacrificios)</span>
+        </div>
+        <div class="c-section-body">
+          <p>Ningún sistema puede ser al mismo tiempo:</p>
+          <ul>
+            <li>1. Infinitamente rápido.</li>
+            <li>2. 100% seguro.</li>
+            <li>3. Totalmente gratis.</li>
+            <li>4. Muy fácil de programar.</li>
+          </ul>
+          <p style="margin-top:0.75rem"><strong>Regla de oro:</strong> Para ganar algo, siempre hay que sacrificar otra cosa.</p>
+        </div>
+      </div>
 
-<h2>Ejemplo de Trade-off </h2>
-<p><img src="../imagenes/img2.png" alt="Imagen de evidencia"></p>
-<h2>Actividades realizadas</h2>
+      <!-- Herramientas de modelos -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🛠️</div>
+          <span class="c-section-title">Herramientas de Modelado</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <div class="ev-item">
+              <img src="../imagenes/img1.png" alt="Herramientas de modelado"/>
+              <div class="ev-caption">Herramientas de modelado</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
+     
+      <!-- Ejemplo Trade-off -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">📊</div>
+          <span class="c-section-title">Ejemplo de Trade-off</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <div class="ev-item">
+              <img src="../imagenes/img2.png" alt="Ejemplo de Trade-off"/>
+              <div class="ev-caption">Ejemplo de Trade-off</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
+ <!-- Atributos de calidad  -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🛠️</div>
+          <span class="c-section-title">Atributos de Calidad(ASRs)</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <div class="ev-item">
+              <img src="../imagenes/img3.png" alt="Atributos de Calidad"/>
+              <div class="ev-caption">Atributos de Calidad</div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
 
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
+ <!-- Disponibilidad  -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🛠️</div>
+          <span class="c-section-title">Disponibilidad(Availability)</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <div class="ev-item">
+              <img src="../imagenes/img4.png" alt="Disponibilidad"/>
+              <div class="ev-caption">Disponibilidad</div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
 
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+      <!-- Actividades -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">✅</div>
+          <span class="c-section-title">Actividades realizadas</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>Actividad 1</li>
+            <li>Actividad 2</li>
+            <li>Actividad 3</li>
+          </ul>
+        </div>
+      </div>
 
-<a href="../index.html">Volver al inicio</a>
+      
 
+      
 
-
-h2>Tema</h2>
-<p> HOLA MUNDO DESDE QUITO ECUADOR.</p>
-
-
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
-
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
-
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
-
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
-
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
-
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
-
-
-h2>Tema</h2>
-<p> HOLA MUNDO DESDE QUITO ECUADOR.</p>
-
-
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
-
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
-
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
-
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
-
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
-
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
-
-
-
-h2>Tema</h2>
-<p> HOLA MUNDO DESDE QUITO ECUADOR.</p>
-
-
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
-
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
-
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
-
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
-
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
-
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
-
-
-
-
-h2>Tema</h2>
-<p> HOLA MUNDO DESDE QUITO ECUADOR.</p>
-
-
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
-
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
-
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
-
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
-
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
-
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+    </div><!-- fin tema-block 1 -->
 
 
-</div>
+    <!-- ══════════════════════════════
+         TEMA 2 — (Por completar)
+         Copia este bloque para cada tema nuevo
+    ══════════════════════════════ -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 02</div>
+      <div class="tema-title">Nombre del tema 2</div>
+
+      <!-- Contenido -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🎯</div>
+          <span class="c-section-title">Contenido</span>
+        </div>
+        <div class="c-section-body">
+          <p>Escribe aquí el contenido del tema 2.</p>
+        </div>
+      </div>
+
+      <!-- Actividades -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">✅</div>
+          <span class="c-section-title">Actividades realizadas</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>Actividad 1</li>
+            <li>Actividad 2</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Evidencias -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <div class="ev-item">
+              <img src="../imagenes/NOMBRE_IMAGEN.png" alt="Evidencia tema 2"/>
+              <div class="ev-caption">Descripción de la imagen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Conclusión -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">💡</div>
+          <span class="c-section-title">Conclusión</span>
+        </div>
+        <div class="c-section-body">
+          <p>Escribe aquí la conclusión del tema 2.</p>
+        </div>
+      </div>
+
+      <!-- Bibliografía -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔗</div>
+          <span class="c-section-title">Bibliografía y recursos</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📌</span> <span>Referencias del tema 2</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- fin tema-block 2 -->
+
+
+    <!-- NAVEGACIÓN ABAJO -->
+    <div style="display:flex; justify-content:space-between; align-items:center; padding-top:1rem; border-top:1px solid var(--border);">
+      <a class="btn-nav" href="../index.html">⌂ Volver al índice</a>
+      <a class="btn-nav" href="semana2.html">Semana 2 →</a>
+    </div>
+
+  </div><!-- fin semana-wrap -->
+
 </body>
 </html>
