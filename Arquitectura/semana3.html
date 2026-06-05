@@ -1,40 +1,417 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>MATERIA1 - Semana 3</title>
-<link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arquitectura de Software · Semana 3</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-<div class="contenido">
-<h1>MATERIA1 - Semana 3</h1>
 
-<h2>Tema</h2>
-<p>Escriba aquí el tema.</p>
+  <div class="page-topbar">
+    <div class="crumb">
+      <a href="../index.html">Inicio</a>
+      <span class="sep">/</span>
+      <a href="../index.html">Arquitectura de Software</a>
+      <span class="sep">/</span>
+      <span class="current">Semana 3</span>
+    </div>
+    <div class="page-nav">
+      <a class="btn-nav" href="semana2.html">← Sem 2</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana4.html">Sem 4 →</a>
+    </div>
+  </div>
 
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
+  <div class="semana-hero">
+    <div class="s-subject-label">Arquitectura de Software · Docente: MSc. Raúl Páez</div>
+    <h1>Semana <span class="accent">03</span></h1>
+    <p style="color:var(--accent2);font-size:15px;margin-top:0.4rem;font-weight:600;">Estilos Arquitectónicos I — Estructurales y Clásicos: Capas, Microkernel y Pizarra</p>
+    <div class="semana-meta">
+      Alex Robinson Zaruma Suntasig &nbsp;·&nbsp; 5to "A" &nbsp;·&nbsp; IST YAVIRAC &nbsp;·&nbsp; 2025-2026
+    </div>
+  </div>
 
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
+  <div class="semana-wrap">
 
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
 
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
+    <div class="tema-block">
+      <div class="tema-number">TEMA 01</div>
+      <div class="tema-title">La Fundación Estructural</div>
 
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🎯</div>
+          <span class="c-section-title">Concepto Principal</span>
+        </div>
+        <div class="c-section-body">
+          <p>Los estilos estructurales determinan la anatomía fundamental del software. Su objetivo central consiste en lograr <strong>organizar la complejidad mediante niveles de abstracción</strong> y límites de responsabilidad sumamente claros.</p>
+          <p style="margin-top:0.85rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            💡 <strong>Un estilo estructural no define el flujo dinámico de datos, sino los cimientos y fronteras del código fuente.</strong>
+          </p>
+        </div>
+      </div>
 
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes o información adicional sobre la fundación estructural...</p>
+        </div>
+      </div>
 
-<a href="../index.html">Volver al inicio</a>
-</div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><div class="tema-block">
+      <div class="tema-number">TEMA 02</div>
+      <div class="tema-title">Arquitectura en Capas (N-Tier)</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🧱</div>
+          <span class="c-section-title">Características e Impacto</span>
+        </div>
+        <div class="c-section-body">
+          <p>Es el estilo clásico más extendido y utilizado. Organiza el sistema entero en un conjunto de <strong>grupos de responsabilidades horizontales</strong>.</p>
+          <ul style="margin-top:0.5rem;">
+            <li><strong>Aislamiento:</strong> Las capas superiores dependen estrictamente de las inferiores, impidiendo el acoplamiento cruzado.</li>
+            <li><strong>Seguridad:</strong> Cada una de las capas actúa de manera directa como una barrera de validación autónoma.</li>
+            <li><strong>Mantenibilidad:</strong> Hace viable cambiar el Data Storage (ej. migrar de MySQL Master u otra DB) sin alterar la Interfaz de Usuario (UI).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">⚠️</div>
+          <span class="c-section-title">Análisis de Trade-offs</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Riesgo de "Sinkhole Pattern":</strong> Ocurre cuando múltiples peticiones pasan a través de todas las capas del sistema sin realizar ninguna transformación ni lógica de negocio sustancial, consumiendo recursos de manera inútil.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre arquitectura en capas...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><div class="tema-block">
+      <div class="tema-number">TEMA 03</div>
+      <div class="tema-title">Arquitectura de Microkernel (Plug-ins)</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🔌</div>
+          <span class="c-section-title">Sistemas Evolutivos</span>
+        </div>
+        <div class="c-section-body">
+          <p>También conocida como Arquitectura de Plug-ins, está diseñada para proveer una flexibilidad extrema, separando por completo el núcleo de lo adicional.</p>
+          <ul style="margin-top:0.5rem;">
+            <li><strong>Core System:</strong> Contiene únicamente la lógica mínima y esencial para que la aplicación funcione.</li>
+            <li><strong>Plug-in Components:</strong> Componentes totalmente independientes que se acoplan al núcleo para añadir valor al negocio.</li>
+            <li><strong>Escalabilidad:</strong> Resulta ideal para el diseño de aplicaciones de escritorio, navegadores web o editores extensibles.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">⚠️</div>
+          <span class="c-section-title">Análisis de Trade-offs</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Complejidad Operativa:</strong> El despliegue de las aplicaciones se vuelve altamente complejo debido a la necesidad de gestionar y coordinar los cambios de versiones de múltiples plug-ins independientes.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes o reflexiones sobre el Microkernel...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><div class="tema-block">
+      <div class="tema-number">TEMA 04</div>
+      <div class="tema-title">Patrón de Pizarra (Blackboard)</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🧠</div>
+          <span class="c-section-title">Inteligencia Colectiva</span>
+        </div>
+        <div class="c-section-body">
+          <p>Este estilo se basa en la colaboración de diversos componentes independientes sobre una base de datos común. Es de gran utilidad para problemas donde <strong>no existe una solución determinista paso a paso</strong>.</p>
+          <ul style="margin-top:0.5rem;">
+            <li><strong>Pizarra (Blackboard):</strong> Memoria global donde reside el problema y donde se ejecutan los métodos de acceso y actualización.</li>
+            <li><strong>Expertos (Knowledge Source):</strong> Módulos de conocimiento aislados que operan sobre la pizarra evaluando condiciones y ejecutando acciones.</li>
+            <li><strong>Controlador (Control):</strong> Organismo que selecciona, configura y activa qué experto debe actuar en cada momento.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">⚠️</div>
+          <span class="c-section-title">Análisis de Trade-offs</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Dificultad de Testing:</strong> Es extremadamente difícil de testear de forma automatizada debido al comportamiento intrínsecamente no determinista con el que interactúan los expertos sobre la pizarra.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre el patrón Blackboard...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><div class="tema-block">
+      <div class="tema-number">TEMA 05</div>
+      <div class="tema-title">Comparativa de Estilos Estructurales</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📊</div>
+          <span class="c-section-title">Matriz de Decisión Arquitectónica</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Estilo</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Pilar de Calidad</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Caso de Uso Ideal</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Dificultad</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:bold;">Capas</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Mantenibilidad</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Apps Empresariales / CRUDs</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#22c55e;font-weight:600;">Baja</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:bold;">Microkernel</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Flexibilidad</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">IDEs, Navegadores, Editores</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#eab308;font-weight:600;">Media</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:bold;">Pizarra</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Fiabilidad (IA)</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Sistemas de Diagnóstico / IA / Reconocimiento de Voz</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#ef4444;font-weight:600;">Alta</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top:0.85rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            💡 <strong>Conclusión: Ningún estilo es perfecto de manera universal; se elige rigurosamente según el "Atributo de Calidad" que se determine como prioritario para el negocio.</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes sobre la matriz</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus observaciones o comparaciones adicionales de la clase...</p>
+        </div>
+      </div>
+
+    </div><div class="tema-block">
+      <div class="tema-number">LABORATORIO</div>
+      <div class="tema-title">Laboratorio Práctico de la Semana</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">✅</div>
+          <span class="c-section-title">Reto Desarrollado — Sistema Extensible (Microkernel)</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Enunciado de la práctica:</strong> Desarrollar en Python la estructura de un núcleo modular (Core) que acepte el registro dinámico de nuevos componentes ("Plug-ins") de notificación externa independientes sin alterar el núcleo central.</p>
+          
+          <div style="margin-top:0.75rem;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
+            <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Estructura del Código implementado:</p>
+            <pre style="background: #1A1A25; color: #E8E8F0; padding: 1rem; border-radius: 8px; font-family: monospace; overflow-x: auto; font-size: 13px; margin: 0; line-height: 1.5;">
+class Core:
+    def __init__(self):
+        self.p = []  # Almacén de plug-ins registrados dinámicamente
+
+    def add(self, x):
+        self.p.append(x)  # Registrar nuevo plug-in
+
+    def notify(self, m):
+        for s in self.p:
+            s.send(m)  # Ejecutar envío en cada módulo
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mi análisis del laboratorio</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus conclusiones sobre cómo el polimorfismo o las listas en Python facilitaron el acoplamiento del Microkernel...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias de la práctica</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus capturas de pantalla de la ejecución de Python.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><div class="tema-block">
+      <div class="tema-number">CIERRE</div>
+      <div class="tema-title">Puntos Clave de la Semana</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">💡</div>
+          <span class="c-section-title">Puntos clave</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>🧩 Los estilos estructurales moldean los límites de capas y responsabilidades lógicas del sistema.</li>
+            <li>🌊 Las arquitecturas en capas se exponen de forma común al fenómeno adverso del <em>Sinkhole Pattern</em>.</li>
+            <li>🔌 El estilo Microkernel potencia de gran manera las aplicaciones evolutivas mediante componentes independientes.</li>
+            <li>🎲 El patrón de Pizarra se desmarca al trabajar sobre escenarios complejos de naturaleza no determinista.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">💭</div>
+          <span class="c-section-title">Mi reflexión y conclusión personal</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu conclusión personal tras estudiar los estilos estructurales clásicos...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔗</div>
+          <span class="c-section-title">Bibliografía y recursos</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list" style="list-style:none;padding:0;margin:0;">
+            <li style="display:flex;gap:10px;align-items:start;margin-bottom:5px;">
+              <span>📌</span>
+              <span>Material de Clase: Estilos Arquitectónicos I — MSc. Raúl Páez (IST Yavirac).</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div><div style="display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border);">
+      <a class="btn-nav" href="semana2.html">← Semana 2</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana4.html">Semana 4 →</a>
+    </div>
+
+  </div><div id="lightbox" onclick="cerrarLightbox()"
+       style="display:none;position:fixed;inset:0;z-index:1000;
+              background:rgba(0,0,0,0.92);align-items:center;
+              justify-content:center;padding:1.5rem;cursor:zoom-out;">
+    <img id="lb-img" src="" alt=""
+         style="max-width:90vw;max-height:90vh;border-radius:10px;object-fit:contain"/>
+    <button onclick="cerrarLightbox()"
+            style="position:fixed;top:1rem;right:1rem;width:36px;height:36px;
+                   border-radius:50%;background:#1A1A25;border:1px solid #2A2A3A;
+                   color:#E8E8F0;font-size:18px;cursor:pointer;
+                   display:flex;align-items:center;justify-content:center;">×</button>
+  </div>
+
+  <script>
+    function abrirLightbox(src) {
+      document.getElementById('lb-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+    function cerrarLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') cerrarLightbox();
+    });
+  </script>
+
 </body>
 </html>

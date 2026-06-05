@@ -1,40 +1,579 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>MATERIA1 - Semana 2</title>
-<link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arquitectura de Software · Semana 2</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-<div class="contenido">
-<h1>MATERIA1 - Semana 2</h1>
 
-<h2>Tema</h2>
-<p>Escriba aquí el tema.</p>
+  <!-- TOP BAR -->
+  <div class="page-topbar">
+    <div class="crumb">
+      <a href="../index.html">Inicio</a>
+      <span class="sep">/</span>
+      <a href="../index.html">Arquitectura de Software</a>
+      <span class="sep">/</span>
+      <span class="current">Semana 2</span>
+    </div>
+    <div class="page-nav">
+      <a class="btn-nav" href="semana1.html">← Sem 1</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana3.html">Sem 3 →</a>
+    </div>
+  </div>
 
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
+  <!-- HERO -->
+  <div class="semana-hero">
+    <div class="s-subject-label">Arquitectura de Software · Docente: MSc. Raúl Páez</div>
+    <h1>Semana <span class="accent">02</span></h1>
+    <p style="color:var(--accent2);font-size:15px;margin-top:0.4rem;font-weight:600;">Documentación y Diseño Arquitectónico — ADRs</p>
+    <div class="semana-meta">
+      Alex Robinson Zaruma Suntasig &nbsp;·&nbsp; 5to "A" &nbsp;·&nbsp; IST YAVIRAC &nbsp;·&nbsp; 2025-2026
+    </div>
+  </div>
 
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
+  <div class="semana-wrap">
 
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
 
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
+    <!-- ══════════════════════════════
+         TEMA 01 — Documentación como Comunicación
+    ══════════════════════════════ -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 01</div>
+      <div class="tema-title">Documentación como Herramienta de Comunicación</div>
 
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🎯</div>
+          <span class="c-section-title">¿Qué comunica la documentación?</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>📌 Decisiones de diseño tomadas y sus razones</li>
+            <li>🔗 Restricciones del sistema y del negocio</li>
+            <li>🧩 Componentes, interfaces y dependencias</li>
+            <li>📋 Suposiciones y riesgos identificados</li>
+            <li>👥 Expectativas entre equipos y stakeholders</li>
+          </ul>
+          <p style="margin-top:0.85rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            💡 <strong>La documentación no es burocracia — es infraestructura de conocimiento compartido.</strong>
+          </p>
+        </div>
+      </div>
 
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">👥</div>
+          <span class="c-section-title">¿A quiénes va dirigida?</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li><strong>Desarrolladores</strong> — Implementación y mantenimiento</li>
+            <li><strong>Arquitectos</strong> — Evolución y coherencia del sistema</li>
+            <li><strong>QA / Testing</strong> — Criterios de calidad y cobertura</li>
+            <li><strong>Product Owners</strong> — Alcance y viabilidad técnica</li>
+            <li><strong>Futuros equipos</strong> — Onboarding y continuidad</li>
+          </ul>
+        </div>
+      </div>
 
-<a href="../index.html">Volver al inicio</a>
-</div>
+      <!-- Mis apuntes -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes o información adicional sobre documentación como comunicación...</p>
+        </div>
+      </div>
+
+      <!-- Evidencias -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- ESPACIO PARA IMÁGENES — descomenta y cambia el nombre -->
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="descripción" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Descripción</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- fin tema 01 -->
+
+
+    <!-- ══════════════════════════════
+         TEMA 02 — Justificar Decisiones
+    ══════════════════════════════ -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 02</div>
+      <div class="tema-title">Documentación para Justificar Decisiones Arquitectónicas</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">⚠️</div>
+          <span class="c-section-title">El problema sin documentación</span>
+        </div>
+        <div class="c-section-body">
+          <p>El equipo cambia, el contexto se pierde. <em>¿Por qué usamos esta base de datos? ¿Por qué ese patrón? Nadie lo recuerda.</em></p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">📋</div>
+          <span class="c-section-title">Los tres pilares de la documentación</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li><strong>📝 QUÉ</strong> — Describe la decisión tomada de forma clara y accionable</li>
+            <li><strong>🤔 POR QUÉ</strong> — Captura el razonamiento, las alternativas y las restricciones del momento</li>
+            <li><strong>⚖️ CONSECUENCIAS</strong> — Documenta trade-offs, deuda técnica y compromisos futuros</li>
+          </ul>
+          <p style="margin-top:0.85rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            <em>"Code tells you HOW. Comments tell you WHAT. Documentation tells you WHY."</em> — D. Thomas
+          </p>
+        </div>
+      </div>
+
+      <!-- Mis apuntes -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre justificación de decisiones arquitectónicas...</p>
+        </div>
+      </div>
+
+      <!-- Evidencias -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="descripción" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Descripción</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- fin tema 02 -->
+
+
+    <!-- ══════════════════════════════
+         TEMA 03 — ADRs
+    ══════════════════════════════ -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 03</div>
+      <div class="tema-title">Architecture Decision Records (ADRs)</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🏗️</div>
+          <span class="c-section-title">Estructura de un ADR</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li><strong>1. Título</strong> — Nombre corto de la decisión (ej: "Usar PostgreSQL como BD principal")</li>
+            <li><strong>2. Estado</strong> — Propuesto / Aceptado / Obsoleto / Reemplazado</li>
+            <li><strong>3. Contexto</strong> — Situación y fuerzas que llevaron a tomar la decisión</li>
+            <li><strong>4. Decisión</strong> — Lo que se decidió y cómo se implementará</li>
+            <li><strong>5. Consecuencias</strong> — Positivas, negativas y compromisos resultantes (trade-offs)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📄</div>
+          <span class="c-section-title">Plantilla Estándar de un ADR</span>
+        </div>
+        <div class="c-section-body">
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1rem;font-size:13px;line-height:1.8;">
+            <p><strong style="color:var(--accent2)"># ADR-001:</strong> Usar arquitectura de microservicios para el módulo de pagos</p>
+            <p><strong style="color:var(--accent2)">## Estado:</strong> Aceptado</p>
+            <p><strong style="color:var(--accent2)">## Contexto:</strong> El módulo de pagos requiere escalabilidad independiente y distintos SLAs respecto al resto del sistema.</p>
+            <p><strong style="color:var(--accent2)">## Decisión:</strong> Extraer el módulo de pagos como microservicio independiente con su propia BD y API REST.</p>
+            <p><strong style="color:var(--accent2)">## Alternativas consideradas:</strong> Monolito modular (descartado: acoplamiento alto) · GraphQL gateway (descartado: complejidad innecesaria)</p>
+            <p><strong style="color:var(--accent2)">## Consecuencias:</strong><br/>
+              ✅ Escalado independiente &nbsp; ✅ Despliegue autónomo<br/>
+              ⚠️ Latencia de red adicional &nbsp; ⚠️ Mayor complejidad ops
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mis apuntes -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes, ejemplos propios o reflexiones sobre los ADRs...</p>
+        </div>
+      </div>
+
+      <!-- Evidencias -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="descripción" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Descripción</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- fin tema 03 -->
+
+
+    <!-- ══════════════════════════════
+         TEMA 04 — Ejercicios Resueltos
+    ══════════════════════════════ -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 04</div>
+      <div class="tema-title">Ejercicios Resueltos</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">✅</div>
+          <span class="c-section-title">Ejercicio Resuelto 1 — Redacción de ADR (JWT)</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Enunciado:</strong> El equipo eligió usar JWT para autenticación stateless en lugar de sesiones en servidor, para permitir escalar horizontalmente la API.</p>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1rem;font-size:13px;line-height:1.8;margin-top:0.75rem;">
+            <p><strong style="color:var(--accent2)">Título:</strong> ADR-002: Usar JWT para autenticación stateless</p>
+            <p><strong style="color:var(--accent2)">Estado:</strong> Aceptado</p>
+            <p><strong style="color:var(--accent2)">Contexto:</strong> La API debe escalar horizontalmente. Las sesiones en servidor crean estado compartido que dificulta el escalado.</p>
+            <p><strong style="color:var(--accent2)">Decisión:</strong> Usar JSON Web Tokens (JWT) firmados con RS256. Los tokens incluyen claims de identidad y expiran en 1h.</p>
+            <p><strong style="color:var(--accent2)">Consecuencias:</strong><br/>
+              ✅ Escalado horizontal sin sesiones compartidas &nbsp; ✅ Stateless<br/>
+              ⚠️ Imposibilidad de revocar tokens antes de expirar &nbsp; ⚠️ Payload expuesto en base64
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">✅</div>
+          <span class="c-section-title">Ejercicio Resuelto 2 — Análisis de ADR incompleto</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>ADR incompleto analizado:</strong></p>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1rem;font-size:13px;margin-top:0.5rem;margin-bottom:0.75rem;">
+            <p>Título: Base de datos &nbsp;|&nbsp; Estado: Aceptado &nbsp;|&nbsp; Decisión: MongoDB</p>
+            <p style="color:var(--muted2)">[sin contexto] [sin consecuencias] [sin alternativas]</p>
+          </div>
+          <p><strong>Problemas identificados:</strong></p>
+          <ul>
+            <li>❌ Título genérico — no especifica la decisión real</li>
+            <li>❌ Falta el Contexto — ¿qué problema se resolvía?</li>
+            <li>❌ Decisión sin justificación — solo nombra la tecnología</li>
+            <li>❌ No hay Alternativas evaluadas</li>
+            <li>❌ No hay Consecuencias ni trade-offs documentados</li>
+          </ul>
+          <p style="margin-top:0.75rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            💡 <strong>Un ADR debe capturar el CONTEXTO y las CONSECUENCIAS — sin ellos pierde su valor principal.</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">✅</div>
+          <span class="c-section-title">Ejercicio Resuelto 3 — Comparativa ADRs vs Sin ADRs</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Escenario</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:#ef4444;">Sin ADRs</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--green);">Con ADRs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);">Nuevo dev ingresa</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Pregunta por qué se usó X. Nadie recuerda. Lee código durante días.</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Lee ADR-005. En 15 min entiende el contexto y restricciones.</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);">Cambio de arquitectura</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Debate interminable. Sin contexto, opiniones sin base.</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">El equipo revisa el ADR original y documenta la nueva decisión.</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);">Auditoría de calidad</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">No hay evidencia de decisiones. Difícil justificar.</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">ADRs sirven como evidencia de due diligence arquitectónico.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mis apuntes -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes sobre los ejercicios resueltos</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus observaciones, conclusiones o dudas sobre los ejercicios resueltos...</p>
+        </div>
+      </div>
+
+      <!-- Evidencias -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="descripción" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Descripción</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia de los ejercicios resueltos.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- fin tema 04 -->
+
+
+    <!-- ══════════════════════════════
+         TEMA 05 — Ejercicios Propuestos
+    ══════════════════════════════ -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 05</div>
+      <div class="tema-title">Ejercicios Propuestos</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📝</div>
+          <span class="c-section-title">Ejercicio Propuesto 1 — Redacción de ADR (e-commerce)</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Escenario:</strong> Eres arquitecto en una startup de e-commerce. Debes decidir entre arquitectura basada en eventos (Kafka/RabbitMQ) o llamadas REST síncronas para comunicar el servicio de órdenes con el de inventario. La startup tiene 3 devs, bajo presupuesto y debe salir a producción en 2 meses.</p>
+          <ul style="margin-top:0.75rem;">
+            <li>a) Identifica las fuerzas (contexto) que influyen en la decisión (mínimo 4)</li>
+            <li>b) Elige una opción y justifica tu elección</li>
+            <li>c) Documenta la decisión completa en formato ADR</li>
+            <li>d) Indica al menos 2 consecuencias positivas y 2 negativas</li>
+            <li>e) ¿Cuándo debería revisarse o reemplazarse este ADR?</li>
+          </ul>
+          <div style="margin-top:1rem;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
+            <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi respuesta:</p>
+            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu solución al ejercicio propuesto 1...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📝</div>
+          <span class="c-section-title">Ejercicio Propuesto 2 — Mejora de ADR (React frontend)</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>ADR a mejorar:</strong> Título: Usar React · Estado: Aceptado · Contexto: El equipo sabe React · Decisión: Usaremos React · Consecuencias: Positivo: rápido de implementar.</p>
+          <ul style="margin-top:0.75rem;">
+            <li>a) Lista todos los problemas de calidad (mínimo 5)</li>
+            <li>b) Reescribe el ADR completo mejorando TODAS las secciones</li>
+            <li>c) Agrega sección de Alternativas Consideradas (mínimo 2)</li>
+            <li>d) ¿Sirve este ADR para un PM no técnico? ¿Por qué?</li>
+          </ul>
+          <div style="margin-top:1rem;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
+            <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi respuesta:</p>
+            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu solución al ejercicio propuesto 2...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📝</div>
+          <span class="c-section-title">Ejercicio Propuesto 3 — Caso TechBank</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Caso:</strong> TechBank tiene un monolito Java de 15 años. El CTO propone migrar a microservicios pero nadie documentó por qué eligieron el diseño monolítico original.</p>
+          <ul style="margin-top:0.75rem;">
+            <li>a) ¿Qué consecuencias tiene la falta de ADRs históricos? (mínimo 3)</li>
+            <li>b) Propón un ADR que capture la decisión original del monolito</li>
+            <li>c) Escribe un ADR para la decisión de migración a microservicios</li>
+            <li>d) Diseña un proceso de 3 pasos para adoptar ADRs en TechBank</li>
+          </ul>
+          <div style="margin-top:1rem;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
+            <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi respuesta:</p>
+            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu solución al ejercicio propuesto 3...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">🎯</div>
+          <span class="c-section-title">Ejercicio Propuesto 4 — Cadena de ADRs (Streaming)</span>
+        </div>
+        <div class="c-section-body">
+          <p>Desarrolla una cadena de ADRs interrelacionados para un sistema de streaming de video:</p>
+          <ul style="margin-top:0.75rem;">
+            <li><strong>ADR-001:</strong> Almacenamiento de videos — ¿S3, CDN propio o filesystem distribuido?</li>
+            <li><strong>ADR-002:</strong> Protocolo de streaming — ¿HLS, DASH o RTMP? (referencia ADR-001)</li>
+            <li><strong>ADR-003:</strong> Estrategia de caché — ¿Redis, Varnish o CDN edge? (referencia ADR-001 y 002)</li>
+            <li><strong>ADR-004:</strong> Usuarios concurrentes — ¿WebSockets, SSE o polling? (referencia toda la cadena)</li>
+          </ul>
+          <div style="margin-top:1rem;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
+            <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi respuesta:</p>
+            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu cadena de ADRs para el sistema de streaming...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mis apuntes -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes sobre los ejercicios propuestos</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes o dudas sobre los ejercicios propuestos...</p>
+        </div>
+      </div>
+
+      <!-- Evidencias -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="descripción" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Descripción</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia de los ejercicios propuestos.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- fin tema 05 -->
+
+
+    <!-- ══════════════════════════════
+         CIERRE — Conclusión y Bibliografía
+    ══════════════════════════════ -->
+    <div class="tema-block">
+      <div class="tema-number">CIERRE</div>
+      <div class="tema-title">Puntos Clave y Conclusión</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">💡</div>
+          <span class="c-section-title">Puntos clave de la semana</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>📄 La documentación ES comunicación — no un artefacto burocrático</li>
+            <li>🤔 Los ADRs capturan el PORQUÉ, no solo el qué o el cómo</li>
+            <li>⚖️ Sin contexto y consecuencias, un ADR no tiene valor real</li>
+            <li>🔄 Los ADRs deben revisarse cuando cambian las fuerzas que los motivaron</li>
+            <li>🏗️ Una cadena de ADRs coherente = arquitectura comprensible por cualquier equipo</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mis apuntes -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">💭</div>
+          <span class="c-section-title">Mi reflexión y conclusión personal</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu reflexión y conclusión personal sobre lo aprendido en la semana 2...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔗</div>
+          <span class="c-section-title">Bibliografía y recursos</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📌</span><span>Escribe aquí tus referencias bibliográficas</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- fin cierre -->
+
+
+    <!-- NAVEGACIÓN ABAJO -->
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border);">
+      <a class="btn-nav" href="semana1.html">← Semana 1</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana3.html">Semana 3 →</a>
+    </div>
+
+  </div><!-- fin semana-wrap -->
+
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" onclick="cerrarLightbox()"
+       style="display:none;position:fixed;inset:0;z-index:1000;
+              background:rgba(0,0,0,0.92);align-items:center;
+              justify-content:center;padding:1.5rem;cursor:zoom-out;">
+    <img id="lb-img" src="" alt=""
+         style="max-width:90vw;max-height:90vh;border-radius:10px;object-fit:contain;"/>
+    <button onclick="cerrarLightbox()"
+            style="position:fixed;top:1rem;right:1rem;width:36px;height:36px;
+                   border-radius:50%;background:#1A1A25;border:1px solid #2A2A3A;
+                   color:#E8E8F0;font-size:18px;cursor:pointer;
+                   display:flex;align-items:center;justify-content:center;">×</button>
+  </div>
+
+  <script>
+    function abrirLightbox(src) {
+      document.getElementById('lb-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+    function cerrarLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') cerrarLightbox();
+    });
+  </script>
+
 </body>
 </html>

@@ -1,40 +1,461 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>MATERIA1 - Semana 4</title>
-<link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arquitectura de Software · Semana 4</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-<div class="contenido">
-<h1>MATERIA1 - Semana 4</h1>
 
-<h2>Tema</h2>
-<p>Escriba aquí el tema.</p>
+  <!-- TOP BAR -->
+  <div class="page-topbar">
+    <div class="crumb">
+      <a href="../index.html">Inicio</a>
+      <span class="sep">/</span>
+      <a href="../index.html">Arquitectura de Software</a>
+      <span class="sep">/</span>
+      <span class="current">Semana 4</span>
+    </div>
+    <div class="page-nav">
+      <a class="btn-nav" href="semana3.html">← Sem 3</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="#">Sem 5 →</a>
+    </div>
+  </div>
 
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
+  <!-- HERO -->
+  <div class="semana-hero">
+    <div class="s-subject-label">Arquitectura de Software · Docente: MSc. Raúl Páez[cite: 2]</div>
+    <h1>Semana <span class="accent">04</span></h1>
+    <p style="color:var(--accent2);font-size:15px;margin-top:0.4rem;font-weight:600;">Estilos II: Distribuidos — Microservicios, Datos en Red y la Nueva Era de la Observabilidad[cite: 2]</p>
+    <div class="semana-meta">
+      Alex Robinson Zaruma Suntasig &nbsp;·&nbsp; 5to "A" &nbsp;·&nbsp; IST YAVIRAC &nbsp;·&nbsp; 2025-2026
+    </div>
+  </div>
 
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
+  <div class="semana-wrap">
 
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
+    <!-- ══════════════════════════════
+         TEMA 01 — El Cambio de Paradigma y Anatomía
+    ══════════════════════════════ -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 01</div>
+      <div class="tema-title">El Cambio de Paradigma a Microservicios</div>
 
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🌐</div>
+          <span class="c-section-title">De Monolitos a Ecosistemas Distribuidos</span>
+        </div>
+        <div class="c-section-body">
+          <p>Se experimenta una transición desde los sistemas monolíticos tradicionales, donde absolutamente todo "vive" y se ejecuta dentro de un único proceso, hacia <strong>ecosistemas fragmentados</strong> que tienen la obligación de colaborar e interactuar de forma constante sobre la red[cite: 2].</p>
+          
+          <h4 style="margin-top:1.2rem;color:var(--accent2);">Anatomía de los Microservicios</h4>
+          <ul style="margin-top:0.5rem;">
+            <li><strong>Descomposición Funcional:</strong> Cada servicio se enfoca de forma estricta en un único dominio de negocio (denominado <em>Bounded Context</em>)[cite: 2]. Esto reduce el radio de explosión ante posibles fallos y permite realizar un escalado selectivo del software[cite: 2].</li>
+            <li><strong>Despliegue Independiente:</strong> Permite que equipos de ingeniería autónomos suban a producción actualizaciones del servicio de "Pagos" sin la necesidad de esperar al equipo a cargo de "Catálogo", acelerando drásticamente el <em>Time-to-Market</em>[cite: 2].</li>
+          </ul>
 
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
+          <p style="margin-top:0.85rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            ⚠️ <strong>Visualizando la Escala:</strong> Cuando los servicios crecen de forma exponencial, la comunicación se vuelve el problema principal[cite: 2]. El <strong>Service Mesh</strong> emerge como la solución definitiva para gestionar adecuadamente el tráfico de la red[cite: 2].
+          </p>
+        </div>
+      </div>
 
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+      <!-- Mis apuntes -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes en clase sobre las arquitecturas distribuidas de Uber o Netflix...</p>
+        </div>
+      </div>
 
-<a href="../index.html">Volver al inicio</a>
-</div>
+      <!-- Evidencias -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/event_driven_uber.png" alt="Escala de Microservicios" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Mapeo de comunicación y Service Mesh a escala</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════
+         TEMA 02 — Gestión de Datos Distribuidos
+    ══════════════════════════════ -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 02</div>
+      <div class="tema-title">Gestión de Datos: Saga vs 2PC</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📊</div>
+          <span class="c-section-title">Estrategias de Transaccionalidad</span>
+        </div>
+        <div class="c-section-body">
+          <p>Garantizar la integridad de los datos a través de múltiples servicios independientes requiere abandonar las transacciones ACID convencionales[cite: 2].</p>
+          
+          <div style="overflow-x:auto; margin-top:1rem;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Característica</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">2-Phase Commit (2PC)[cite: 2]</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Patrón SAGA[cite: 2]</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:bold;">Consistencia</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Fuerte (Atómica)[cite: 2]</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Eventual[cite: 2]</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:bold;">Bloqueo</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Sí (Bloquea recursos)[cite: 2]</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">No (Optimista)[cite: 2]</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:bold;">Escalabilidad</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#ef4444;font-weight:600;">Baja (Cuello de botella)[cite: 2]</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#22c55e;font-weight:600;">Alta (Asíncrona)[cite: 2]</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:bold;">Fallo</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Rollback automático[cite: 2]</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Transacción Compensatoria[cite: 2]</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4 style="margin-top:1.5rem;color:var(--accent2);">Checklist imperativo de Datos Distribuidos</h4>
+          <ul style="margin-top:0.5rem; list-style-type: '✔ '; padding-left: 1.2rem;">
+            <li><strong>Database-per-service:</strong> Nunca compartas una base de datos común entre microservicios; incurre en acoplamiento oculto[cite: 2].</li>
+            <li><strong>API Composition:</strong> Une y mezcla datos de múltiples servicios en la capa del API Gateway para servirlos al frontend[cite: 2].</li>
+            <li><strong>CQRS:</strong> Separa de forma estricta la lógica de escritura (comandos) de la lógica de lectura (consultas) para optimizar altas cargas[cite: 2].</li>
+            <li><strong>Idempotencia:</strong> Asegura técnicamente que procesar el mismo mensaje de red dos veces no altere el estado final del sistema[cite: 2].</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mis apuntes -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Anota aquí ejemplos de transacciones compensatorias vistos en clase (ej. revertir una reserva de hotel)...</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════
+         TEMA 03 — El Concepto de Observabilidad
+    ══════════════════════════════ -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 03</div>
+      <div class="tema-title">El Concepto y los Pilares de Observabilidad</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">👁️</div>
+          <span class="c-section-title">Entender el Interior desde el Exterior</span>
+        </div>
+        <div class="c-section-body">
+          <p>La <strong>observabilidad</strong> no es sinónimo de simple monitoreo[cite: 2]. Se define formalmente como la capacidad técnica de entender y deducir el estado interno de un sistema distribuido basándose únicamente en sus salidas externas[cite: 2]. Responde eficientemente a tres preguntas clave:</p>
+          <ul style="margin-top:0.5rem; list-style-type: '➔ '; padding-left:1.2rem;">
+            <li><strong>Detección:</strong> ¿Qué servicio o componente está fallando?[cite: 2]</li>
+            <li><strong>Aislamiento:</strong> ¿En dónde exacto se localiza el cuello de botella?[cite: 2]</li>
+            <li><strong>Diagnóstico:</strong> ¿Por qué ocurrió específicamente el error en producción?[cite: 2]</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">📐</div>
+          <span class="c-section-title">Los Tres Pilares de la Observabilidad (M.E.L.T)</span>
+        </div>
+        <div class="c-section-body">
+          <p>Para recuperar el control en arquitecturas distribuidas, nos apoyamos de forma estricta en tres pilares esenciales[cite: 2]:</p>
+          <ol style="margin-top:0.5rem; padding-left:1.2rem;">
+            <li><strong>Logs (Registros):</strong> Bloques inmutables de eventos discretos en el tiempo[cite: 2]. Nos proveen la certeza del "cuándo" y el "qué" sucedió con sumo detalle[cite: 2].</li>
+            <li><strong>Métricas:</strong> Valores numéricos agregados calculados sobre el tiempo[cite: 2]. Muestran tendencias claras de salud: uso de CPU, Memoria, tasas de error y Latencia[cite: 2].</li>
+            <li><strong>Traces (Trazas):</strong> El mapa de ciclo de vida completo de una petición HTTP/RPC a través de múltiples microservicios[cite: 2]. Es la herramienta vital para hallar latencias ocultas[cite: 2].</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Evidencias -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias de la Suite de Observabilidad</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/pillars_observability.png" alt="Pilares de Observabilidad" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Logs, Metrics y Traces integrados</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí la gráfica de los tres pilares de la observabilidad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════
+         TEMA 04 — Ecosistema Tecnológico y Objetivos
+    ══════════════════════════════ -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 04</div>
+      <div class="tema-title">Ecosistema Tecnológico y Objetivos de Rendimiento</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🛠️</div>
+          <span class="c-section-title">Herramientas Líderes del Mercado</span>
+        </div>
+        <div class="c-section-body">
+          <p>El mercado ha estandarizado herramientas específicas para atacar cada uno de los pilares de manera óptima[cite: 2]:</p>
+          <ul>
+            <li><strong>Kibana / ELK Stack:</strong> Especializado en la ingesta masiva y agregación inteligente de Logs[cite: 2].</li>
+            <li><strong>Prometheus:</strong> Motor de series temporales enfocado en la recolección de Métricas y disparo de Alertas operativas[cite: 2].</li>
+            <li><strong>Jaeger:</strong> Framework open-source diseñado para habilitar el rastreo distribuido (*Distributed Tracing*)[cite: 2].</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">📈</div>
+          <span class="c-section-title">Métricas de Rendimiento Reales (SLA y Percentiles)</span>
+        </div>
+        <div class="c-section-body">
+          <p>En el mundo real de los sistemas distribuidos, no medimos el rendimiento utilizando promedios matemáticos simples, ya que estos ocultan las malas experiencias de usuario[cite: 2].</p>
+          <ul>
+            <li><strong>Disponibilidad (SLA):</strong> Fijado comúnmente en objetivos de alta disponibilidad como el $$99.9\%$$[cite: 2].</li>
+            <li><strong>Latencia P99 (Percentil 99):</strong> Asegura de forma estadística que incluso el usuario que experimenta la mayor lentitud en la red obtenga una respuesta sub-200ms[cite: 2].</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Evidencias -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias del Ecosistema</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/kibana_elk.png" alt="Dashboard Kibana" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Agregación de logs en ELK</div>
+            </div>
+            <div class="ev-item">
+              <img src="../imagenes/prometheus_dashboard.png" alt="Dashboard Prometheus" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Métricas de series temporales en Prometheus</div>
+            </div>
+            <div class="ev-item">
+              <img src="../imagenes/jaeger_tracing.png" alt="Distributed Tracing Jaeger" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Trazado de peticiones distribuidas en Jaeger</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus capturas del ecosistema tecnológico (Kibana, Prometheus, Jaeger).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════
+         LABORATORIO — Python + Prometheus
+    ══════════════════════════════ -->
+    <div class="tema-block">
+      <div class="tema-number">LABORATORIO</div>
+      <div class="tema-title">Laboratorio Práctico: Python + Prometheus Client</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">🚀</div>
+          <span class="c-section-title">Reto de Instrumentación de la API de Pagos</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Enunciado:</strong> Implementar instrumentación mediante código utilizando la librería <code>prometheus_client</code> para exponer métricas en tiempo real de una API de Pagos, enfocándonos en medir la latencia de validación con el banco externo[cite: 2].</p>
+          
+          <h4 style="margin-top:1rem;color:var(--accent2); font-size:14px;">Concepto Clave: Counter vs Histogram[cite: 2]</h4>
+          <p>El <strong>Counter (Contador)</strong> incrementa de forma continua registrando únicamente el número total acumulado de pagos procesados[cite: 2]; el <strong>Histogram (Histograma)</strong> guarda de forma segregada cuánto tiempo toma cada petición individual, vital para calcular la latencia media y percentiles[cite: 2].</p>
+
+          <div style="margin-top:1rem;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
+            <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Código de la Práctica (Instrumentación):</p>
+            <pre style="background: #1A1A25; color: #E8E8F0; padding: 1rem; border-radius: 8px; font-family: monospace; overflow-x: auto; font-size: 13px; margin: 0; line-height: 1.5;">
+from prometheus_client import start_http_server, Counter, Histogram
+import time
+import random
+
+# Inicialización de métricas de Observabilidad
+PAGOS_TOTALES = Counter('pagos_procesados_total', 'Número total de pagos')
+LATENCIA_BANCO = Histogram('pago_validacion_banco_segundos', 'Tiempo de validación')
+
+def procesar_pago():
+    PAGOS_TOTALES.inc() # Incrementa el Contador
+    
+    with LATENCIA_BANCO.time(): # Mide de forma automática el tiempo de ejecución
+        tiempo_simulado = random.uniform(0.05, 0.4)
+        time.sleep(tiempo_simulado)
+
+if __name__ == '__main__':
+    # Servidor expuesto para que Prometheus haga scraping en el puerto 8000
+    start_http_server(8000)
+    print("Métricas expuestas en http://localhost:8000")
+    while True:
+        procesar_pago()
+        time.sleep(1)
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mis apuntes de laboratorio -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mi análisis del laboratorio</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus observaciones sobre cómo se visualizan los datos estructurados en texto plano al consultar el puerto 8000...</p>
+        </div>
+      </div>
+
+      <!-- Evidencias de laboratorio -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias de Ejecución</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/captura_prometheus_python.png" alt="Servidor Prometheus Activo" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Terminal exponiendo métricas de la API de Pagos</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus capturas de pantalla de la terminal o el navegador con las métricas de Prometheus.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════
+         CIERRE — Conclusión y Bibliografía
+    ══════════════════════════════ -->
+    <div class="tema-block">
+      <div class="tema-number">CIERRE</div>
+      <div class="tema-title">Puntos Clave de la Semana</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">💡</div>
+          <span class="c-section-title">Conclusión General</span>
+        </div>
+        <div class="c-section-body">
+          <blockquote style="margin:0; padding:0.75rem 1rem; background:rgba(255,255,255,0.02); border-left:3px solid var(--accent); border-radius:0 8px 8px 0; font-size:14px;">
+            "La distribución añade complejidad inherente, pero la observabilidad nos devuelve por completo el control."[cite: 2]
+          </blockquote>
+          <ul style="margin-top:1rem;">
+            <li>🧩 Los microservicios habilitan escalabilidad selectiva reduciendo dramáticamente el radio de explosión[cite: 2].</li>
+            <li>🔄 Las arquitecturas SAGA entregan alta escalabilidad asíncrona mediante lógica compensatoria ante fallos[cite: 2].</li>
+            <li>📊 Los promedios ocultan cuellos de botella; la métrica reina para asegurar calidad de servicio al usuario es la Latencia P99[cite: 2].</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Reflexión propia -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">💭</div>
+          <span class="c-section-title">Mi reflexión personal</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus ideas y conclusiones propias respecto a los retos del testing y despliegue en sistemas distribuidos...</p>
+        </div>
+      </div>
+
+      <!-- Bibliografía -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔗</div>
+          <span class="c-section-title">Bibliografía y recursos</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list" style="list-style:none;padding:0;margin:0;">
+            <li style="display:flex;gap:10px;align-items:start;margin-bottom:5px;">
+              <span>📌</span>
+              <span>Material de Clase: Estilos II — Distribuidos, Datos en Red y la Nueva Era de la Observabilidad — MSc. Raúl Páez (IST Yavirac)[cite: 2].</span>
+            </li>
+            <li style="display:flex;gap:10px;align-items:start;margin-bottom:5px;">
+              <span>🌐</span>
+              <span>Documentación oficial de Prometheus y OpenObserve (openobserve.ai)[cite: 2].</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- fin cierre -->
+
+
+    <!-- NAVEGACIÓN ABAJO -->
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border);">
+      <a class="btn-nav" href="semana3.html">← Semana 3</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="#">Semana 5 →</a>
+    </div>
+
+  </div><!-- fin semana-wrap -->
+
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" onclick="cerrarLightbox()"
+       style="display:none;position:fixed;inset:0;z-index:1000;
+              background:rgba(0,0,0,0.92);align-items:center;
+              justify-content:center;padding:1.5rem;cursor:zoom-out;">
+    <img id="lb-img" src="" alt=""
+         style="max-width:90vw;max-height:90vh;border-radius:10px;object-fit:contain"/>
+    <button onclick="cerrarLightbox()"
+            style="position:fixed;top:1rem;right:1rem;width:36px;height:36px;
+                   border-radius:50%;background:#1A1A25;border:1px solid #2A2A3A;
+                   color:#E8E8F0;font-size:18px;cursor:pointer;
+                   display:flex;align-items:center;justify-content:center;">×</button>
+  </div>
+
+  <script>
+    function abrirLightbox(src) {
+      document.getElementById('lb-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+    function cerrarLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') cerrarLightbox();
+    });
+  </script>
+
 </body>
 </html>
