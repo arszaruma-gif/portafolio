@@ -1,40 +1,414 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>MATERIA1 - Semana 8</title>
-<link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arquitectura de Software · Semana 8</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-<div class="contenido">
-<h1>MATERIA1 - Semana 8</h1>
 
-<h2>Tema</h2>
-<p>Escriba aquí el tema.</p>
+  <div class="page-topbar">
+    <div class="crumb">
+      <a href="../index.html">Inicio</a>
+      <span class="sep">/</span>
+      <a href="../index.html">Arquitectura de Software</a>
+      <span class="sep">/</span>
+      <span class="current">Semana 8</span>
+    </div>
+    <div class="page-nav">
+      <a class="btn-nav" href="semana7.html">← Sem 7</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana9.html">Sem 9 →</a>
+    </div>
+  </div>
 
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
+  <div class="semana-hero">
+    <div class="s-subject-label">Arquitectura de Software · Docente: MSc. Raúl Páez</div>
+    <h1>Semana <span class="accent">08</span></h1>
+    <p style="color:var(--accent2);font-size:15px;margin-top:0.4rem;font-weight:600;">Diseño Estratégico y APIs — Alineando los Límites del Negocio, las Estructuras de Equipo y la Calidad Técnica</p>
+    <div class="semana-meta">
+      Alex Robinson Zaruma Suntasig &nbsp;·&nbsp; 5to "A" &nbsp;·&nbsp; IST YAVIRAC &nbsp;·&nbsp; 2025-2026
+    </div>
+  </div>
 
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
+  <div class="semana-wrap">
 
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
+    <!-- TEMA 01 — ¿Qué es el Diseño Estratégico? -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 01</div>
+      <div class="tema-title">¿Qué es el Diseño Estratégico?</div>
 
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🎯</div>
+          <span class="c-section-title">Concepto</span>
+        </div>
+        <div class="c-section-body">
+          <p>Antes de escribir código o diseñar tablas de bases de datos, los arquitectos deben entender <strong>cómo se divide y comunica el negocio real</strong>.</p>
+          <ul style="margin-top:0.75rem">
+            <li>🗺️ <strong>Foco Macroscópico:</strong> Define los límites de los módulos de software en lugar de detalles de clases internas.</li>
+            <li>🤝 <strong>Socio de Negocio:</strong> Asegura que el software mapee fielmente el flujo operativo de la institución.</li>
+          </ul>
+        </div>
+      </div>
 
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📐</div>
+          <span class="c-section-title">Las Tres Aristas de la Semana</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li><strong>1. DDD Estratégico:</strong> Fronteras lógicas claras.</li>
+            <li><strong>2. Ley de Conway:</strong> Impacto socio-técnico de los equipos.</li>
+            <li><strong>3. Deuda Técnica:</strong> El costo financiero del diseño apresurado.</li>
+          </ul>
+        </div>
+      </div>
 
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Diseño Estratégico...</p>
+        </div>
+      </div>
 
-<a href="../index.html">Volver al inicio</a>
-</div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Diseño Estratégico" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Diseño Estratégico</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 01 -->
+
+
+    <!-- TEMA 02 — DDD Estratégico -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 02</div>
+      <div class="tema-title">Domain-Driven Design (DDD) Estratégico — Modelando el software en función del lenguaje y fronteras de negocio</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🗣️</div>
+          <span class="c-section-title">Bounded Contexts y Lenguaje Ubicuo</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Ubiquitous Language:</strong> Vocabulario común compartido de forma estricta entre expertos de negocio y desarrolladores. No se permiten sinónimos ambiguos en el código.</p>
+          <p style="margin-top:0.5rem"><strong>Bounded Context (Contexto Delimitado):</strong> La frontera lógica donde un modelo conceptual de software tiene validez absoluta. Evita mezclar significados.</p>
+          <p style="margin-top:0.85rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            <strong>Ejemplo:</strong> La palabra <strong>"Matrícula"</strong> significa cosas totalmente distintas según el contexto:<br/>
+            • <strong>Contexto Financiero:</strong> Un valor económico por cobrar (Factura/Pago).<br/>
+            • <strong>Contexto Académico:</strong> Un registro de materias y paralelos asignados.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🗺️</div>
+          <span class="c-section-title">Context Mapping (Mapa de Contextos)</span>
+        </div>
+        <div class="c-section-body">
+          <p>Define cómo interactúan e intercambian información los diferentes contextos delimitados a través de las APIs.</p>
+          <ul style="margin-top:0.75rem">
+            <li><strong>Upstream (Aguas Arriba):</strong> El contexto que provee la información. Sus cambios impactan al receptor.</li>
+            <li><strong>Downstream (Aguas Abajo):</strong> El contexto que consume la información y depende del proveedor.</li>
+            <li><strong>Anti-Corruption Layer (ACL):</strong> Capa traductora para evitar que modelos ajenos ensucien tu propio dominio.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre DDD Estratégico...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="DDD" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">DDD Estratégico</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia sobre DDD.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 02 -->
+
+
+    <!-- TEMA 03 — Ley de Conway -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 03</div>
+      <div class="tema-title">La Ley de Conway — "Las organizaciones diseñan sistemas que reflejan sus propias estructuras de comunicación"</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">👥</div>
+          <span class="c-section-title">Socio-tecnología: Equipos vs Código</span>
+        </div>
+        <div class="c-section-body">
+          <p style="margin-bottom:0.75rem;padding:0.75rem 1rem;background:var(--surface);border-left:3px solid var(--accent2);border-radius:0 8px 8px 0;font-style:italic;">
+            "Si tienes cuatro equipos trabajando en un compilador, obtendrás un compilador de cuatro etapas."<br/>
+            <span style="font-size:12px;color:var(--muted)">— Melvin Conway, 1967</span>
+          </p>
+          <p>Los silos organizacionales generan silos de software. Si los equipos no se comunican de forma fluida, sus sistemas integrados fallarán por la red.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔄</div>
+          <span class="c-section-title">Inverse Conway Maneuver</span>
+        </div>
+        <div class="c-section-body">
+          <p>Técnica moderna que consiste en <strong>diseñar primero la estructura de equipos</strong> que deseas promover (por ejemplo, autónomos por dominio) para guiar evolutivamente a la arquitectura de software hacia ese mismo destino distribuido.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre la Ley de Conway...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Ley de Conway" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Ley de Conway</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 03 -->
+
+
+    <!-- TEMA 04 — Deuda Técnica y APIs -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 04</div>
+      <div class="tema-title">Deuda Técnica y APIs — El costo oculto de avanzar rápido sin cuidar las interfaces</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">📊</div>
+          <span class="c-section-title">El Cuadrante de Martin Fowler</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);"></th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Imprudente (Reckless)</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Prudente (Prudent)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Deliberada</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;font-style:italic;">"No tenemos tiempo para diseñar APIs, tiren código sin documentar."</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;font-style:italic;">"Debemos salir a producción ya; sabemos las fallas del API y las pagaremos el próximo Sprint."</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Inadvertida</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;font-style:italic;">"¿Qué es OpenAPI? ¿Qué es control de versiones?"</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;font-style:italic;">"Ahora que el sistema creció, entendemos finalmente cómo debió lucir este dominio."</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📜</div>
+          <span class="c-section-title">API Contracts para Mitigar Riesgos</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>📋 <strong>Design-First:</strong> Diseñar el contrato de la API (OpenAPI/Swagger) antes de codificar permite que frontend y backend avancen en paralelo simulando datos con Mocks.</li>
+            <li>🛡️ <strong>Aislamiento de Cambios:</strong> Al tener contratos estables, reduces drásticamente la deuda técnica inadvertida generada por dependencias rotas entre equipos.</li>
+            <li>🔁 <strong>Versionamiento Estratégico:</strong> Uso estricto de esquemas de versionado en las URLs (ej. <code style="background:var(--surface);padding:2px 6px;border-radius:4px;font-size:11px;">/api/v1/estudiantes</code>) para dar predictibilidad al ecosistema corporativo.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Deuda Técnica y APIs...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Deuda Técnica" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Deuda Técnica y APIs</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 04 -->
+
+
+    <!-- ACTIVIDADES -->
+    <div class="tema-block">
+      <div class="tema-number">ACTIVIDADES</div>
+      <div class="tema-title">Laboratorio Práctico — Modelado Estratégico de un LMS</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">🎯</div>
+          <span class="c-section-title">Reto: Modelado Estratégico de un LMS</span>
+        </div>
+        <div class="c-section-body">
+          <p>Dada la descripción operativa de los flujos del Instituto (Docentes, Estudiantes, Colecturía y Calificaciones), los alumnos deberán:</p>
+          <ul style="margin-top:0.75rem">
+            <li>1. Identificar al menos 3 Bounded Contexts.</li>
+            <li>2. Definir los términos clave del Lenguaje Ubicuo.</li>
+            <li>3. Diseñar la especificación OpenAPI (<code style="background:var(--surface);padding:2px 6px;border-radius:4px;font-size:11px;">.yaml</code>) básica de comunicación entre ellos.</li>
+          </ul>
+          <p style="margin-top:0.85rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            <strong>Criterio de Entrega:</strong> El entregable principal no es código funcional, sino diagramas de límites de dominio claros y el contrato formal de la API que demuestre que no hay acoplamiento directo entre bases de datos.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">✅</div>
+          <span class="c-section-title">Mi solución al laboratorio</span>
+        </div>
+        <div class="c-section-body">
+          <div style="padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
+            <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mis Bounded Contexts, Lenguaje Ubicuo y especificación OpenAPI:</p>
+            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu solución al laboratorio práctico...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias de actividades</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Laboratorio" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Laboratorio Práctico</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí las imágenes de evidencia del laboratorio.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin actividades -->
+
+
+    <!-- CIERRE -->
+    <div class="tema-block">
+      <div class="tema-number">CIERRE</div>
+      <div class="tema-title">Conclusión y Bibliografía</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">💡</div>
+          <span class="c-section-title">Puntos clave de la semana</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>🗣️ <strong>DDD Estratégico</strong> → Bounded Contexts y Lenguaje Ubicuo definen fronteras claras</li>
+            <li>👥 <strong>Ley de Conway</strong> → La estructura de equipos determina la arquitectura del sistema</li>
+            <li>📊 <strong>Deuda Técnica</strong> → APIs bien diseñadas reducen riesgos a largo plazo</li>
+            <li>📜 <strong>API Contracts</strong> → Design-First, ACL y versionamiento estratégico</li>
+            <li>💬 La arquitectura es el puente que traduce la estrategia del negocio en realidades técnicas gobernables.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">💭</div>
+          <span class="c-section-title">Mi reflexión y conclusión personal</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu reflexión personal sobre lo aprendido en la semana 8...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔗</div>
+          <span class="c-section-title">Bibliografía y recursos</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📌</span><span>Escribe aquí tus referencias bibliográficas</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border);">
+      <a class="btn-nav" href="semana7.html">← Semana 7</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana9.html">Semana 9 →</a>
+    </div>
+
+  </div>
+
+  <div id="lightbox" onclick="cerrarLightbox()" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:1.5rem;cursor:zoom-out;">
+    <img id="lb-img" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:10px;object-fit:contain;"/>
+    <button onclick="cerrarLightbox()" style="position:fixed;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#1A1A25;border:1px solid #2A2A3A;color:#E8E8F0;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">×</button>
+  </div>
+  <script>
+    function abrirLightbox(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').style.display='flex';}
+    function cerrarLightbox(){document.getElementById('lightbox').style.display='none';}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrarLightbox();});
+  </script>
 </body>
 </html>

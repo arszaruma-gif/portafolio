@@ -159,7 +159,58 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Anota aquí ejemplos de transacciones compensatorias vistos en clase (ej. revertir una reserva de hotel)...</p>
+          <p style="color:var(--muted2);font-style:italic;"><div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 30px auto; max-width: 900px;">
+    
+    <div style="width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px; background-color: rgba(0,0,0,0.01); box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+        
+        <h3 style="text-align: center; margin-top: 0; margin-bottom: 20px; font-size: 1.4rem; font-family: system-ui, sans-serif; color: inherit;">Tabla Comparativa </h3>
+        
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; min-width: 600px; text-align: left; font-size: 14px; line-height: 1.6;">
+                <thead>
+                    <tr style="border-bottom: 2px solid #ccc;">
+                        <th style="padding: 12px; font-weight: bold; font-family: system-ui, sans-serif;">Criterio</th>
+                        <th style="padding: 12px; font-weight: bold; font-family: system-ui, sans-serif;">2PC (Two-Phase Commit)</th>
+                        <th style="padding: 12px; font-weight: bold; font-family: system-ui, sans-serif;">Patrón Saga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>Tipo de Consistencia</strong></p></td>
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>ACID (Estricta):</strong> Los datos son idénticos en todos los servicios en el mismo milisegundo.</p></td>
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>Eventual:</strong> El sistema puede estar en un estado "gris" temporalmente hasta que se estabilice.</p></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>Bloqueo de Recursos</strong></p></td>
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>Sí:</strong> Bloquea las bases de datos de todos los servicios involucrados hasta que termina la transacción.</p></td>
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>No:</strong> Cada servicio guarda sus datos inmediatamente, liberando recursos para otros usuarios.</p></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>Protocolo de Comunicación</strong></p></td>
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;">Típicamente <strong>Síncrono</strong> (RPC, gRPC o llamadas HTTP directas).</p></td>
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;">Típicamente <strong>Asíncrono</strong> (Basado en eventos con Kafka, RabbitMQ, etc.).</p></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>Punto Único de Fallo</strong></p></td>
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>Alto:</strong> Si el Coordinador Central se cae a mitad del proceso, el sistema queda en un limbo indeterminado.</p></td>
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>Bajo:</strong> Al ser distribuido (especialmente en coreografía), no depende de un único servidor crítico.</p></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>Manejo de Errores</strong></p></td>
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>Rollback Automático:</strong> La base de datos deshace el cambio como si nunca hubiera pasado.</p></td>
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>Acciones Compensatorias:</strong> Hay que escribir código explícito para "revertir" la acción (ej. depositar dinero de vuelta, cancelar reservas de hotel, etc.).</p></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>Impacto en el Rendimiento</strong></p></td>
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>Malo en alta demanda:</strong> A mayor número de microservicios, más lento se vuelve el sistema por la espera de confirmaciones.</p></td>
+                        <td style="padding: 16px 12px; vertical-align: top;"><p style="color:var(--muted2); font-style:italic; margin:0;"><strong>Excelente:</strong> Permite procesar millones de transacciones por segundo porque nadie espera a nadie de forma síncrona.</p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div></p>
         </div>
       </div>
     </div>
@@ -202,6 +253,23 @@
         </div>
       </div>
 
+      <!-- Mis apuntes -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">
+• <strong>Los más comunes en Desarrollo Web y Software</strong><br>
+• <strong>A11y (Accessibility / Accesibilidad):</strong> Se usa para todo lo relacionado con diseñar software accesible para personas con discapacidades (lectores de pantalla, contrastes altos, etc.). Hay 11 letras entre la 'A' y la 'y'.<br>
+• <strong>I18n (Internationalization / Internacionalización):</strong> Es el proceso de diseñar el código de una aplicación para que pueda adaptarse a diferentes idiomas y regiones sin necesidad de reescribirlo. Tiene 18 letras en medio.<br>
+• <strong>L10n (Localization / Localización):</strong> A diferencia de la internacionalización, este es el proceso real de traducir y adaptar el software a un país específico (cambiar monedas, formatos de fecha, modismos).<br>
+• <strong>C14n (Canonicalization / Canonicalización):</strong> En bases de datos y SEO, es el proceso de convertir datos que tienen múltiples formatos posibles a un único formato estándar o "canónico".
+</p>
+        </div>
+      </div>
+
       <!-- Evidencias -->
       <div class="c-section">
         <div class="c-section-header">
@@ -214,7 +282,44 @@
               <img src="../imagenes/pillars_observability.png" alt="Pilares de Observabilidad" onclick="abrirLightbox(this.src)"/>
               <div class="ev-caption">Logs, Metrics y Traces integrados</div>
             </div> -->
-            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí la gráfica de los tres pilares de la observabilidad.</p>
+            <p style="color:var(--muted2);font-style:italic;">
+• <strong>Métricas (Metrics)</strong><br>
+• Las métricas son datos numéricos agregados medidos a lo largo del tiempo.<br>
+• Son los signos vitales de tu software.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>¿Qué está pasando y qué tan grave es?</strong><br>
+• Ejemplos: El uso de CPU está al 92%, la base de datos está recibiendo 5,000 peticiones por segundo, o el porcentaje de errores 500 subió al 4%.<br>
+• Su valor: Son extremadamente ligeras y baratas de almacenar. Sirven para activar las alertas (por ejemplo, que te llegue un mensaje a Slack si el sistema se ralentiza). No te dicen exactamente cuál es el error, pero te avisan que hay un incendio.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Registros (Logs)</strong><br>
+• Un log es una línea de texto que describe un evento específico que ocurrió en un momento exacto.<br>
+• Es el diario de navegación de tu código.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>¿Por qué está pasando esto?</strong><br>
+• Ejemplo: [2026-06-03 10:14:22] ERROR - ServicioPagos: Error de conexión con el banco. Tarjeta rechazada para el usuario ID: 99482.<br>
+• Su valor: Es el nivel máximo de detalle. Cuando la métrica te avisa que hay errores, vas a los logs para ver la descripción exacta del fallo o el stack trace del código.<br>
+• El problema: Almacenar trillones de líneas de texto de miles de microservicios se vuelve muy costoso y difícil de buscar si no están centralizados.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Trazas (Traces / Distributed Tracing)</strong><br>
+• Una traza representa el viaje completo de una petición desde que el usuario hace clic en la aplicación hasta que pasa por todos los microservicios fragmentados y responde.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>¿Dónde se está rompiendo o ralentizando el flujo?</strong><br>
+• Ejemplo: El usuario le da a "Comprar". La traza te muestra gráficamente:<br>
+• Frontend tarda 10ms.<br>
+• Servicio de Autenticación tarda 15ms.<br>
+• Servicio de Inventario tarda 4.5 segundos (¡Aquí está el cuello de botella!).<br>
+• Su valor: En un sistema fragmentado, una sola petición puede tocar 10 servidores distintos. La traza le asigna un ID único a esa petición para que puedas ver cómo saltó de un servicio a otro y dónde se perdió el tiempo o se generó el error.
+</p>
           </div>
         </div>
       </div>

@@ -1,40 +1,606 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>MATERIA2 - Semana 5</title>
-<link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aseguramiento de Calidad · Semana 5</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-<div class="contenido">
-<h1>MATERIA2 - Semana 5</h1>
 
-<h2>Tema</h2>
-<p>Escriba aquí el tema.</p>
+  <div class="page-topbar">
+    <div class="crumb">
+      <a href="../index.html">Inicio</a>
+      <span class="sep">/</span>
+      <a href="../index.html">Aseguramiento de Calidad de Software</a>
+      <span class="sep">/</span>
+      <span class="current">Semana 5</span>
+    </div>
+    <div class="page-nav">
+      <a class="btn-nav" href="semana4.html">← Sem 4</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana6.html">Sem 6 →</a>
+    </div>
+  </div>
 
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
+  <div class="semana-hero">
+    <div class="s-subject-label">Aseguramiento de Calidad de Software · IST YAVIRAC · Quinto Semestre</div>
+    <h1>Semana <span class="accent">05</span></h1>
+    <p style="color:var(--accent2);font-size:15px;margin-top:0.4rem;font-weight:600;">SQA — Aseguramiento de la Calidad del Software · Procesos, Actividades y Estándares</p>
+    <div class="semana-meta">
+      IST YAVIRAC &nbsp;·&nbsp; Quinto Semestre &nbsp;·&nbsp; 2025-2026
+    </div>
+  </div>
 
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
+  <div class="semana-wrap">
 
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
+    <!-- TEMA 01 -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 01</div>
+      <div class="tema-title">¿Qué es el SQA? — Definición y Filosofía</div>
 
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🛡️</div>
+          <span class="c-section-title">Concepto — IEEE Std 730</span>
+        </div>
+        <div class="c-section-body">
+          <p>"El SQA es un conjunto de actividades sistemáticas y planificadas que proveen evidencia de que los procesos y productos de software cumplen con los requisitos y estándares establecidos."</p>
+          <p style="margin-top:0.5rem;color:var(--muted);font-size:13px;">— IEEE Std 730 (SQA Plan Standard)</p>
+        </div>
+      </div>
 
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔍</div>
+          <span class="c-section-title">SQA vs QC vs Testing — Diferencias clave</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Disciplina</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Foco</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Actividades principales</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Cuándo aplica</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">🛡️ SQA</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">PROCESO</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Planificación preventiva · Auditorías · Estándares y normas</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Durante TODO el ciclo</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">🔍 QC</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">PRODUCTO</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Inspecciones de código · Pruebas del sistema · Revisión de entregables</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Al FINAL de etapas</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">🧪 Testing</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">EJECUCIÓN</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Casos de prueba · Ejecución automatizada · Reportes de defectos</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Sobre el CÓDIGO</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
 
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre la definición y filosofía del SQA...</p>
+        </div>
+      </div>
 
-<a href="../index.html">Volver al inicio</a>
-</div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="SQA vs QC" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">SQA vs QC vs Testing</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 01 -->
+
+
+    <!-- TEMA 02 -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 02</div>
+      <div class="tema-title">Actividades del Plan SQA — IEEE 730</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">📋</div>
+          <span class="c-section-title">Componentes del Plan SQA</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li><strong>📋 Propósito y Alcance:</strong> Define el propósito del plan, el proyecto al que aplica y los entregables de software en scope.</li>
+            <li style="margin-top:0.5rem"><strong>📚 Documentos de Referencia:</strong> Lista estándares, normas, procedimientos y políticas que guiarán las actividades de calidad.</li>
+            <li style="margin-top:0.5rem"><strong>🔍 Revisiones y Auditorías:</strong> Establece qué revisiones técnicas, auditorías y walkthroughs se realizarán y en qué etapas.</li>
+            <li style="margin-top:0.5rem"><strong>🐛 Reporte de Problemas:</strong> Define el proceso para reportar, clasificar, rastrear y resolver defectos y no-conformidades.</li>
+            <li style="margin-top:0.5rem"><strong>🔧 Control de Herramientas:</strong> Identifica las herramientas, técnicas y metodologías usadas para implementar el SQA.</li>
+            <li style="margin-top:0.5rem"><strong>📊 Métricas de Calidad:</strong> Define los indicadores que se recolectarán para medir la efectividad del proceso de calidad.</li>
+          </ul>
+          <p style="margin-top:0.85rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            📌 El Plan SQA debe elaborarse <strong>antes de que comience el desarrollo</strong> y actualizarse en cada cambio significativo del proyecto.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre el Plan SQA IEEE 730...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Plan SQA" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Plan SQA IEEE 730</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 02 -->
+
+
+    <!-- TEMA 03 -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 03</div>
+      <div class="tema-title">Revisiones Técnicas Formales (RTF)</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🔬</div>
+          <span class="c-section-title">Tipos de Revisión</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Tipo</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Formalidad</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Descripción</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Roles</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">🚶 Walkthrough</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Baja</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">El autor guía al equipo por el trabajo. Objetivo educativo más que de detección. Informal y flexible.</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Autor · Revisores · Secretario</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">🔬 Inspección (Fagan)</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Alta</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Proceso formal riguroso con roles definidos, checklists y métricas. Mayor tasa de detección de defectos.</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Moderador · Autor · Lectores · Inspectores · Secretario</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">👥 Peer Review</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Media</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Revisión entre pares de código, documentos o diseño. Base del Code Review en metodologías ágiles.</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Autor · Revisor par · Observadores opcionales</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">6️⃣</div>
+          <span class="c-section-title">Proceso de una Inspección Formal — Fagan (6 Pasos)</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li><strong>1. 📋 Planificación:</strong> Moderador selecciona revisores, distribuye materiales y establece criterios de entrada.</li>
+            <li style="margin-top:0.5rem"><strong>2. 👁️ Vista General:</strong> Autor presenta el documento al equipo para dar contexto del trabajo a revisar.</li>
+            <li style="margin-top:0.5rem"><strong>3. 📖 Preparación:</strong> Cada revisor estudia el documento individualmente usando checklists predefinidos.</li>
+            <li style="margin-top:0.5rem"><strong>4. 🤝 Reunión de Revisión:</strong> El equipo discute los defectos encontrados. Se registran todos los hallazgos.</li>
+            <li style="margin-top:0.5rem"><strong>5. 🔧 Retrabajo:</strong> El autor corrige los defectos identificados según las recomendaciones del equipo.</li>
+            <li style="margin-top:0.5rem"><strong>6. ✅ Seguimiento:</strong> Moderador verifica que todas las correcciones fueron aplicadas correctamente.</li>
+          </ul>
+          <p style="margin-top:0.85rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            💡 Las inspecciones formales detectan entre <strong>60–90% de defectos</strong> antes de las pruebas, reduciendo el costo de corrección hasta 10 veces.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre las RTF y el proceso Fagan...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="RTF Fagan" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Proceso de Inspección Fagan</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 03 -->
+
+
+    <!-- TEMA 04 -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 04</div>
+      <div class="tema-title">Auditorías de Calidad SQA</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🗂️</div>
+          <span class="c-section-title">Tipos de Auditoría</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li><strong>Auditoría de Proceso:</strong> Verifica que el equipo sigue los procesos definidos (SDLC, revisiones, etc.)</li>
+            <li style="margin-top:0.5rem"><strong>Auditoría de Producto:</strong> Examina entregables específicos para verificar conformidad con estándares.</li>
+            <li style="margin-top:0.5rem"><strong>Auditoría Funcional:</strong> Confirma que el software cumple los requisitos funcionales especificados.</li>
+            <li style="margin-top:0.5rem"><strong>Auditoría de Seguimiento:</strong> Verifica que las no-conformidades previas fueron correctamente resueltas.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔄</div>
+          <span class="c-section-title">Proceso de Auditoría — 5 Etapas</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li><strong>1. Inicio:</strong> Definir alcance, criterios y equipo auditor</li>
+            <li style="margin-top:0.4rem"><strong>2. Preparación:</strong> Recopilar evidencia, checklists y documentos</li>
+            <li style="margin-top:0.4rem"><strong>3. Ejecución:</strong> Entrevistas, observación y revisión de artefactos</li>
+            <li style="margin-top:0.4rem"><strong>4. Informe:</strong> Documentar hallazgos, no-conformidades y recomendaciones</li>
+            <li style="margin-top:0.4rem"><strong>5. Seguimiento:</strong> Plan de acción correctiva y verificación de cierre</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Auditorías de Calidad SQA...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Auditorías SQA" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Auditorías de Calidad SQA</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 04 -->
+
+
+    <!-- TEMA 05 -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 05</div>
+      <div class="tema-title">Gestión de Defectos y Métricas SQA</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🐛</div>
+          <span class="c-section-title">Ciclo de Vida del Defecto</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li><strong>Nuevo →</strong> Defecto reportado, pendiente de revisión</li>
+            <li style="margin-top:0.35rem"><strong>Asignado →</strong> Asignado a un desarrollador para análisis</li>
+            <li style="margin-top:0.35rem"><strong>Abierto →</strong> El dev confirma el defecto y trabaja en él</li>
+            <li style="margin-top:0.35rem"><strong>Resuelto →</strong> Corrección aplicada, pendiente de verificación</li>
+            <li style="margin-top:0.35rem"><strong>Verificado →</strong> QA confirma que el defecto fue corregido</li>
+            <li style="margin-top:0.35rem"><strong>Cerrado →</strong> Defecto cerrado formalmente en el sistema</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📊</div>
+          <span class="c-section-title">KPIs Clave de SQA</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">KPI</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Fórmula</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Meta</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">Defect Removal Efficiency (DRE)</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-family:monospace;color:#C8C8E0;font-size:12px;">Def. antes entrega / (Def. antes + después) × 100</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">&gt; 95%</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">Eficacia de la Revisión (ER)</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-family:monospace;color:#C8C8E0;font-size:12px;">Defectos hallados en revisión / Total defectos × 100</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">&gt; 70%</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">Densidad de Defectos Residual (DR)</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-family:monospace;color:#C8C8E0;font-size:12px;">Defectos post-entrega / KLOC</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">&lt; 0.1</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">Cobertura del Plan SQA (CSQA)</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-family:monospace;color:#C8C8E0;font-size:12px;">Actividades SQA ejecutadas / Planificadas × 100</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">= 100%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre gestión de defectos y KPIs SQA...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="KPIs SQA" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Gestión de Defectos y KPIs SQA</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 05 -->
+
+
+    <!-- ACTIVIDADES -->
+    <div class="tema-block">
+      <div class="tema-number">ACTIVIDADES</div>
+      <div class="tema-title">Ejercicios Propuestos y Resueltos</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">✏️</div>
+          <span class="c-section-title">Ejercicio 1 — Elaborar un Plan SQA básico</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Enunciado:</strong> El IST Yavirac desarrollará un Sistema de Notas en línea (10 semanas). Defina los componentes del Plan SQA para las fases de Análisis de Requisitos, Diseño y Codificación.</p>
+          <div style="overflow-x:auto;margin-top:0.75rem;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Fase</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Actividad SQA</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Revisión / Auditoría</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Métrica</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Responsable</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Requisitos</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Revisión de especificación (Walkthrough)</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">RTF — Walkthrough formal</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">% req. aprobados</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Analista + QA Lead</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Diseño</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Inspección de arquitectura y diagramas</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Inspección Fagan</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Defectos/hora revisión</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Arquitecto + QA</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Codificación</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Peer Review de código + análisis estático</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Code Review + SonarQube</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Defect Density (&lt; 1/KLOC)</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Dev + QA Engineer</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">✏️</div>
+          <span class="c-section-title">Ejercicio 2 — Cálculo de DRE y Eficacia de Revisión</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Enunciado:</strong> Durante el desarrollo del sistema de notas se encontraron: 45 defectos en revisiones técnicas, 12 en pruebas de sistema y 8 reportados por usuarios en producción.</p>
+          <div style="margin-top:0.75rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            <p><strong>✅ a) DRE (Defect Removal Efficiency):</strong></p>
+            <p style="font-family:monospace;margin-top:0.4rem;">Total antes entrega = 45 + 12 = 57<br/>DRE = 57 / (57 + 8) × 100 = <strong>87.7%</strong></p>
+            <p style="margin-top:0.4rem;">⚠️ Por debajo del estándar (meta &gt; 95%). Acción: intensificar RTF y aumentar casos de prueba de sistema.</p>
+            <p style="margin-top:0.75rem"><strong>✅ b) Eficacia de la Revisión (ER):</strong></p>
+            <p style="font-family:monospace;margin-top:0.4rem;">Total defectos = 45 + 12 + 8 = 65<br/>ER = 45 / 65 × 100 = <strong>69.2%</strong></p>
+            <p style="margin-top:0.4rem;">✅ Aceptable (meta &gt; 70% — muy cerca del objetivo). El equipo de revisión es efectivo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">✏️</div>
+          <span class="c-section-title">Ejercicio 3 — Análisis de una Inspección Técnica Formal</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Enunciado:</strong> El módulo de registro de notas fue inspeccionado por 4 revisores durante 2 horas. Se encontraron 18 defectos (5 mayores, 13 menores). El módulo tiene 450 LOC. Un revisor propone omitir la reunión de revisión porque "todos encontraron lo mismo".</p>
+          <div style="margin-top:0.75rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            <p><strong>✅ a) Propuesta del revisor:</strong> <span style="color:#ff6b6b;">INCORRECTA.</span> La reunión de revisión es un paso obligatorio del proceso Fagan. Permite discutir y clasificar cada defecto, identificar hallazgos que uno vio y otro no, tomar decisiones de aceptación/rechazo formales y registrar oficialmente los hallazgos.</p>
+            <p style="margin-top:0.75rem"><strong>✅ b) Tasa de detección:</strong></p>
+            <p style="font-family:monospace;margin-top:0.4rem;">Tasa = 18 defectos / (4 revisores × 2 horas) = <strong>2.25 def/hora/revisor</strong></p>
+            <p style="margin-top:0.4rem;">Referencia industria: 1 – 4 def/hora/rev → Resultado dentro del rango normal ✅</p>
+            <p style="margin-top:0.75rem"><strong>✅ c) Evaluación:</strong></p>
+            <p style="font-family:monospace;margin-top:0.4rem;">Densidad en revisión = 18 def / 0.45 KLOC = <strong>40 def/KLOC</strong></p>
+            <p style="margin-top:0.4rem;">Esperado en inspección (~40-100 def/KLOC). Los 5 defectos mayores deben resolverse antes de continuar → Resultado <strong>SATISFACTORIO</strong> ✅</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">✅</div>
+          <span class="c-section-title">Mi solución al laboratorio</span>
+        </div>
+        <div class="c-section-body">
+          <div style="padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
+            <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mis respuestas y cálculos:</p>
+            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu solución a los ejercicios del laboratorio...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias de actividades</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Ejercicios SQA" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Ejercicios Resueltos</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí las imágenes de evidencia del laboratorio.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin actividades -->
+
+
+    <!-- CIERRE -->
+    <div class="tema-block">
+      <div class="tema-number">CIERRE</div>
+      <div class="tema-title">Conclusión y Bibliografía</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">💡</div>
+          <span class="c-section-title">Puntos clave de la semana</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>🛡️ <strong>SQA es PREVENTIVO:</strong> Asegura que los procesos sean correctos antes de que los errores ocurran, a diferencia del testing que es reactivo.</li>
+            <li>📋 <strong>Plan SQA (IEEE 730):</strong> Define las actividades, responsables, métricas y estándares de calidad para todo el proyecto.</li>
+            <li>🔬 <strong>RTF:</strong> Walkthroughs, Inspecciones y Peer Reviews detectan hasta el 90% de defectos antes de las pruebas formales.</li>
+            <li>🗂️ <strong>Auditorías:</strong> Verifican el cumplimiento de procesos. No buscan culpables: buscan mejoras sistemáticas.</li>
+            <li>📊 <strong>KPIs clave:</strong> DRE &gt; 95% y ER &gt; 70%. Si no se mide la calidad, no se puede mejorar.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">💭</div>
+          <span class="c-section-title">Mi reflexión y conclusión personal</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu reflexión personal sobre lo aprendido en la semana 5...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔗</div>
+          <span class="c-section-title">Bibliografía y recursos</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📌</span><span>Escribe aquí tus referencias bibliográficas</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border);">
+      <a class="btn-nav" href="semana4.html">← Semana 4</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana6.html">Semana 6 →</a>
+    </div>
+
+  </div>
+
+  <div id="lightbox" onclick="cerrarLightbox()" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:1.5rem;cursor:zoom-out;">
+    <img id="lb-img" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:10px;object-fit:contain;"/>
+    <button onclick="cerrarLightbox()" style="position:fixed;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#1A1A25;border:1px solid #2A2A3A;color:#E8E8F0;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">×</button>
+  </div>
+  <script>
+    function abrirLightbox(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').style.display='flex';}
+    function cerrarLightbox(){document.getElementById('lightbox').style.display='none';}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrarLightbox();});
+  </script>
 </body>
-</html>
+</html>   

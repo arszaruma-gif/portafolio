@@ -1,40 +1,418 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>MATERIA2 - Semana 1</title>
-<link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aseguramiento de Calidad de Software · Semana 1</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-<div class="contenido">
-<h1>MATERIA2 - Semana 1</h1>
 
-<h2>Tema</h2>
-<p>Escriba aquí el tema.</p>
+  <div class="page-topbar">
+    <div class="crumb">
+      <a href="../index.html">Inicio</a>
+      <span class="sep">/</span>
+      <a href="../index.html">Aseguramiento de Calidad de Software</a>
+      <span class="sep">/</span>
+      <span class="current">Semana 1</span>
+    </div>
+    <div class="page-nav">
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana2.html">Sem 2 →</a>
+    </div>
+  </div>
 
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
+  <div class="semana-hero">
+    <div class="s-subject-label">Aseguramiento de Calidad de Software · Docente: MSc. Raúl Páez</div>
+    <h1>Semana <span class="accent">01</span></h1>
+    <p style="color:var(--accent2);font-size:15px;margin-top:0.4rem;font-weight:600;">Introducción a la Calidad de Software — Definiciones, Grandes Errores de la Historia, Costos Internos y Responsabilidades</p>
+    <div class="semana-meta">
+      Alex Robinson Zaruma Suntasig &nbsp;·&nbsp; 5to "A" &nbsp;·&nbsp; IST YAVIRAC &nbsp;·&nbsp; 2025-2026
+    </div>
+  </div>
 
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
+  <div class="semana-wrap">
 
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
+    <!-- TEMA 01 — Definición de Calidad de Software -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 01</div>
+      <div class="tema-title">Definición de Calidad de Software — Conceptos, normas ISO/IEEE y dimensiones de calidad</div>
 
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📦</div>
+          <span class="c-section-title">Definición Formal (IEEE Std 610.12)</span>
+        </div>
+        <div class="c-section-body">
+          <p style="padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-style:italic;">
+            "Grado en que un sistema, componente o proceso cumple con los requisitos especificados y las necesidades o expectativas del usuario final."
+          </p>
+          <ul style="margin-top:0.75rem">
+            <li>📦 <strong>Calidad de Producto:</strong> Características funcionales y no funcionales del software.</li>
+            <li>⚙️ <strong>Calidad de Proceso:</strong> Metodologías y prácticas utilizadas en el desarrollo.</li>
+            <li>👤 <strong>Calidad en Uso:</strong> Satisfacción del usuario al usar el producto en su contexto.</li>
+          </ul>
+        </div>
+      </div>
 
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">📜</div>
+          <span class="c-section-title">Normas y Modelos de Calidad</span>
+        </div>
+        <div class="c-section-body">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;">
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">ISO/IEC 25010 — SQuaRE</p>
+              <p style="font-size:13px;color:#C8C8E0;">Modelo de calidad del producto: funcionalidad, rendimiento, seguridad, usabilidad, mantenibilidad y más.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">ISO 9001 — Gestión de Calidad</p>
+              <p style="font-size:13px;color:#C8C8E0;">Sistema de gestión de calidad organizacional aplicable al desarrollo de software.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">CMMI — Capability Maturity Model</p>
+              <p style="font-size:13px;color:#C8C8E0;">Modelo de madurez en 5 niveles para mejorar procesos de desarrollo.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">IEEE 730 — SQA Plans</p>
+              <p style="font-size:13px;color:#C8C8E0;">Estándar para la elaboración de planes de aseguramiento de calidad de software.</p>
+            </div>
+          </div>
+          <p style="margin-top:0.75rem;color:var(--accent2);font-weight:600;">💡 La ISO/IEC 25010 es la norma más utilizada en la industria moderna del software.</p>
+        </div>
+      </div>
 
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Definición de Calidad de Software...</p>
+        </div>
+      </div>
 
-<a href="../index.html">Volver al inicio</a>
-</div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Calidad de Software" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Calidad de Software</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 01 -->
+
+
+    <!-- TEMA 02 — Importancia y Grandes Errores -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 02</div>
+      <div class="tema-title">Importancia de la Calidad — Grandes Errores de Software en la Historia</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">💥</div>
+          <span class="c-section-title">Casos Reales de Fallas Catastróficas</span>
+        </div>
+        <div class="c-section-body">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;">
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.2rem;">Ariane 5 — 1996</p>
+              <p style="font-size:12px;color:#9B9BC0;margin-bottom:0.4rem;">Overflow · $370M perdidos</p>
+              <p style="font-size:13px;color:#C8C8E0;">El cohete explotó 37 segundos después del lanzamiento por un desbordamiento de entero al convertir un flotante de 64-bit a 16-bit.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.2rem;">Mars Climate Orbiter — 1999</p>
+              <p style="font-size:12px;color:#9B9BC0;margin-bottom:0.4rem;">Unidades · $327.6M perdidos</p>
+              <p style="font-size:13px;color:#C8C8E0;">La sonda se perdió por un error de unidades: un equipo usaba unidades imperiales y otro métricas, sin validación cruzada.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.2rem;">Therac-25 — 1985–1987</p>
+              <p style="font-size:12px;color:#9B9BC0;margin-bottom:0.4rem;">Race Condition · 6 muertes</p>
+              <p style="font-size:13px;color:#C8C8E0;">Una máquina de radioterapia entregó dosis 100x superiores a la normal por una condición de carrera en el software de control.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.2rem;">Bug Y2K — 2000</p>
+              <p style="font-size:12px;color:#9B9BC0;margin-bottom:0.4rem;">Representación · $300B en correcciones</p>
+              <p style="font-size:13px;color:#C8C8E0;">Los años se almacenaban con 2 dígitos. El mundo invirtió millones para evitar fallos masivos en sistemas críticos al llegar el año 2000.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre los Grandes Errores de Software...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Grandes Errores" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Grandes Errores</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 02 -->
+
+
+    <!-- TEMA 03 — Costos Internos de la Mala Calidad -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 03</div>
+      <div class="tema-title">Costos Internos de la Mala Calidad — Prevención, evaluación, fallos internos y externos</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">💰</div>
+          <span class="c-section-title">El Costo Global de los Bugs</span>
+        </div>
+        <div class="c-section-body">
+          <p style="padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            <strong style="color:var(--accent2);font-size:18px;">$1.52 TRILLONES</strong> perdidos anualmente por bugs de software (CISQ, 2022).
+          </p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">📊</div>
+          <span class="c-section-title">Categorías de Costos de Calidad</span>
+        </div>
+        <div class="c-section-body">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;">
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">Costos de Prevención</p>
+              <p style="font-size:13px;color:#C8C8E0;">Capacitación y formación · Revisiones de diseño · Planificación de QA · Mejora de procesos.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">Costos de Evaluación</p>
+              <p style="font-size:13px;color:#C8C8E0;">Testing y pruebas · Inspecciones de código · Auditorías de calidad · Revisiones de requisitos.</p>
+            </div>
+          </div>
+          <p style="margin-top:0.75rem;color:#FFB199;font-weight:600;">⚠️ Fallos Internos (más costosos): Re-trabajo, re-testing, análisis de defectos, degradación de procesos.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📈</div>
+          <span class="c-section-title">Regla del 10 — Costo de Corregir un Defecto según la Etapa</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Etapa de Detección</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Factor de Costo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Requisitos</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">×1</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Diseño</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">×5</td></tr>
+                <tr><td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Codificación</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">×10</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Pruebas</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">×20</td></tr>
+                <tr><td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Producción</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">×100</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Costos Internos de la Mala Calidad...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Costos de Calidad" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Costos de Calidad</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 03 -->
+
+
+    <!-- TEMA 04 — Responsables de la Calidad -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 04</div>
+      <div class="tema-title">Responsables de la Calidad de Software — Roles: QA, desarrolladores, PM y stakeholders</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">👥</div>
+          <span class="c-section-title">Responsabilidades por Rol</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--accent2);font-weight:600;margin-bottom:0.75rem;">💡 La calidad es responsabilidad de TODOS en el equipo, no solo del área de QA.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;">
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">🔍 QA Engineer / Tester</p>
+              <p style="font-size:13px;color:#C8C8E0;">Diseñar y ejecutar planes de prueba · Reportar y gestionar defectos · Automatizar pruebas regresivas · Verificar criterios de aceptación.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">💻 Desarrollador</p>
+              <p style="font-size:13px;color:#C8C8E0;">Escribir código limpio y testeable · Realizar pruebas unitarias · Revisión de código entre pares · Cumplir estándares de codificación.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">📋 Project Manager</p>
+              <p style="font-size:13px;color:#C8C8E0;">Incluir calidad en la planificación · Asignar tiempo para pruebas · Gestionar riesgos de calidad · Comunicar expectativas al cliente.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">🏢 Cliente / Stakeholder</p>
+              <p style="font-size:13px;color:#C8C8E0;">Definir requisitos claros · Validar entregables · Proveer retroalimentación · Aprobar criterios de aceptación.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">⚖️</div>
+          <span class="c-section-title">QA vs QC — Diferencia Clave</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Característica</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">QA · Quality Assurance</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">QC · Quality Control</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Enfoque</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Proactivo — Prevenir defectos.</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Reactivo — Detectar defectos.</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Orientación</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Al proceso: mejora el desarrollo.</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Al producto: identifica defectos existentes.</td></tr>
+                <tr><td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Tipo de actividad</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Preventiva, involucra a todo el equipo.</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Correctiva, responsabilidad del equipo de testing.</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Ejemplos</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Revisiones, auditorías, SCRUM.</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Pruebas unitarias, UAT, regresión.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Responsables de la Calidad...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="QA vs QC" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">QA vs QC</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 04 -->
+
+
+    <!-- CIERRE -->
+    <div class="tema-block">
+      <div class="tema-number">CIERRE</div>
+      <div class="tema-title">Conclusión y Bibliografía</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">💡</div>
+          <span class="c-section-title">Puntos clave de la semana</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>📦 <strong>Calidad de Software</strong> → Tiene múltiples dimensiones: producto, proceso y uso, regida por normas como ISO/IEC 25010 e IEEE.</li>
+            <li>💥 <strong>Grandes errores</strong> → Pérdidas millonarias, vidas humanas y fallas en misiones críticas (Ariane 5, Mars Orbiter, Therac-25, Y2K).</li>
+            <li>💰 <strong>Costos internos</strong> → Prevención, evaluación y fallos. Detectar defectos tarde es exponencialmente más caro (Regla del 10).</li>
+            <li>👥 <strong>Responsables</strong> → QA, desarrolladores, PM y clientes. QA previene, QC detecta.</li>
+            <li>💬 La calidad de software no es un evento final, es una responsabilidad compartida durante todo el ciclo de vida.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">💭</div>
+          <span class="c-section-title">Mi reflexión y conclusión personal</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu reflexión personal sobre lo aprendido en la semana 1...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔗</div>
+          <span class="c-section-title">Bibliografía y recursos</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📌</span><span>Escribe aquí tus referencias bibliográficas</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border);">
+      <a class="btn-nav" href="../index.html">← Índice</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana2.html">Semana 2 →</a>
+    </div>
+
+  </div>
+
+  <div id="lightbox" onclick="cerrarLightbox()" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:1.5rem;cursor:zoom-out;">
+    <img id="lb-img" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:10px;object-fit:contain;"/>
+    <button onclick="cerrarLightbox()" style="position:fixed;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#1A1A25;border:1px solid #2A2A3A;color:#E8E8F0;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">×</button>
+  </div>
+  <script>
+    function abrirLightbox(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').style.display='flex';}
+    function cerrarLightbox(){document.getElementById('lightbox').style.display='none';}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrarLightbox();});
+  </script>
 </body>
 </html>

@@ -259,7 +259,16 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre disponibilidad...</p>
+          <p style="color:var(--muted2);font-style:italic;"> ¿De qué depende la disponibilidad?
+Para que tu software sea altamente disponible, no basta con que el código esté bien escrito; entran en juego varios factores:
+
+Fiabilidad (Reliability): Que el sistema no falle. Si falla poco, es más fácil que esté disponible.
+
+Recuperación (Resilience): Qué tan rápido vuelve a levantarse el sistema después de un error.
+
+Redundancia: Tener "copias" del sistema. Si un servidor se quema, otro entra en acción de inmediato (como el ejemplo de la RAM que mencionaste: si tienes varios módulos y uno falla, el sistema podría seguir si está diseñado para ello).
+
+Mantenimiento: La capacidad de actualizar la app sin tener que apagarla (el famoso "estamos en mantenimiento" reduce la disponibilidad).</p>
         </div>
       </div>
 
@@ -609,7 +618,19 @@
           <p><strong>Pregunta:</strong> ¿Qué es peor: que el cajero esté apagado (Baja Disponibilidad) o que te dé $20 pero te descuente $200 (Baja Fiabilidad)?</p>
           <div style="margin-top:0.75rem;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
             <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi respuesta:</p>
-            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu respuesta y análisis...</p>
+           <p style="color:var(--muted2);font-style:italic;">
+• <strong>Escenario A: El cajero está apagado (Baja Disponibilidad)</strong><br>
+• El impacto: Es muy molesto. Tienes que caminar tres cuadras, buscar otro cajero o regresar más tarde.<br>
+• El estado del sistema: El sistema falló en dar el servicio, pero protegió la información. Tu dinero sigue intacto en el banco.<br>
+• Costo de reparación: Relativamente bajo. Se reinicia el sistema, se cambia la pieza dañada y listo.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Escenario B: El cajero te roba dinero (Baja Fiabilidad)</strong><br>
+• El impacto: Es una catástrofe absoluta. El usuario pierde dinero, entra en pánico y la empresa destruye por completo la confianza de sus clientes (y se gana una demanda legal).<br>
+• El estado del sistema: El sistema está "disponible" (te atendió), pero sus datos y su lógica están corruptos.<br>
+• Costo de reparación: Altísimo. Arreglar esto implica auditorías manuales, revisar bases de datos descuadradas, hacer devoluciones y lidiar con un caos de soporte técnico.
+</p>
           </div>
         </div>
       </div>
@@ -623,7 +644,19 @@
           <p><strong>Pregunta:</strong> ¿Qué es peor en un banco: que la app no abra por 5 minutos (Falla de Resiliencia) o que se pierda el registro de un depósito de $500 (Falla de Durabilidad)?</p>
           <div style="margin-top:0.75rem;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
             <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi respuesta:</p>
-            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu respuesta y análisis...</p>
+            <p style="color:var(--muted2);font-style:italic;">
+• <strong>1. Si falla la Resiliencia</strong><br>
+• El escenario: El usuario intenta enviar un mensaje, hay un micro-corte de internet y la app se cierra sola o se queda congelada.<br>
+• El resultado: Mala experiencia.<br>
+• Lección de arquitectura: La resiliencia es la capacidad de un sistema para soportar y recuperarse de fallos parciales. Un diseño resiliente incluiría lógica de reintentos o manejo de errores para que la app no colapse ante un problema de red.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>2. Si falla la Durabilidad</strong><br>
+• El escenario: El usuario envía el mensaje, la app dice "Enviado", pero el servidor se reinicia y el mensaje se borra de la base de datos. El receptor nunca lo lee.<br>
+• El resultado: Pérdida de información crítica.<br>
+• Lección de arquitectura: La durabilidad garantiza que, una vez que se le confirma al usuario que una acción se completó, los datos se mantienen grabados permanentemente, incluso si el hardware o el software fallan inmediatamente después.
+</p>
           </div>
         </div>
       </div>

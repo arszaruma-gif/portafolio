@@ -1,40 +1,627 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>MATERIA2 - Semana 4</title>
-<link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aseguramiento de Calidad · Semana 4</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-<div class="contenido">
-<h1>MATERIA2 - Semana 4</h1>
 
-<h2>Tema</h2>
-<p>Escriba aquí el tema.</p>
+  <div class="page-topbar">
+    <div class="crumb">
+      <a href="../index.html">Inicio</a>
+      <span class="sep">/</span>
+      <a href="../index.html">Aseguramiento de Calidad de Software</a>
+      <span class="sep">/</span>
+      <span class="current">Semana 4</span>
+    </div>
+    <div class="page-nav">
+      <a class="btn-nav" href="semana3.html">← Sem 3</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana5.html">Sem 5 →</a>
+    </div>
+  </div>
 
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
+  <div class="semana-hero">
+    <div class="s-subject-label">Aseguramiento de Calidad de Software · IST YAVIRAC · Quinto Semestre</div>
+    <h1>Semana <span class="accent">04</span></h1>
+    <p style="color:var(--accent2);font-size:15px;margin-top:0.4rem;font-weight:600;">Métricas de Calidad &amp; Modelos de Calidad — CMMI · McCall · Boehm · FURPS · Dromey</p>
+    <div class="semana-meta">
+      IST YAVIRAC &nbsp;·&nbsp; Quinto Semestre &nbsp;·&nbsp; 2025-2026
+    </div>
+  </div>
 
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
+  <div class="semana-wrap">
 
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
+    <!-- TEMA 01 -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 01</div>
+      <div class="tema-title">¿Qué son las Métricas de Calidad?</div>
 
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">📐</div>
+          <span class="c-section-title">Concepto — IEEE Std 1061</span>
+        </div>
+        <div class="c-section-body">
+          <p>"Una métrica de calidad es una medida cuantitativa del grado en que un sistema, componente o proceso posee un atributo dado." — IEEE Std 1061</p>
+        </div>
+      </div>
 
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📊</div>
+          <span class="c-section-title">Tipos de Métricas</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>
+              <strong>📦 Métricas de Producto:</strong> Defect Density · Complejidad ciclomática · Cobertura de pruebas · Cohesión / Acoplamiento
+            </li>
+            <li style="margin-top:0.5rem">
+              <strong>⚙️ Métricas de Proceso:</strong> Velocidad del equipo · Tasa de defectos inyectados · Eficacia de revisiones · Lead time
+            </li>
+            <li style="margin-top:0.5rem">
+              <strong>📋 Métricas de Proyecto:</strong> Variación de cronograma · Esfuerzo estimado vs real · Costo por defecto · Burn-down rate
+            </li>
+          </ul>
+        </div>
+      </div>
 
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Métricas de Calidad...</p>
+        </div>
+      </div>
 
-<a href="../index.html">Volver al inicio</a>
-</div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Métricas de Calidad" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Métricas de Calidad</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 01 -->
+
+
+    <!-- TEMA 02 -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 02</div>
+      <div class="tema-title">Métricas Clave del Producto de Software — Fórmulas e interpretación</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🐛</div>
+          <span class="c-section-title">Defect Density</span>
+        </div>
+        <div class="c-section-body">
+          <p style="padding:0.75rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-family:monospace;">
+            DD = Nº defectos / KLOC &nbsp;&nbsp;<span style="color:var(--muted)">(Miles de Líneas de Código)</span>
+          </p>
+          <p style="margin-top:0.5rem">Referencia: <strong>&lt; 1 defecto/KLOC</strong> — Mide la concentración de errores. Alto = código de baja calidad.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🧪</div>
+          <span class="c-section-title">Cobertura de Pruebas</span>
+        </div>
+        <div class="c-section-body">
+          <p style="padding:0.75rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-family:monospace;">
+            COV = (Líneas ejecutadas / Total líneas) × 100
+          </p>
+          <p style="margin-top:0.5rem">Referencia: <strong>&gt; 80%</strong> — Porcentaje del código verificado por pruebas automatizadas.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">🔀</div>
+          <span class="c-section-title">Complejidad Ciclomática (CC)</span>
+        </div>
+        <div class="c-section-body">
+          <p style="padding:0.75rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-family:monospace;">
+            CC = E − N + 2P &nbsp;&nbsp;<span style="color:var(--muted)">(aristas − nodos + 2 × componentes)</span>
+          </p>
+          <p style="margin-top:0.5rem">Referencia: <strong>CC ≤ 10 por módulo</strong> — Mide caminos independientes. Alta CC = difícil de probar y mantener.</p>
+          <div style="overflow-x:auto;margin-top:0.75rem;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:8px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Rango CC</th>
+                  <th style="padding:8px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Riesgo</th>
+                  <th style="padding:8px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding:8px 12px;border:1px solid var(--border);">1 – 5</td><td style="padding:8px 12px;border:1px solid var(--border);color:#C8C8E0;">Bajo</td><td style="padding:8px 12px;border:1px solid var(--border);color:#C8C8E0;">Simple, fácil de probar</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:8px 12px;border:1px solid var(--border);">6 – 10</td><td style="padding:8px 12px;border:1px solid var(--border);color:#C8C8E0;">Medio</td><td style="padding:8px 12px;border:1px solid var(--border);color:#C8C8E0;">Aceptable, monitorear</td></tr>
+                <tr><td style="padding:8px 12px;border:1px solid var(--border);">11 – 20</td><td style="padding:8px 12px;border:1px solid var(--border);color:#C8C8E0;">Alto</td><td style="padding:8px 12px;border:1px solid var(--border);color:#C8C8E0;">Riesgo, considerar refactoring</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:8px 12px;border:1px solid var(--border);">&gt; 20</td><td style="padding:8px 12px;border:1px solid var(--border);color:#C8C8E0;">Crítico</td><td style="padding:8px 12px;border:1px solid var(--border);color:#C8C8E0;">Refactoring obligatorio</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔗</div>
+          <span class="c-section-title">Acoplamiento entre Clases (CBO)</span>
+        </div>
+        <div class="c-section-body">
+          <p style="padding:0.75rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-family:monospace;">
+            CBO = Nº de clases de las que depende una clase
+          </p>
+          <p style="margin-top:0.5rem">Referencia: <strong>CBO ≤ 5</strong> — Alto acoplamiento = cambios en cascada y difícil mantenimiento.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre las métricas clave...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Métricas Producto" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Métricas del Producto</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 02 -->
+
+
+    <!-- TEMA 03 -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 03</div>
+      <div class="tema-title">Modelos de Calidad: CMMI y McCall</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🏛️</div>
+          <span class="c-section-title">Modelo McCall (1977) — Factores → Criterios → Métricas</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>
+              <strong>🖥️ Operación del Producto:</strong> Corrección · Fiabilidad · Eficiencia · Integridad · Usabilidad
+            </li>
+            <li style="margin-top:0.5rem">
+              <strong>🔍 Revisión del Producto:</strong> Mantenibilidad · Flexibilidad · Facilidad de prueba
+            </li>
+            <li style="margin-top:0.5rem">
+              <strong>🚀 Transición del Producto:</strong> Portabilidad · Reutilización · Interoperabilidad
+            </li>
+          </ul>
+          <p style="margin-top:0.85rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            <strong>Jerarquía FCM:</strong> Factor (qué se quiere) → Criterio (cómo se manifiesta) → Métrica (cómo se mide).<br/>
+            <em>Ej: Fiabilidad → Precisión → Tasa de errores.</em>
+          </p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📈</div>
+          <span class="c-section-title">Modelo CMMI — Capability Maturity Model Integration</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Nivel</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Nombre</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">1</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Inicial</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Procesos impredecibles, mal controlados y reactivos. Éxito depende del esfuerzo individual.</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">2</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Gestionado</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Procesos planificados y ejecutados según política. Bajo control básico.</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">3</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Definido</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Procesos bien caracterizados. Descritos con estándares, procedimientos y herramientas.</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">4</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">Gestionado Cuantitativamente</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Procesos medidos y controlados usando métricas. Predictible dentro de límites.</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">5</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">En Optimización</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Mejora continua del proceso basada en comprensión cuantitativa de variación.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top:0.85rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            💡 La mayoría de empresas de software se encuentran en nivel 2 o 3. Alcanzar nivel 5 requiere años de inversión sistemática en procesos.
+          </p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre CMMI y McCall...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="CMMI McCall" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">CMMI y McCall</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 03 -->
+
+
+    <!-- TEMA 04 -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 04</div>
+      <div class="tema-title">Modelos: Boehm, FURPS+ y Dromey</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🌳</div>
+          <span class="c-section-title">Modelo Boehm (1978) — Árbol jerárquico de calidad</span>
+        </div>
+        <div class="c-section-body">
+          <p>Estructura en tres niveles: primitivas, intermedias y uso general.</p>
+          <ul style="margin-top:0.75rem">
+            <li><strong>Utilidad General:</strong> Exactitud · Fiabilidad · Eficiencia · Integridad · Usabilidad</li>
+            <li><strong>Mantenibilidad:</strong> Comprensibilidad · Modificabilidad · Flexibilidad · Facilidad de prueba</li>
+            <li><strong>Portabilidad:</strong> Independencia del dispositivo · Auto-contenido · Facilidad de instalación</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔤</div>
+          <span class="c-section-title">FURPS+ (Hewlett-Packard, 1987)</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Letra</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Factor</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding:10px 12px;border:1px solid var(--border);font-weight:700;color:var(--accent);">F</td><td style="padding:10px 12px;border:1px solid var(--border);">Functionality</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Características, capacidades, seguridad</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:10px 12px;border:1px solid var(--border);font-weight:700;color:var(--accent);">U</td><td style="padding:10px 12px;border:1px solid var(--border);">Usability</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Factores humanos, ayuda, documentación</td></tr>
+                <tr><td style="padding:10px 12px;border:1px solid var(--border);font-weight:700;color:var(--accent);">R</td><td style="padding:10px 12px;border:1px solid var(--border);">Reliability</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Frecuencia/severidad de fallos, recuperabilidad</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:10px 12px;border:1px solid var(--border);font-weight:700;color:var(--accent);">P</td><td style="padding:10px 12px;border:1px solid var(--border);">Performance</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Velocidad, eficiencia, consumo de recursos</td></tr>
+                <tr><td style="padding:10px 12px;border:1px solid var(--border);font-weight:700;color:var(--accent);">S</td><td style="padding:10px 12px;border:1px solid var(--border);">Supportability</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Adaptabilidad, mantenibilidad, internacionalización</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:10px 12px;border:1px solid var(--border);font-weight:700;color:var(--accent2);">+</td><td style="padding:10px 12px;border:1px solid var(--border);">Design / Impl / Interface / Physical</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Restricciones adicionales del sistema</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">⬆️</div>
+          <span class="c-section-title">Dromey (1995) — Modelo orientado a propiedades</span>
+        </div>
+        <div class="c-section-body">
+          <p>A diferencia de modelos anteriores, Dromey parte del producto mismo (el código, el diseño) e identifica sus propiedades de calidad de abajo hacia arriba.</p>
+          <ul style="margin-top:0.75rem">
+            <li><strong>Propiedades del Módulo:</strong> Corrección, fiabilidad del módulo individual</li>
+            <li><strong>Propiedades del Producto:</strong> Funcionalidad, eficiencia, mantenibilidad</li>
+            <li><strong>Propiedades de Calidad:</strong> Satisfacción del cliente, facilidad de uso</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📊</div>
+          <span class="c-section-title">Comparativa de los 5 Modelos</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Modelo</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Año</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Enfoque</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Uso Principal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">McCall</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">1977</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Perspectiva del usuario — 3 perspectivas → 11 factores</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Contratos de software, DoD</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">Boehm</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">1978</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Perspectiva técnica jerárquica — árbol de 3 niveles</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Evaluación técnica, ISO</td></tr>
+                <tr><td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">FURPS</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">1987</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Req. funcionales y no funcionales — 6 categorías + extensiones</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Especificación de requisitos</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">CMMI</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">2002</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Madurez del proceso organizacional — 5 niveles</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Evaluación y mejora de proceso</td></tr>
+                <tr><td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">Dromey</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">1995</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Propiedades del producto/código — bottom-up desde el módulo</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Evaluación técnica de código</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Boehm, FURPS y Dromey...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Modelos Calidad" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Boehm, FURPS y Dromey</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 04 -->
+
+
+    <!-- ACTIVIDADES -->
+    <div class="tema-block">
+      <div class="tema-number">ACTIVIDADES</div>
+      <div class="tema-title">Ejercicios Propuestos y Resueltos</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">✏️</div>
+          <span class="c-section-title">Ejercicio 1 — Cálculo de Defect Density</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Enunciado:</strong> Un módulo de facturación tiene 8.500 LOC con 12 defectos. El módulo de reportes tiene 3.200 LOC con 6 defectos.</p>
+          <p style="margin-top:0.5rem">a) Calcule la Defect Density de cada módulo. b) ¿Cuál tiene mayor calidad? c) ¿Están dentro del rango aceptable (&lt; 1 defecto/KLOC)?</p>
+          <div style="margin-top:0.85rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            <p><strong>✅ Solución:</strong></p>
+            <ul style="margin-top:0.5rem">
+              <li>Módulo Facturación: DD = 12 / 8.5 KLOC = <strong>1.41 def/KLOC</strong> ❌ Fuera del rango aceptable</li>
+              <li>Módulo Reportes: DD = 6 / 3.2 KLOC = <strong>1.875 def/KLOC</strong> ❌ Fuera del rango aceptable</li>
+              <li style="margin-top:0.5rem">Conclusión: Facturación tiene mejor calidad relativa (1.41 &lt; 1.875). Ambos requieren revisión. Acción: code review prioritario en Reportes y meta &lt; 1 def/KLOC para el próximo sprint.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">✏️</div>
+          <span class="c-section-title">Ejercicio 2 — Complejidad Ciclomática</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Enunciado:</strong> El grafo de <code style="background:var(--surface);padding:2px 6px;border-radius:4px;font-size:11px;">validarPago()</code> tiene 14 nodos (N), 16 aristas (E) y 1 componente conectado (P).</p>
+          <p style="margin-top:0.5rem">a) Calcule la CC. b) Determine el riesgo asociado. c) ¿Se recomienda refactoring?</p>
+          <div style="margin-top:0.85rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            <p><strong>✅ Solución:</strong></p>
+            <p style="margin-top:0.5rem;font-family:monospace;">CC = E − N + 2P = 16 − 14 + 2(1) = <strong>4</strong></p>
+            <p style="margin-top:0.5rem">Resultado: CC = 4 → Riesgo <strong>BAJO</strong>. No requiere refactoring inmediato. La función es manejable y suficientemente testeable.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">✏️</div>
+          <span class="c-section-title">Ejercicio 3 — Selección del Modelo de Calidad adecuado</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>
+              <strong>Escenario A:</strong> El Ministerio de Educación necesita auditar el proceso de desarrollo de una empresa proveedora para renovar contrato.<br/>
+              <span style="color:var(--accent2);">→ Modelo: <strong>CMMI</strong></span> — Evalúa la madurez del proceso organizacional; permite auditar si la empresa sigue procesos repetibles, definidos y medibles.
+            </li>
+            <li style="margin-top:0.75rem">
+              <strong>Escenario B:</strong> Un equipo quiere especificar los requisitos no funcionales de un nuevo sistema bancario antes de comenzar el diseño.<br/>
+              <span style="color:var(--accent2);">→ Modelo: <strong>FURPS+</strong></span> — Diseñado para capturar requisitos funcionales y no funcionales durante la fase de especificación.
+            </li>
+            <li style="margin-top:0.75rem">
+              <strong>Escenario C:</strong> Un QA Engineer debe evaluar la calidad técnica del código fuente de un módulo existente para identificar componentes de baja calidad.<br/>
+              <span style="color:var(--accent2);">→ Modelo: <strong>Dromey</strong></span> — Parte de las propiedades del código/componente (bottom-up), ideal para análisis técnico de código existente.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">✏️</div>
+          <span class="c-section-title">Ejercicio 4 — Caso Integrador: Sistema de Gestión Académica</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Datos:</strong> 45.000 LOC totales · 38 defectos en producción · Módulo más complejo: CC = 18 · Cobertura actual: 52% · Empresa nivel CMMI 2</p>
+          <div style="overflow-x:auto;margin-top:0.75rem;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Ítem</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Cálculo</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Resultado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">a) Defect Density global</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-family:monospace;color:#C8C8E0;">38 / 45 KLOC</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">0.84 def/KLOC ✅ Dentro del rango</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);">b) Módulo CC = 18</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-family:monospace;color:#C8C8E0;">Rango 11–20</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Nivel ALTO ⚠️ Refactoring recomendado</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);">c) Cobertura de pruebas</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-family:monospace;color:#C8C8E0;">52% vs meta &gt; 80%</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Brecha 28% ❌ Plan de pruebas urgente</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);">d) Siguiente paso CMMI</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-family:monospace;color:#C8C8E0;">Nivel 2 → Nivel 3</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">📌 Documentar, estandarizar y capacitar</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">✅</div>
+          <span class="c-section-title">Mi solución al laboratorio</span>
+        </div>
+        <div class="c-section-body">
+          <div style="padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
+            <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mis cálculos y respuestas:</p>
+            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu solución a los ejercicios del laboratorio...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias de actividades</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Ejercicios" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Ejercicios Resueltos</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí las imágenes de evidencia del laboratorio.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin actividades -->
+
+
+    <!-- CIERRE -->
+    <div class="tema-block">
+      <div class="tema-number">CIERRE</div>
+      <div class="tema-title">Conclusión y Bibliografía</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">💡</div>
+          <span class="c-section-title">Puntos clave de la semana</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>📐 <strong>Métricas</strong> → Cuantifican la calidad: Defect Density, CC y Cobertura son las más usadas en la industria moderna.</li>
+            <li>🏛️ <strong>McCall</strong> → Organiza la calidad en 3 perspectivas y 11 factores. Base histórica de todos los modelos posteriores.</li>
+            <li>📈 <strong>CMMI</strong> → Mide la madurez del proceso en 5 niveles. No evalúa el producto, sino cómo trabaja el equipo.</li>
+            <li>🌳 <strong>Boehm, FURPS y Dromey</strong> → Complementan con enfoques técnicos, de requisitos y de propiedades del código.</li>
+            <li>🎯 <strong>No hay un modelo universal</strong> → El contexto (tipo de sistema, fase, audiencia) determina cuál aplicar.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">💭</div>
+          <span class="c-section-title">Mi reflexión y conclusión personal</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu reflexión personal sobre lo aprendido en la semana 4...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔗</div>
+          <span class="c-section-title">Bibliografía y recursos</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📌</span><span>Escribe aquí tus referencias bibliográficas</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border);">
+      <a class="btn-nav" href="semana3.html">← Semana 3</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana5.html">Semana 5 →</a>
+    </div>
+
+  </div>
+
+  <div id="lightbox" onclick="cerrarLightbox()" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:1.5rem;cursor:zoom-out;">
+    <img id="lb-img" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:10px;object-fit:contain;"/>
+    <button onclick="cerrarLightbox()" style="position:fixed;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#1A1A25;border:1px solid #2A2A3A;color:#E8E8F0;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">×</button>
+  </div>
+  <script>
+    function abrirLightbox(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').style.display='flex';}
+    function cerrarLightbox(){document.getElementById('lightbox').style.display='none';}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrarLightbox();});
+  </script>
 </body>
 </html>

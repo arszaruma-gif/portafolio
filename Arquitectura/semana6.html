@@ -1,40 +1,422 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>MATERIA1 - Semana 6</title>
-<link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arquitectura de Software · Semana 6</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-<div class="contenido">
-<h1>MATERIA1 - Semana 6</h1>
 
-<h2>Tema</h2>
-<p>Escriba aquí el tema.</p>
+  <div class="page-topbar">
+    <div class="crumb">
+      <a href="../index.html">Inicio</a>
+      <span class="sep">/</span>
+      <a href="../index.html">Arquitectura de Software</a>
+      <span class="sep">/</span>
+      <span class="current">Semana 6</span>
+    </div>
+    <div class="page-nav">
+      <a class="btn-nav" href="semana5.html">← Sem 5</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana7.html">Sem 7 →</a>
+    </div>
+  </div>
 
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
+  <div class="semana-hero">
+    <div class="s-subject-label">Arquitectura de Software · Docente: MSc. Raúl Páez</div>
+    <h1>Semana <span class="accent">06</span></h1>
+    <p style="color:var(--accent2);font-size:15px;margin-top:0.4rem;font-weight:600;">Patrones de Diseño I — Creacionales y Estructurales: El Catálogo de Soluciones Reutilizables</p>
+    <div class="semana-meta">
+      Alex Robinson Zaruma Suntasig &nbsp;·&nbsp; 5to "A" &nbsp;·&nbsp; IST YAVIRAC &nbsp;·&nbsp; 2025-2026
+    </div>
+  </div>
 
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
+  <div class="semana-wrap">
 
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
+    <!-- TEMA 01 — ¿Qué son los Patrones? -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 01</div>
+      <div class="tema-title">¿Qué son los Patrones de Diseño?</div>
 
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🎯</div>
+          <span class="c-section-title">Concepto — Gang of Four (GoF)</span>
+        </div>
+        <div class="c-section-body">
+          <p>Introducidos por la <strong>Gang of Four (GoF)</strong>, son soluciones estándar a problemas comunes en el diseño de software orientado a objetos.</p>
+          <ul style="margin-top:0.75rem">
+            <li>🔤 <strong>Lenguaje Común:</strong> Permiten a los desarrolladores comunicarse con términos técnicos claros (ej. "Usa un Adapter").</li>
+            <li>♻️ <strong>Reutilización:</strong> Evitan reinventar la rueda ante problemas de diseño recurrentes.</li>
+          </ul>
+        </div>
+      </div>
 
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📂</div>
+          <span class="c-section-title">Categorías de la GoF</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>🏗️ <strong>1. Creacionales:</strong> Mecanismos de creación de objetos. <em>(Esta semana)</em></li>
+            <li>🔗 <strong>2. Estructurales:</strong> Composición de clases y objetos. <em>(Esta semana)</em></li>
+            <li>🔄 <strong>3. Comportamiento:</strong> Interacción y responsabilidades entre objetos. <em>(Semana 7)</em></li>
+          </ul>
+          <p style="margin-top:0.85rem;padding:0.75rem 1rem;background:rgba(124,92,252,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;">
+            💡 <em>"Los patrones no son fragmentos de código para copiar; son plantillas conceptuales para resolver problemas de diseño."</em>
+          </p>
+        </div>
+      </div>
 
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre qué son los patrones de diseño...</p>
+        </div>
+      </div>
 
-<a href="../index.html">Volver al inicio</a>
-</div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Patrones GoF" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Patrones de Diseño GoF</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 01 -->
+
+
+    <!-- TEMA 02 — Patrones Creacionales -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 02</div>
+      <div class="tema-title">Patrones Creacionales — Abstraen el proceso de instanciación de objetos</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🏗️</div>
+          <span class="c-section-title">El Catálogo Creacional Completo</span>
+        </div>
+        <div class="c-section-body">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:0.5rem;">
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">📦 Singleton</p>
+              <p style="font-size:13px;color:#C8C8E0;">Garantiza que una clase tenga una única instancia en todo el sistema y proporciona un punto de acceso global.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">🏭 Factory Method</p>
+              <p style="font-size:13px;color:#C8C8E0;">Define una interfaz para crear un objeto, pero deja que las subclases decidan qué clase exacta instanciar.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">🏗️ Abstract Factory</p>
+              <p style="font-size:13px;color:#C8C8E0;">Permite producir familias de objetos relacionados o dependientes sin especificar sus clases concretas.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">🔨 Builder</p>
+              <p style="font-size:13px;color:#C8C8E0;">Separa la construcción de un objeto complejo de su representación, permitiendo crear variaciones paso a paso.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">📋 Prototype</p>
+              <p style="font-size:13px;color:#C8C8E0;">Permite copiar u clonar objetos existentes sin que el código dependa de sus clases específicas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">💻</div>
+          <span class="c-section-title">Patrón en Acción: Singleton — Conexión a Base de Datos</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Problema:</strong> Múltiples instancias abiertas saturan los recursos del servidor.</p>
+          <p style="margin-top:0.5rem"><strong>Solución:</strong> Controlar el constructor internamente para garantizar una sola instancia.</p>
+          <div style="background:#0D0D12;border:1px solid var(--border);border-radius:8px;padding:1rem;font-family:'Space Mono',monospace;font-size:12px;color:#A8B5C8;line-height:1.8;margin-top:0.75rem;">
+            <span style="color:#22C55E">class</span> <span style="color:#60a5fa">DatabaseConnection</span>:<br/>
+            &nbsp;&nbsp;_instance = <span style="color:#7C5CFC">None</span><br/><br/>
+            &nbsp;&nbsp;<span style="color:#22C55E">def</span> <span style="color:#fbbf24">__new__</span>(cls):<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#7C5CFC">if</span> cls._instance <span style="color:#7C5CFC">is</span> <span style="color:#7C5CFC">None</span>:<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cls._instance = <span style="color:#fbbf24">super</span>().__new__(cls)<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#7070A0"># Inicializar conexión aquí</span><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#7C5CFC">return</span> cls._instance
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Patrones Creacionales...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Patrones Creacionales" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Patrones Creacionales</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia sobre Patrones Creacionales.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 02 -->
+
+
+    <!-- TEMA 03 — Patrones Estructurales -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 03</div>
+      <div class="tema-title">Patrones Estructurales — Cómo se entrelazan los objetos para formar estructuras más grandes</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔗</div>
+          <span class="c-section-title">El Catálogo Estructural (1/2)</span>
+        </div>
+        <div class="c-section-body">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;">
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">🔌 Adapter</p>
+              <p style="font-size:13px;color:#C8C8E0;">Permite que clases con interfaces incompatibles trabajen juntas, traduciendo las peticiones de una a otra.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">🌉 Bridge</p>
+              <p style="font-size:13px;color:#C8C8E0;">Separa una abstracción de su implementación, permitiendo que ambas varíen y crezcan de forma independiente.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">🌳 Composite</p>
+              <p style="font-size:13px;color:#C8C8E0;">Compone objetos en estructuras de árbol para representar jerarquías parte-todo, tratando objetos individuales y composiciones por igual.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🔗</div>
+          <span class="c-section-title">El Catálogo Estructural (2/2)</span>
+        </div>
+        <div class="c-section-body">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;">
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">✨ Decorator</p>
+              <p style="font-size:13px;color:#C8C8E0;">Añade responsabilidades a un objeto de forma dinámica sin alterar su estructura interna ni usar herencia.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">🏛️ Facade</p>
+              <p style="font-size:13px;color:#C8C8E0;">Proporciona una interfaz simplificada y unificada para un subsistema complejo de clases, ocultando la complejidad técnica.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">🪶 Flyweight</p>
+              <p style="font-size:13px;color:#C8C8E0;">Optimiza el uso de memoria compartiendo eficientemente estados comunes entre grandes cantidades de objetos similares.</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">🔒 Proxy</p>
+              <p style="font-size:13px;color:#C8C8E0;">Proporciona un sustituto o intermediario para controlar el acceso a otro objeto (ej. control de permisos, caché o carga perezosa).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">💻</div>
+          <span class="c-section-title">Patrón en Acción: Adapter — Integración de APIs</span>
+        </div>
+        <div class="c-section-body">
+          <p>Esencial cuando integramos servicios de terceros (Gateways de pago, APIs de mapas) que cambian con frecuencia sus firmas.</p>
+          <ul style="margin-top:0.75rem">
+            <li><strong>Problema:</strong> El API externo usa un método <code style="background:var(--surface);padding:2px 6px;border-radius:4px;font-size:11px;">pay_usd()</code>, pero nuestra arquitectura espera <code style="background:var(--surface);padding:2px 6px;border-radius:4px;font-size:11px;">procesar_cobro()</code>.</li>
+            <li><strong>Solución:</strong> El Adapter envuelve el API viejo y expone el formato nuevo.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📊</div>
+          <span class="c-section-title">Comparativa de Intención Técnica</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Patrón</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Tipo</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Propósito Arquitectónico Primario</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Abstract Factory</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Creacional</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Garantizar consistencia entre familias de objetos creados en caliente.</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Builder</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Creacional</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Evitar constructores gigantes con decenas de parámetros opcionales.</td></tr>
+                <tr><td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Facade</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Estructural</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Reducir el acoplamiento directo de la UI con capas de negocio complejas.</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:10px 12px;border:1px solid var(--border);color:var(--text);font-weight:600;">Decorator</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Estructural</td><td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Favorecer Composición sobre Herencia para añadir lógica funcional.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Patrones Estructurales...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Patrones Estructurales" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Patrones Estructurales</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia sobre Patrones Estructurales.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 03 -->
+
+
+    <!-- ACTIVIDADES -->
+    <div class="tema-block">
+      <div class="tema-number">ACTIVIDADES</div>
+      <div class="tema-title">Laboratorio Práctico — Refactorizar un Catálogo Académico</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">🎯</div>
+          <span class="c-section-title">El Reto: Adapter XML → JSON</span>
+        </div>
+        <div class="c-section-body">
+          <p>Dada una clase vieja que exporta listas de estudiantes en formato XML estructurado, los alumnos deberán implementar un <strong>Adapter</strong> para entregar la misma data en formato JSON plano.</p>
+          <p style="margin-top:0.5rem;color:var(--accent2);font-weight:600;">Objetivo: No alterar la clase original que genera el XML.</p>
+          <p style="margin-top:0.75rem"><strong>Criterios de Evaluación:</strong></p>
+          <ul>
+            <li>✅ Correcta separación de responsabilidades.</li>
+            <li>✅ Uso de tipos nativos de Python para la conversión.</li>
+            <li>✅ Pruebas que demuestren que el cliente interactúa únicamente con la interfaz del Adapter.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">✅</div>
+          <span class="c-section-title">Mi solución al laboratorio</span>
+        </div>
+        <div class="c-section-body">
+          <div style="padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
+            <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi respuesta / código:</p>
+            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu solución al laboratorio práctico...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias de actividades</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Laboratorio" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Laboratorio Práctico</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí las imágenes de evidencia del laboratorio.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin actividades -->
+
+
+    <!-- CIERRE -->
+    <div class="tema-block">
+      <div class="tema-number">CIERRE</div>
+      <div class="tema-title">Conclusión y Bibliografía</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">💡</div>
+          <span class="c-section-title">Puntos clave de la semana</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>🏗️ <strong>Creacionales</strong> → Controlan cómo se crean los objetos (Singleton, Factory, Builder, Prototype)</li>
+            <li>🔗 <strong>Estructurales</strong> → Cómo se componen los objetos (Adapter, Facade, Decorator, Proxy)</li>
+            <li>💬 Los patrones son lenguaje, no código: cuando dices "Adapter" todos entienden la solución</li>
+            <li>🎯 Siguiente sesión: Patrones de Comportamiento</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">💭</div>
+          <span class="c-section-title">Mi reflexión y conclusión personal</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu reflexión personal sobre lo aprendido en la semana 6...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔗</div>
+          <span class="c-section-title">Bibliografía y recursos</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📌</span><span>Escribe aquí tus referencias bibliográficas</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border);">
+      <a class="btn-nav" href="semana5.html">← Semana 5</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana7.html">Semana 7 →</a>
+    </div>
+
+  </div>
+
+  <div id="lightbox" onclick="cerrarLightbox()" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:1.5rem;cursor:zoom-out;">
+    <img id="lb-img" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:10px;object-fit:contain;"/>
+    <button onclick="cerrarLightbox()" style="position:fixed;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#1A1A25;border:1px solid #2A2A3A;color:#E8E8F0;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">×</button>
+  </div>
+  <script>
+    function abrirLightbox(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').style.display='flex';}
+    function cerrarLightbox(){document.getElementById('lightbox').style.display='none';}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrarLightbox();});
+  </script>
 </body>
 </html>

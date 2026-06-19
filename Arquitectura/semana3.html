@@ -109,7 +109,59 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre arquitectura en capas...</p>
+          <p style="color:var(--muted2);font-style:italic;">
+• <strong>Arquitectura en Capas (Layered Architecture)</strong><br>
+• También conocida como arquitectura multicapa o Layered Architecture.<br>
+• Se basa en dividir una aplicación en diferentes niveles, donde cada capa cumple una función específica y se comunica únicamente con las capas adyacentes.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>¿Qué es?</strong><br>
+• La arquitectura en Capas organiza una aplicación separando sus responsabilidades en distintos niveles.<br>
+• Cada capa realiza una función específica y trabaja de manera independiente de las demás.<br>
+• Esta organización facilita el mantenimiento, las actualizaciones y el desarrollo de nuevas funcionalidades sin afectar al resto del sistema.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Capas más Comunes</strong><br>
+• Capa de Presentación: contiene la interfaz de usuario y permite la interacción con el sistema.<br>
+• Capa de Negocio: implementa la lógica de la aplicación y las reglas del negocio.<br>
+• Capa de Datos: administra el acceso, almacenamiento y recuperación de la información desde la base de datos.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Características</strong><br>
+• Divide la aplicación en capas con responsabilidades bien definidas.<br>
+• Cada capa se comunica únicamente con las capas cercanas.<br>
+• Facilita el mantenimiento y la organización del código.<br>
+• Permite reutilizar componentes en diferentes proyectos.<br>
+• Favorece la escalabilidad y la separación de responsabilidades.<br>
+• Es una de las arquitecturas más utilizadas en aplicaciones empresariales.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Ventajas</strong><br>
+• Código organizado y fácil de mantener.<br>
+• Facilita la detección y corrección de errores.<br>
+• Permite reutilizar componentes de negocio y acceso a datos.<br>
+• Hace más sencillo el trabajo colaborativo entre desarrolladores.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Desventajas</strong><br>
+• Puede generar una ligera pérdida de rendimiento debido al paso por varias capas.<br>
+• Si el sistema crece demasiado, algunas capas pueden volverse complejas.<br>
+• Un diseño inadecuado puede provocar dependencias innecesarias entre las capas.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Ejemplos</strong><br>
+• Sistema de banca en línea.<br>
+• Sistema de ventas o facturación.<br>
+• Sistema de gestión académica para universidades o colegios.<br>
+• Sistemas empresariales (ERP y CRM).<br>
+• Plataformas de comercio electrónico (E-commerce).
+</p>
         </div>
       </div>
 
@@ -160,7 +212,50 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes o reflexiones sobre el Microkernel...</p>
+          <p style="color:var(--muted2);font-style:italic;">
+• <strong>Arquitectura de Microkernel (Microkernel)</strong><br>
+• También conocida como arquitectura de núcleo mínimo.<br>
+• Se basa en separar las funciones esenciales del sistema de las funcionalidades adicionales mediante módulos o plugins.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>¿Qué es?</strong><br>
+• La arquitectura Microkernel mantiene un núcleo pequeño que contiene únicamente los servicios básicos del sistema.<br>
+• Las funcionalidades adicionales se implementan como plugins o módulos independientes.<br>
+• Esto permite ampliar el sistema sin modificar el núcleo principal, facilitando el mantenimiento y la evolución del software.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Características</strong><br>
+• Núcleo pequeño con funciones esenciales.<br>
+• Arquitectura modular y flexible.<br>
+• Fácil de extender mediante plugins.<br>
+• Permite agregar nuevas funcionalidades sin modificar el núcleo.<br>
+• Favorece el mantenimiento y la reutilización del código.<br>
+• Muy utilizada en aplicaciones que requieren complementos o extensiones.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Ventajas</strong><br>
+• Facilita la incorporación de nuevas funciones.<br>
+• Reduce el impacto de los cambios en el sistema principal.<br>
+• Mejora la escalabilidad y el mantenimiento.<br>
+• Permite desarrollar plugins de forma independiente.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Desventajas</strong><br>
+• Puede aumentar la complejidad de la comunicación entre el núcleo y los plugins.<br>
+• Un diseño inadecuado del núcleo puede afectar el rendimiento del sistema.<br>
+• Requiere una buena definición de interfaces entre los módulos.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Ejemplos</strong><br>
+• Eclipse IDE: permite instalar plugins para soportar distintos lenguajes de programación y herramientas.<br>
+• Visual Studio Code: amplía sus funcionalidades mediante extensiones desarrolladas por la comunidad.<br>
+• Mozilla Firefox: admite complementos para agregar nuevas características al navegador sin modificar su núcleo.
+</p>
         </div>
       </div>
 
@@ -211,7 +306,51 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre el patrón Blackboard...</p>
+          <p style="color:var(--muted2);font-style:italic;">
+• <strong>Arquitectura de Pizarra (Blackboard)</strong><br>
+• También conocida como arquitectura Blackboard o de Pizarra.<br>
+• Se basa en un espacio compartido donde diferentes componentes colaboran para resolver un problema de forma conjunta.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>¿Qué es?</strong><br>
+• La arquitectura de Pizarra utiliza una base de datos o memoria compartida llamada "Blackboard" donde los distintos módulos escriben y leen información.<br>
+• Cada componente aporta parte de la solución hasta resolver completamente el problema.<br>
+• Es especialmente útil para problemas complejos donde intervienen diferentes algoritmos o técnicas de procesamiento.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Características</strong><br>
+• Existe una base de datos compartida denominada Pizarra (Blackboard).<br>
+• Varios módulos trabajan de manera simultánea sobre la misma información.<br>
+• Cada módulo aporta una parte de la solución del problema.<br>
+• La información se actualiza continuamente conforme avanzan los procesos.<br>
+• Favorece la colaboración entre diferentes componentes especializados.<br>
+• Es ampliamente utilizada en sistemas de Inteligencia Artificial y procesamiento de información.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Ventajas</strong><br>
+• Facilita la colaboración entre múltiples módulos especializados.<br>
+• Permite resolver problemas complejos mediante el trabajo conjunto de diferentes algoritmos.<br>
+• Es flexible y fácil de ampliar incorporando nuevos componentes.<br>
+• Favorece la reutilización de módulos independientes.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Desventajas</strong><br>
+• Puede presentar problemas de rendimiento cuando muchos módulos acceden simultáneamente a la pizarra.<br>
+• La coordinación entre componentes puede aumentar la complejidad del sistema.<br>
+• Requiere un mecanismo eficiente para controlar el acceso a la información compartida.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Ejemplos</strong><br>
+• Sistemas de reconocimiento de voz.<br>
+• Sistemas de diagnóstico médico basados en Inteligencia Artificial.<br>
+• Sistemas de reconocimiento y procesamiento de imágenes.<br>
+• Sistemas expertos para la toma de decisiones.
+</p>
         </div>
       </div>
 

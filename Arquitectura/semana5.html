@@ -1,40 +1,371 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>MATERIA1 - Semana 5</title>
-<link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arquitectura de Software · Semana 5</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-<div class="contenido">
-<h1>MATERIA1 - Semana 5</h1>
 
-<h2>Tema</h2>
-<p>Escriba aquí el tema.</p>
+  <div class="page-topbar">
+    <div class="crumb">
+      <a href="../index.html">Inicio</a>
+      <span class="sep">/</span>
+      <a href="../index.html">Arquitectura de Software</a>
+      <span class="sep">/</span>
+      <span class="current">Semana 5</span>
+    </div>
+    <div class="page-nav">
+      <a class="btn-nav" href="semana4.html">← Sem 4</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana6.html">Sem 6 →</a>
+    </div>
+  </div>
 
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
+  <div class="semana-hero">
+    <div class="s-subject-label">Arquitectura de Software · Docente: MSc. Raúl Páez</div>
+    <h1>Semana <span class="accent">05</span></h1>
+    <p style="color:var(--accent2);font-size:15px;margin-top:0.4rem;font-weight:600;">Estilos III — Reactivos y Evolutivos: Eventos, CQRS y Adaptabilidad</p>
+    <div class="semana-meta">
+      Alex Robinson Zaruma Suntasig &nbsp;·&nbsp; 5to "A" &nbsp;·&nbsp; IST YAVIRAC &nbsp;·&nbsp; 2025-2026
+    </div>
+  </div>
 
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
+  <div class="semana-wrap">
 
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
+    <!-- TEMA 01 — EDA -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 01</div>
+      <div class="tema-title">Arquitectura Orientada a Eventos (EDA)</div>
 
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">⚡</div>
+          <span class="c-section-title">Sistemas que reaccionan a cambios de estado en tiempo real</span>
+        </div>
+        <div class="c-section-body">
+          <p>En lugar de peticiones directas, los sistemas <strong>emiten eventos</strong> que notifican cambios significativos. Los componentes no necesitan conocerse entre sí — solo reaccionan a lo que ocurre.</p>
+        </div>
+      </div>
 
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🔌</div>
+          <span class="c-section-title">Componentes Clave — El Modelo Pub/Sub</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>⚡ <strong>Productores:</strong> Generan el evento cuando ocurre algo significativo en el sistema.</li>
+            <li>📬 <strong>Canales:</strong> Brokers como <strong>Kafka</strong> o <strong>RabbitMQ</strong> que transportan y distribuyen los eventos.</li>
+            <li>👥 <strong>Consumidores:</strong> Reaccionan al evento de forma independiente y asíncrona.</li>
+          </ul>
+        </div>
+      </div>
 
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">✅</div>
+          <span class="c-section-title">Ventajas</span>
+        </div>
+        <div class="c-section-body">
+          <p>Máximo desacoplamiento. Los servicios no necesitan conocerse entre sí. Permite una <strong>escalabilidad masiva</strong> y procesamiento asíncrono.</p>
+        </div>
+      </div>
 
-<a href="../index.html">Volver al inicio</a>
-</div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">⚠️</div>
+          <span class="c-section-title">Retos</span>
+        </div>
+        <div class="c-section-body">
+          <p>La trazabilidad se vuelve compleja. La transaccionalidad distribuida requiere patrones como <strong>Saga</strong> para mantener la consistencia.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">💻</div>
+          <span class="c-section-title">Laboratorio: Event-Bus en Python</span>
+        </div>
+        <div class="c-section-body">
+          <p><strong>Concepto Práctico:</strong> Simularemos un sistema donde una orden de compra dispara eventos a Inventario y Notificaciones sin llamadas directas.</p>
+          <p style="margin-top:0.5rem"><strong>Reto de Código:</strong> Implementar una clase <code style="background:var(--surface);padding:2px 6px;border-radius:4px;">EventBus</code> que permita registrar <em>Subscribers</em> y emitir mensajes asíncronos.</p>
+          <div style="background:#0D0D12;border:1px solid var(--border);border-radius:8px;padding:1rem;font-family:'Space Mono',monospace;font-size:12px;color:#A8B5C8;line-height:1.8;margin-top:0.75rem;">
+            <span style="color:#00BFFF">bus</span>.publish(<span style="color:#22C55E">"orden_creada"</span>, data)
+          </div>
+        </div>
+      </div>
+
+      <!-- Mis apuntes -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Arquitectura Orientada a Eventos...</p>
+        </div>
+      </div>
+
+      <!-- Evidencias -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="EDA" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Arquitectura Orientada a Eventos</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia sobre EDA.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 01 -->
+
+
+    <!-- TEMA 02 — CQRS -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 02</div>
+      <div class="tema-title">Patrón CQRS — Command Query Responsibility Segregation</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">📋</div>
+          <span class="c-section-title">Separación de Responsabilidades — Escribir vs Leer</span>
+        </div>
+        <div class="c-section-body">
+          <p>CQRS propone usar <strong>modelos distintos</strong> para actualizar información y para consultarla.</p>
+          <ul style="margin-top:0.75rem">
+            <li>✏️ <strong>Commands:</strong> Tareas específicas de negocio que alteran el estado. Ej: <em>"Reservar Habitación"</em>.</li>
+            <li>🔍 <strong>Queries:</strong> Consultas optimizadas que devuelven DTOs sin lógica de dominio.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🎯</div>
+          <span class="c-section-title">¿Por qué implementar CQRS?</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>📊 <strong>Escalado Independiente:</strong> Las lecturas suelen ser 100x más frecuentes que las escrituras.</li>
+            <li>🗄️ <strong>Esquemas Optimizados:</strong> Modelos de lectura desnormalizados para máxima velocidad.</li>
+            <li>🛡️ <strong>Seguridad:</strong> Control estricto sobre quién puede ejecutar cambios de estado.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mis apuntes -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre el patrón CQRS...</p>
+        </div>
+      </div>
+
+      <!-- Evidencias -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="CQRS" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Patrón CQRS</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia sobre CQRS.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 02 -->
+
+
+    <!-- TEMA 03 — Arquitectura Evolutiva -->
+    <div class="tema-block">
+      <div class="tema-number">TEMA 03</div>
+      <div class="tema-title">Arquitectura Evolutiva — Sistemas diseñados para el cambio constante</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">🌱</div>
+          <span class="c-section-title">Crecimiento Incremental — Sobrevivir al Futuro</span>
+        </div>
+        <div class="c-section-body">
+          <p>El software no es estático. Una arquitectura evolutiva soporta <strong>cambios guiados e incrementales</strong> a través de múltiples dimensiones.</p>
+          <p style="margin-top:0.75rem">Se enfoca en la <strong>"Evolutividad"</strong> como una característica arquitectónica de primer nivel, evitando la rigidez del diseño inicial.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📐</div>
+          <span class="c-section-title">Fitness Functions — Los Guardianes del Diseño</span>
+        </div>
+        <div class="c-section-body">
+          <p>Métricas objetivas que evalúan qué tan cerca está la arquitectura de sus objetivos.</p>
+          <div style="background:#0D0D12;border:1px solid var(--border);border-radius:8px;padding:0.85rem 1rem;font-family:'Space Mono',monospace;font-size:13px;color:#A8B5C8;margin:0.75rem 0;">
+            f(a) → [0, 1]
+          </div>
+          <p>Se integran en el pipeline de <strong>CI/CD</strong> para detectar desviaciones en rendimiento, seguridad o deuda técnica automáticamente.</p>
+          <p style="margin-top:0.75rem">Evalúan dimensiones como: Auditability, Performance, Security, Data, Legality, Scalability.</p>
+        </div>
+      </div>
+
+      <!-- Mis apuntes -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Arquitectura Evolutiva y Fitness Functions...</p>
+        </div>
+      </div>
+
+      <!-- Evidencias -->
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Arquitectura Evolutiva" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Arquitectura Evolutiva</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia sobre Arquitectura Evolutiva.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin tema 03 -->
+
+
+    <!-- ACTIVIDADES -->
+    <div class="tema-block">
+      <div class="tema-number">ACTIVIDADES</div>
+      <div class="tema-title">Actividades y Laboratorio Práctico</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">✅</div>
+          <span class="c-section-title">Actividad 1 — Por completar</span>
+        </div>
+        <div class="c-section-body">
+          <div style="padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
+            <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi respuesta:</p>
+            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu respuesta...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">✅</div>
+          <span class="c-section-title">Actividad 2 — Por completar</span>
+        </div>
+        <div class="c-section-body">
+          <div style="padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
+            <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi respuesta:</p>
+            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu respuesta...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-pink">🖼️</div>
+          <span class="c-section-title">Evidencias de actividades</span>
+        </div>
+        <div class="c-section-body">
+          <div class="ev-grid">
+            <!-- <div class="ev-item">
+              <img src="../imagenes/NOMBRE.png" alt="Actividad" onclick="abrirLightbox(this.src)"/>
+              <div class="ev-caption">Actividad</div>
+            </div> -->
+            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí las imágenes de evidencia de tus actividades.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- fin actividades -->
+
+
+    <!-- CIERRE -->
+    <div class="tema-block">
+      <div class="tema-number">CIERRE</div>
+      <div class="tema-title">Conclusión y Bibliografía</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">💡</div>
+          <span class="c-section-title">Puntos clave de la semana</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>⚡ EDA — máximo desacoplamiento mediante eventos asíncronos</li>
+            <li>📋 CQRS — modelos separados para lectura y escritura</li>
+            <li>🌱 Arquitectura Evolutiva — diseñada para el cambio constante</li>
+            <li>📐 Fitness Functions — guardianes objetivos del diseño</li>
+            <li>💬 La arquitectura perfecta no existe, solo la que mejor evoluciona.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">💭</div>
+          <span class="c-section-title">Mi reflexión y conclusión personal</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu reflexión personal sobre lo aprendido en la semana 5...</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">🔗</div>
+          <span class="c-section-title">Bibliografía y recursos</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>🔗</span><a href="https://www.adservio.fr" target="_blank">adservio.fr — Event-Driven Architecture</a></li>
+            <li><span>🔗</span><a href="https://learn.microsoft.com" target="_blank">learn.microsoft.com — CQRS Pattern</a></li>
+            <li><span>🔗</span><a href="https://www.geeksforgeeks.org" target="_blank">geeksforgeeks.org — Evolutionary Process Model</a></li>
+            <li><span>📌</span><span>Escribe aquí tus referencias bibliográficas adicionales</span></li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- fin cierre -->
+
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border);">
+      <a class="btn-nav" href="semana4.html">← Semana 4</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana6.html">Semana 6 →</a>
+    </div>
+
+  </div>
+
+  <div id="lightbox" onclick="cerrarLightbox()" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:1.5rem;cursor:zoom-out;">
+    <img id="lb-img" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:10px;object-fit:contain;"/>
+    <button onclick="cerrarLightbox()" style="position:fixed;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#1A1A25;border:1px solid #2A2A3A;color:#E8E8F0;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">×</button>
+  </div>
+  <script>
+    function abrirLightbox(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').style.display='flex';}
+    function cerrarLightbox(){document.getElementById('lightbox').style.display='none';}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrarLightbox();});
+  </script>
 </body>
 </html>
+HTMLEOF
+echo "semana5 done"
+Salida

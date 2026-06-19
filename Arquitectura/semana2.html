@@ -393,7 +393,54 @@
           </ul>
           <div style="margin-top:1rem;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
             <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi respuesta:</p>
-            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu solución al ejercicio propuesto 1...</p>
+            <p style="color:var(--muted2);font-style:italic;">
+• <strong>Identificación de las Fuerzas (Contexto)</strong><br>
+• Restricción de Tiempo Extrema (Time-to-Market): Salir a producción en 2 meses deja margen cero para curvas de aprendizaje complejas o depuración de infraestructura persistente.<br>
+• Capacidad del Equipo Muy Limitada: Un equipo de 3 desarrolladores debe enfocarse en la lógica de negocio (vender, cobrar, entregar). Operar y mantener clústeres de mensajería restaría ancho de banda crítico.<br>
+• Presupuesto Reducido: Minimizar el gasto en infraestructura inicial es vital. Levantarse en arquitecturas de eventos gestionadas o mantener servidores robustos para RabbitMQ eleva los costos fijos mensuales.<br>
+• Consistencia de Datos en E-commerce: En un flujo de compra, la consistencia entre la orden y el inventario es crítica para evitar la sobreventa (overselling).
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>b) Elección y Justificación</strong><br>
+• Decisión: Elegir Llamadas REST Síncronas (HTTP) entre el Servicio de Órdenes y el Servicio de Inventario.<br>
+• Justificación: En una startup en etapa temprana, la velocidad de entrega y la simplicidad superan a la arquitectura ideal. REST es un estándar dominado por el equipo, eliminando la curva de aprendizaje de patrones asíncronos. Además, permite validar el stock de forma inmediata dentro de la misma transacción de la orden.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>c) Documentación en formato ADR</strong><br>
+• ADR 003: Comunicación Síncrona REST para los Servicios de Órdenes e Inventario.<br>
+• Estatus: Aprobado.<br>
+• Fecha: 8 de junio de 2026.<br>
+• Autor: Arquitecto de Software Principal / Startup E-commerce.<br>
+• Contexto: La startup necesita lanzar su MVP de comercio electrónico en un plazo estricto de 2 meses. El equipo está compuesto por 3 desarrolladores full-stack y el presupuesto es limitado.<br>
+• Decisión: Implementar comunicación síncrona mediante llamadas REST (HTTP/JSON) desde el Servicio de Órdenes hacia el Servicio de Inventario.<br>
+• Se descarta el uso de arquitecturas dirigidas por eventos (Kafka/RabbitMQ) en esta primera etapa.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación del ADR</strong><br>
+• Time-to-Market: Desarrollar endpoints HTTP y clientes REST toma horas, mientras que implementar sistemas de mensajería tomaría semanas.<br>
+• Simplicidad Operativa: No es necesario aprovisionar, pagar ni monitorear brokers de mensajería.<br>
+• Consistencia Inmediata: Si el inventario responde con un error por falta de stock, la orden se cancela inmediatamente evitando la sobreventa.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>d) Consecuencias Positivas y Negativas</strong><br>
+• Consecuencias Positivas:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Reducción drástica del tiempo de desarrollo.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Costos de infraestructura mínimos ($0 adicionales).<br>
+• Consecuencias Negativas:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Acoplamiento fuerte y disponibilidad ligada entre servicios.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Problemas de escalabilidad futura ante picos de tráfico.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>e) ¿Cuándo debería revisarse o reemplazarse este ADR?</strong><br>
+• Hito de Tráfico/Escala: Cuando la plataforma supere de forma sostenida las 50 órdenes por minuto.<br>
+• Crecimiento del Equipo: Cuando el equipo pase de 3 a más de 8-10 desarrolladores.<br>
+• Adición de Nuevos Consumidores de Eventos: Cuando otros servicios necesiten reaccionar a la creación de órdenes y las llamadas REST síncronas se vuelvan difíciles de mantener. En ese momento, migrar a RabbitMQ o Kafka estará plenamente justificado.
+</p>
           </div>
         </div>
       </div>
@@ -413,7 +460,82 @@
           </ul>
           <div style="margin-top:1rem;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
             <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi respuesta:</p>
-            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu solución al ejercicio propuesto 2...</p>
+            <p style="color:var(--muted2);font-style:italic;">
+• <strong>Problemas de Calidad Identificados (Mínimo 5)</strong><br>
+• Falta de Contexto de Negocio y Técnico: Decir "el equipo sabe React" es una razón de conveniencia, no una justificación de arquitectura. No menciona qué se va a construir ni las restricciones del proyecto.<br>
+• Razonamiento Circular / Tautológico: El título es "Usar React" y la decisión es "Usaremos React". No existe un análisis real ni un proceso de diseño.<br>
+• Ausencia de Alternativas Consideradas: No se comparó React con Vue, Angular, Svelte o Vanilla JS, por lo que no se demuestra que sea la mejor opción.<br>
+• Consecuencias Superficiales e Incompletas: Solo menciona ventajas e ignora riesgos como SEO, mantenimiento de dependencias o tamaño del bundle.<br>
+• Falta de Detalles de Implementación: No se especifica si se utilizará Vite, Next.js, Redux, Zustand o Context API.<br>
+• Falta de Criterios de Revisión: No define cuándo la decisión debe ser reevaluada o reemplazada.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>b) y c) ADR 004 Mejorado (Incluye Alternativas)</strong><br>
+• ADR 004: Selección de la Tecnología Frontend para la Aplicación del Cliente.<br>
+• Estatus: Aprobado.<br>
+• Fecha: 8 de junio de 2026.<br>
+• Autor: Equipo de Arquitectura y Core Frontend.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Contexto</strong><br>
+• Desarrollo de una nueva plataforma orientada al cliente.<br>
+• Requiere una interfaz altamente interactiva y actualizaciones de datos en tiempo real.<br>
+• El negocio exige un Time-to-Market de 3 meses para la versión Beta.<br>
+• El equipo está compuesto por 4 ingenieros con experiencia previa en JavaScript moderno.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Alternativas Consideradas</strong><br>
+• Alternativa 1: Vue.js (v3).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Pros: Curva de aprendizaje amigable y excelente rendimiento.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Contras: El equipo requiere capacitación adicional, afectando la fecha de entrega.<br><br>
+
+• Alternativa 2: HTML/Vanilla JS tradicional (Server-Rendered).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Pros: Excelente SEO y velocidad de carga inicial.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Contras: El mantenimiento de interfaces complejas es más difícil y propenso a errores.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Decisión</strong><br>
+• Adoptar React (v19+) junto con Vite como base de la arquitectura Frontend.<br>
+• No se utilizarán frameworks SSR como Next.js durante la primera etapa.<br>
+• La aplicación será una SPA (Single Page Application) alojada en un CDN para reducir la complejidad de infraestructura.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación</strong><br>
+• Velocidad de Entrega: Todo el equipo domina React, permitiendo iniciar el desarrollo inmediatamente.<br>
+• Ecosistema y Madurez: Librerías como TailwindCSS, Shadcn, React Hook Form y Zustand aceleran el desarrollo y reducen trabajo adicional.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias Positivas (Ventajas)</strong><br>
+• Alta velocidad de desarrollo inicial gracias a la reutilización de componentes.<br>
+• Facilidad para contratar nuevos desarrolladores debido a la popularidad de React en el mercado laboral.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias Negativas (Desventajas / Riesgos)</strong><br>
+• SEO Deficiente: Al ser una SPA, el posicionamiento en buscadores puede verse afectado.<br>
+• Fatiga de JavaScript: La dependencia de múltiples librerías externas incrementa la deuda técnica y el mantenimiento.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Criterios de Revisión</strong><br>
+• La decisión deberá reevaluarse si el negocio requiere SEO orgánico estricto.<br>
+• En ese escenario, se considerará migrar a un framework con SSR como Next.js o Remix.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>d) ¿Sirve este ADR para un PM no técnico? ¿Por qué?</strong><br>
+• Sí, la versión mejorada resulta útil para un Product Manager no técnico.<br>
+• Permite comprender claramente los beneficios y riesgos de la decisión tecnológica.<br>
+• Justifica el uso del tiempo y los recursos del equipo.<br>
+• Explica el impacto de la tecnología elegida sobre objetivos de negocio como Time-to-Market, SEO y contratación futura.<br>
+• Facilita la alineación entre las decisiones técnicas y las metas estratégicas del producto.
+</p>
           </div>
         </div>
       </div>
@@ -433,7 +555,82 @@
           </ul>
           <div style="margin-top:1rem;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
             <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi respuesta:</p>
-            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu solución al ejercicio propuesto 3...</p>
+           <p style="color:var(--muted2);font-style:italic;">
+• <strong>Problemas de Calidad Identificados (Mínimo 5)</strong><br>
+• Falta de Contexto de Negocio y Técnico: Decir "el equipo sabe React" es una razón de conveniencia, no una justificación de arquitectura. No menciona qué se va a construir ni las restricciones del proyecto.<br>
+• Razonamiento Circular / Tautológico: El título es "Usar React" y la decisión es "Usaremos React". No existe un análisis real ni un proceso de diseño.<br>
+• Ausencia de Alternativas Consideradas: No se comparó React con Vue, Angular, Svelte o Vanilla JS, por lo que no se demuestra que sea la mejor opción.<br>
+• Consecuencias Superficiales e Incompletas: Solo menciona ventajas e ignora riesgos como SEO, mantenimiento de dependencias o tamaño del bundle.<br>
+• Falta de Detalles de Implementación: No se especifica si se utilizará Vite, Next.js, Redux, Zustand o Context API.<br>
+• Falta de Criterios de Revisión: No define cuándo la decisión debe ser reevaluada o reemplazada.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>b) y c) ADR 004 Mejorado (Incluye Alternativas)</strong><br>
+• ADR 004: Selección de la Tecnología Frontend para la Aplicación del Cliente.<br>
+• Estatus: Aprobado.<br>
+• Fecha: 8 de junio de 2026.<br>
+• Autor: Equipo de Arquitectura y Core Frontend.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Contexto</strong><br>
+• Desarrollo de una nueva plataforma orientada al cliente.<br>
+• Requiere una interfaz altamente interactiva y actualizaciones de datos en tiempo real.<br>
+• El negocio exige un Time-to-Market de 3 meses para la versión Beta.<br>
+• El equipo está compuesto por 4 ingenieros con experiencia previa en JavaScript moderno.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Alternativas Consideradas</strong><br>
+• Alternativa 1: Vue.js (v3).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Pros: Curva de aprendizaje amigable y excelente rendimiento.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Contras: El equipo requiere capacitación adicional, afectando la fecha de entrega.<br><br>
+
+• Alternativa 2: HTML/Vanilla JS tradicional (Server-Rendered).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Pros: Excelente SEO y velocidad de carga inicial.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• Contras: El mantenimiento de interfaces complejas es más difícil y propenso a errores.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Decisión</strong><br>
+• Adoptar React (v19+) junto con Vite como base de la arquitectura Frontend.<br>
+• No se utilizarán frameworks SSR como Next.js durante la primera etapa.<br>
+• La aplicación será una SPA (Single Page Application) alojada en un CDN para reducir la complejidad de infraestructura.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación</strong><br>
+• Velocidad de Entrega: Todo el equipo domina React, permitiendo iniciar el desarrollo inmediatamente.<br>
+• Ecosistema y Madurez: Librerías como TailwindCSS, Shadcn, React Hook Form y Zustand aceleran el desarrollo y reducen trabajo adicional.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias Positivas (Ventajas)</strong><br>
+• Alta velocidad de desarrollo inicial gracias a la reutilización de componentes.<br>
+• Facilidad para contratar nuevos desarrolladores debido a la popularidad de React en el mercado laboral.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias Negativas (Desventajas / Riesgos)</strong><br>
+• SEO Deficiente: Al ser una SPA, el posicionamiento en buscadores puede verse afectado.<br>
+• Fatiga de JavaScript: La dependencia de múltiples librerías externas incrementa la deuda técnica y el mantenimiento.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Criterios de Revisión</strong><br>
+• La decisión deberá reevaluarse si el negocio requiere SEO orgánico estricto.<br>
+• En ese escenario, se considerará migrar a un framework con SSR como Next.js o Remix.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>d) ¿Sirve este ADR para un PM no técnico? ¿Por qué?</strong><br>
+• Sí, la versión mejorada resulta útil para un Product Manager no técnico.<br>
+• Permite comprender claramente los beneficios y riesgos de la decisión tecnológica.<br>
+• Justifica el uso del tiempo y los recursos del equipo.<br>
+• Explica el impacto de la tecnología elegida sobre objetivos de negocio como Time-to-Market, SEO y contratación futura.<br>
+• Facilita la alineación entre las decisiones técnicas y las metas estratégicas del producto.
+</p>
           </div>
         </div>
       </div>
@@ -453,7 +650,140 @@
           </ul>
           <div style="margin-top:1rem;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
             <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi respuesta:</p>
-            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu cadena de ADRs para el sistema de streaming...</p>
+           ```html
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>ADR-001: Selección del Almacenamiento Base para Archivos de Video Master</strong><br>
+• Estatus: Aprobado.<br>
+• Fecha: 8 de junio de 2026.<br>
+• Autor: Equipo de Arquitectura de Plataforma.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Contexto</strong><br>
+• El sistema de streaming necesita almacenar petabytes de archivos de video de alta definición.<br>
+• Se requiere alta durabilidad, disponibilidad, bajo costo por gigabyte e integración con herramientas de procesamiento y transcodificación.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Alternativas Consideradas</strong><br>
+• AWS S3 (Object Storage): Alta durabilidad, bajo costo y administración simplificada.<br>
+• CDN Propio On-Premise: Control total del hardware, pero costos operativos elevados.<br>
+• Filesystem Distribuido (GlusterFS/Ceph): Escalable, pero complejo de administrar.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Decisión</strong><br>
+• Utilizar AWS S3 como almacenamiento base y persistente para todos los recursos de video.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación</strong><br>
+• Elimina la carga operativa de administrar discos y sistemas distribuidos.<br>
+• Permite automatizar políticas de ciclo de vida y almacenamiento frío.<br>
+• Facilita la integración con servicios de procesamiento en la nube.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias</strong><br>
+• Positivas: Durabilidad extrema y escalabilidad automática.<br>
+• Negativas: Altos costos de egress, por lo que el acceso directo de clientes a S3 estará prohibido.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>ADR-002: Selección del Protocolo de Streaming para Distribución</strong><br>
+• Estatus: Aprobado.<br>
+• Referencia: ADR-001.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Alternativas Consideradas</strong><br>
+• HLS (HTTP Live Streaming).<br>
+• DASH (Dynamic Adaptive Streaming over HTTP).<br>
+• RTMP (Real-Time Messaging Protocol).
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Decisión</strong><br>
+• Adoptar HLS utilizando fragmentos fMP4 como protocolo principal de entrega.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación</strong><br>
+• Compatible con la mayoría de dispositivos.<br>
+• Funciona sobre HTTP estándar.<br>
+• Se integra perfectamente con los archivos almacenados en S3.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias</strong><br>
+• Positivas: Compatibilidad universal y aprovechamiento de tecnologías web existentes.<br>
+• Negativas: Latencia de entre 6 y 30 segundos, poco adecuada para interactividad en tiempo real.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>ADR-003: Diseño de la Estrategia de Caché y Red de Distribución (CDN)</strong><br>
+• Estatus: Aprobado.<br>
+• Referencias: ADR-001 y ADR-002.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Alternativas Consideradas</strong><br>
+• CDN Global (Cloudflare, CloudFront, Akamai).<br>
+• Clúster de Reverse Proxies (Nginx/Varnish).<br>
+• Redis en Clúster.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Decisión</strong><br>
+• Implementar un CDN en el Edge frente al origen en AWS S3.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación</strong><br>
+• Reduce drásticamente el tráfico directo hacia S3.<br>
+• Disminuye los costos de transferencia.<br>
+• Mejora significativamente la experiencia del usuario.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias</strong><br>
+• Positivas: Escalabilidad global y soporte para millones de usuarios simultáneos.<br>
+• Negativas: Necesidad de gestionar cuidadosamente la invalidación de caché y los TTL de los manifiestos.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>ADR-004: Comunicación para Métricas en Tiempo Real y Usuarios Concurrentes</strong><br>
+• Estatus: Aprobado.<br>
+• Referencias: ADR-001, ADR-002 y ADR-003.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Alternativas Consideradas</strong><br>
+• WebSockets.<br>
+• Server-Sent Events (SSE).<br>
+• Short Polling / Long Polling.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Decisión</strong><br>
+• Utilizar Server-Sent Events (SSE) para actualizaciones del servidor al cliente.<br>
+• Utilizar HTTP POST para el envío de métricas de telemetría desde el cliente.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación</strong><br>
+• Mantiene una arquitectura basada en HTTP estándar.<br>
+• Reduce el consumo de memoria frente a WebSockets.<br>
+• Permite aprovechar HTTP/2 y HTTP/3 con reconexión automática.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias</strong><br>
+• Positivas: Infraestructura más simple, escalable y alineada con la arquitectura de streaming existente.<br>
+• Negativas: Si se requieren funciones altamente interactivas en tiempo real, será necesario incorporar WebSockets o WebRTC en el futuro.
+</p>
+```
+
           </div>
         </div>
       </div>
@@ -465,7 +795,363 @@
           <span class="c-section-title">Mis apuntes sobre los ejercicios propuestos</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes o dudas sobre los ejercicios propuestos...</p>
+          <p style="color:var(--muted2);font-style:italic;">
+<strong>EJEMPLOS DE EJERCICIO 1 - Fuerzas (Contexto)</strong><br>
+• Título: Identificación de fuerzas restrictivas en la startup.<br>
+• Estado: Completado.<br>
+• Contexto:<br>
+• Tiempo de comercialización (Time-to-Market) crítico: el plazo límite de 2 meses exige priorizar soluciones de rápida implementación.<br>
+• Capacidad limitada del equipo: con solo 3 desarrolladores, no existe suficiente personal para mantener arquitecturas complejas.<br>
+• Presupuesto ajustado: no existe capital para costear infraestructura administrada como AWS MSK o servidores adicionales para mensajería.<br>
+• Curva de aprendizaje: implementar eventos requiere dominar patrones como consistencia eventual, colas de error e idempotencia, consumiendo tiempo valioso de desarrollo.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Elección y Justificación</strong><br>
+• Título: Selección del mecanismo de comunicación interservicio.<br>
+• Estado: Decidido.<br>
+• Contexto: Se debe elegir entre una arquitectura basada en eventos (Kafka/RabbitMQ) o llamadas REST síncronas para el flujo entre Órdenes e Inventario.<br>
+• Decisión: Utilizar llamadas REST síncronas.<br>
+• Justificación: En la etapa de MVP la prioridad es validar el negocio rápidamente. REST evita la sobreingeniería, reduce la complejidad y permite salir a producción en el tiempo establecido.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>ADR-001: Comunicación Síncrona entre Servicio de Órdenes e Inventario</strong><br>
+• Estado: Aceptado.<br>
+• Contexto: El equipo de tres desarrolladores necesita verificar y descontar inventario cuando un cliente realiza una compra, con un plazo de dos meses y presupuesto reducido.<br>
+• Decisión: Utilizar llamadas HTTP/REST síncronas entre el Servicio de Órdenes y el Servicio de Inventario.<br>
+• El Servicio de Órdenes enviará una petición HTTP y esperará una respuesta (200 OK o 400 Error) antes de confirmar la compra.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación</strong><br>
+• Reduce el tiempo necesario para implementar la comunicación entre servicios.<br>
+• No requiere instalar ni administrar un broker de mensajería.<br>
+• El equipo ya domina REST, evitando una curva de aprendizaje adicional.<br>
+• Permite entregar el Producto Mínimo Viable dentro del plazo establecido.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias</strong><br>
+• Positivas:<br>
+• Implementación rápida.<br>
+• Infraestructura sencilla.<br>
+• Menor costo operativo.<br>
+• Desarrollo y depuración más simples.<br>
+• Negativas:<br>
+• Existe acoplamiento temporal entre los servicios.<br>
+• Si el servicio de Inventario falla, el servicio de Órdenes también fallará.<br>
+• Bajo alta demanda las peticiones pueden bloquear recursos y disminuir el rendimiento.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Circunstancias Futuras de Revisión</strong><br>
+• Título: Criterios de obsolescencia y migración del ADR.<br>
+• Estado: Monitoreado.<br>
+• El ADR será revisado cuando aparezcan nuevos servicios que deban reaccionar a una compra (Facturación, Envíos, Notificaciones, etc.).<br>
+• También será revisado cuando aumente significativamente el tráfico de usuarios y las conexiones HTTP comiencen a saturarse.<br>
+• La decisión podrá reemplazarse cuando el equipo crezca y sea necesario desacoplar completamente los servicios mediante una arquitectura basada en eventos.
+</p>
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>EJERCICIO 2 - Lista de Problemas de Calidad del ADR Original</strong><br>
+• Título: Auditoría de calidad y deficiencias del ADR simplificado.<br>
+• Estado: Completado.<br>
+• Contexto: Se analiza el ADR original para identificar por qué no cumple con los estándares profesionales de documentación arquitectónica.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Problemas Identificados</strong><br>
+• Contexto extremadamente vago: "El equipo sabe React" no explica las necesidades del negocio ni las restricciones del proyecto.<br>
+• Falta de profundidad en la decisión: no especifica versiones, frameworks complementarios ni manejo del estado de la aplicación.<br>
+• Sesgo de confirmación: la decisión se basa únicamente en la experiencia del equipo sin evaluar criterios técnicos.<br>
+• Consecuencias incompletas: solo menciona beneficios y omite riesgos, costos y deuda técnica.<br>
+• No se documentan alternativas como Angular o Vue ni las razones para descartarlas.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias</strong><br>
+• La falta de información reduce el valor histórico del ADR.<br>
+• Los futuros desarrolladores no comprenderán el motivo real de la decisión.<br>
+• Se dificulta el mantenimiento y la evolución de la arquitectura del sistema.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>ADR-003: Selección de React y Vite para el Frontend del Portal Educativo</strong><br>
+• Estado: Aceptado.<br>
+• Contexto: El proyecto consiste en desarrollar un portal web educativo para gestionar cursos en línea con una interfaz dinámica y actualizaciones en tiempo real.<br>
+• El plazo de entrega es de tres meses y el equipo posee experiencia consolidada en React y JavaScript.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Decisión</strong><br>
+• Utilizar React versión 18 junto con Vite para el desarrollo del frontend.<br>
+• Emplear Zustand para la administración del estado global debido a su simplicidad y bajo consumo de recursos.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación</strong><br>
+• React permite iniciar el desarrollo inmediatamente gracias a la experiencia del equipo.<br>
+• Vite proporciona tiempos de compilación y recarga muy rápidos.<br>
+• Zustand evita la complejidad innecesaria de Redux y facilita el mantenimiento del proyecto.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias</strong><br>
+• Positivas: desarrollo más rápido, mejor rendimiento durante la programación y menor curva de aprendizaje.<br>
+• Negativas: React es una biblioteca y requiere seleccionar herramientas adicionales para el enrutamiento, organización del proyecto y componentes de interfaz.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Alternativas Consideradas</strong><br>
+• Angular: descartado por su elevada curva de aprendizaje y la falta de experiencia del equipo en TypeScript avanzado.<br>
+• Vue.js: considerado por su facilidad de uso, pero descartado porque el equipo ya domina React y su ecosistema ofrece una mayor cantidad de librerías disponibles.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Conclusión de las Alternativas</strong><br>
+• React fue seleccionado tras comparar sus ventajas frente a Angular y Vue.<br>
+• La decisión se fundamenta en un análisis técnico, el tiempo disponible y la experiencia del equipo de desarrollo.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Evaluación para un Product Manager (PM) No Técnico</strong><br>
+• Estado: Evaluado.<br>
+• El ADR original no resulta útil para un PM porque únicamente indica que el equipo conoce React.<br>
+• No explica cómo la decisión impacta en el presupuesto, el tiempo de entrega ni los riesgos del proyecto.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Conclusión</strong><br>
+• El ADR mejorado comunica claramente las razones de negocio y técnicas de la decisión.<br>
+• Permite comprender el impacto en costos, tiempos y mantenimiento del proyecto.<br>
+• Facilita la comunicación entre desarrolladores, arquitectos y responsables del negocio.
+</p>
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>EJERCICIO 3 - Consecuencias de la Falta de ADRs Históricos</strong><br>
+• Título: Análisis de impacto por ausencia de documentación histórica.<br>
+• Estado: Evaluado.<br>
+• Contexto: El equipo de TechBank analiza la migración de un sistema bancario monolítico hacia una arquitectura de microservicios sin contar con registros históricos de las decisiones arquitectónicas originales.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias Identificadas</strong><br>
+• Riesgo de romper reglas de negocio críticas al desconocer por qué ciertos módulos fueron diseñados de forma acoplada.<br>
+• Parálisis por análisis debido a discusiones constantes sobre decisiones del pasado.<br>
+• Repetición de errores previamente solucionados por no existir documentación histórica.<br>
+• Incremento de costos y riesgos técnicos durante el proceso de modernización.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>ADR-000: Selección de Arquitectura Monolítica para el Sistema Core de TechBank</strong><br>
+• Estado: Superado (Histórico).<br>
+• Contexto: En 2011 TechBank necesitaba desarrollar su sistema bancario central con un equipo reducido, presupuesto limitado y tecnologías distribuidas aún poco maduras.<br>
+• Se requería una alta consistencia transaccional mediante una única base de datos relacional Oracle.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Decisión</strong><br>
+• Implementar una arquitectura monolítica desarrollada en Java.<br>
+• Toda la lógica de negocio, presentación e integración se ejecutará dentro de una única aplicación desplegada en un servidor empresarial.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación</strong><br>
+• Garantiza consistencia transaccional ACID en todas las operaciones bancarias.<br>
+• Simplifica el desarrollo inicial y el proceso de despliegue.<br>
+• Reduce la complejidad tecnológica para el equipo disponible.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias</strong><br>
+• Positivas: simplicidad inicial, confiabilidad y consistencia de datos.<br>
+• Negativas: aumento del acoplamiento, dificultad para escalar componentes individuales y tiempos de despliegue cada vez mayores.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>ADR-015: Migración Gradual del Monolito Java Core a Microservicios</strong><br>
+• Estado: Propuesto (En evaluación).<br>
+• Contexto: El sistema monolítico ha alcanzado sus límites de escalabilidad y dificulta la incorporación de nuevas funcionalidades para los canales digitales.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Decisión</strong><br>
+• Adoptar una migración gradual utilizando el patrón Strangler Fig.<br>
+• Mantener temporalmente las operaciones financieras críticas dentro del monolito mientras se extraen módulos independientes como Consultas, Usuarios y Notificaciones.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación</strong><br>
+• Reduce el riesgo de una migración completa tipo Big Bang.<br>
+• Permite modernizar el sistema de forma progresiva.<br>
+• Conserva la estabilidad de las operaciones bancarias críticas durante la transición.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias</strong><br>
+• Positivas: menor riesgo de fallos, modernización gradual y mayor flexibilidad para futuras mejoras.<br>
+• Negativas: coexistencia temporal entre monolito y microservicios, aumentando la complejidad operativa y la necesidad de herramientas de observabilidad.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Proceso de Adopción de ADRs en TechBank</strong><br>
+• Estado: Aprobado.<br>
+• Objetivo: garantizar que todas las decisiones arquitectónicas importantes queden documentadas para futuras generaciones de desarrolladores.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Paso 1 - Creación</strong><br>
+• Todo cambio significativo en arquitectura, infraestructura, patrones o tecnologías deberá documentarse mediante un ADR en estado Propuesto.<br>
+• El responsable será un Arquitecto de Software o un Ingeniero Senior.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Paso 2 - Revisión y Aprobación</strong><br>
+• El ADR será revisado por el comité de arquitectura.<br>
+• La aprobación final corresponderá al Líder de Arquitectura o al CTO.<br>
+• Una vez aprobado, el documento será almacenado en formato Markdown dentro del repositorio Git del proyecto.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Paso 3 - Auditoría y Revisión</strong><br>
+• Los ADR deberán revisarse al inicio de cada trimestre o cuando cambien las condiciones del negocio, el rendimiento del sistema o los costos de infraestructura.<br>
+• Esto permitirá mantener la documentación vigente y alineada con la evolución tecnológica.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Conclusión</strong><br>
+• La adopción de ADRs proporciona un historial confiable de las decisiones arquitectónicas.<br>
+• Facilita el mantenimiento del software, mejora el proceso de incorporación de nuevos desarrolladores y reduce el riesgo de repetir errores del pasado.
+</p>
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>EJERCICIO 4 - ADR-001: Selección de Almacenamiento para Videos</strong><br>
+• Estado: Aceptado.<br>
+• Contexto: El sistema de streaming debe almacenar grandes volúmenes de videos bajo demanda (VOD).<br>
+• Se evaluaron diferentes alternativas considerando costo, durabilidad, escalabilidad y disponibilidad.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Alternativas Consideradas</strong><br>
+• AWS S3 como almacenamiento de objetos administrado.<br>
+• Construir una CDN propia desde cero.<br>
+• Implementar un sistema de archivos distribuido como GlusterFS.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Decisión</strong><br>
+• Utilizar AWS S3 como almacenamiento principal y persistente para todos los archivos maestros de video.<br>
+• Los usuarios finales no accederán directamente a S3; el contenido será distribuido mediante una capa de caché.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación</strong><br>
+• AWS S3 ofrece alta disponibilidad y una durabilidad del 99.999999999%.<br>
+• Permite almacenar grandes cantidades de información sin administrar servidores propios.<br>
+• Facilita la escalabilidad y reduce los costos de mantenimiento.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias</strong><br>
+• Positivas: almacenamiento prácticamente ilimitado y alta confiabilidad.<br>
+• Negativas: el acceso directo desde los clientes genera mayor latencia y costos de transferencia, por lo que será necesario utilizar una CDN.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>ADR-002: Selección del Protocolo de Streaming</strong><br>
+• Estado: Aceptado.<br>
+• Contexto: Una vez definido AWS S3 como almacenamiento, era necesario seleccionar el protocolo de transmisión de video compatible con navegadores y dispositivos móviles.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Alternativas Consideradas</strong><br>
+• HTTP Live Streaming (HLS).<br>
+• MPEG-DASH.<br>
+• RTMP.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Decisión</strong><br>
+• Adoptar HLS como protocolo principal de streaming.<br>
+• Los videos serán segmentados en archivos .ts y listas de reproducción .m3u8.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación</strong><br>
+• HLS funciona sobre HTTP estándar.<br>
+• Es compatible con navegadores, dispositivos móviles y Smart TV.<br>
+• Se integra perfectamente con AWS S3 y con las CDN.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias</strong><br>
+• Positivas: gran compatibilidad entre plataformas y facilidad de implementación.<br>
+• Negativas: introduce una latencia aproximada de entre 2 y 6 segundos, adecuada para video bajo demanda pero limitada para transmisiones altamente interactivas.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>ADR-003: Estrategia de Caché mediante CDN</strong><br>
+• Estado: Aceptado.<br>
+• Contexto: Servir los segmentos HLS directamente desde AWS S3 incrementaría la latencia y los costos cuando miles de usuarios soliciten el mismo contenido.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Alternativas Consideradas</strong><br>
+• Amazon CloudFront.<br>
+• Varnish Cache.<br>
+• Redis.<br>
+• Otros servicios CDN.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Decisión</strong><br>
+• Implementar Amazon CloudFront como red de distribución de contenido (CDN).<br>
+• CloudFront almacenará en caché los segmentos de video y únicamente solicitará el contenido a AWS S3 cuando sea necesario.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación</strong><br>
+• Reduce significativamente la latencia para los usuarios.<br>
+• Disminuye el consumo de ancho de banda y los costos de salida desde AWS S3.<br>
+• Mejora el rendimiento global del sistema.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias</strong><br>
+• Positivas: reproducción más rápida, mejor experiencia de usuario y capacidad para atender millones de solicitudes.<br>
+• Negativas: será necesario administrar correctamente la invalidación de caché cuando cambien los archivos originales.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>ADR-004: Comunicación para Usuarios Concurrentes</strong><br>
+• Estado: Aceptado.<br>
+• Contexto: La plataforma requiere mostrar información en tiempo real, como la cantidad de usuarios conectados y eventos del sistema, sin afectar el rendimiento del streaming.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Alternativas Consideradas</strong><br>
+• WebSockets.<br>
+• Server-Sent Events (SSE).<br>
+• HTTP Polling.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Decisión</strong><br>
+• Utilizar Server-Sent Events (SSE) para enviar eventos y métricas desde el servidor hacia los clientes.<br>
+• Las acciones del usuario continuarán realizándose mediante solicitudes HTTP REST tradicionales.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Justificación</strong><br>
+• SSE funciona sobre HTTP estándar y aprovecha la infraestructura existente.<br>
+• Consume menos recursos que WebSockets para comunicaciones unidireccionales.<br>
+• Facilita la escalabilidad y simplifica la arquitectura del sistema.
+</p>
+
+<p style="color:var(--muted2);font-style:italic;">
+• <strong>Consecuencias</strong><br>
+• Positivas: infraestructura más sencilla, mejor rendimiento y menor consumo de recursos.<br>
+• Negativas: la comunicación solo es del servidor hacia el cliente; para funcionalidades como chat en tiempo real será necesario incorporar WebSockets o WebRTC en futuras versiones.
+</p>
+
         </div>
       </div>
 
