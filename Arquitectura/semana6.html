@@ -160,7 +160,16 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Patrones Creacionales...</p>
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>Patrones Creacionales (Mecanismos de Creación de Objetos)</strong><br>
+• <strong>Singleton:</strong> Asegura una única instancia global en toda la aplicación para no destruir el rendimiento del servidor. <em>Ejemplo:</em> Una conexión a Base de Datos o Gestor de Logs; en frameworks se ve en el <code>EntityManager</code> de Hibernate (Java) o servicios Singleton en .NET Core.<br>
+• <strong>Factory Method:</strong> Define una interfaz para crear un objeto, pero deja que las subclases decidan la clase exacta a instanciar. <em>Ejemplo:</em> Un sistema de Logística donde <code>LogisticaTerrestre</code> crea un <code>Camion</code> y <code>LogisticaMaritima</code> un <code>Barco</code>; en el mundo real se usa en <code>LoggerFactory.getLogger()</code> en Java.<br>
+• <strong>Abstract Factory:</strong> Permite producir familias de objetos relacionados sin especificar sus clases concretas. <em>Ejemplo:</em> Componentes de UI Multiplataforma donde una <code>FabricaWindows</code> crea botones/ventanas de Windows y una <code>FabricaMac</code> los de Mac para mantener la coherencia; usado en Look and Feel de Java Swing o kits de renderizado en Flutter.<br>
+• <strong>Builder:</strong> Separa la construcción de un objeto complejo de su representación para crearlo paso a paso de forma limpia, evitando constructores gigantes con argumentos <code>null</code>. <em>Ejemplo:</em> Un generador de peticiones HTTP complejas o consultas SQL, como el cliente moderno de Java: <code>HttpClient.newBuilder().connectTimeout(...).build()</code>.<br>
+• <strong>Prototype:</strong> Permite copiar o clonar objetos existentes directamente en memoria sin depender de sus clases específicas ni realizar cargas costosas desde disco. <em>Ejemplo:</em> Un motor de videojuegos que genera 100 soldados enemigos idénticos clonando un soldado "Base" con un método <code>.clonar()</code>; implementado mediante <code>.clone()</code> en Java o <code>Object.create()</code> en JavaScript.
+</p>
+</div>
         </div>
       </div>
 
@@ -209,6 +218,25 @@
           </div>
         </div>
       </div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <div class="c-section-body">
+ <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>Patrones Estructurales (Relación y Organización de Clases)</strong><br>
+• <strong>Adapter (Adaptador):</strong> Permite que dos clases con interfaces incompatibles trabajen juntas traduciendo las peticiones de una a la otra. <em>Ejemplo:</em> Integrar un servicio externo que solo acepta XML en una app que procesa JSON; un adaptador traduce los datos de forma transparente sin reescribir la app. En el mundo real se usa en los drivers de bases de datos como JDBC.<br>
+• <strong>Bridge (Puente):</strong> Desacopla una abstracción de su implementación para que ambas evolucionen de forma independiente, evitando la explosión de clases. <em>Ejemplo:</em> Una app que exporta reportes (PDF, Excel) en varias plataformas (Web, Móvil); separa los "Tipos de Reporte" de los "Renderizadores de Plataforma". Usado en librerías gráficas para alternar entre DirectX u OpenGL por debajo.<br>
+• <strong>Composite (Objeto Compuesto):</strong> Organiza objetos en estructuras de árbol para representar jerarquías de parte-todo, tratando a objetos individuales y colecciones por igual. <em>Ejemplo:</em> El sistema de archivos donde un Archivo y una Carpeta implementan <code>.obtenerTamano()</code>; la carpeta calcula recursivamente el total de sus hijos bajo la misma interfaz uniforme. Se ve reflejado en el DOM de HTML o el árbol de componentes de React y Flutter.
+</p>
+</div>
+</div>
+        </div>
+      </div>
+
 
       <div class="c-section">
         <div class="c-section-header">
@@ -236,6 +264,24 @@
           </div>
         </div>
       </div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>Patrones Estructurales (Relación y Organización de Clases - Continuación)</strong><br>
+• <strong>Decorator (Decorador):</strong> Añade responsabilidades a un objeto de forma dinámica en tiempo de ejecución sin alterar su estructura ni abusar de la herencia. <em>Ejemplo:</em> Un sistema de notificaciones donde envuelves un <code>NotificadorCorreo</code> básico dentro de un <code>NotificadorSMS</code> y un <code>NotificadorWhatsApp</code> para combinar alertas según el usuario. En el mundo real se ve en flujos de I/O de Java como <code>new BufferedReader(new FileReader("..."))</code>.<br>
+• <strong>Facade (Fachada):</strong> Ofrece una interfaz simplificada y única frente a un grupo complejo de clases o un subsistema difícil de usar. <em>Ejemplo:</em> Un <code>ConversorVideo</code> que reduce a una sola línea como <code>convertir("video.avi", "mp4")</code> la compleja coordinación de codecs, audio y bitrates internos. Históricamente, la librería jQuery nació como una fachada para simplificar la caótica manipulación del DOM en los navegadores.<br>
+• <strong>Flyweight (Peso Ligero):</strong> Reduce drásticamente el uso de memoria RAM al compartir eficientemente datos idénticos entre miles de objetos similares. <em>Ejemplo:</em> Un procesador de texto donde el diseño y fuente de la letra "a" se almacena una sola vez en memoria, y cada letra en el documento solo guarda su posición X, Y. Se utiliza en el manejo de String Pools en lenguajes como Java o C# para apuntar variables idénticas al mismo texto.<br>
+• <strong>Proxy:</strong> Coloca un objeto intermediario para controlar el acceso al objeto real, permitiendo validar permisos, guardar en caché o retrasar cargas pesadas. <em>Ejemplo:</em> Un <code>ProxyImagen</code> para hacer Lazy Loading en una red social, mostrando un ícono ligero y descargando la foto real de alta resolución solo cuando se hace scroll. Utilizado en frameworks como Hibernate o Spring AOP para evitar consultas SQL hasta que el objeto sea requerido.
+</p>
+</div>
+        </div>
+      </div>
+
 
       <div class="c-section">
         <div class="c-section-header">
@@ -335,7 +381,24 @@
         <div class="c-section-body">
           <div style="padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
             <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi respuesta / código:</p>
-            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu solución al laboratorio práctico...</p>
+            <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>Ejemplo de Código - Patrón Adapter en Python</strong><br>
+• <strong>El Escenario:</strong> La <code>APIExternaPago</code> expone el método incompatible <code>pay_usd()</code>, pero nuestra arquitectura requiere obligatoriamente implementar el método estandarizado <code>procesar_cobro()</code> definido en <code>ProcesadorPagoTarget</code>.<br>
+• <strong>La Solución:</strong> El <code>AdaptadorPago</code> hereda del target esperado y envuelve la instancia de la API externa por composición, traduciendo de forma transparente la llamada del cliente hacia el método nativo.<br>
+• <strong>Implementación:</strong><br>
+<code>
+class APIExternaPago:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def pay_usd(self, amount): print(f"Cobrando ${amount} USD usando la API Externa original.")<br>
+class ProcesadorPagoTarget:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def procesar_cobro(self, monto): raise NotImplementedError()<br>
+class AdaptadorPago(ProcesadorPagoTarget):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, api_externa: APIExternaPago): self.api_externa = api_externa<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def procesar_cobro(self, monto): self.api_externa.pay_usd(monto)<br>
+# Cliente: adaptador = AdaptadorPago(APIExternaPago()); adaptador.procesar_cobro(150)
+</code>
+</p>
+</div>
           </div>
         </div>
       </div>

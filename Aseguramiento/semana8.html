@@ -1,40 +1,1028 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>MATERIA2 - Semana 8</title>
-<link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aseguramiento de Calidad · Semana 8</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-<div class="contenido">
-<h1>MATERIA2 - Semana 8</h1>
 
-<h2>Tema</h2>
-<p>Escriba aquí el tema.</p>
+  <div class="page-topbar">
+    <div class="crumb">
+      <a href="../index.html">Inicio</a>
+      <span class="sep">/</span>
+      <a href="../index.html">Aseguramiento de Calidad de Software</a>
+      <span class="sep">/</span>
+      <span class="current">Semana 8</span>
+    </div>
+    <div class="page-nav">
+      <a class="btn-nav" href="semana7.html">← Sem 7</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana9.html">Sem 9 →</a>
+    </div>
+  </div>
 
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
+  <div class="semana-hero">
+    <div class="s-subject-label">Aseguramiento de Calidad de Software · IST YAVIRAC · Quinto Semestre</div>
+    <h1>Semana <span class="accent">08</span></h1>
+    <p style="color:var(--accent2);font-size:15px;margin-top:0.4rem;font-weight:600;">Pruebas Unitarias — La base de todo software de calidad · Patrón AAA, FIRST, TDD y Cobertura</p>
+    <div class="semana-meta">
+      IST YAVIRAC &nbsp;·&nbsp; Quinto Semestre
+    </div>
+  </div>
 
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
+  <div class="semana-wrap">
 
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
+    <div class="tema-block">
+      <div class="tema-number">INTRODUCCIÓN</div>
+      <div class="tema-title">Agenda y Objetivos</div>
+      
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-purple">🎯</div><span class="c-section-title">El valor del Unit Testing</span></div>
+        <div class="c-section-body">
+          <div style="display: flex; gap: 20px;">
+            <div style="background:var(--surface); padding: 15px; border-radius: 8px; border: 1px solid var(--border); flex: 1;">
+              <h3 style="color:#ef4444; margin-bottom: 5px;">70%</h3>
+              <p style="color:#C8C8E0; font-size:13px;">del tiempo debugueando se evita con tests unitarios.</p>
+            </div>
+            <div style="background:var(--surface); padding: 15px; border-radius: 8px; border: 1px solid var(--border); flex: 1;">
+              <h3 style="color:#22c55e; margin-bottom: 5px;">30×</h3>
+              <p style="color:#C8C8E0; font-size:13px;">más barato es corregir un error en esta etapa temprana.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-blue">📋</div><span class="c-section-title">Agenda — Semana 8</span></div>
+        <div class="c-section-body">
+          <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 10px;">
+            <li style="background:rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; border: 1px solid var(--border);"><strong>01. ¿Qué es una Prueba Unitaria?</strong> Definición, características, ventajas y la regla FIRST.</li>
+            <li style="background:rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; border: 1px solid var(--border);"><strong>02. Patrón AAA — Arrange, Act, Assert:</strong> Estructura de todo test unitario: preparar, ejecutar, verificar.</li>
+            <li style="background:rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; border: 1px solid var(--border);"><strong>03. Diseño de Casos de Prueba Unitarios:</strong> Casos válidos, inválidos, bordes, valores nulos y excepciones.</li>
+            <li style="background:rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; border: 1px solid var(--border);"><strong>04. Herramientas: JUnit, PyTest y Jest:</strong> Frameworks más usados en Java, Python y JS con ejemplos reales.</li>
+            <li style="background:rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; border: 1px solid var(--border);"><strong>05. TDD y Cobertura de Código:</strong> Red → Green → Refactor, y métricas de code coverage.</li>
+            <li style="background:rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; border: 1px solid var(--border);"><strong>06. Ejercicios Propuestos y Resueltos:</strong> Escribir tests completos + análisis de cobertura.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
 
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+    <div class="tema-block">
+      <div class="tema-number">TEMA 01</div>
+      <div class="tema-title">¿Qué es una Prueba Unitaria?</div>
 
-<a href="../index.html">Volver al inicio</a>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-purple">💡</div><span class="c-section-title">Definición y Principios FIRST</span></div>
+        <div class="c-section-body">
+          <p style="margin-bottom: 15px;">"Una prueba unitaria verifica el comportamiento de una <strong>UNIDAD de código</strong> (función, método o clase) de manera aislada, con entradas controladas y salidas verificables."</p>
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px;text-align:left;border:1px solid var(--border);color:var(--accent2);width:50px;">Letra</th>
+                  <th style="padding:10px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Principio</th>
+                  <th style="padding:10px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:10px;border:1px solid var(--border);font-weight:700;color:#e879f9;font-size:16px;">F</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-weight:600;">Fast (Rápidas)</td>
+                  <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Se ejecutan en milisegundos. Miles de tests en segundos.</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px;border:1px solid var(--border);font-weight:700;color:#38bdf8;font-size:16px;">I</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-weight:600;">Independent (Independientes)</td>
+                  <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">No dependen de otros tests ni de BD, red o archivos.</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px;border:1px solid var(--border);font-weight:700;color:#34d399;font-size:16px;">R</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-weight:600;">Repeatable (Repetibles)</td>
+                  <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Misma entrada → mismo resultado siempre, en cualquier entorno.</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px;border:1px solid var(--border);font-weight:700;color:#fbbf24;font-size:16px;">S</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-weight:600;">Self-Validating (Autovalidables)</td>
+                  <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Pass o Fail automático. Sin interpretación manual.</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px;border:1px solid var(--border);font-weight:700;color:#f87171;font-size:16px;">T</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-weight:600;">Timely (Oportunas)</td>
+                  <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Escritos al mismo tiempo o antes del código de producción.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-blue">🔍</div><span class="c-section-title">¿Qué ES y qué NO ES una unidad?</span></div>
+        <div class="c-section-body">
+          <div style="display:flex; gap:20px; flex-wrap:wrap;">
+            <div style="flex:1; background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.3); padding:1rem; border-radius:8px;">
+              <h4 style="color:#22c55e; margin-bottom:10px;">✅ SÍ es una unidad:</h4>
+              <ul style="color:#C8C8E0; font-size:13px; line-height:1.6;">
+                <li>Una función o método.</li>
+                <li>Una clase con su comportamiento.</li>
+                <li>Un módulo pequeño aislado.</li>
+              </ul>
+            </div>
+            <div style="flex:1; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); padding:1rem; border-radius:8px;">
+              <h4 style="color:#ef4444; margin-bottom:10px;">❌ NO es una unidad:</h4>
+              <ul style="color:#C8C8E0; font-size:13px; line-height:1.6;">
+                <li>Un flujo que llama a la BD.</li>
+                <li>Una integración entre módulos.</li>
+                <li>Código que accede a red/disco.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📌</span><span>Anota cómo aplicar la regla FIRST en tus prácticas...</span></li></ul>
+        </div>
+      </div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div><span class="c-section-title" style="color:#ec4899;">Evidencias</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📸</span><span>Capturas sobre los principios del Testing Unitario...</span></li></ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">TEMA 02</div>
+      <div class="tema-title">Patrón AAA — Arrange, Act, Assert</div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-blue">🧩</div><span class="c-section-title">Estructura Universal de un Test Unitario</span></div>
+        <div class="c-section-body">
+          <div style="display:flex; gap:15px; flex-wrap:wrap;">
+            
+            <div style="flex:1; min-width:260px; background:var(--surface); padding:1.2rem; border-radius:8px; border:1px solid var(--border);">
+              <h3 style="color:#38bdf8; margin-bottom:8px; font-size:16px;">A - ARRANGE (Preparar)</h3>
+              <p style="font-size:12px; color:#C8C8E0; margin-bottom:10px; height: 50px;">Configura todo lo que el test necesita: objetos, datos de entrada, mocks y condiciones iniciales.</p>
+              <pre style="background:#111; padding:10px; border-radius:5px; font-size:12px; color:#a5b4fc; border: 1px solid #333;">// Arrange
+double precio = 200.0;
+double descuento = 0.15;
+Calculadora calc = 
+  new Calculadora();</pre>
+              <p style="font-size:11px; color:#94a3b8; margin-top:8px;">💡 <em>Solo datos necesarios. Nombres descriptivos.</em></p>
+            </div>
+            
+            <div style="flex:1; min-width:260px; background:var(--surface); padding:1.2rem; border-radius:8px; border:1px solid var(--border);">
+              <h3 style="color:#fbbf24; margin-bottom:8px; font-size:16px;">A - ACT (Ejecutar)</h3>
+              <p style="font-size:12px; color:#C8C8E0; margin-bottom:10px; height: 50px;">Llama a la función o método que se está probando. <strong>Solo UNA llamada por test.</strong></p>
+              <pre style="background:#111; padding:10px; border-radius:5px; font-size:12px; color:#fcd34d; border: 1px solid #333;">// Act
+double resultado = 
+  calc.aplicar(
+    precio, 
+    descuento);</pre>
+              <p style="font-size:11px; color:#94a3b8; margin-top:8px;">💡 <em>Una sola llamada. Sin lógica aquí.</em></p>
+            </div>
+
+            <div style="flex:1; min-width:260px; background:var(--surface); padding:1.2rem; border-radius:8px; border:1px solid var(--border);">
+              <h3 style="color:#34d399; margin-bottom:8px; font-size:16px;">A - ASSERT (Verificar)</h3>
+              <p style="font-size:12px; color:#C8C8E0; margin-bottom:10px; height: 50px;">Verifica que el resultado obtenido coincide con el esperado. El test falla aquí si hay un bug.</p>
+              <pre style="background:#111; padding:10px; border-radius:5px; font-size:12px; color:#6ee7b7; border: 1px solid #333;">// Assert
+assertEquals(
+  170.0, 
+  resultado, 
+  0.001);</pre>
+              <p style="font-size:11px; color:#94a3b8; margin-top:8px;">💡 <em>Mensaje claro al fallar. (assertEquals / assertTrue).</em></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📌</span><span>Anotaciones del patrón AAA en el código...</span></li></ul>
+        </div>
+      </div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div><span class="c-section-title" style="color:#ec4899;">Evidencias</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📸</span><span>Capturas estructurando código con comentarios //Arrange //Act //Assert...</span></li></ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">TEMA 03</div>
+      <div class="tema-title">Diseño de Casos de Prueba Unitarios</div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-purple">📊</div><span class="c-section-title">Tipos de casos que todo test debe cubrir</span></div>
+        <div class="c-section-body">
+          <div style="background:rgba(0,0,0,0.3); border-left:4px solid var(--accent); padding:10px; margin-bottom:15px;">
+            <p style="font-family:monospace; font-size:13px; color:#e2e8f0; margin:0;">
+              <strong>📌 Función a probar:</strong><br>
+              <span style="color:#a5b4fc;">def</span> <span style="color:#fcd34d;">calcular_descuento</span>(precio, porcentaje):<br>
+              <span style="color:#64748b;">&nbsp;&nbsp;&nbsp;&nbsp;# Retorna precio con descuento. Error si precio < 0 o porcentaje fuera de [0,100]</span>
+            </p>
+          </div>
+
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px;border:1px solid var(--border);color:var(--accent2);">Tipo de Caso</th>
+                  <th style="padding:10px;border:1px solid var(--border);color:var(--accent2);">Escenario</th>
+                  <th style="padding:10px;border:1px solid var(--border);color:var(--accent2);">Entrada</th>
+                  <th style="padding:10px;border:1px solid var(--border);color:var(--accent2);">Esperado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="3" style="padding:10px;border:1px solid var(--border);font-weight:600;color:#34d399;">✅ Caso VÁLIDO<br>(Happy Path)</td>
+                  <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Precio normal con descuento estándar</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">precio=200, pct=15</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">170.0</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Precio con descuento 0%</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">precio=100, pct=0</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">100.0</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Descuento completo 100%</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">precio=100, pct=100</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">0.0</td>
+                </tr>
+                
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td rowspan="3" style="padding:10px;border:1px solid var(--border);font-weight:600;color:#fbbf24;">⚠️ Caso LÍMITE<br>(Edge/Boundary)</td>
+                  <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Precio igual a 0</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">precio=0, pct=10</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">0.0</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Porcentaje exacto 100</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">precio=50, pct=100</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">0.0</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Precio con decimales</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">precio=99.99, pct=10</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">89.99</td>
+                </tr>
+
+                <tr>
+                  <td rowspan="3" style="padding:10px;border:1px solid var(--border);font-weight:600;color:#ef4444;">❌ Caso INVÁLIDO<br>/ Excepción</td>
+                  <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Precio negativo</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">precio=-50, pct=10</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#ef4444;">ValueError</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Porcentaje > 100</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">precio=100, pct=150</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#ef4444;">ValueError</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Porcentaje negativo</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#94a3b8;">precio=100, pct=-5</td>
+                  <td style="padding:10px;border:1px solid var(--border);font-family:monospace;color:#ef4444;">ValueError</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📌</span><span>Anotaciones de cómo diseñar los casos para mis proyectos...</span></li></ul>
+        </div>
+      </div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div><span class="c-section-title" style="color:#ec4899;">Evidencias</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📸</span><span>Tablas de diseño de pruebas elaboradas en clase...</span></li></ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">TEMA 04</div>
+      <div class="tema-title">Herramientas — JUnit (Java) y PyTest (Python)</div>
+
+      <div class="c-section">
+        <div class="c-section-body">
+          <div style="display:flex; gap:20px; flex-wrap:wrap;">
+            
+            <div style="flex:1; min-width:300px;">
+              <h4 style="color:#e2e8f0; margin-bottom:10px;">☕ JUnit 5 — Java</h4>
+              <pre style="background:#111; padding:15px; border-radius:6px; font-size:12px; color:#e2e8f0; border: 1px solid #333; overflow-x:auto;">
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+class CalculadoraTest {
+    @Test
+    void testDescuento_precioValido() {
+        // Arrange
+        Calculadora calc = new Calculadora();
+        // Act
+        double res = calc.descuento(200, 0.15);
+        // Assert
+        assertEquals(170.0, res, 0.001);
+    }
+
+    @Test
+    void testDescuento_precioNegativo() {
+        assertThrows(IllegalArgException.class,
+            () -> calc.descuento(-50, 0.10));
+    }
+}</pre>
+            </div>
+
+            <div style="flex:1; min-width:300px;">
+              <h4 style="color:#e2e8f0; margin-bottom:10px;">🐍 PyTest — Python</h4>
+              <pre style="background:#111; padding:15px; border-radius:6px; font-size:12px; color:#e2e8f0; border: 1px solid #333; overflow-x:auto;">
+import pytest
+from calculadora import descuento
+
+# Happy path
+def test_descuento_precio_valido():
+    # Arrange
+    precio, pct = 200, 0.15
+    # Act
+    resultado = descuento(precio, pct)
+    # Assert
+    assert resultado == 170.0
+
+# Boundary
+def test_descuento_cero_pct():
+    assert descuento(100, 0) == 100.0
+
+# Exception
+def test_precio_negativo_raises():
+    with pytest.raises(ValueError):
+        descuento(-50, 0.10)</pre>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📌</span><span>Comentarios sobre la sintaxis de las herramientas...</span></li></ul>
+        </div>
+      </div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div><span class="c-section-title" style="color:#ec4899;">Evidencias</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📸</span><span>Capturas de IDE corriendo los tests...</span></li></ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">TEMA 05</div>
+      <div class="tema-title">TDD y Cobertura de Código (Code Coverage)</div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-orange">🔄</div><span class="c-section-title">TDD — Test Driven Development</span></div>
+        <div class="c-section-body">
+          <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom: 15px;">
+            <div style="flex:1; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); padding:1rem; border-radius:8px;">
+              <h4 style="color:#ef4444; margin-bottom:5px;">🔴 Paso 1: RED</h4>
+              <p style="font-size:12px; color:#C8C8E0;">Escribe un test para la funcionalidad que AÚN NO EXISTE. El test debe fallar. Si no falla, algo está mal.</p>
+            </div>
+            <div style="flex:1; background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.3); padding:1rem; border-radius:8px;">
+              <h4 style="color:#22c55e; margin-bottom:5px;">🟢 Paso 2: GREEN</h4>
+              <p style="font-size:12px; color:#C8C8E0;">Escribe el código de producción MÍNIMO necesario para que el test pase. Nada más, nada menos.</p>
+            </div>
+            <div style="flex:1; background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.3); padding:1rem; border-radius:8px;">
+              <h4 style="color:#60a5fa; margin-bottom:5px;">🔵 Paso 3: REFACTOR</h4>
+              <p style="font-size:12px; color:#C8C8E0;">Limpia el código: elimina duplicación, mejora nombres. Los tests deben seguir pasando.</p>
+            </div>
+          </div>
+          <p style="font-size: 13px; color:#94a3b8;"><strong>Beneficios:</strong> Diseño más limpio, cobertura alta por defecto, detecta regresiones al instante, documentación viva y menos debugging.</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-purple">📈</div><span class="c-section-title">Cobertura de Código (Code Coverage)</span></div>
+        <div class="c-section-body">
+          <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+            <div style="flex:1; background:var(--surface); border:1px solid var(--border); padding:15px; border-radius:6px;">
+              <h4 style="color:#a5b4fc; margin-bottom:5px; font-size: 15px;">Tipos de Cobertura</h4>
+              <ul style="color:#C8C8E0; font-size:12px; padding-left:15px; line-height: 1.6;">
+                <li><strong style="color:#fff;">> 80% Líneas:</strong> % de líneas de código ejecutadas al menos una vez.</li>
+                <li><strong style="color:#fff;">> 70% Ramas:</strong> % de ramas (if/else, switch) ejercitadas.</li>
+                <li><strong style="color:#fff;">> 90% Funciones:</strong> % de funciones/métodos llamados.</li>
+                <li><strong style="color:#fff;">> 65% Condiciones:</strong> % de booleanos evaluados como V y F.</li>
+              </ul>
+              <p style="font-size:11px; color:var(--green); margin-top:8px;">🛠 Herramientas: JaCoCo (Java), Coverage.py (Python), Istanbul/NYC (JS)</p>
+            </div>
+            <div style="flex:1; background:var(--surface); border:1px solid var(--border); padding:15px; border-radius:6px;">
+              <h4 style="color:#a5b4fc; margin-bottom:5px; font-size: 15px;">Interpretación del Coverage</h4>
+              <ul style="color:#C8C8E0; font-size:12px; padding-left:0; list-style:none; line-height: 1.6;">
+                <li><strong style="color:#ef4444;">&lt; 50% INSUFICIENTE:</strong> Alta probabilidad de bugs ocultos.</li>
+                <li><strong style="color:#fb923c;">50–70% BÁSICO:</strong> Cubre caminos principales, faltan bordes.</li>
+                <li><strong style="color:#38bdf8;">70–85% ACEPTABLE:</strong> Buen balance. Estándar de industria.</li>
+                <li><strong style="color:#22c55e;">85–100% EXCELENTE:</strong> Alta confianza. Para sistemas críticos.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📌</span><span>Anotaciones del ciclo TDD y reportes de cobertura...</span></li></ul>
+        </div>
+      </div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div><span class="c-section-title" style="color:#ec4899;">Evidencias</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📸</span><span>Reporte HTML de cobertura...</span></li></ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">ACTIVIDADES</div>
+      <div class="tema-title">Ejercicios Propuestos y Resueltos</div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-orange">✏️</div><span class="c-section-title">E1: Escribir Suite de Tests Unitarios Completa (PyTest)</span></div>
+        <div class="c-section-body">
+          <p style="font-size:13px; color:#C8C8E0; margin-bottom:10px;"><strong>ENUNCIADO:</strong> Escriba tests para `def calcular_imc(peso_kg, altura_m)` que retorna el IMC. Reglas: peso > 0, altura > 0, sino ValueError.</p>
+          <pre style="background:#111; padding:15px; border-radius:6px; font-size:12px; color:#e2e8f0; border: 1px solid #333; overflow-x:auto;">
+import pytest
+from imc import calcular_imc
+
+# --- HAPPY PATH ---
+def test_imc_persona_normal():
+    resultado = calcular_imc(70, 1.75)  # Arrange + Act
+    assert abs(resultado - 22.86) < 0.01  # Assert
+
+def test_imc_obesidad():
+    assert calcular_imc(100, 1.70) > 30
+
+# --- BOUNDARY ---
+def test_imc_valores_minimos():
+    assert calcular_imc(0.1, 0.1) > 0  # Valores muy pequeños
+
+# --- EXCEPTIONS ---
+def test_peso_negativo_lanza_error():
+    with pytest.raises(ValueError, match='peso'):  # Verifica msg
+        calcular_imc(-70, 1.75)
+
+def test_altura_cero_lanza_error():
+    with pytest.raises(ValueError):
+        calcular_imc(70, 0)</pre>
+        </div>
+     <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;"><strong>• Ejercicio 1: Validador de Descuentos en un Carrito</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 ENUNCIADO:</strong> Escriba la suite de pruebas para una función <code>calcular_descuento(monto_total, porcentaje)</code>.<br>
+    * Reglas: El <code>monto_total</code> debe ser mayor o igual a 0. El <code>porcentaje</code> debe estar entre 0 y 100 (inclusive). De lo contrario, lanza <code>ValueError</code>. Retorna el monto final con el descuento aplicado.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:25%;">Categoría de Prueba</th>
+        <th style="padding:8px; width:35%;">Nombre del Test</th>
+        <th style="padding:8px; width:40%;">Comportamiento / Resultado Esperado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;" rowspan="2"><strong>HAPPY PATH</strong></td><td style="padding:8px;"><code>test_descuento_valido</code></td><td style="padding:8px;">Descuento del 20% a $100.0 $\rightarrow$ Retorna <strong>80.0</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;"><code>test_sin_descuento</code></td><td style="padding:8px;">Descuento del 0% a $50.0 $\rightarrow$ Retorna <strong>50.0</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;" rowspan="2"><strong>BOUNDARY</strong></td><td style="padding:8px;"><code>test_descuento_total_limite</code></td><td style="padding:8px;">Descuento del 100% a $200.0 $\rightarrow$ Retorna <strong>0.0</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;"><code>test_monto_cero</code></td><td style="padding:8px;">Monto 0.0 con 50% de descuento $\rightarrow$ Retorna <strong>0.0</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;" rowspan="3"><strong>EXCEPTIONS</strong></td><td style="padding:8px;"><code>test_porcentaje_negativo_lanza_error</code></td><td style="padding:8px;">Porcentaje de -5 $\rightarrow$ Lanza <strong>ValueError</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;"><code>test_porcentaje_excedido_lanza_error</code></td><td style="padding:8px;">Porcentaje de 101 $\rightarrow$ Lanza <strong>ValueError</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;"><code>test_monto_negativo_lanza_error</code></td><td style="padding:8px;">Monto de -10.0 $\rightarrow$ Lanza <strong>ValueError</strong></td></tr>
+    </tbody>
+  </table>
+
+<code>
+import pytest<br>
+from tienda import calcular_descuento<br><br>
+def test_descuento_valido():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert calcular_descuento(100.0, 20) == 80.0<br><br>
+def test_sin_descuento():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert calcular_descuento(50.0, 0) == 50.0<br><br>
+def test_descuento_total_limite():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert calcular_descuento(200.0, 100) == 0.0<br><br>
+def test_monto_cero():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert calcular_descuento(0.0, 50) == 0.0<br><br>
+def test_porcentaje_negativo_lanza_error():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;with pytest.raises(ValueError, match="porcentaje"):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calcular_descuento(100.0, -5)<br><br>
+def test_porcentaje_excedido_lanza_error():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;with pytest.raises(ValueError):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calcular_descuento(100.0, 101)<br><br>
+def test_monto_negativo_lanza_error():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;with pytest.raises(ValueError):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calcular_descuento(-10.0, 15)
+</code>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <p style="color:var(--muted2);font-style:italic;"><strong>• Ejercicio 2: Sistema de Clasificación por Edades (Cine/Videojuegos)</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 ENUNCIADO:</strong> Escriba la suite de pruebas para la función <code>obtener_categoria_edad(edad)</code>.<br>
+    * Reglas: Clasifica según la edad: <code>&lt; 0</code> lanza <code>ValueError</code>. <code>0 a 11</code> retorna "Infantil". <code>12 a 17</code> retorna "Adolescente". <code>18 o más</code> retorna "Adulto".
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:25%;">Categoría de Prueba</th>
+        <th style="padding:8px; width:35%;">Nombre del Test</th>
+        <th style="padding:8px; width:40%;">Comportamiento / Resultado Esperado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;" rowspan="3"><strong>HAPPY PATH</strong></td><td style="padding:8px;"><code>test_categoria_infantil</code></td><td style="padding:8px;">Edad: 5 $\rightarrow$ Retorna <strong>"Infantil"</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;"><code>test_categoria_adolescente</code></td><td style="padding:8px;">Edad: 15 $\rightarrow$ Retorna <strong>"Adolescente"</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;"><code>test_categoria_adulto</code></td><td style="padding:8px;">Edad: 30 $\rightarrow$ Retorna <strong>"Adulto"</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;" rowspan="3"><strong>BOUNDARY</strong></td><td style="padding:8px;"><code>test_limite_inferior_adolescente</code></td><td style="padding:8px;">Edad: 12 $\rightarrow$ Retorna <strong>"Adolescente"</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;"><code>test_limite_inferior_adulto</code></td><td style="padding:8px;">Edad: 18 $\rightarrow$ Retorna <strong>"Adulto"</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;"><code>test_edad_cero</code></td><td style="padding:8px;">Edad: 0 $\rightarrow$ Retorna <strong>"Infantil"</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;"><strong>EXCEPTIONS</strong></td><td style="padding:8px;"><code>test_edad_negativa_lanza_error</code></td><td style="padding:8px;">Edad: -1 $\rightarrow$ Lanza <strong>ValueError</strong></td></tr>
+    </tbody>
+  </table>
+
+<code>
+import pytest<br>
+from clasificador import obtener_categoria_edad<br><br>
+def test_categoria_infantil():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert obtener_categoria_edad(5) == "Infantil"<br><br>
+def test_categoria_adolescente():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert obtener_categoria_edad(15) == "Adolescente"<br><br>
+def test_categoria_adulto():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert obtener_categoria_edad(30) == "Adulto"<br><br>
+def test_limite_inferior_adolescente():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert obtener_categoria_edad(12) == "Adolescente"<br><br>
+def test_limite_inferior_adulto():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert obtener_categoria_edad(18) == "Adulto"<br><br>
+def test_edad_cero():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert obtener_categoria_edad(0) == "Infantil"<br><br>
+def test_edad_negativa_lanza_error():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;with pytest.raises(ValueError, match="edad"):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obtener_categoria_edad(-1)
+</code>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <p style="color:var(--muted2);font-style:italic;"><strong>• Ejercicio 3: Generador de Nombres de Usuario para Registro (Slugs)</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 ENUNCIADO:</strong> Escriba la suite de pruebas para la función <code>generar_slug(texto)</code>. Convierte un título en una cadena limpia para URLs (en minúsculas, reemplaza espacios por guiones).<br>
+    * Reglas: El texto no puede estar vacío ni contener solo espacios, de lo contrario lanza <code>ValueError</code>. Debe remover espacios extras al inicio y al final.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:25%;">Categoría de Prueba</th>
+        <th style="padding:8px; width:35%;">Nombre del Test</th>
+        <th style="padding:8px; width:40%;">Comportamiento / Resultado Esperado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;" rowspan="2"><strong>HAPPY PATH</strong></td><td style="padding:8px;"><code>test_slug_texto_normal</code></td><td style="padding:8px;">"Curso de Python" $\rightarrow$ Retorna <strong>"curso-de-python"</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;"><code>test_slug_con_mayusculas_mezcladas</code></td><td style="padding:8px;">"PyTest-Es-Genial" $\rightarrow$ Retorna <strong>"pytest-es-genial"</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;" rowspan="2"><strong>BOUNDARY</strong></td><td style="padding:8px;"><code>test_slug_con_espacios_extremos</code></td><td style="padding:8px;">"   Hola Mundo   " $\rightarrow$ Retorna <strong>"hola-mundo"</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;"><code>test_un_solo_caracter</code></td><td style="padding:8px;">"A" $\rightarrow$ Retorna <strong>"a"</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;" rowspan="2"><strong>EXCEPTIONS</strong></td><td style="padding:8px;"><code>test_texto_vacio_lanza_error</code></td><td style="padding:8px;">Texto vacío "" $\rightarrow$ Lanza <strong>ValueError</strong></td></tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);"><td style="padding:8px;"><code>test_solo_espacios_lanza_error</code></td><td style="padding:8px;">Solo espacios "     " $\rightarrow$ Lanza <strong>ValueError</strong></td></tr>
+    </tbody>
+  </table>
+
+<code>
+import pytest<br>
+from herramientas import generar_slug<br><br>
+def test_slug_texto_normal():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert generar_slug("Curso de Python") == "curso-de-python"<br><br>
+def test_slug_con_mayusculas_mezcladas():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert generar_slug("PyTest-Es-Genial") == "pytest-es-genial"<br><br>
+def test_slug_con_espacios_extremos():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert generar_slug("&nbsp;&nbsp;&nbsp;Hola Mundo&nbsp;&nbsp;&nbsp;") == "hola-mundo"<br><br>
+def test_un_solo_caracter():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assert generar_slug("A") == "a"<br><br>
+def test_texto_vacio_lanza_error():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;with pytest.raises(ValueError):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;generar_slug("")<br><br>
+def test_solo_espacios_lanza_error():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;with pytest.raises(ValueError, match="vacio"):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;generar_slug("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+</code>
 </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-blue">✏️</div><span class="c-section-title">E2: Identificar AAA y Aplicar TDD</span></div>
+        <div class="c-section-body">
+          <p style="font-size: 13px; color:#e2e8f0; margin-bottom:8px;"><strong>a) Identifique las secciones AAA en este test Java:</strong></p>
+          <pre style="background:#111; padding:10px; border-radius:6px; font-size:12px; color:#a5b4fc; border: 1px solid #333; margin-bottom:10px;">
+@Test
+void testRegistroEstudiante() {
+  String nombre = "Ana";
+  int edad = 20;
+  Registro reg = new Registro();
+  boolean result = reg.registrar(nombre, edad);
+  assertTrue(result);
+  assertEquals("Ana", reg.getNombre());
+}</pre>
+          <ul style="font-size:12px; color:var(--green); margin-bottom: 15px; padding-left: 20px;">
+            <li><strong>ARRANGE:</strong> nombre, edad, Registro reg = new Registro()</li>
+            <li><strong>ACT:</strong> reg.registrar(nombre, edad)</li>
+            <li><strong>ASSERT:</strong> assertTrue(result), assertEquals("Ana", reg.getNombre())</li>
+          </ul>
+
+          <p style="font-size: 13px; color:#e2e8f0; margin-bottom:8px;"><strong>b) Ordene los pasos del ciclo TDD:</strong></p>
+          <ol style="font-size: 12px; color:#C8C8E0; padding-left:20px; line-height:1.6;">
+            <li><strong>A</strong> - Escribir un test para la función sumarLista() que aún no existe</li>
+            <li><strong>B</strong> - Ejecutar el test → falla (rojo). Es el comportamiento esperado.</li>
+            <li><strong>C</strong> - Ejecutar todos los tests y confirmar que pasan (verde) <em>[Nota: Previamente se escribe el código mínimo, luego sucede el C]</em></li>
+            <li><strong>D</strong> - Refactorizar: extraer constantes, mejorar nombres de variables</li>
+            <li><strong>E</strong> - Ejecutar tests → siguen en verde. Proceso completado.</li>
+          </ol>
+          <p style="font-size:12px; color:var(--green);">✅ Orden correcto: A → B → C → D → E</p>
+        </div>
+      </div>
+        <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;"><strong>• Ejercicio 1: Procesamiento de Carrito de Compras</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 ENUNCIADO:</strong> Identifique las secciones AAA en el test estructurado en Java y determine el orden secuencial correcto de los pasos dentro del ciclo de desarrollo guiado por pruebas (TDD).
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:20%;">Fase AAA</th>
+        <th style="padding:8px; width:20%;">Líneas</th>
+        <th style="padding:8px; width:60%;">Descripción / Código Involucrado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>ARRANGE</strong></td>
+        <td style="padding:8px; text-align:center;">3 - 6</td>
+        <td style="padding:8px;">Configuración: Instanciación de <code>Carrito</code>, creación del objeto <code>Producto("Laptop", 1000.0)</code> y su agregación a la colección.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>ACT</strong></td>
+        <td style="padding:8px; text-align:center;">8</td>
+        <td style="padding:8px;">Ejecución: Invocación directa del método bajo análisis <code>carrito.obtenerTotalConDescuento(10)</code>.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>ASSERT</strong></td>
+        <td style="padding:8px; text-align:center;">11 - 12</td>
+        <td style="padding:8px;">Validación: Verificación con <code>assertEquals(900.0, totalFinal)</code> y comprobación de estado con <code>assertTrue</code>.</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+@Test<br>
+void testCalcularTotalConDescuento() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// [ARRANGE]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Carrito carrito = new Carrito();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Producto laptop = new Producto("Laptop", 1000.0);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;carrito.agregar(laptop);<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;// [ACT]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;double totalFinal = carrito.obtenerTotalConDescuento(10);<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;// [ASSERT]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assertEquals(900.0, totalFinal);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assertTrue(carrito.tieneDescuentoAplicado());<br>
+}
+</code>
+
+  <p style="color:var(--muted2);font-style:italic; margin-top:15px;"><strong>🔄 Ciclo TDD Ordenado:</strong> A $\rightarrow$ B $\rightarrow$ C $\rightarrow$ D $\rightarrow$ E</p>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <p style="color:var(--muted2);font-style:italic;"><strong>• Ejercicio 2: Autenticación de Usuarios</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 ENUNCIADO:</strong> Identifique las secciones AAA en la prueba automatizada de inicio de sesión y defina el orden operativo de los bloques correspondientes a su ciclo TDD.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:20%;">Fase AAA</th>
+        <th style="padding:8px; width:20%;">Líneas</th>
+        <th style="padding:8px; width:60%;">Descripción / Código Involucrado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>ARRANGE</strong></td>
+        <td style="padding:8px; text-align:center;">3 - 6</td>
+        <td style="padding:8px;">Configuración: Instanciación de <code>ServicioAuth</code>, creación del <code>Usuario("admin", "12345")</code> y su registro en el sistema.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>ACT</strong></td>
+        <td style="padding:8px; text-align:center;">8</td>
+        <td style="padding:8px;">Ejecución: Llamada a la función de autenticación principal <code>auth.login("admin", "12345")</code>.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>ASSERT</strong></td>
+        <td style="padding:8px; text-align:center;">11 - 12</td>
+        <td style="padding:8px;">Validación: Confirmación del valor booleano resultante y verificación de que la sesión activa no sea nula.</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+@Test<br>
+void testLoginExitoso() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// [ARRANGE]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ServicioAuth auth = new ServicioAuth();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Usuario usuarioValido = new Usuario("admin", "12345");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;auth.registrar(usuarioValido);<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;// [ACT]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;boolean resultado = auth.login("admin", "12345");<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;// [ASSERT]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assertTrue(resultado);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assertNotNull(auth.getSesionActual());<br>
+}
+</code>
+
+  <p style="color:var(--muted2);font-style:italic; margin-top:15px;"><strong>🔄 Ciclo TDD Ordenado:</strong> B $\rightarrow$ C $\rightarrow$ D $\rightarrow$ E $\rightarrow$ A</p>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <p style="color:var(--muted2);font-style:italic;"><strong>• Ejercicio 3: Generador de Reportes de Nómina</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 ENUNCIADO:</strong> Identifique las secciones AAA asociadas al lanzamiento de excepciones de negocio en la generación de nóminas vacías y estructure su flujo secuencial en TDD.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:20%;">Fase AAA</th>
+        <th style="padding:8px; width:20%;">Líneas</th>
+        <th style="padding:8px; width:60%;">Descripción / Código Involucrado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>ARRANGE</strong></td>
+        <td style="padding:8px; text-align:center;">3 - 5</td>
+        <td style="padding:8px;">Configuración: Instanciación de <code>GestorNominas</code> y declaración de una lista estructural vacía de tipo <code>ArrayList</code>.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>ACT</strong></td>
+        <td style="padding:8px; text-align:center;">7</td>
+        <td style="padding:8px;">Ejecución: Aislamiento del estímulo mediante una expresión lambda diferida asignada a la referencia <code>accion</code>.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>ASSERT</strong></td>
+        <td style="padding:8px; text-align:center;">10</td>
+        <td style="padding:8px;">Validación: Uso de <code>assertThrows</code> para capturar la interrupción esperada por un <code>IllegalArgumentException.class</code>.</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+@Test<br>
+void testGenerarReporteVacioLanzaExcepcion() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// [ARRANGE]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GestorNominas gestor = new GestorNominas();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Empleado&gt; listaVacia = new ArrayList&lt;&gt;();<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;// [ACT]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Executable accion = () -> gestor.generarReporte(listaVacia);<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;// [ASSERT]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assertThrows(IllegalArgumentException.class, accion);<br>
+}
+</code>
+
+  <p style="color:var(--muted2);font-style:italic; margin-top:15px;"><strong>🔄 Ciclo TDD Ordenado:</strong> E $\rightarrow$ D $\rightarrow$ C $\rightarrow$ A $\rightarrow$ B</p>
+</div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-purple">✏️</div><span class="c-section-title">E3: Análisis de Cobertura y Tests Faltantes</span></div>
+        <div class="c-section-body">
+          <p style="font-size:13px; color:#C8C8E0; margin-bottom:10px;"><strong>ENUNCIADO:</strong> La función <code>clasificar_nota(nota)</code> tiene 5 ramas (if/elif/else). Actual Coverage = 40%. Identifique qué casos faltan para 100%.</p>
+          <pre style="background:#111; padding:10px; border-radius:6px; font-size:12px; color:#a5b4fc; border: 1px solid #333; margin-bottom:10px;">
+def clasificar_nota(nota):
+  if nota < 0 or nota > 100: raise ValueError('Inválida')  # B1
+  elif nota >= 90: return 'Sobresaliente'                 # B2
+  elif nota >= 70: return 'Aprobado'                      # B3
+  elif nota >= 51: return 'Recuperación'                  # B4
+  else: return 'Reprobado'                                # B5</pre>
+          <ul style="font-size:12px; color:#C8C8E0; padding-left:20px; line-height:1.6;">
+            <li><span style="color:#22c55e;">✅ B1 (Error):</span> Cubierto con nota=-1 y nota=101</li>
+            <li><span style="color:#22c55e;">✅ B2 (Sobresaliente):</span> Cubierto con nota=95</li>
+            <li><span style="color:#ef4444;">❌ B3 (Aprobado):</span> <strong>FALTA:</strong> test con nota=75</li>
+            <li><span style="color:#ef4444;">❌ B4 (Recuperación):</span> <strong>FALTA:</strong> test con nota=60</li>
+            <li><span style="color:#ef4444;">❌ B5 (Reprobado):</span> <strong>FALTA:</strong> test con nota=30</li>
+          </ul>
+          <p style="font-size:13px; color:var(--green); margin-top:5px;"><strong>Conclusión:</strong> Se necesitan 3 tests adicionales (B3, B4, B5) para subir del 40% al 100% (todas ramas cubiertas).</p>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;"><strong>• Ejercicio 1: Cálculo del Costo de Envío por Peso</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 ENUNCIADO:</strong> Una función calcula el recargo de envío basado en el peso del paquete en kg. Cuenta con 4 ramas. Los tests actuales solo cubren 2 de ellas (Coverage = 50%). Identifique qué casos faltan y cuántos tests adicionales se necesitan para alcanzar el 100%.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:20%;">Rama / Bifurcación</th>
+        <th style="padding:8px; width:25%;">Condición Evaluada</th>
+        <th style="padding:8px; width:20%;">Estado / Test de Entrada</th>
+        <th style="padding:8px; width:35%;">Resultado Esperado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>B1 — ValueError</strong></td>
+        <td style="padding:8px;"><code>peso &lt;= 0</code></td>
+        <td style="padding:8px; color:green;">✅ Cubierto (peso = -2)</td>
+        <td style="padding:8px;">Lanza ValueError('Peso inválido')</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>B2 — Estándar</strong></td>
+        <td style="padding:8px;"><code>0 &lt; peso &lt;= 5</code></td>
+        <td style="padding:8px; color:green;">✅ Cubierto (peso = 3)</td>
+        <td style="padding:8px;">'Envio Estándar: $5'</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>B3 — Pesado</strong></td>
+        <td style="padding:8px;"><code>5 &lt; peso &lt;= 20</code></td>
+        <td style="padding:8px; color:red;">❌ FALTA (peso = 10)</td>
+        <td style="padding:8px;">'Envio Pesado: $15'</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>B4 — Especial</strong></td>
+        <td style="padding:8px;"><code>peso &gt; 20</code></td>
+        <td style="padding:8px; color:red;">❌ FALTA (peso = 25)</td>
+        <td style="padding:8px;">'Envio Especial: $50'</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+def calcular_envio(peso):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if peso &lt;= 0:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise ValueError('Peso inválido')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elif peso &lt;= 5:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 'Envio Estándar: $5'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elif peso &lt;= 20:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 'Envio Pesado: $15'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 'Envio Especial: $50'
+</code>
+
+  <p style="color:var(--muted2);font-style:italic; margin-top:15px;"><strong>📊 Conclusión:</strong> Cobertura actual del 50%. Añadiendo <strong>2 tests adicionales</strong> (B3 y B4) se cubren todas las ramas del algoritmo para lograr el <strong>100% de Coverage</strong>.</p>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <p style="color:var(--muted2);font-style:italic;"><strong>• Ejercicio 2: Validador de Complejidad de Contraseñas</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 ENUNCIADO:</strong> Un sistema asigna un nivel de seguridad a una contraseña según su longitud. Cuenta con 5 ramas. Los tests actuales solo cubren 2 de ellas (Coverage = 40%). Identifique los casos faltantes y determine la cantidad de tests necesarios para subir la cobertura al 100%.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:20%;">Rama / Bifurcación</th>
+        <th style="padding:8px; width:25%;">Condición Evaluada</th>
+        <th style="padding:8px; width:20%;">Estado / Test de Entrada</th>
+        <th style="padding:8px; width:35%;">Resultado Esperado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>B1 — ValueError</strong></td>
+        <td style="padding:8px;"><code>longitud == 0</code></td>
+        <td style="padding:8px; color:green;">✅ Cubierto (password = "")</td>
+        <td style="padding:8px;">Lanza ValueError('Vacía')</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>B2 — Insegura</strong></td>
+        <td style="padding:8px;"><code>0 &lt; longitud &lt; 6</code></td>
+        <td style="padding:8px; color:red;">❌ FALTA (password = "abc")</td>
+        <td style="padding:8px;">'Insegura'</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>B3 — Moderada</strong></td>
+        <td style="padding:8px;"><code>6 &lt;= longitud &lt; 10</code></td>
+        <td style="padding:8px; color:green;">✅ Cubierto (password = "secret1")</td>
+        <td style="padding:8px;">'Moderada'</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>B4 — Segura</strong></td>
+        <td style="padding:8px;"><code>10 &lt;= longitud &lt; 14</code></td>
+        <td style="padding:8px; color:red;">❌ FALTA (password = "password12")</td>
+        <td style="padding:8px;">'Segura'</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>B5 — Muy Segura</strong></td>
+        <td style="padding:8px;"><code>longitud &gt;= 14</code></td>
+        <td style="padding:8px; color:red;">❌ FALTA (password = "claveLarga2026")</td>
+        <td style="padding:8px;">'Muy Segura'</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+def evaluar_password(password):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;longitud = len(password)<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if longitud == 0:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise ValueError('Vacía')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elif longitud &lt; 6:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 'Insegura'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elif longitud &lt; 10:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 'Moderada'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elif longitud &lt; 14:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 'Segura'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 'Muy Segura'
+</code>
+
+  <p style="color:var(--muted2);font-style:italic; margin-top:15px;"><strong>📊 Conclusión:</strong> Cobertura actual del 40%. Añadiendo los <strong>3 tests faltantes</strong> (B2, B4 y B5) se completan todas las rutas lógicas requeridas para alcanzar el <strong>100% de Cobertura de ramas</strong>.</p>
+</div>
+        </div>
+      </div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div><span class="c-section-title" style="color:#ec4899;">Evidencias</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📸</span><span>Capturas de los resultados en terminal...</span></li></ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">CIERRE</div>
+      <div class="tema-title">Resumen — Semana 8</div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-purple">💡</div><span class="c-section-title">Puntos clave</span></div>
+        <div class="c-section-body">
+          <ul style="color:#C8C8E0; font-size:14px; padding-left: 20px; line-height: 1.6;">
+            <li><strong>01.</strong> Una prueba unitaria verifica UNA unidad aislada. Debe ser FIRST: rápida, independiente y automática. [cite: 324, 325]</li>
+            <li><strong>02.</strong> El patrón AAA (Arrange-Act-Assert) es la estructura universal. Un test = una sola cosa verificada. [cite: 326, 327]</li>
+            <li><strong>03.</strong> Cubrir casos válidos, límite e inválidos es obligatorio. Testear solo el happy path da falsa confianza. [cite: 328, 329]</li>
+            <li><strong>04.</strong> TDD invierte el orden: test (rojo) → código (verde) → refactorizar. Produce mejor diseño. [cite: 330, 331]</li>
+            <li><strong>05.</strong> La cobertura > 80% es el estándar. Herramientas como JaCoCo y Coverage.py miden cuánto código fue ejercitado. [cite: 332, 333]</li>
+          </ul>
+          <div style="margin-top:15px; font-size:14px; color:var(--text); font-weight:600;">
+            📅 Próxima semana: Pruebas de Integración y de Sistema — APIs, Selenium y End-to-End Testing [cite: 334]
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border);">
+      <a class="btn-nav" href="semana7.html">← Semana 7</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana9.html">Semana 9 →</a>
+    </div>
+
+  </div>
+
+  <div id="lightbox" onclick="cerrarLightbox()" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:1.5rem;cursor:zoom-out;">
+    <img id="lb-img" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:10px;object-fit:contain;"/>
+    <button onclick="cerrarLightbox()" style="position:fixed;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#1A1A25;border:1px solid #2A2A3A;color:#E8E8F0;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">×</button>
+  </div>
+  
+  <script>
+    function abrirLightbox(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').style.display='flex';}
+    function cerrarLightbox(){document.getElementById('lightbox').style.display='none';}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrarLightbox();});
+  </script>
 </body>
 </html>

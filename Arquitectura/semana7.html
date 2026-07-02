@@ -118,6 +118,22 @@
           </div>
         </div>
       </div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes sobre el catálogo</span>
+        </div>
+        <div class="c-section-body">
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>Patrones de Comportamiento (Interacción y Responsabilidad entre Objetos)</strong><br>
+• <strong>Chain of Responsibility (Cadena de Responsabilidad):</strong> Pasa una petición a lo largo de una cadena de posibles encargados, donde cada eslabón decide si la resuelve o la pasa al siguiente. <em>Ejemplo:</em> Un sistema de soporte de 3 niveles; un Bot básico filtra preguntas comunes, un Operador Junior atiende facturación y un Director Técnico resuelve fallos críticos de servidores si los niveles anteriores no pudieron.<br>
+• <strong>Command (Orden):</strong> Encapsula una acción o solicitud como un objeto independiente, facilitando el almacenamiento en colas, el paso de parámetros y la reversión de operaciones. <em>Ejemplo:</em> El botón deshacer (Ctrl + Z) en un editor de texto; en lugar de aplicar cambios directamente, se ejecuta un <code>InsertarTextoCommand</code> que guarda internamente tanto el método <code>ejecutar()</code> como su contraparte <code>deshacer()</code> en un historial.<br>
+• <strong>Interpreter (Intérprete):</strong> Define una representación de la gramática de un lenguaje junto con un intérprete que utiliza dicha representación para evaluar oraciones o expresiones. <em>Ejemplo:</em> Un buscador que procesa consultas como <code>"precio &lt; 100 AND stock &gt; 0"</code>; el patrón divide la frase en piezas y genera un árbol de objetos (expresiones matemáticas y lógicas) que evalúan recursivamente el resultado mediante el método <code>interpretar()</code>.
+</p>
+</div>
+        </div>
+      </div>
 
       <div class="c-section">
         <div class="c-section-header">
@@ -141,6 +157,22 @@
           </div>
         </div>
       </div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-green">📝</div>
+          <span class="c-section-title">Mis apuntes sobre el catálogo</span>
+        </div>
+        <div class="c-section-body">
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>Patrones de Comportamiento (Interacción y Responsabilidad entre Objetos - Continuación)</strong><br>
+• <strong>Iterator (Iterador):</strong> Permite recorrer secuencialmente todos los elementos de una colección sin exponer su estructura ni su representación interna. <em>Ejemplo:</em> El control remoto de una televisión o una lista de reproducción en Spotify; al usuario no le interesa cómo están almacenados los canales o canciones, solo interactúa de forma uniforme con los métodos <code>siguiente()</code> y <code>¿hayMasElementos?()</code>.<br>
+• <strong>Mediator (Mediador):</strong> Restringe las comunicaciones directas entre objetos, forzándolos a cooperar únicamente a través de un objeto centralizado para reducir las dependencias caóticas. <em>Ejemplo:</em> Una torre de control en un aeropuerto; en lugar de que 20 aviones intenten hablar directamente entre sí para coordinar despegues y aterrizajes, cada piloto se comunica exclusivamente con la torre, la cual centraliza y gestiona todo el tráfico.<br>
+• <strong>Memento (Recuerdo / Historial):</strong> Permite capturar y almacenar el estado interno de un objeto en un momento dado para poder restaurarlo al estado original sin violar el principio de encapsulamiento. <em>Ejemplo:</em> Los puntos de guardado o el autoguardado en un videojuego; el sistema toma una "fotografía" secreta de la vida, inventario y posición del personaje, permitiendo hacer un rollback inmediato si el jugador comete un error fatal.
+</p>
+</div>
+        </div>
+      </div>
 
       <div class="c-section">
         <div class="c-section-header">
@@ -156,7 +188,7 @@
             <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
               <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">🔄 State</p>
               <p style="font-size:13px;color:#C8C8E0;">Permite a un objeto alterar todo su comportamiento interno cuando su estado cambia, simulando el cambio de su propia clase.</p>
-            </div>
+            </div><
             <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
               <p style="color:var(--accent2);font-weight:600;margin-bottom:0.4rem;">♟️ Strategy</p>
               <p style="font-size:13px;color:#C8C8E0;">Define una familia de algoritmos, encapsula cada uno de ellos y los vuelve totalmente intercambiables de forma dinámica en caliente.</p>
@@ -179,7 +211,16 @@
           <span class="c-section-title">Mis apuntes sobre el catálogo</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre el catálogo de patrones de comportamiento...</p>
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>Patrones de Comportamiento (Interacción y Responsabilidad entre Objetos - Final)</strong><br>
+• <strong>Observer (Observador):</strong> Establece una relación de dependencia de uno a muchos, de modo que cuando un objeto central (Sujeto) cambia de estado, notifica automáticamente a todos sus dependientes (Observadores). <em>Ejemplo:</em> El sistema de suscripciones de YouTube; los usuarios se suscriben a un canal y, en cuanto el creador sube un nuevo video, el sistema recorre la lista de suscriptores para dispararles una notificación en tiempo real.<br>
+• <strong>State (Estado):</strong> Permite que un objeto altere su comportamiento cuando cambia su estado interno, encapsulando las lógicas específicas en clases separadas para evitar estructuras condicionales complejas. <em>Ejemplo:</em> El botón "Proceder al pago" en un carrito de compras; su comportamiento muta de forma radical si el estado actual del carrito es <code>EstadoVacio</code> (muestra error), <code>EstadoConProductos</code> (redirige al checkout) o <code>EstadoPagado</code> (indica que ya fue procesado).<br>
+• <strong>Strategy (Estrategia):</strong> Define una familia de algoritmos, encapsula cada uno de ellos y los hace intercambiables en tiempo de ejecución según las necesidades del contexto. <em>Ejemplo:</em> La pasarela de pagos de un e-commerce; el fin es el mismo (procesar la transacción), pero el usuario puede alternar "en caliente" entre diferentes estrategias de ejecución como pagar con Tarjeta de Crédito, PayPal o Criptomonedas.<br>
+• <strong>Template Method (Método Plantilla):</strong> Define el esqueleto de un algoritmo en una operación de la clase base, delegando la implementación de ciertos pasos específicos a las subclases sin permitir que se altere la estructura general. <em>Ejemplo:</em> La preparación de bebidas calientes; la receta madre fija los pasos rígidos como hervir agua y servir en taza, mientras que las subclases <code>Cafe</code> o <code>Te</code> sobreescriben los pasos variables de infusión y adición de condimentos.<br>
+• <strong>Visitor (Visitante):</strong> Permite separar un algoritmo o nueva operación de la estructura de objetos sobre la que opera, permitiendo añadir funciones a clases existentes sin modificarlas directamente. <em>Ejemplo:</em> Un sistema con las clases estables <code>Edificio</code>, <code>Parque</code> y <code>Carretera</code>; para no alterar su código al añadir nuevas herramientas, se crean componentes externos como <code>VisitantePDF</code> (que recorre los objetos para exportar sus datos) o <code>VisitanteImpuestos</code> (que evalúa el costo fiscal de cada uno).
+</p>
+</div>
         </div>
       </div>
 
@@ -248,7 +289,43 @@
           <span class="c-section-title">Mis apuntes sobre Strategy y Observer</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Strategy y Observer...</p>
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 ENUNCIADO — Implementación y Cumplimiento de OCP del Patrón Strategy en Python</strong><br>
+    Se requiere diseñar un sistema de procesamiento de pagos para un e-commerce que permita a los usuarios seleccionar e intercambiar de forma dinámica su método de cobro (Tarjeta, Transferencia o Efectivo) durante el checkout. La solución debe cumplir con el Principio Abierto/Cerrado (OCP), garantizando que la incorporación de nuevas pasarelas de pago no obligue a modificar la estructura interna de la lógica del negocio existente.
+  </p>
+
+  <p style="color:var(--muted2);font-style:italic; margin-top:15px;">• <strong>Implementación del Código:</strong></p>
+<code>
+from abc import ABC, abstractmethod<br><br>
+# 1. Interfaz común para todas las variantes del algoritmo<br>
+class EstrategiaPago(ABC):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@abstractmethod<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def pagar(self, monto: float): pass<br><br>
+# 2. Estrategias concretas con lógicas de negocio independientes<br>
+class PagoTarjeta(EstrategiaPago):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def pagar(self, monto: float): print(f"💳 Procesando pago de ${monto} con Tarjeta.")<br><br>
+class PagoTransferencia(EstrategiaPago):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def pagar(self, monto: float): print(f"🏦 Pago de ${monto} mediante Transferencia Bancaria.")<br><br>
+class PagoEfectivo(EstrategiaPago):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def pagar(self, monto: float): print(f"💵 Pago de ${monto} en Efectivo. Generando recibo...")<br><br>
+# 3. El Contexto que delega el comportamiento a la estrategia asignada<br>
+class ContextoPedido:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, estrategia_pago: EstrategiaPago): self._estrategia = estrategia_pago<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def cambiar_estrategia(self, nueva_estrategia: EstrategiaPago): self._estrategia = nueva_estrategia<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def ejecutar_cobro(self, monto: float): return self._estrategia.pagar(monto)<br><br>
+# 4. Demostración en Tiempo de Ejecución<br>
+pedido = ContextoPedido(PagoTarjeta())<br>
+pedido.ejecutar_cobro(150.00)  # Procesa con Tarjeta<br>
+pedido.cambiar_estrategia(PagoEfectivo())<br>
+pedido.ejecutar_cobro(150.00)  # Cambia 'en caliente' a Efectivo
+</code>
+
+  <p style="color:var(--muted2);font-style:italic; margin-top:15px;">
+    • <strong>¿Por qué cumple el Principio Abierto/Cerrado (OCP)?</strong><br>
+    Si en el futuro se decide incorporar nuevos métodos de pago (como Bitcoin o PayPal), la clase contenedora <code>ContextoPedido</code> queda completamente <strong>cerrada a modificaciones</strong>, evitando alterar código antiguo o introducir fallos colaterales en condicionales anidados (if/else). El sistema se mantiene <strong>abierto a extensiones</strong>, ya que solo basta con estructurar una nueva subclase que herede de <code>EstrategiaPago</code> e inyectarla dinámicamente en el contexto cuando el cliente lo requiera.
+  </p>
+</div>
         </div>
       </div>
 
@@ -320,7 +397,15 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre cuándo aplicar cada patrón y la relación con Arquitectura Limpia...</p>
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>Aplicaciones Prácticas de los Patrones de Comportamiento</strong><br>
+• <strong>1. Memento (Problema: Auditar cambios y volver atrás en el tiempo):</strong> Permite recuperar estados previos de un objeto sin vulnerar su privacidad. <em>Ejemplo:</em> El historial de versiones en Google Docs; el servidor genera capturas de estado discretas con fecha y hora, permitiendo al usuario revertir el documento de forma integral a un punto exacto en el pasado si borra información por error.<br>
+• <strong>2. Chain of Responsibility (Problema: Flujo de negocio con aprobaciones secuenciales):</strong> Evita el acoplamiento directo entre el emisor de una solicitud y sus posibles receptores mediante una cadena jerárquica. <em>Ejemplo:</em> Una solicitud de viáticos corporativos de $5,000; el Líder de Equipo la evalúa y la delega al superar su límite de $500, el Gerente la transfiere de igual forma al exceder sus $2,000, hasta que llega al Director de Finanzas, quien posee la autoridad para otorgar la aprobación final.<br>
+• <strong>3. State (Problema: El comportamiento cambia según sus atributos internos):</strong> Modifica las rutinas operativas de una entidad eliminando estructuras condicionales masivas. <em>Ejemplo:</em> El procesamiento de <code>cancelarPedido()</code> en una orden de e-commerce; la lógica se bifurca drásticamente delegando la acción en sus estados internos: reembolsa el dinero bajo el estado "Creado", bloquea la operación bajo el estado "Enviado" o inicia un trámite de devolución física bajo el estado "Entregado".<br>
+• <strong>4. Command (Problema: Desacoplar el origen de una orden de quien la procesa):</strong> Transforma solicitudes en objetos independientes, permitiendo parametrizar clientes, encolar tareas y diferir ejecuciones. <em>Ejemplo:</em> La comanda en la cocina de un restaurante; el cliente emite la solicitud y el mesero la encapsula en una orden física (objeto Command) colocándola en una fila de pendientes. El cocinero extrae y procesa los elementos de la cola secuencialmente sin interactuar ni conocer la identidad del cliente originario.
+</p>
+</div>
         </div>
       </div>
 

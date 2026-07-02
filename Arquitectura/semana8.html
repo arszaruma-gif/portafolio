@@ -137,7 +137,20 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre DDD Estratégico...</p>
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>Diseño Guiado por el Dominio (DDD Estratégico) y Bounded Contexts</strong><br>
+• <strong>Ejemplo 1: Plataforma de Comercio Electrónico (E-commerce)</strong><br>
+&nbsp;&nbsp;• <strong>Bounded Context (Catálogo y Ventas):</strong> Su Lenguaje Ubicuo define al "Producto" como una entidad visual. Importa su nombre, descripción, precio e imágenes. Su frontera se limita a que el cliente visualice el artículo y lo añada al carrito.<br>
+&nbsp;&nbsp;• <strong>Bounded Context (Inventario y Logística):</strong> Su Lenguaje Ubicuo lo denomina "Stock" o "SKU". Importan el peso, dimensiones, pasillo de bodega y stock disponible. Su frontera ignora el marketing, enfocándose en la capacidad del camión de reparto.<br>
+&nbsp;&nbsp;• <em>Resultado Estratégico:</em> Se evita un modelo monolítico con 80 atributos propicios a fallos, sustituyéndolo por dos modelos independientes en código que se comunican de forma limpia.<br>
+• <strong>Ejemplo 2: Sistema para una Clínica Médica (Hospital)</strong><br>
+&nbsp;&nbsp;• <strong>Bounded Context (Citas Médicas y Recepción):</strong> El "Paciente" se entiende como un Cliente/Usuario. Importan su nombre, cédula, teléfono y fecha de cita. Su frontera gestiona agendas y salas de espera.<br>
+&nbsp;&nbsp;• <strong>Bounded Context (Historial Clínico):</strong> El "Paciente" es un Caso de Estudio. Importan su tipo de sangre, alergias y recetas. Su frontera blinda la información por normativas de privacidad, restringiendo el acceso al personal administrativo.<br>
+&nbsp;&nbsp;• <strong>Bounded Context (Facturación y Seguros):</strong> El "Paciente" se traduce en Asegurado o Pagador. Importan el número de póliza, cobertura y deducibles.<br>
+&nbsp;&nbsp;• <em>Resultado Estratégico:</em> Al delimitar los contextos, si Contabilidad modifica las reglas de procesamiento de seguros, la lógica médica para verificar las alergias de un paciente permanece intacta y libre de efectos colaterales.
+</p>
+</div>
         </div>
       </div>
 
@@ -194,7 +207,19 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre la Ley de Conway...</p>
+         <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>La Ley de Conway y su Impacto Arquitectural</strong><br>
+• <strong>Ejemplo 1: Nacimiento de un Monolito Caótico vs. Microservicios</strong><br>
+&nbsp;&nbsp;• <em>Estructura de la empresa:</em> Un único equipo centralizado de 15 programadores donde todos intervienen simultáneamente en la base de datos, el frontend y las pasarelas de pago bajo un canal de comunicación directa y constante.<br>
+&nbsp;&nbsp;• <em>Resultado en el software:</em> El sistema evoluciona hacia un Monolito acoplado con código mezclado, reflejando de forma natural la falta de fronteras en la comunicación del equipo técnico.<br>
+&nbsp;&nbsp;• <em>Maniobra Inversa de Conway:</em> Al reorganizar la estructura interna en 3 células autónomas (Pagos, Usuarios y Envíos), la arquitectura de la aplicación muta de forma orgánica hacia 3 microservicios independientes que interactúan exclusivamente mediante contratos de API.<br>
+• <strong>Ejemplo 2: El "Efecto Silo" en un Banco Tradicional</strong><br>
+&nbsp;&nbsp;• <em>Estructura de la empresa:</em> Departamentos herméticos e independientes (Piso 4: Tarjetas de Crédito / Piso 5: Cuentas de Ahorros) regidos por burocracia, metas aisladas y flujos de comunicación estrictamente formales a través de correos de aprobación.<br>
+&nbsp;&nbsp;• <em>Resultado en el software:</em> La aplicación móvil bancaria expone una experiencia fragmentada; el módulo de tarjetas presenta un diseño azul con tiempos de carga elevados, mientras que la sección de ahorros cuenta con una interfaz visualmente distinta y mayor velocidad.<br>
+&nbsp;&nbsp;• <em>Causa Raíz:</em> El sistema no se estructuró en torno a la experiencia de usuario, sino que se convirtió en el espejo exacto de la nula comunicación y división física de los pisos 4 y 5 de la organización bancaria.
+</p>
+</div>
         </div>
       </div>
 
@@ -273,7 +298,19 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Deuda Técnica y APIs...</p>
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>Deuda Técnica: El Costo de los Atajos en el Software</strong><br>
+• <strong>Ejemplo 1: El "Atajo" en los formatos de fecha (Rompiendo integraciones)</strong><br>
+&nbsp;&nbsp;• <strong>El Atajo (Generando la deuda):</strong> Para lanzar una función antes del Black Friday, un desarrollador envía las fechas en la API como texto plano en formato local (<code>"25/12/2026"</code>) sin documentación ni estandarización internacional (ISO 8601). El despliegue inmediato funciona y es un éxito comercial.<br>
+&nbsp;&nbsp;• <strong>El Interés a pagar (La consecuencia):</strong> Seis meses después, al integrarse con una agencia internacional que procesa fechas en formato internacional o anglosajón, el sistema colapsa masivamente intercambiando meses por días, provocando cancelaciones y errores de reserva.<br>
+&nbsp;&nbsp;• <strong>El Costo de pagarla:</strong> Cambiar la API es crítico porque las versiones antiguas de la app móvil dependen de ella. El equipo debe gastar semanas programando parches de retrocompatibilidad y manteniendo múltiples versiones en paralelo.<br>
+• <strong>Ejemplo 2: Exponer la Base de Datos directamente en la API</strong><br>
+&nbsp;&nbsp;• <strong>El Atajo (Generando la deuda):</strong> Con el fin de iniciar el ciclo escolar a tiempo, un equipo expone la estructura interna de la base de datos directamente en el JSON de la API (ej. <code>"tbl_usr_id_01"</code>), incluyendo datos sensibles como el hash de las contraseñas por omitir el filtrado de campos.<br>
+&nbsp;&nbsp;• <strong>El Interés a pagar (La consecuencia):</strong> Al año siguiente, se planifica una migración tecnológica y una normalización de las tablas del sistema. Sin embargo, cualquier modificación interna altera la API e interrumpe de inmediato el funcionamiento del portal de alumnos, la app de profesores y sistemas externos conectados.<br>
+&nbsp;&nbsp;• <strong>El Costo de pagarla:</strong> El sistema queda encadenado a un diseño obsoleto e inseguro. Para solventarlo, se ven obligados a construir e implementar una capa intermedia de traducción (Anti-Corruption Layer), duplicando el esfuerzo y las horas de desarrollo que habrían requerido un diseño correcto desde el inicio.
+</p>
+</div>
         </div>
       </div>
 

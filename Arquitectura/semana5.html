@@ -324,10 +324,168 @@
       <div class="c-section">
         <div class="c-section-header">
           <div class="c-icon ic-orange">💭</div>
-          <span class="c-section-title">Mi reflexión y conclusión personal</span>
+          <span class="c-section-title">EXAMEN DE PRIMER PARCIAL</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu reflexión personal sobre lo aprendido en la semana 5...</p>
+          <p style="color:var(--muted2);font-style:italic;">
+    <strong>Bloque 1: Fundamentos, Atributos de Calidad y Modelo C4</strong><br><br>
+    
+    <strong>1. Al evaluar requerimientos de software, ¿cuál de los siguientes describe un trade-off (compensación) crítico al integrar Modelos de Lenguaje Grande (LLMs) de terceros?</strong><br>
+    • Respuesta: B) Incremento notable en la precisión y capacidades generativas a expensas de una mayor latencia de red e inferencia y costos variables por tokens.<br><br>
+    
+    <strong>2. En el modelado de escenarios de atributos de calidad utilizando plantillas estándar, ¿qué representa el "Estímulo"?</strong><br>
+    • Respuesta: B) Una condición o evento que llega al sistema, como un pico de tráfico, un fallo de red o un timeout de una API externa.<br><br>
+    
+    <strong>3. Para mitigar los riesgos de disponibilidad y latencia alta al consumir APIs de IA de terceros, ¿cuál es la estrategia arquitectónica más adecuada?</strong><br>
+    • Respuesta: B) Implementar patrones de resiliencia como almacenamiento en caché (caching) de respuestas comunes, colas de procesamiento asíncrono y Circuit Breakers.<br><br>
+    
+    <strong>4. ¿Cuál es el propósito primordial de redactar un Registro de Decisión de Arquitectura (ADR)?</strong><br>
+    • Respuesta: B) Capturar de manera clara el contexto, las restricciones, los criterios de diseño, las alternativas descartadas y el "porqué" de una elección tecnológica.<br><br>
+    
+    <strong>5. El modelo C4 propone una visualización jerárquica de la arquitectura de software. ¿Qué elementos clave se representan en el Nivel 1 (Diagrama de Contexto)?</strong><br>
+    • Respuesta: C) El sistema de software como una caja negra, los usuarios que interactúan con él y los sistemas externos o dependencias de terceros con los que se conecta.<br><br>
+    
+    <strong>6. En el modelo C4, ¿cómo se define conceptualmente un "Contenedor" (Nivel 2)?</strong><br>
+    • Respuesta: B) Cualquier unidad de despliegue ejecutable de forma independiente, como una SPA web, una aplicación móvil, una API o un almacén de datos.<br><br>
+    
+    <strong>7. Al redactar un ADR según las prácticas de la Semana 2, ¿qué sección se encarga de mapear los beneficios, compromisos o deudas técnicas asumidas tras aceptar la decisión?</strong><br>
+    • Respuesta: C) Consecuencias (Consequences).<br><br>
+    
+    <strong>8. Si un sistema transaccional procesa datos altamente confidenciales y los envía a un modelo de IA comercial, ¿cuál de los siguientes representa el mayor riesgo de seguridad arquitectónica?</strong><br>
+    • Respuesta: B) La violación de normativas de privacidad de datos (como GDPR) si los prompts contienen información sensible expuesta al entrenamiento de terceros.<br><br>
+    
+    <strong>9. ¿Cuál es el principal motivo por el que se desaconseja mantener manualmente el Nivel 4 (Diagrama de Código) del modelo C4 en proyectos de mediano y gran tamaño?</strong><br>
+    • Respuesta: B) Porque cambia con demasiada frecuencia con cada refactorización de código diaria, volviéndose obsoleto de inmediato si no se automatiza.<br><br>
+    
+    <strong>10. En una plantilla de escenario de atributos de calidad, la "Medida de la Respuesta" debe caracterizarse por ser:</strong><br>
+    • Respuesta: B) Estrictamente cuantificable, medible o comprobable (ej. "en menos de 2 segundos", "0% de pérdida de paquetes").<br><br>
+    
+    <strong>11. ¿Qué información técnica se detalla en el Nivel 3 (Diagrama de Componentes) del modelo C4?</strong><br>
+    • Respuesta: B) La organización interna de un contenedor específico, mostrando sus controladores, servicios, repositorios y dependencias internas.<br><br>
+    
+    <strong>12. Guardar los archivos de documentación ADR en formato Markdown (.md) dentro del mismo repositorio de código Git de la aplicación permite:</strong><br>
+    • Respuesta: B) Que la documentación evolucione junto al código, facilitando el control de versiones, auditorías técnicas e históricos transparentes.<br><br>
+    
+    <strong>13. La arquitectura de software se limita exclusivamente a la elección del lenguaje de programación y no influye en la longevidad del sistema ante cambios de negocio.</strong><br>
+    • Respuesta: B) Falso (La arquitectura impacta profundamente en la evolución y mantenibilidad a largo plazo).<br><br>
+    
+    <strong>14. Un trade-off ocurre cuando la optimización extrema de un atributo de calidad (como la seguridad) causa una degradación o penalización inevitable en otro atributo (como el rendimiento o la latencia).</strong><br>
+    • Respuesta: A) Verdadero<br><br>
+    
+    <strong>15. La mantenibilidad mide la facilidad con la que un sistema de software puede ser modificado, corregido o extendido ante la aparición de nuevas reglas de negocio.</strong><br>
+    • Respuesta: A) Verdadero<br><br>
+    
+    <strong>16. El modelo de lenguaje (LLM) de un tercero garantiza de forma nativa un comportamiento determinista, por lo que nunca alterará el atributo de calidad de exactitud o precisión del software.</strong><br>
+    • Respuesta: B) Falso (Los LLMs son probabilísticos y de naturaleza no determinista, propensos a alucinaciones).<br><br>
+    
+    <strong>17. Un requerimiento funcional se enfoca en "qué" debe hacer el sistema, mientras que un atributo de calidad define las restricciones de "cómo" debe comportarse el sistema operativamente.</strong><br>
+    • Respuesta: A) Verdadero<br><br>
+    
+    <strong>18. El uso excesivo de llamadas síncronas encadenadas a múltiples servicios de IA externos es una excelente práctica para sistemas que buscan reducir al mínimo su latencia general.</strong><br>
+    • Respuesta: B) Falso (El encadenamiento síncrono incrementa drásticamente la latencia global).<br><br>
+    
+    <strong>19. El modelo C4 prohíbe de forma estricta el uso de diagramas UML clásicos, obligando a usar únicamente sus propias herramientas propietarias de pago.</strong><br>
+    • Respuesta: B) Falso (C4 es un modelo independiente de la herramienta y es totalmente compatible con notaciones abstractas o extensiones UML).<br><br>
+    
+    <strong>20. El "Estado" de un ADR permite saber si una decisión arquitectónica se encuentra actualmente aprobada, bajo propuesta o si ha sido superada por un diseño posterior.</strong><br>
+    • Respuesta: A) Verdadero<br><br>
+    
+    <strong>Bloque 2: Estilos Arquitectónicos Clásicos</strong><br><br>
+    
+    <strong>21. En el estilo clásico de Arquitectura en Capas Cerradas (Layered Architecture), ¿cuál es la resistencia de acoplamiento más severa que deben cumplir los niveles?</strong><br>
+    • Respuesta: B) Cada capa puede comunicarse únicamente con la capa inmediatamente inferior a ella, sin saltarse niveles intermedios.<br><br>
+    
+    <strong>22. ¿Qué problema arquitectónico describe el denominado "Efecto Sumidero" (Sinkhole Effect) en una arquitectura organizada en capas?</strong><br>
+    • Respuesta: B) El traspaso inútil de peticiones a través de múltiples capas que no realizan ninguna lógica de negocio ni transformación de datos, actuando solo como pasamanos.<br><br>
+    
+    <strong>23. Al comparar el estilo Microkernel (Plug-in) con una Arquitectura en Capas para el diseño de una aplicación empresarial estándar que solo procesa registros CRUD predecibles, ¿cuál es la ventaja de la simplicidad de las Capas?</strong><br>
+    • Respuesta: B) Las capas reducen significativamente el esfuerzo de diseño inicial y la complejidad de interfaces complejas, acelerando el desarrollo si los requerimientos son lineales y estables.<br><br>
+    
+    <strong>24. El estilo arquitectónico de Microkernel se define por estar estructurado en base a dos elementos principales:</strong><br>
+    • Respuesta: B) Un núcleo central mínimo (Core System) y módulos de extensión autónomos e independientes (Plug-ins).<br><br>
+    
+    <strong>25. En una arquitectura de estilo Pizarra (Blackboard), ¿cómo interactúan las llamadas Fuentes de Conocimiento (Knowledge Sources)?</strong><br>
+    • Respuesta: B) Evaluando de forma asíncrona y autónoma un espacio de datos centralizado (la pizarra) para proponer soluciones parciales a problemas complejos o no deterministas.<br><br>
+    
+    <strong>26. Al analizar herramientas del mercado actual, ¿cuál de los siguientes sistemas representa una clara aplicación práctica del estilo arquitectónico Microkernel?</strong><br>
+    • Respuesta: B) Un IDE de desarrollo moderno como VS Code, que funciona con un motor base liviano y expande sus capacidades (soporte de lenguajes, linters) mediante extensiones instalables.<br><br>
+    
+    <strong>27. ¿Cuál es el riesgo de permitir que un sistema evolucione hacia una estructura de Capas Abiertas (Open Layered Architecture)?</strong><br>
+    • Respuesta: B) Aumenta la flexibilidad de llamadas directas, pero eleva drásticamente el riesgo de acoplamiento difuso y dificulta la sustitución o refactorización de los niveles más profundos.<br><br>
+    
+    <strong>28. En una arquitectura en Capas tradicionales, la capa de Presentación tiene el control absoluto y es la encargada de dictar los esquemas y llaves foráneas directamente dentro del motor de base de datos.</strong><br>
+    • Respuesta: B) Falso (Cada capa tiene su responsabilidad, y la persistencia o base de datos está típicamente aislada en el nivel más bajo, lejos del control directo de la presentación).<br><br>
+    
+    <strong>29. El estilo de Pizarra (Blackboard) es altamente recomendado para sistemas de comercio electrónico que necesitan responder transacciones bancarias en menos de 5 milisegundos netos.</strong><br>
+    • Respuesta: B) Falso (Blackboard no es determinista y no está diseñado para sistemas transaccionales tradicionales de bajísima latencia homogénea).<br><br>
+    
+    <strong>30. Uno de los mayores retos de ingeniería al implementar el estilo Microkernel es diseñar contratos de interfaz (APIs) estables y robustos en el Core para evitar que los cambios en el núcleo rompan los plug-ins existentes.</strong><br>
+    • Respuesta: A) Verdadero<br><br>
+    
+    <strong>31. El bajo acoplamiento y la alta cohesión son objetivos clave de diseño que los arquitectos buscan equilibrar cuando eligen e implementan un estilo arquitectónico clásico.</strong><br>
+    • Respuesta: A) Verdadero<br><br>
+    
+    <strong>32. En una arquitectura en Capas Cerradas, si la Capa 3 necesita información de la Capa 1, tiene permitido realizar una llamada directa hacia arriba violando la jerarquía de niveles.</strong><br>
+    • Respuesta: B) Falso (Viola las reglas estrictas de una arquitectura de capas cerradas y la dirección del flujo habitual de arriba hacia abajo).<br><br>
+    
+    <strong>Bloque 3: Microservicios, Diseño Guiado por el Dominio (DDD) y Observabilidad</strong><br><br>
+    
+    <strong>33. Al diseñar una arquitectura basada en Microservicios, ¿cuál de los siguientes enunciados representa la estrategia correcta sobre la persistencia de los datos?</strong><br>
+    • Respuesta: B) Desplegar una base de datos exclusiva para cada microservicio (Database-per-Service), aislando sus datos y prohibiendo consultas directas externas al almacén.<br><br>
+    
+    <strong>34. El Diseño Guiado por el Dominio (DDD) estratégico aporta un concepto fundamental para establecer límites de servicios claros y evitar la creación de un "monolito distribuido". Este concepto es:</strong><br>
+    • Respuesta: B) Los Contextos Delimitados (Bounded Contexts).<br><br>
+    
+    <strong>35. En sistemas distribuidos complejos, la Observabilidad es un requisito técnico no negociable. ¿Cuáles son los tres pilares esenciales que la conforman?</strong><br>
+    • Respuesta: B) Logs (Registros), Métricas (Metrics) y Trazas Distribuidas (Traces).<br><br>
+    
+    <strong>36. ¿Cuál es el principal trade-off o desventaja operativa que asume una organización al migrar de una arquitectura monolítica hacia microservicios?</strong><br>
+    • Respuesta: B) Un incremento sustancial en la complejidad operativa de despliegue, automatización de infraestructura, monitoreo de red y gestión de consistencia de datos.<br><br>
+    
+    <strong>37. Cuando se realiza un taller de diseño arquitectónico para descomponer un sistema, ¿qué síntoma técnico denota un alto "acoplamiento transaccional" perjudicial entre microservicios?</strong><br>
+    • Respuesta: B) Que para completar una sola operación de escritura del usuario, un microservicio deba realizar llamadas HTTP síncronas en cadena a otros tres servicios, fallando por completo si uno de ellos experimenta latencia o caídas.<br><br>
+    
+    <strong>38. La Ley de Conway postula que el diseño de los sistemas de software de una organización tiende a replicar las estructuras y canales de comunicación interna de la propia empresa.</strong><br>
+    • Respuesta: A) Verdadero<br><br>
+    
+    <strong>39. En microservicios, una Capa Anticorrupción (ACL) de DDD sirve para traducir y aislar los modelos de datos limpios de nuestro nuevo servicio cuando este interactúa con sistemas legados o externos deficientes.</strong><br>
+    • Respuesta: A) Verdadero<br><br>
+    
+    <strong>40. Las trazas distribuidas (Distributed Tracing) pierden utilidad en arquitecturas de microservicios, ya que es sumamente fácil diagnosticar errores leyendo un único archivo de log local en sistemas distribuidos.</strong><br>
+    • Respuesta: B) Falso (Son indispensables precisamente porque en sistemas distribuidos los logs están dispersos en múltiples servidores, haciendo muy difícil seguir el flujo sin una traza unificada).<br><br>
+    
+    <strong>41. El tamaño ideal de un microservicio debe ser medido de forma matemática contando estrictamente que no supere las 200 líneas de código fuente totales.</strong><br>
+    • Respuesta: B) Falso (El tamaño se delimita por la cohesión del dominio comercial y el Bounded Context, nunca por métricas arbitrarias de líneas de código).<br><br>
+    
+    <strong>42. El componente denominado "API Gateway" centraliza preocupaciones transversales de red como el enrutamiento de peticiones, la autenticación de tokens y el control de tasa de solicitudes (Rate Limiting).</strong><br>
+    • Respuesta: A) Verdadero<br><br>
+    
+    <strong>Bloque 4: Arquitecturas Orientadas a Eventos, Resiliencia y Evolución</strong><br><br>
+    
+    <strong>43. En una Arquitectura Orientada a Eventos (EDA) asíncrona, ¿cuál de los siguientes describe la naturaleza fundamental de un "Evento"?</strong><br>
+    • Respuesta: B) Un hecho histórico inmutable del pasado que ya ocurrió en el negocio (ej. "OrdenCreada", "PagoProcesado") y que no puede ser borrado ni modificado.<br><br>
+    
+    <strong>44. El patrón arquitectónico CQRS propone resolver la asimetría de carga de trabajo en sistemas de alto tráfico mediante:</strong><br>
+    • Respuesta: B) La separación explícita de los modelos lógicos e infraestructura para las operaciones de modificación de estado (Commands) frente a las operaciones de lectura de datos (Queries).<br><br>
+    
+    <strong>45. En el contexto de las "Arquitecturas Evolutivas", ¿qué herramientas automatizadas se implementan para validar de manera continua que los cambios de código no degraden los atributos de calidad críticos?</strong><br>
+    • Respuesta: B) Funciones de Fitness (Fitness Functions) automatizadas dentro del pipeline de CI/CD.<br><br>
+    
+    <strong>46. Al diseñar sistemas distribuidos resilientes, el patrón de "Circuit Breaker" (Disyuntor) se utiliza específicamente para:</strong><br>
+    • Respuesta: B) Evitar que una aplicación sature de llamadas síncronas a un servicio externo que está caído o lento, fallando de inmediato de forma controlada y retornando una respuesta de respaldo (fallback).<br><br>
+    
+    <strong>47. Para gestionar transacciones de negocio distribuidas entre múltiples microservicios autónomos asegurando la consistencia eventual, ¿qué patrón es el más recomendado?</strong><br>
+    • Respuesta: B) El Patrón Saga, a través de coreografía o orquestación de transacciones locales secuenciales con lógica de compensación automática ante fallos.<br><br>
+    
+    <strong>48. El patrón de Event Sourcing (Abastecimiento de Eventos) consiste en guardar únicamente la fila con el estado final actual de un registro en la base de datos, destruyendo el historial completo de cambios previos por motivos de optimización de espacio.</strong><br>
+    • Respuesta: B) Falso (Es justo lo contrario: se almacena secuencialmente todo el historial de eventos ocurridos para reconstruir el estado a partir de ellos).<br><br>
+    
+    <strong>49. Diseñar pensando en "decisiones reversibles" en arquitectura evolutiva implica estructurar el software mediante interfaces y bajo acoplamiento para que la elección de una base de datos o un framework hoy pueda ser cambiada en el futuro sin destruir el negocio.</strong><br>
+    • Respuesta: A) Verdadero<br><br>
+    
+    <strong>50. Al adoptar una Arquitectura Orientada a Eventos asíncrona, la organización gana un alto desacoplamiento y escalabilidad, pero asume conscientemente el trade-off de perder la consistencia síncrona inmediata de los datos, adoptando la consistencia eventual.</strong><br>
+    • Respuesta: A) Verdadero
+</p>
         </div>
       </div>
 
@@ -366,6 +524,3 @@
   </script>
 </body>
 </html>
-HTMLEOF
-echo "semana5 done"
-Salida

@@ -1,40 +1,689 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>MATERIA2 - Semana 7</title>
-<link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aseguramiento de Calidad · Semana 7</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-<div class="contenido">
-<h1>MATERIA2 - Semana 7</h1>
 
-<h2>Tema</h2>
-<p>Escriba aquí el tema.</p>
+  <div class="page-topbar">
+    <div class="crumb">
+      <a href="../index.html">Inicio</a>
+      <span class="sep">/</span>
+      <a href="../index.html">Aseguramiento de Calidad de Software</a>
+      <span class="sep">/</span>
+      <span class="current">Semana 7</span>
+    </div>
+    <div class="page-nav">
+      <a class="btn-nav" href="semana6.html">← Sem 6</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana8.html">Sem 8 →</a>
+    </div>
+  </div>
 
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
+  <div class="semana-hero">
+    <div class="s-subject-label">Aseguramiento de Calidad de Software · IST YAVIRAC · Quinto Semestre</div>
+    <h1>Semana <span class="accent">07</span></h1>
+    <p style="color:var(--accent2);font-size:15px;margin-top:0.4rem;font-weight:600;">Tipos de Pruebas de Software — Funcionales · No Funcionales · Caja Negra · Caja Blanca · Regresión · Humo</p>
+    <div class="semana-meta">
+      IST YAVIRAC &nbsp;·&nbsp; Quinto Semestre
+    </div>
+  </div>
 
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
+  <div class="semana-wrap">
 
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
+    <div class="tema-block">
+      <div class="tema-number">INTRODUCCIÓN</div>
+      <div class="tema-title">Agenda — Semana 7</div>
 
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-blue">📋</div><span class="c-section-title">Tipos de Pruebas de Software — Clasificación completa</span></div>
+        <div class="c-section-body">
+          <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 10px;">
+            <li style="background:var(--surface); padding: 12px; border-radius: 8px; border: 1px solid var(--border);"><strong>01. Clasificación General de las Pruebas:</strong> Funcionales vs. No Funcionales · Estáticas vs. Dinámicas</li>
+            <li style="background:var(--surface); padding: 12px; border-radius: 8px; border: 1px solid var(--border);"><strong>02. Pruebas por Caja (Negra, Blanca y Gris):</strong> Técnicas de diseño según el conocimiento del sistema interno</li>
+            <li style="background:var(--surface); padding: 12px; border-radius: 8px; border: 1px solid var(--border);"><strong>03. Pruebas Funcionales en detalle:</strong> Unitarias, Integración, Sistema y Aceptación (UAT) — diferencias y cuándo</li>
+            <li style="background:var(--surface); padding: 12px; border-radius: 8px; border: 1px solid var(--border);"><strong>04. Pruebas No Funcionales:</strong> Rendimiento, Seguridad, Usabilidad, Compatibilidad, Portabilidad</li>
+            <li style="background:var(--surface); padding: 12px; border-radius: 8px; border: 1px solid var(--border);"><strong>05. Pruebas de Regresión, Humo y Sanidad:</strong> Cuándo aplicarlas, diferencias y estrategias de automatización</li>
+            <li style="background:var(--surface); padding: 12px; border-radius: 8px; border: 1px solid var(--border);"><strong>06. Ejercicios Propuestos y Resueltos:</strong> Diseño de casos de prueba + selección del tipo + análisis de escenarios</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
 
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+    <div class="tema-block">
+      <div class="tema-number">TEMA 01</div>
+      <div class="tema-title">Clasificación General de las Pruebas</div>
 
-<a href="../index.html">Volver al inicio</a>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-purple">⚙️</div><span class="c-section-title">Funcionales vs. No Funcionales</span></div>
+        <div class="c-section-body">
+          <div style="display:flex; gap:20px; flex-wrap:wrap;">
+            <div style="flex:1; min-width:300px; background:var(--surface); padding:1.5rem; border-radius:8px; border:1px solid var(--border);">
+              <h3 style="color:#a855f7; margin-bottom:10px;">⚙️ Pruebas FUNCIONALES</h3>
+              <p style="color:#e2e8f0; font-size:14px; margin-bottom:15px;">Verifican <strong>QUÉ</strong> hace el sistema — si las funciones cumplen los requisitos especificados.</p>
+              <ul style="color:#94a3b8; font-size:13px; line-height:1.6;">
+                <li>¿El login acepta credenciales correctas?</li>
+                <li>¿El cálculo de descuento es correcto?</li>
+                <li>¿Se envía el correo de confirmación?</li>
+                <li>¿Se guardan los datos en la BD?</li>
+              </ul>
+            </div>
+            <div style="flex:1; min-width:300px; background:var(--surface); padding:1.5rem; border-radius:8px; border:1px solid var(--border);">
+              <h3 style="color:#38bdf8; margin-bottom:10px;">📊 Pruebas NO FUNCIONALES</h3>
+              <p style="color:#e2e8f0; font-size:14px; margin-bottom:15px;">Verifican <strong>CÓMO</strong> se comporta — calidad de operación: velocidad, seguridad, usabilidad.</p>
+              <ul style="color:#94a3b8; font-size:13px; line-height:1.6;">
+                <li>¿Responde en &lt; 2 segundos?</li>
+                <li>¿Soporta 10.000 usuarios simultáneos?</li>
+                <li>¿Es fácil de usar para un novato?</li>
+                <li>¿Resiste un ataque SQL injection?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-orange">🔍</div><span class="c-section-title">Otra Dimensión: Estáticas vs. Dinámicas</span></div>
+        <div class="c-section-body">
+          <ul style="line-height:1.7;">
+            <li><strong style="color:var(--text);">ESTÁTICAS:</strong> No se ejecuta el código. Se revisan documentos, requisitos, código fuente y diseño.<br>
+            <span style="color:#94a3b8; font-size:13px;">Ej: Revisiones · Inspecciones · Análisis estático · Walkthroughs</span></li>
+            <li style="margin-top:10px;"><strong style="color:var(--text);">DINÁMICAS:</strong> Se ejecuta el software con entradas y se observan las salidas reales del sistema.<br>
+            <span style="color:#94a3b8; font-size:13px;">Ej: Pruebas unitarias · Integración · Sistema · UAT · Regresión</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📌</span><span>Anotaciones sobre la clasificación general de pruebas...</span></li></ul>
+        </div>
+      </div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div><span class="c-section-title" style="color:#ec4899;">Evidencias</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📸</span><span>Capturas o esquemas del Tema 1...</span></li></ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">TEMA 02</div>
+      <div class="tema-title">Pruebas por Caja: Negra, Blanca y Gris</div>
+
+      <div class="c-section">
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Tipo de Caja</th>
+                  <th style="padding:12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Descripción</th>
+                  <th style="padding:12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Técnicas Comunes</th>
+                  <th style="padding:12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">¿Quién lo hace?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:12px;border:1px solid var(--border);font-weight:600;">⬛ Caja NEGRA<br><span style="font-size:11px;color:#94a3b8;font-weight:400;">Black Box Testing</span></td>
+                  <td style="padding:12px;border:1px solid var(--border);color:#C8C8E0;">El tester no conoce el código interno. Prueba basada en entradas/salidas y requisitos funcionales.</td>
+                  <td style="padding:12px;border:1px solid var(--border);color:#C8C8E0;">Partición de equivalencias, Valores límite, Tabla de decisiones, Casos de uso.</td>
+                  <td style="padding:12px;border:1px solid var(--border);color:#C8C8E0;">QA Testers, usuarios</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:12px;border:1px solid var(--border);font-weight:600;">⬜ Caja BLANCA<br><span style="font-size:11px;color:#94a3b8;font-weight:400;">White Box / Glass Box</span></td>
+                  <td style="padding:12px;border:1px solid var(--border);color:#C8C8E0;">El tester conoce la estructura interna. Diseña casos para cubrir caminos, ramas y condiciones.</td>
+                  <td style="padding:12px;border:1px solid var(--border);color:#C8C8E0;">Cobertura de sentencias, Cobertura de ramas, Complejidad ciclomática, Caminos.</td>
+                  <td style="padding:12px;border:1px solid var(--border);color:#C8C8E0;">Desarrolladores, QA técnico</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px;border:1px solid var(--border);font-weight:600;">🔲 Caja GRIS<br><span style="font-size:11px;color:#94a3b8;font-weight:400;">Grey Box Testing</span></td>
+                  <td style="padding:12px;border:1px solid var(--border);color:#C8C8E0;">Combina enfoques: acceso parcial a arquitectura o BD sin conocer el código completo.</td>
+                  <td style="padding:12px;border:1px solid var(--border);color:#C8C8E0;">Pruebas de integración, API, Análisis de arquitectura, Seguridad web.</td>
+                  <td style="padding:12px;border:1px solid var(--border);color:#C8C8E0;">QA Engineer Senior, DevOps</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📌</span><span>Anotaciones de cómo elegir entre caja negra y blanca...</span></li></ul>
+        </div>
+      </div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div><span class="c-section-title" style="color:#ec4899;">Evidencias</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📸</span><span>Esquemas de técnicas de diseño...</span></li></ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">TEMA 03</div>
+      <div class="tema-title">Pruebas Funcionales — Los 4 Niveles</div>
+
+      <div class="c-section">
+        <div class="c-section-body">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            
+            <div style="background:var(--surface); border-left:4px solid #22c55e; padding:15px; border-radius:4px;">
+              <h4 style="color:#e2e8f0; font-size:16px; margin-bottom:8px;">1. Pruebas Unitarias</h4>
+              <ul style="font-size:13px; color:#94a3b8; list-style:none; padding-left:0; line-height:1.6;">
+                <li><strong>Alcance:</strong> Función / Método individual</li>
+                <li><strong>Cuándo:</strong> Durante el desarrollo, por el propio dev</li>
+                <li><strong>💡 Ejemplo:</strong> Probar que calcularIVA(100) retorna 12.00</li>
+                <li><strong>🛠 Herramientas:</strong> JUnit, NUnit, PyTest, Jest, Mocha</li>
+              </ul>
+            </div>
+
+            <div style="background:var(--surface); border-left:4px solid #38bdf8; padding:15px; border-radius:4px;">
+              <h4 style="color:#e2e8f0; font-size:16px; margin-bottom:8px;">2. Pruebas de Integración</h4>
+              <ul style="font-size:13px; color:#94a3b8; list-style:none; padding-left:0; line-height:1.6;">
+                <li><strong>Alcance:</strong> Interacción entre módulos</li>
+                <li><strong>Cuándo:</strong> Al combinar componentes o servicios</li>
+                <li><strong>💡 Ejemplo:</strong> Probar que el módulo de pagos se comunica correctamente con la BD</li>
+                <li><strong>🛠 Herramientas:</strong> Postman, REST Assured, TestNG, Cucumber</li>
+              </ul>
+            </div>
+
+            <div style="background:var(--surface); border-left:4px solid #f97316; padding:15px; border-radius:4px;">
+              <h4 style="color:#e2e8f0; font-size:16px; margin-bottom:8px;">3. Pruebas de Sistema</h4>
+              <ul style="font-size:13px; color:#94a3b8; list-style:none; padding-left:0; line-height:1.6;">
+                <li><strong>Alcance:</strong> Sistema completo end-to-end</li>
+                <li><strong>Cuándo:</strong> Después de la integración, antes de UAT</li>
+                <li><strong>💡 Ejemplo:</strong> Probar flujo: registro → pedido → pago → confirmación</li>
+                <li><strong>🛠 Herramientas:</strong> Selenium, Cypress, TestComplete, Robot Framework</li>
+              </ul>
+            </div>
+
+            <div style="background:var(--surface); border-left:4px solid #ef4444; padding:15px; border-radius:4px;">
+              <h4 style="color:#e2e8f0; font-size:16px; margin-bottom:8px;">4. Pruebas de Aceptación (UAT)</h4>
+              <ul style="font-size:13px; color:#94a3b8; list-style:none; padding-left:0; line-height:1.6;">
+                <li><strong>Alcance:</strong> Validación del negocio por el cliente</li>
+                <li><strong>Cuándo:</strong> Antes de la entrega formal al cliente</li>
+                <li><strong>💡 Ejemplo:</strong> El cliente verifica que el sistema cumple los criterios del contrato</li>
+                <li><strong>🛠 Herramientas:</strong> Cucumber, FitNesse, Excel/manual</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📌</span><span>Anotaciones de los niveles funcionales...</span></li></ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">TEMA 04</div>
+      <div class="tema-title">Pruebas No Funcionales</div>
+      <div style="padding: 0 20px; color:#94a3b8; font-size:14px; margin-bottom:15px;">Evalúan CÓMO funciona el sistema, no qué hace — calidad de servicio.</div>
+
+      <div class="c-section">
+        <div class="c-section-body">
+          <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px;">
+            
+            <div style="background:var(--surface); border:1px solid var(--border); padding:1rem; border-radius:8px;">
+              <h4 style="color:var(--text); margin-bottom:5px;">⚡ Rendimiento (Performance)</h4>
+              <p style="font-size:12px; color:#C8C8E0; margin-bottom:8px;">Tiempo de respuesta, throughput, uso de recursos bajo carga normal.</p>
+              <span style="font-size:11px; color:#60a5fa; font-weight:600;">🛠 JMeter, Gatling, k6</span>
+            </div>
+
+            <div style="background:var(--surface); border:1px solid var(--border); padding:1rem; border-radius:8px;">
+              <h4 style="color:var(--text); margin-bottom:5px;">📈 Carga (Load)</h4>
+              <p style="font-size:12px; color:#C8C8E0; margin-bottom:8px;">Comportamiento con volumen creciente hasta el punto de rotura.</p>
+              <span style="font-size:11px; color:#60a5fa; font-weight:600;">🛠 JMeter, Locust, BlazeMeter</span>
+            </div>
+
+            <div style="background:var(--surface); border:1px solid var(--border); padding:1rem; border-radius:8px;">
+              <h4 style="color:var(--text); margin-bottom:5px;">💥 Estrés (Stress)</h4>
+              <p style="font-size:12px; color:#C8C8E0; margin-bottom:8px;">Qué pasa al superar carga máxima. Punto de quiebre y recuperación.</p>
+              <span style="font-size:11px; color:#60a5fa; font-weight:600;">🛠 Gatling, k6, Artillery</span>
+            </div>
+
+            <div style="background:var(--surface); border:1px solid var(--border); padding:1rem; border-radius:8px;">
+              <h4 style="color:var(--text); margin-bottom:5px;">🔒 Seguridad (Security)</h4>
+              <p style="font-size:12px; color:#C8C8E0; margin-bottom:8px;">Vulnerabilidades, autenticación, autorización, inyecciones, cifrado.</p>
+              <span style="font-size:11px; color:#60a5fa; font-weight:600;">🛠 OWASP ZAP, Burp Suite, Nessus</span>
+            </div>
+
+            <div style="background:var(--surface); border:1px solid var(--border); padding:1rem; border-radius:8px;">
+              <h4 style="color:var(--text); margin-bottom:5px;">👤 Usabilidad (Usability)</h4>
+              <p style="font-size:12px; color:#C8C8E0; margin-bottom:8px;">Facilidad de uso, interfaz intuitiva, experiencia del usuario final.</p>
+              <span style="font-size:11px; color:#60a5fa; font-weight:600;">🛠 UserTesting, Hotjar, SUS Score</span>
+            </div>
+
+            <div style="background:var(--surface); border:1px solid var(--border); padding:1rem; border-radius:8px;">
+              <h4 style="color:var(--text); margin-bottom:5px;">🌐 Compatibilidad</h4>
+              <p style="font-size:12px; color:#C8C8E0; margin-bottom:8px;">Funciona en distintos navegadores, SO, dispositivos y versiones.</p>
+              <span style="font-size:11px; color:#60a5fa; font-weight:600;">🛠 BrowserStack, Sauce Labs, LambdaTest</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📌</span><span>Anotaciones de atributos de calidad...</span></li></ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">TEMA 05</div>
+      <div class="tema-title">Pruebas de Regresión, Humo y Sanidad</div>
+
+      <div class="c-section">
+        <div class="c-section-body">
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            
+            <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); padding:15px; border-radius:6px;">
+              <h4 style="color:#38bdf8; margin-bottom:8px;">🔄 Prueba de REGRESIÓN</h4>
+              <ul style="font-size:13px; color:#C8C8E0; list-style:none; padding-left:0; line-height:1.6;">
+                <li><strong>¿Cuándo?:</strong> Cada vez que se modifica el código.</li>
+                <li><strong>Objetivo:</strong> Verificar que los cambios no rompieron funcionalidades que ya trabajaban.</li>
+                <li><strong>Proceso:</strong> Ejecutar suite completa de tests existentes tras cada cambio.</li>
+                <li><strong>Automatiz.:</strong> ★★★ Alta — Ideal para automatizar (Selenium, Cypress, pytest).</li>
+                <li><strong>Ejemplo:</strong> Al añadir módulo de descuentos, se re-ejecutan todos los tests de facturación.</li>
+              </ul>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); padding:15px; border-radius:6px;">
+              <h4 style="color:#fbbf24; margin-bottom:8px;">💨 Prueba de HUMO (Smoke)</h4>
+              <ul style="font-size:13px; color:#C8C8E0; list-style:none; padding-left:0; line-height:1.6;">
+                <li><strong>¿Cuándo?:</strong> Al recibir un nuevo build del sistema.</li>
+                <li><strong>Objetivo:</strong> Verificar que las funciones más críticas funcionan — 'prende o no prende'.</li>
+                <li><strong>Proceso:</strong> Ejecutar subconjunto reducido (10-20%) de tests críticos. Rápido (&lt;30 min).</li>
+                <li><strong>Automatiz.:</strong> ★★★ Alta — Primer gate de CI/CD.</li>
+                <li><strong>Ejemplo:</strong> ¿El sistema inicia? ¿El login funciona? ¿La página carga?</li>
+              </ul>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); padding:15px; border-radius:6px;">
+              <h4 style="color:#34d399; margin-bottom:8px;">🩺 Prueba de SANIDAD</h4>
+              <ul style="font-size:13px; color:#C8C8E0; list-style:none; padding-left:0; line-height:1.6;">
+                <li><strong>¿Cuándo?:</strong> Después de un bug fix específico.</li>
+                <li><strong>Objetivo:</strong> Verificar que una corrección funciona y no causó efectos secundarios cercanos.</li>
+                <li><strong>Proceso:</strong> Subconjunto focalizado en el área del fix. Más profundo que humo, más rápido que regresión.</li>
+                <li><strong>Automatiz.:</strong> ★★ Media — A veces manual para mayor foco.</li>
+                <li><strong>Ejemplo:</strong> Se corrigió bug en impuestos. Se prueba solo el módulo fiscal.</li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-blue">📊</div><span class="c-section-title">Comparativa Rápida — Todos los Tipos de Prueba</span></div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:12px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:8px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Tipo</th>
+                  <th style="padding:8px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Nivel</th>
+                  <th style="padding:8px;text-align:left;border:1px solid var(--border);color:var(--accent2);">¿Quién?</th>
+                  <th style="padding:8px;text-align:left;border:1px solid var(--border);color:var(--accent2);">¿Cuándo?</th>
+                  <th style="padding:8px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Automatizable</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding:8px;border:1px solid var(--border);font-weight:600;">Unitaria</td><td style="padding:8px;border:1px solid var(--border);">Componente</td><td style="padding:8px;border:1px solid var(--border);">Desarrollador</td><td style="padding:8px;border:1px solid var(--border);">Durante codificación</td><td style="padding:8px;border:1px solid var(--border);color:#34d399;">★★★ Muy alta</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:8px;border:1px solid var(--border);font-weight:600;">Integración</td><td style="padding:8px;border:1px solid var(--border);">Módulos</td><td style="padding:8px;border:1px solid var(--border);">Dev / QA</td><td style="padding:8px;border:1px solid var(--border);">Al integrar</td><td style="padding:8px;border:1px solid var(--border);color:#34d399;">★★ Alta</td></tr>
+                <tr><td style="padding:8px;border:1px solid var(--border);font-weight:600;">Sistema</td><td style="padding:8px;border:1px solid var(--border);">Sistema</td><td style="padding:8px;border:1px solid var(--border);">QA Engineer</td><td style="padding:8px;border:1px solid var(--border);">Antes de UAT</td><td style="padding:8px;border:1px solid var(--border);color:#34d399;">★★ Alta</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:8px;border:1px solid var(--border);font-weight:600;">Aceptación (UAT)</td><td style="padding:8px;border:1px solid var(--border);">Sistema</td><td style="padding:8px;border:1px solid var(--border);">Cliente/Usuario</td><td style="padding:8px;border:1px solid var(--border);">Antes entrega</td><td style="padding:8px;border:1px solid var(--border);color:#fbbf24;">★ Media/Baja</td></tr>
+                <tr><td style="padding:8px;border:1px solid var(--border);font-weight:600;">Regresión</td><td style="padding:8px;border:1px solid var(--border);">Variable</td><td style="padding:8px;border:1px solid var(--border);">QA Auto.</td><td style="padding:8px;border:1px solid var(--border);">Tras cada cambio</td><td style="padding:8px;border:1px solid var(--border);color:#34d399;">★★★ Muy alta</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:8px;border:1px solid var(--border);font-weight:600;">Humo (Smoke)</td><td style="padding:8px;border:1px solid var(--border);">Sistema</td><td style="padding:8px;border:1px solid var(--border);">QA / Dev</td><td style="padding:8px;border:1px solid var(--border);">Al recibir build</td><td style="padding:8px;border:1px solid var(--border);color:#34d399;">★★★ Alta</td></tr>
+                <tr><td style="padding:8px;border:1px solid var(--border);font-weight:600;">Rendimiento</td><td style="padding:8px;border:1px solid var(--border);">Sistema</td><td style="padding:8px;border:1px solid var(--border);">QA / DevOps</td><td style="padding:8px;border:1px solid var(--border);">Pre-producción</td><td style="padding:8px;border:1px solid var(--border);color:#34d399;">★★★ Alta</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:8px;border:1px solid var(--border);font-weight:600;">Seguridad</td><td style="padding:8px;border:1px solid var(--border);">Sistema</td><td style="padding:8px;border:1px solid var(--border);">Sec. Tester</td><td style="padding:8px;border:1px solid var(--border);">Continua</td><td style="padding:8px;border:1px solid var(--border);color:#fbbf24;">★★ Media</td></tr>
+                <tr><td style="padding:8px;border:1px solid var(--border);font-weight:600;">Caja Negra</td><td style="padding:8px;border:1px solid var(--border);">Cualquier</td><td style="padding:8px;border:1px solid var(--border);">QA Tester</td><td style="padding:8px;border:1px solid var(--border);">En todas fases</td><td style="padding:8px;border:1px solid var(--border);color:#34d399;">★★ Alta</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:8px;border:1px solid var(--border);font-weight:600;">Caja Blanca</td><td style="padding:8px;border:1px solid var(--border);">Unitaria</td><td style="padding:8px;border:1px solid var(--border);">Desarrollador</td><td style="padding:8px;border:1px solid var(--border);">Codif/Integ.</td><td style="padding:8px;border:1px solid var(--border);color:#34d399;">★★★ Muy alta</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📌</span><span>Anotaciones adicionales del tema 5...</span></li></ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">ACTIVIDADES</div>
+      <div class="tema-title">Ejercicios Propuestos y Resueltos</div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-orange">✏️</div><span class="c-section-title">Ejercicio 1 — Casos con Partición de Equivalencias</span></div>
+        <div class="c-section-body">
+          <p style="font-size:13px; color:#C8C8E0; margin-bottom:10px;"><strong>ENUNCIADO:</strong> Sistema acepta notas (0-100). &lt; 51: REPROBADO, 51-69: RECUPERACIÓN, ≥ 70: APROBADO. Aplique Caja Negra y diseñe los casos mínimos.</p>
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:8px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Clase</th>
+                  <th style="padding:8px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Valor Representativo</th>
+                  <th style="padding:8px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Resultado Esperado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding:8px;border:1px solid var(--border);">Inválida (&lt; 0)</td><td style="padding:8px;border:1px solid var(--border);color:#C8C8E0;">-5 ó -1</td><td style="padding:8px;border:1px solid var(--border);color:#ef4444;">Error / Rechazo</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:8px;border:1px solid var(--border);">Válida: REPROBADO</td><td style="padding:8px;border:1px solid var(--border);color:#C8C8E0;">0 – 50</td><td style="padding:8px;border:1px solid var(--border);">REPROBADO</td></tr>
+                <tr><td style="padding:8px;border:1px solid var(--border);">Válida: RECUPERACIÓN</td><td style="padding:8px;border:1px solid var(--border);color:#C8C8E0;">51 – 69</td><td style="padding:8px;border:1px solid var(--border);">RECUPERACIÓN</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:8px;border:1px solid var(--border);">Válida: APROBADO</td><td style="padding:8px;border:1px solid var(--border);color:#C8C8E0;">70 – 100</td><td style="padding:8px;border:1px solid var(--border);">APROBADO</td></tr>
+                <tr><td style="padding:8px;border:1px solid var(--border);">Inválida (&gt; 100)</td><td style="padding:8px;border:1px solid var(--border);color:#C8C8E0;">101 ó 150</td><td style="padding:8px;border:1px solid var(--border);color:#ef4444;">Error / Rechazo</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:12px; color:var(--green); margin-top:8px;">💡 Con solo 5 casos cubrimos TODAS las clases. (Análisis de Valores Límite añadiría: 0, 50, 51, 69, 70, 100).</p>
+        </div>
+      </div>
+      
+     <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;"><strong>• Ejercicio 1 — Compra de Licencias de Software con Descuento</strong></p>
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-bottom:25px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px;">Clase</th>
+        <th style="padding:8px; text-align:center;">Valor Representativo</th>
+        <th style="padding:8px;">Resultado Esperado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;">Inválida ($&lt; 1$)</td>
+        <td style="padding:8px; text-align:center;">-5 ó 0</td>
+        <td style="padding:8px;">Error / Rechazo</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;">Válida: SIN DESCUENTO ($1 - 9$)</td>
+        <td style="padding:8px; text-align:center;">5</td>
+        <td style="padding:8px;">SIN DESCUENTO</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;">Válida: DESCUENTO 10% ($10 - 49$)</td>
+        <td style="padding:8px; text-align:center;">25</td>
+        <td style="padding:8px;">DESCUENTO DEL 10%</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;">Válida: DESCUENTO 25% ($50 - 500$)</td>
+        <td style="padding:8px; text-align:center;">150</td>
+        <td style="padding:8px;">DESCUENTO DEL 25%</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;">Inválida ($&gt; 500$)</td>
+        <td style="padding:8px; text-align:center;">501 ó 600</td>
+        <td style="padding:8px;">Error / Rechazo</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="color:var(--muted2);font-style:italic;"><strong>• Ejercicio 2 — Categorías de Inscripción por Edad (Club Deportivo)</strong></p>
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px;">Clase</th>
+        <th style="padding:8px; text-align:center;">Valor Representativo</th>
+        <th style="padding:8px;">Resultado Esperado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;">Inválida ($&lt; 5$)</td>
+        <td style="padding:8px; text-align:center;">2 ó 4</td>
+        <td style="padding:8px;">Error / Rechazo</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;">Válida: JUVENIL ($5 - 17$)</td>
+        <td style="padding:8px; text-align:center;">10</td>
+        <td style="padding:8px;">CATEGORÍA JUVENIL</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;">Válida: ADULTO ($18 - 64$)</td>
+        <td style="padding:8px; text-align:center;">40</td>
+        <td style="padding:8px;">CATEGORÍA ADULTO</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;">Válida: MASTER ($65 - 90$)</td>
+        <td style="padding:8px; text-align:center;">75</td>
+        <td style="padding:8px;">CATEGORÍA MASTER</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;">Inválida ($&gt; 90$)</td>
+        <td style="padding:8px; text-align:center;">91 ó 100</td>
+        <td style="padding:8px;">Error / Rechazo</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+        </div>
+      </div>  
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-blue">✏️</div><span class="c-section-title">Ejercicio 2 — Identificar el Tipo de Prueba según el Escenario</span></div>
+        <div class="c-section-body">
+          <ul style="color:#C8C8E0; font-size:13px; padding-left:1.5rem; line-height:1.7;">
+            <li><strong>A.</strong> Dev verifica calcularPromedio() [6, 8, 9] retorna 7.5. → <strong style="color:var(--text);">Prueba Unitaria (Caja BLANCA)</strong></li>
+            <li><strong>B.</strong> QA ejecuta 250 tests tras fix en pagos para ver que no se rompió nada. → <strong style="color:var(--text);">Prueba de Regresión (Caja Negra/Gris)</strong></li>
+            <li><strong>C.</strong> Operaciones simula 5.000 usuarios concurrentes en e-commerce. → <strong style="color:var(--text);">Prueba de Carga/Estrés (Caja NEGRA)</strong></li>
+            <li><strong>D.</strong> QA Lead ejecuta 15 casos críticos antes de aceptar el build. → <strong style="color:var(--text);">Prueba de Humo / Smoke (Caja NEGRA)</strong></li>
+            <li><strong>E.</strong> Ministerio revisa flujos según pliegos de requerimiento. → <strong style="color:var(--text);">Prueba de Aceptación / UAT (Caja NEGRA)</strong></li>
+            <li><strong>F.</strong> Security tester inyecta payloads SQL y XSS. → <strong style="color:var(--text);">Prueba de Seguridad (Caja GRIS)</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+         <div class="c-section-body">
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:45%;">Descripción del Escenario</th>
+        <th style="padding:8px; width:20%;">① Tipo de Prueba</th>
+        <th style="padding:8px; width:15%;">② Tipo de Caja</th>
+        <th style="padding:8px; width:20%;">Justificación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Escenario G</strong><br>El equipo de QA verifica que los datos de compra generados en la tienda virtual se transmitan de forma correcta y en el formato estructurado correspondiente hacia la API de la pasarela de pagos externa (como Stripe o PayPal).</td>
+        <td style="padding:8px;">Prueba de Integración</td>
+        <td style="padding:8px;">Caja GRIS</td>
+        <td style="padding:8px;">Se enfoca en la comunicación y el intercambio de datos entre sistemas. El tester no ve el código de la API, pero conoce y manipula la estructura de mensajes XML o JSON.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Escenario H</strong><br>Se convoca a un grupo de usuarios reales (por ejemplo, adultos mayores) para evaluar si la nueva interfaz de una aplicación de salud es intuitiva y si son capaces de agendar una cita médica en menos de 3 pasos sin recibir asistencia técnica.</td>
+        <td style="padding:8px;">Prueba de Usabilidad</td>
+        <td style="padding:8px;">Caja NEGRA</td>
+        <td style="padding:8px;">Evalúa qué tan fácil, eficiente y agradable es el sistema para el usuario final. Se basa en la interacción externa con la interfaz gráfica, ignorando el código.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Escenario I</strong><br>El tester ejecuta de forma sistemática la plataforma web en múltiples navegadores (Chrome, Safari, Firefox, Edge) y dispositivos móviles con diferentes tamaños de pantalla (iOS y Android) para asegurar que el diseño responsivo no se desconfigure.</td>
+        <td style="padding:8px;">Prueba de Compatibilidad</td>
+        <td style="padding:8px;">Caja NEGRA</td>
+        <td style="padding:8px;">Verifica que el software funcione de manera correcta en distintos entornos, hardware y navegadores, analizando el comportamiento visual expuesto al usuario.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Escenario J</strong><br>El desarrollador utiliza una herramienta especializada de análisis dinámico para comprobar que sus pruebas automatizadas de código alcancen a recorrer el 100% de las ramas condicionales (if/else) de un algoritmo que calcula impuestos según la región.</td>
+        <td style="padding:8px;">Prueba de Cobertura (Estructural)</td>
+        <td style="padding:8px;">Caja BLANCA</td>
+        <td style="padding:8px;">Mide qué porcentaje del código fuente está siendo ejecutado. Requiere acceso total a la lógica, sentencias y caminos del flujo interno de la programación.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+        </div>
+      </div>  
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-purple">✏️</div><span class="c-section-title">Ejercicio 3 — Estrategia de Pruebas: App Bancaria</span></div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:12px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:8px;border:1px solid var(--border);color:var(--accent2);">Módulo</th>
+                  <th style="padding:8px;border:1px solid var(--border);color:var(--accent2);">Tipo</th>
+                  <th style="padding:8px;border:1px solid var(--border);color:var(--accent2);">Caja</th>
+                  <th style="padding:8px;border:1px solid var(--border);color:var(--accent2);">Herramienta</th>
+                  <th style="padding:8px;border:1px solid var(--border);color:var(--accent2);">Criterio de Éxito</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding:8px;border:1px solid var(--border);font-weight:600;">Cálculo interés</td><td style="padding:8px;border:1px solid var(--border);">Unitaria</td><td style="padding:8px;border:1px solid var(--border);">Blanca</td><td style="padding:8px;border:1px solid var(--border);">JUnit/PyTest</td><td style="padding:8px;border:1px solid var(--border);color:#C8C8E0;">Retorna valor exacto en todos los rangos</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:8px;border:1px solid var(--border);font-weight:600;">API de pagos</td><td style="padding:8px;border:1px solid var(--border);">Integración</td><td style="padding:8px;border:1px solid var(--border);">Gris</td><td style="padding:8px;border:1px solid var(--border);">Postman</td><td style="padding:8px;border:1px solid var(--border);color:#C8C8E0;">Transferencia procesada en &lt; 3s, HTTP 200</td></tr>
+                <tr><td style="padding:8px;border:1px solid var(--border);font-weight:600;">App completa</td><td style="padding:8px;border:1px solid var(--border);">Sistema</td><td style="padding:8px;border:1px solid var(--border);">Negra</td><td style="padding:8px;border:1px solid var(--border);">Appium/Selenium</td><td style="padding:8px;border:1px solid var(--border);color:#C8C8E0;">Todos flujos críticos funcionan end-to-end</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:8px;border:1px solid var(--border);font-weight:600;">1000 trans./min</td><td style="padding:8px;border:1px solid var(--border);">Carga</td><td style="padding:8px;border:1px solid var(--border);">Negra</td><td style="padding:8px;border:1px solid var(--border);">JMeter/k6</td><td style="padding:8px;border:1px solid var(--border);color:#C8C8E0;">Respuesta &lt; 2s, 0% errores bajo carga</td></tr>
+                <tr><td style="padding:8px;border:1px solid var(--border);font-weight:600;">Form login</td><td style="padding:8px;border:1px solid var(--border);">Seguridad</td><td style="padding:8px;border:1px solid var(--border);">Gris</td><td style="padding:8px;border:1px solid var(--border);">OWASP ZAP</td><td style="padding:8px;border:1px solid var(--border);color:#C8C8E0;">0 vulnerabilidades críticas (OWASP Top 10)</td></tr>
+                <tr style="background:rgba(255,255,255,0.02)"><td style="padding:8px;border:1px solid var(--border);font-weight:600;">Aceptación</td><td style="padding:8px;border:1px solid var(--border);">UAT</td><td style="padding:8px;border:1px solid var(--border);">Negra</td><td style="padding:8px;border:1px solid var(--border);">Cucumber/Man.</td><td style="padding:8px;border:1px solid var(--border);color:#C8C8E0;">Cliente firma acta de aceptación formal</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 ENUNCIADO — Estrategia de Pruebas para un Sistema de Inventario</strong><br>
+    Una empresa de logística y retail va a lanzar un nuevo sistema web de gestión de inventarios para centralizar el control de sus bodegas. Para cada módulo, se debe diseñar la estrategia de pruebas indicando: tipo de prueba, tipo de caja, herramienta recomendada y criterio de éxito.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:22%;">Módulo</th>
+        <th style="padding:8px; width:13%;">Tipo de Prueba</th>
+        <th style="padding:8px; width:10%;">Caja</th>
+        <th style="padding:8px; width:15%;">Herramienta</th>
+        <th style="padding:8px; width:40%;">Criterio de Éxito</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Cálculo de valoración de stock</strong><br><small>(Fórmulas de costo promedio ponderado, mermas y alertas de stock mínimo)</small></td>
+        <td style="padding:8px;">Unitaria</td>
+        <td style="padding:8px;">Blanca</td>
+        <td style="padding:8px;">JUnit / PyTest</td>
+        <td style="padding:8px;">Retorna el valor monetario exacto del inventario y dispara alertas automáticas según los rangos establecidos.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>API de Proveedores y Facturación</strong><br><small>(Sincronización de órdenes de compra con sistemas externos)</small></td>
+        <td style="padding:8px;">Integración</td>
+        <td style="padding:8px;">Gris</td>
+        <td style="padding:8px;">Postman / RestAssured</td>
+        <td style="padding:8px;">Datos del proveedor y stock entrante sincronizados correctamente en &lt; 3s, retornando código 200 OK.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Flujo de Entrada y Egreso de Mercancía</strong><br><small>(La aplicación web completa desde la recepción del producto hasta su despacho)</small></td>
+        <td style="padding:8px;">Sistema</td>
+        <td style="padding:8px;">Negra</td>
+        <td style="padding:8px;">Selenium / Cypress</td>
+        <td style="padding:8px;">Todos los flujos críticos de la interfaz de usuario (crear, editar, mover y dar de baja stock) funcionan de extremo a extremo (end-to-end).</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Importación masiva de catálogo</strong><br><small>(Subida simultánea de archivos con más de 10,000 códigos de barra)</small></td>
+        <td style="padding:8px;">Carga</td>
+        <td style="padding:8px;">Negra</td>
+        <td style="padding:8px;">JMeter / k6</td>
+        <td style="padding:8px;">Procesamiento completo del archivo masivo en &lt; 5s bajo condiciones de alta demanda, con 0% de pérdida de datos.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Roles de usuario y logs de auditoría</strong><br><small>(Control de quién puede modificar el inventario)</small></td>
+        <td style="padding:8px;">Seguridad</td>
+        <td style="padding:8px;">Gris</td>
+        <td style="padding:8px;">OWASP ZAP</td>
+        <td style="padding:8px;">Un usuario con rol de "Operador de Bodega" no puede alterar precios base ni borrar el historial de auditoría (0 vulnerabilidades críticas).</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Validación del Jefe de Almacén</strong><br><small>(Uso del sistema en el día a día)</small></td>
+        <td style="padding:8px;">UAT</td>
+        <td style="padding:8px;">Negra</td>
+        <td style="padding:8px;">Pruebas Manuales / Jira</td>
+        <td style="padding:8px;">El Jefe de Almacén valida que los flujos diarios se ejecuten de forma fluida, intuitiva y conforme a los requisitos del negocio.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>>
+        </div>
+      </div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div><span class="c-section-title" style="color:#ec4899;">Evidencias</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📸</span><span>Capturas de las soluciones de los ejercicios...</span></li></ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">CIERRE</div>
+      <div class="tema-title">Resumen — Semana 7</div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-purple">💡</div><span class="c-section-title">Puntos clave</span></div>
+        <div class="c-section-body">
+          <ul style="color:#C8C8E0; font-size:14px; padding-left: 20px; line-height: 1.6;">
+            <li><strong>01.</strong> Las pruebas se clasifican en Funcionales (qué hace) y No Funcionales (cómo lo hace). Ambas imprescindibles.</li>
+            <li><strong>02.</strong> Caja Negra prueba sin conocer el código (usuario). Caja Blanca requiere conocimiento interno.</li>
+            <li><strong>03.</strong> Los 4 niveles funcionales (Unitaria → Integración → Sistema → UAT) se ejecutan en ese orden.</li>
+            <li><strong>04.</strong> Rendimiento, Seguridad y Usabilidad son pruebas no funcionales críticas desde el inicio.</li>
+            <li><strong>05.</strong> Regresión = no romper lo que ya funcionaba. Humo = build válido. Sanidad = fix correcto.</li>
+          </ul>
+          <div style="margin-top:15px; font-size:14px; color:var(--text); font-weight:600;">
+            📅 Próxima semana: Pruebas Ágiles y Automatización de Pruebas — TDD, BDD, Selenium y CI/CD
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border);">
+      <a class="btn-nav" href="semana6.html">← Semana 6</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana8.html">Semana 8 →</a>
+    </div>
+
+  </div>
+
+  <div id="lightbox" onclick="cerrarLightbox()" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:1.5rem;cursor:zoom-out;">
+    <img id="lb-img" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:10px;object-fit:contain;"/>
+    <button onclick="cerrarLightbox()" style="position:fixed;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#1A1A25;border:1px solid #2A2A3A;color:#E8E8F0;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">×</button>
+  </div>
+  
+  <script>
+    function abrirLightbox(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').style.display='flex';}
+    function cerrarLightbox(){document.getElementById('lightbox').style.display='none';}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrarLightbox();});
+  </script>
 </body>
 </html>

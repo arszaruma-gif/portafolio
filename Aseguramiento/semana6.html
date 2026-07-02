@@ -1,40 +1,525 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>MATERIA2 - Semana 6</title>
-<link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aseguramiento de Calidad · Semana 6</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-<div class="contenido">
-<h1>MATERIA2 - Semana 6</h1>
 
-<h2>Tema</h2>
-<p>Escriba aquí el tema.</p>
+  <div class="page-topbar">
+    <div class="crumb">
+      <a href="../index.html">Inicio</a>
+      <span class="sep">/</span>
+      <a href="../index.html">Aseguramiento de Calidad de Software</a>
+      <span class="sep">/</span>
+      <span class="current">Semana 6</span>
+    </div>
+    <div class="page-nav">
+      <a class="btn-nav" href="semana5.html">← Sem 5</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana7.html">Sem 7 →</a>
+    </div>
+  </div>
 
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
+  <div class="semana-hero">
+    <div class="s-subject-label">Aseguramiento de Calidad de Software · IST YAVIRAC · Quinto Semestre [cite: 4]</div>
+    <h1>Semana <span class="accent">06</span> [cite: 5]</h1>
+    <p style="color:var(--accent2);font-size:15px;margin-top:0.4rem;font-weight:600;">Importancia de Realizar Pruebas de Software — Por qué probar es tan esencial como desarrollar [cite: 6, 7, 8]</p>
+    <div class="semana-meta">
+      IST YAVIRAC &nbsp;·&nbsp; Quinto Semestre
+    </div>
+  </div>
 
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
+  <div class="semana-wrap">
 
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
+    <div class="tema-block">
+      <div class="tema-number">INTRODUCCIÓN</div>
+      <div class="tema-title">Agenda y Objetivos [cite: 13, 14]</div>
 
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-purple">🎯</div><span class="c-section-title">Pilares de la Importancia del Testing</span></div>
+        <div class="c-section-body">
+          <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <li style="background:var(--surface); padding: 10px; border-radius: 6px; border: 1px solid var(--border);">🛡️ Prevención de fallos críticos [cite: 9]</li>
+            <li style="background:var(--surface); padding: 10px; border-radius: 6px; border: 1px solid var(--border);">💰 Reducción de costos [cite: 10]</li>
+            <li style="background:var(--surface); padding: 10px; border-radius: 6px; border: 1px solid var(--border);">👤 Confianza del usuario [cite: 11]</li>
+            <li style="background:var(--surface); padding: 10px; border-radius: 6px; border: 1px solid var(--border);">⚖️ Calidad y cumplimiento [cite: 12]</li>
+          </ul>
+        </div>
+      </div>
 
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-blue">📋</div><span class="c-section-title">Agenda de la Semana [cite: 13]</span></div>
+        <div class="c-section-body">
+          <ul>
+            <li><strong>01. ¿Por qué Probamos Software?</strong> Definición de prueba, mitos vs. realidad y la regla del costo temprano[cite: 15, 16, 17].</li>
+            <li><strong>02. El Costo de No Probar:</strong> Casos reales de fallos por falta de pruebas y su impacto económico[cite: 18, 19, 20].</li>
+            <li><strong>03. Principios Fundamentales:</strong> Los 7 principios del testing (ISTQB) que todo tester debe conocer[cite: 21, 22, 23].</li>
+            <li><strong>04. Tipos y Niveles de Prueba:</strong> Unitarias, integración, sistema, aceptación — cuándo y por qué aplicarlas[cite: 24, 25, 26].</li>
+            <li><strong>05. El Proceso de Pruebas:</strong> Planificación → Diseño → Ejecución → Evaluación → Cierre[cite: 27, 28, 29].</li>
+            <li><strong>06. Ejercicios Propuestos:</strong> Casos de análisis de riesgo, selección de tipo de prueba y cálculo ROI[cite: 30, 31, 32].</li>
+          </ul>
+        </div>
+      </div>
+       <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <p style="color:var(--muted2);font-style:italic;">
+    <strong>01. ¿Por qué Probamos Software? (Definición de prueba, mitos vs. realidad y la regla del costo temprano)</strong><br>
+    • <strong>Ejemplo 1 (Mito vs. Realidad):</strong> Romper el mito de que "las pruebas demuestran que el software no tiene errores". En la realidad, si pruebas una aplicación móvil de un banco y no encuentras fallas, solo demuestra que pasó los escenarios ejecutados, pero no garantiza al 100% que no existan errores ocultos bajo otras condiciones.<br>
+    • <strong>Ejemplo 2 (Regla del costo temprano):</strong> Si un analista detecta una contradicción en los requerimientos escritos de una pantalla antes de que se programe, corregirla cuesta casi $0. Si el error se deja pasar, se programa mal y el cliente lo descubre en producción, el costo de corregirlo se multiplica drásticamente por todo el retrabajo necesario.<br><br>
+    
+    <strong>02. El Costo de No Probar (Casos reales de fallos por falta de pruebas y su impacto económico)</strong><br>
+    • <strong>Ejemplo 1 (Impacto Espacial):</strong> El caso histórico del cohete Ariane 5 (1996), el cual exploded 37 segundos después de despegar debido a un error de software no detectado (desbordamiento de entero), lo que provocó una pérdida de $370 millones de dólares.<br>
+    • <strong>Ejemplo 2 (Impacto en la Salud):</strong> El desastre de la máquina de radioterapia médica Therac-25, donde la ausencia de pruebas de concurrencia de software causó una condición de carrera que terminó costando 6 vidas humanas debido a sobredosis masivas de radiación.<br><br>
+    
+    <strong>03. Principios Fundamentales del Testing (Los 7 principios del testing según ISTQB)</strong><br>
+    • <strong>Ejemplo 1 (Principio: Las pruebas exhaustivas son imposibles):</strong> Tratar de probar un campo de texto que acepta contraseñas de hasta 20 caracteres combinando todas las letras, números y símbolos existentes. Como las combinaciones tienden al infinito, los testers aplican técnicas para elegir solo los valores más representativos.<br>
+    • <strong>Ejemplo 2 (Principio: Paradoja del Pesticida):</strong> Si un equipo ejecuta exactamente los mismos casos de prueba manuales mes tras mes en una plataforma web, llegará un punto en que esas pruebas ya no detectarán nuevos defectos, obligando a los ingenieros a actualizar y diseñar nuevos escenarios.<br><br>
+    
+    <strong>04. Tipos y Niveles de Prueba (Unitarias, integración, sistema, aceptación)</strong><br>
+    • <strong>Ejemplo 1 (Prueba Unitaria):</strong> Un desarrollador escribe un pequeño bloque de código aislado para verificar de forma matemática y estricta que la función calcularDescuento(100, 10%) retorne exactamente el valor numérico 90.<br>
+    • <strong>Ejemplo 2 (Prueba de Aceptación):</strong> Antes de firmar el contrato de cierre, el dueño de una cadena de supermercados realiza simulaciones de compras reales en el sistema de facturación recién desarrollado para validar si el producto cumple formalmente con todas sus necesidades de negocio.<br><br>
+    
+    <strong>05. El Proceso de Pruebas (Planificación ➡️ Diseño ➡️ Ejecución ➡️ Evaluación ➡️ Cierre)</strong><br>
+    • <strong>Ejemplo 1 (Fase de Diseño):</strong> El ingeniero de QA lee la documentación de una tienda en línea y redacta detalladamente un caso de prueba con pasos e instrucciones específicas: "Paso 1: Añadir artículo, Paso 2: Ir a checkout, Resultado esperado: Mostrar el botón de pagar activo".<br>
+    • <strong>Ejemplo 2 (Fase de Evaluación):</strong> Al finalizar la semana de pruebas de una aplicación, el Líder de QA revisa los tableros de métricas para comparar la cantidad de errores descubiertos frente a los resueltos, determinando si el software es lo suficientemente estable como para autorizar su salida al mercado.<br><br>
+    
+    <strong>06. Ejercicios Propuestos y Resueltos (Casos de análisis de riesgo, selección de tipo de prueba y cálculo ROI)</strong><br>
+    • <strong>Ejemplo 1 (Análisis de Riesgo):</strong> En una aplicación médica, el módulo de "Alertas de ritmo cardíaco" se clasifica como de Riesgo Crítico Alto (puede costar vidas), mientras que el módulo de "Cambiar foto de perfil" es de Riesgo Bajo. Con esto resuelto, el equipo decide asignar el 80% de su tiempo disponible a probar el ritmo cardíaco.<br>
+    • <strong>Ejemplo 2 (Cálculo del ROI de Automatización):</strong> Un ejercicio donde se calcula el Retorno de Inversión (ROI): Si ejecutar una prueba de regresión manual cuesta $500 cada mes, pero crear un script automatizado cuesta $2,000 una sola vez y se ejecutará durante los próximos dos años, el ejercicio demuestra matemáticamente que la automatización se paga sola a partir del cuarto mes.
+</p>
+        </div>
+      </div>
+    </div>
+    
 
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+    <div class="tema-block">
+      <div class="tema-number">TEMA 01</div>
+      <div class="tema-title">¿Por qué Probamos Software? [cite: 34]</div>
 
-<a href="../index.html">Volver al inicio</a>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-purple">📖</div><span class="c-section-title">Definición</span></div>
+        <div class="c-section-body">
+          <p>"Probar software es el proceso de evaluar un sistema o componente para verificar que satisface los requisitos especificados y para identificar diferencias entre resultados esperados y reales." — IEEE 829 [cite: 35, 36]</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:0.85rem;">
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.3rem;">🛡️ Prevenir fallos [cite: 37, 38]</p>
+              <p style="font-size:13px;color:#C8C8E0;">Encontrar defectos antes de que lleguen al usuario. Un bug en prod cuesta 100× más que en diseño[cite: 39].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.3rem;">💰 Reducir costos [cite: 40, 41]</p>
+              <p style="font-size:13px;color:#C8C8E0;">El costo de corrección crece exponencialmente. Detectar temprano = ahorro real[cite: 42].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.3rem;">👤 Satisfacción usuario [cite: 43, 44]</p>
+              <p style="font-size:13px;color:#C8C8E0;">Software que funciona genera confianza, lealtad y reputación de marca[cite: 45].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+              <p style="color:var(--accent2);font-weight:600;margin-bottom:0.3rem;">⚖️ Cumplimiento legal [cite: 46, 47]</p>
+              <p style="font-size:13px;color:#C8C8E0;">Sectores como salud, finanzas y aviación EXIGEN pruebas certificadas por norma[cite: 48].</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-orange">❌</div><span class="c-section-title">Mitos vs. Realidad en las Pruebas [cite: 49]</span></div>
+        <div class="c-section-body">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.85rem 1rem;">
+              <p style="font-size:13px;"><strong style="color:#ef4444;">MITO:</strong> "Las pruebas son pérdida de tiempo" [cite: 50, 51] → <strong style="color:var(--green);">REALIDAD:</strong> IBM estima que por cada $1 invertido se ahorran $4 (ROI 4:1)[cite: 52, 53, 55].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.85rem 1rem;">
+              <p style="font-size:13px;"><strong style="color:#ef4444;">MITO:</strong> "Si el código compila, funciona" [cite: 56, 57] → <strong style="color:var(--green);">REALIDAD:</strong> El 95% de los bugs son lógicos, no sintácticos. El compilador nunca los detecta[cite: 58, 59, 60].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.85rem 1rem;">
+              <p style="font-size:13px;"><strong style="color:#ef4444;">MITO:</strong> "El testing es solo al final" [cite: 61, 62] → <strong style="color:var(--green);">REALIDAD:</strong> Un error en requisitos que llega a producción cuesta hasta 200× más corregirlo[cite: 63, 64, 65].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.85rem 1rem;">
+              <p style="font-size:13px;"><strong style="color:#ef4444;">MITO:</strong> "Los testers ralentizan el desarrollo" [cite: 66, 67] → <strong style="color:var(--green);">REALIDAD:</strong> Equipos con QA integrado desde el inicio entregan proyectos un 40% más rápido[cite: 68, 69, 70].</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+         <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>Prevenir Fallos:</strong> Consiste en descubrir y solucionar los defectos (bugs) en las etapas iniciales del desarrollo antes de que el producto llegue al usuario final. Es una medida crítica, ya que un error detectado en producción (cuando el sistema ya está en uso) puede costar hasta 100 veces más que si se hubiera detectado en la fase de diseño.<br>
+• <strong>Reducir Costos:</strong> Está directamente ligado a la detección temprana. El costo de corregir un error aumenta exponencialmente a medida que el software avanza en su ciclo de vida. Encontrar los problemas a tiempo se traduce en un ahorro real de dinero y tiempo para el equipo de desarrollo y la empresa.<br>
+• <strong>Satisfacción del Usuario:</strong> Un software que pasa por pruebas de calidad funciona de manera correcta, fluida y sin interrupciones para el cliente. Esto genera confianza, lealtad y una excelente reputación de marca, asegurando que los usuarios sigan utilizando el producto de forma positiva.<br>
+• <strong>Cumplimiento Legal:</strong> En ciertas industrias, las pruebas no son opcionales, sino un requisito obligatorio exigido por regulaciones y normativas gubernamentales o internacionales. Sectores críticos como la salud, las finanzas y la aviación exigen pruebas certificadas por norma para garantizar la seguridad de los datos y, en muchos casos, la vida de las personas.
+</p>
 </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">TEMA 02</div>
+      <div class="tema-title">El Costo de No Probar — Casos Reales [cite: 72]</div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-blue">📰</div><span class="c-section-title">Errores que cambiaron la historia [cite: 73]</span></div>
+        <div class="c-section-body">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid #ef4444;border-radius:0 8px 8px 0;padding:0.85rem 1rem;">
+              <p style="font-weight:600;color:var(--text);margin-bottom:0.3rem;">✈️ Boeing 737 MAX (2018-2019) · 346 vidas + $20B pérdidas [cite: 75, 76]</p>
+              <p style="font-size:13px;color:#C8C8E0;">Falta de pruebas de seguridad crítica. El sistema MCAS no fue adecuadamente probado en escenarios de fallo de sensor[cite: 74, 77, 78].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid #f97316;border-radius:0 8px 8px 0;padding:0.85rem 1rem;">
+              <p style="font-weight:600;color:var(--text);margin-bottom:0.3rem;">📈 Knight Capital (2012) · $440M en 45 minutos [cite: 80, 81]</p>
+              <p style="font-size:13px;color:#C8C8E0;">Falta de pruebas de regresión. Un bug activó 4 millones de órdenes erróneas, quebrando la empresa[cite: 79, 82, 83].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid #eab308;border-radius:0 8px 8px 0;padding:0.85rem 1rem;">
+              <p style="font-weight:600;color:var(--text);margin-bottom:0.3rem;">🏥 Healthcare.gov (2013) · Lanzamiento fallido [cite: 85, 86]</p>
+              <p style="font-size:13px;color:#C8C8E0;">Falta de pruebas de carga/estrés. Colapsó el día 1 con 250,000 usuarios, costando $840M adicionales[cite: 84, 87, 88].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid #3b82f6;border-radius:0 8px 8px 0;padding:0.85rem 1rem;">
+              <p style="font-weight:600;color:var(--text);margin-bottom:0.3rem;">🔓 Heartbleed — OpenSSL (2014) · 500M sitios vulnerables [cite: 90, 91]</p>
+              <p style="font-size:13px;color:#C8C8E0;">Falta de pruebas de seguridad. Una línea sin validar expuso datos por 2 años. Un test de límites lo habría detectado[cite: 89, 92, 93].</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <ul class="rec-list"><li><span>📌</span><span>Anotaciones del impacto económico...</span></li></ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">TEMA 03</div>
+      <div class="tema-title">Los 7 Principios Fundamentales del Testing (ISTQB) [cite: 95]</div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-purple">📋</div><span class="c-section-title">Principios</span></div>
+        <div class="c-section-body">
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;display:flex;gap:10px;align-items:flex-start;">
+              <span style="background:var(--accent);color:#fff;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px;">1</span>
+              <p style="font-size:13px;color:#C8C8E0;"><strong style="color:var(--text);">Muestran presencia de defectos:</strong> Revelan defectos pero NO prueban que esté 100% libre de ellos[cite: 97, 98].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;display:flex;gap:10px;align-items:flex-start;">
+              <span style="background:var(--accent);color:#fff;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px;">2</span>
+              <p style="font-size:13px;color:#C8C8E0;"><strong style="color:var(--text);">Pruebas exhaustivas imposibles:</strong> Probar todas las combinaciones es inviable; se usa análisis de riesgo[cite: 100, 101].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;display:flex;gap:10px;align-items:flex-start;">
+              <span style="background:var(--accent);color:#fff;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px;">3</span>
+              <p style="font-size:13px;color:#C8C8E0;"><strong style="color:var(--text);">Pruebas tempranas:</strong> El costo crece 10× por fase. Probar desde requisitos ahorra dinero[cite: 103, 104].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;display:flex;gap:10px;align-items:flex-start;">
+              <span style="background:var(--accent);color:#fff;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px;">4</span>
+              <p style="font-size:13px;color:#C8C8E0;"><strong style="color:var(--text);">Agrupamiento de defectos:</strong> El 80% de defectos se concentra en el 20% del código (Pareto)[cite: 106, 107].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;display:flex;gap:10px;align-items:flex-start;">
+              <span style="background:var(--accent);color:#fff;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px;">5</span>
+              <p style="font-size:13px;color:#C8C8E0;"><strong style="color:var(--text);">Paradoja del pesticida:</strong> Tests repetidos dejan de encontrar nuevos errores. Deben actualizarse[cite: 109, 110].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;display:flex;gap:10px;align-items:flex-start;">
+              <span style="background:var(--accent);color:#fff;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px;">6</span>
+              <p style="font-size:13px;color:#C8C8E0;"><strong style="color:var(--text);">Dependen del contexto:</strong> Un sistema médico y un juego requieren estrategias distintas[cite: 112, 113].</p>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;display:flex;gap:10px;align-items:flex-start;">
+              <span style="background:var(--accent);color:#fff;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px;">7</span>
+              <p style="font-size:13px;color:#C8C8E0;"><strong style="color:var(--text);">Ausencia de errores es falacia:</strong> Un sistema sin bugs que no cumple las necesidades NO es calidad[cite: 115, 116].</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div><span class="c-section-title" style="color:#22c55e;">Mis apuntes</span></div>
+        <div class="c-section-body">
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>EJEMPLOS: Principios de las Pruebas de Software (QA)</strong><br>
+• <strong>Las pruebas muestran presencia de defectos:</strong> Demuestran la existencia de fallos, pero no que el sistema sea 100% perfecto. <em>Ejemplo:</em> Si pruebas un formulario con contraseñas incorrectas y todo funciona bien, mañana un usuario podría ingresar un carácter especial (como un emoji 🚀) que rompa el sistema porque esa combinación exacta jamás se evaluó.<br>
+• <strong>Las pruebas exhaustivas son imposibles:</strong> Es inviable probar todas las combinaciones posibles de datos. <em>Ejemplo:</em> En un campo de contraseña de 8 a 16 caracteres con símbolos y números, probar cada variante tomaría millones de años; por ello, el tester prioriza mediante análisis de riesgo evaluando solo los límites (ej. contraseñas de 7, 8, 16 y 17 caracteres).<br>
+• <strong>Pruebas tempranas ahorran tiempo y dinero:</strong> Encontrar fallos en etapas iniciales reduce el costo de corrección. <em>Ejemplo:</em> Corregir una ambigüedad sobre divisas en el documento de requisitos toma 5 minutos; descubrir ese mismo vacío legal con la app ya lanzada en producción en Europa costará miles de dólares y parches de emergencia.<br>
+• <strong>Agrupamiento de defectos (Regla de Pareto):</strong> El 80% de los fallos suele concentrarse en el 20% de los módulos debido a su complejidad. <em>Ejemplo:</em> En una app bancaria, el módulo de Transferencias Internacionales acumula casi todos los errores del sistema por sus conexiones externas y tasas en tiempo real, mientras que el perfil o el modo oscuro no fallan.<br>
+• <strong>La paradoja del pesticida:</strong> Si se corren las mismas pruebas una y otra vez, llegará un punto en que no encontrarán fallos nuevos. <em>Ejemplo:</em> Ejecutar la misma lista de 50 pruebas automatizadas por un año dará "0 errores" porque el código ya se adaptó a ellas, pero los nuevos bugs de las funciones recientes pasarán desapercibidos si no se actualiza el set de pruebas.<br>
+• <strong>Las pruebas dependen del contexto:</strong> La estrategia cambia según el tipo de software. <em>Ejemplo:</em> Un juego móvil casual se prueba buscando fluidez y consumo de batería, donde un bug visual es menor; en cambio, el software de un marcapasos o de un avión exige simulaciones matemáticas ultra rigurosas porque un solo fallo cuesta vidas.<br>
+• <strong>Ausencia de errores es una falacia:</strong> Que un sistema no tenga bugs no significa que sea exitoso si no cumple las expectativas del usuario. <em>Ejemplo:</em> Crear un software impecable y con cero fallos que gestiona inventarios mediante disquetes es un fracaso comercial si el mercado actual opera 100% en la nube y las computadoras ya no tienen lectores físicos.
+</p>
+</div>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <div class="tema-block">
+      <div class="tema-number">TEMA 04</div>
+      <div class="tema-title">Tipos y Niveles de Prueba [cite: 118]</div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-blue">🔺</div><span class="c-section-title">Pirámide de Testing [cite: 119]</span></div>
+        <div class="c-section-body">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);padding:0.85rem 1rem;">
+              <p style="font-weight:600;color:var(--green);margin-bottom:0.3rem;">🧱 Unitarias (70%) [cite: 120, 121]</p>
+              <p style="font-size:13px;color:#C8C8E0;">Validan funciones individuales. Rápidas, baratas. Base del testing ágil[cite: 122].</p>
+            </div>
+            <div style="background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);padding:0.85rem 1rem;">
+              <p style="font-weight:600;color:#60a5fa;margin-bottom:0.3rem;">🔗 Integración (20%) [cite: 123, 124]</p>
+              <p style="font-size:13px;color:#C8C8E0;">Verifican interacción entre módulos/servicios y detectan problemas de interfaz[cite: 125].</p>
+            </div>
+            <div style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.3);padding:0.85rem 1rem;">
+              <p style="font-weight:600;color:#fb923c;margin-bottom:0.3rem;">🖥️ Sistema (8%) [cite: 126, 127]</p>
+              <p style="font-size:13px;color:#C8C8E0;">Prueban el sistema completo simulando uso real contra los requisitos[cite: 128].</p>
+            </div>
+            <div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);padding:0.85rem 1rem;">
+              <p style="font-weight:600;color:#ef4444;margin-bottom:0.3rem;">✅ Aceptación / UAT (2%) [cite: 129, 130]</p>
+              <p style="font-size:13px;color:#C8C8E0;">Validación final por el cliente. Aprueba o rechaza la entrega del sistema[cite: 131].</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">TEMA 05</div>
+      <div class="tema-title">El Proceso de Pruebas de Software [cite: 132]</div>
+
+      <div class="c-section">
+        <div class="c-section-body">
+          <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+              <tr style="background:var(--surface);">
+                <th style="padding:10px;border:1px solid var(--border);color:var(--accent2);">Fase</th>
+                <th style="padding:10px;border:1px solid var(--border);color:var(--accent2);">Actividades Principales</th>
+                <th style="padding:10px;border:1px solid var(--border);color:var(--accent2);">Salida</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:10px;border:1px solid var(--border);font-weight:600;color:#e879f9;">📋 1. Planificación [cite: 133]</td>
+                <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Definir alcance, riesgos, estimar esfuerzo, seleccionar herramientas[cite: 136, 137, 138, 139, 140].</td>
+                <td style="padding:10px;border:1px solid var(--border);font-weight:600;">Plan de Pruebas [cite: 141]</td>
+              </tr>
+              <tr style="background:rgba(255,255,255,0.02)">
+                <td style="padding:10px;border:1px solid var(--border);font-weight:600;color:#38bdf8;">✏️ 2. Diseño [cite: 142]</td>
+                <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Diseñar casos, definir datos, preparar ambiente[cite: 145, 146, 147, 148].</td>
+                <td style="padding:10px;border:1px solid var(--border);font-weight:600;">Casos de prueba [cite: 150]</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border:1px solid var(--border);font-weight:600;color:#34d399;">▶️ 3. Ejecución [cite: 151]</td>
+                <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Ejecutar casos, reportar defectos, re-testing[cite: 154, 155, 156, 157, 158].</td>
+                <td style="padding:10px;border:1px solid var(--border);font-weight:600;">Defect reports [cite: 159]</td>
+              </tr>
+              <tr style="background:rgba(255,255,255,0.02)">
+                <td style="padding:10px;border:1px solid var(--border);font-weight:600;color:#fbbf24;">📊 4. Evaluación [cite: 160]</td>
+                <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Analizar cobertura, KPIs, criterios de salida, go/no-go[cite: 163, 164, 165, 166, 167].</td>
+                <td style="padding:10px;border:1px solid var(--border);font-weight:600;">Informe calidad [cite: 168]</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border:1px solid var(--border);font-weight:600;color:#f87171;">✅ 5. Cierre [cite: 169]</td>
+                <td style="padding:10px;border:1px solid var(--border);color:#C8C8E0;">Archivar artefactos, lecciones aprendidas, liberar ambiente[cite: 172, 173, 174, 175].</td>
+                <td style="padding:10px;border:1px solid var(--border);font-weight:600;">Closure Report [cite: 177]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tema-block">
+      <div class="tema-number">ACTIVIDADES</div>
+      <div class="tema-title">Ejercicios Propuestos y Resueltos</div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-orange">✏️</div><span class="c-section-title">Ejercicio 1: Cálculo del ROI de Pruebas [cite: 178]</span></div>
+        <div class="c-section-body">
+          <p style="margin-bottom:10px;"><strong>Enunciado:</strong> 30 defectos en codificación. Costos: $80 (codificación), $400 (sistema), $2.000 (producción). QA cuesta $8.000/mes[cite: 180, 181, 182].</p>
+          <ul style="color:#C8C8E0; font-size:13px; padding-left:1.5rem; line-height: 1.6;">
+            <li><strong>Ahorro Detección Temprana:</strong> En producción costarían $60.000. En código cuestan $2.400. <strong>Ahorro = $57.600</strong> (25× más barato)[cite: 186, 187, 188, 189, 190].</li>
+            <li><strong>Cálculo del ROI:</strong> (Ahorro $57.600 - QA $8.000) / $8.000 × 100 = <strong>620%</strong>[cite: 193, 194, 195]. <br>Por cada $1 invertido se ahorraron $7.20[cite: 196].</li>
+          </ul>
+        </div>
+      </div>
+        <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div>
+          <span class="c-section-title" style="color:#22c55e;">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>Casos de Estudio Financiero y ROI en QA</strong><br>
+• <strong>Ejercicio 1: App de Banca Móvil (Fintech)</strong><br>
+&nbsp;&nbsp;• <em>Enunciado:</em> Se detectan 25 defectos en codificación. Costos por bug: Codificación $100, Sistema $500, Producción $3,000. El equipo de testing costó $10,000 por 1 mes.<br>
+&nbsp;&nbsp;• <em>Ahorro por detección temprana:</em> Costo codificación ($25 \times \$100 = \$2,500$) vs. Costo producción ($25 \times \$3,000 = \$75,000$). $\text{Ahorro} = \$75,000 - \$2,500 = \mathbf{\$72,500}$. Detectar los errores en codificación fue 30 veces más barato.<br>
+&nbsp;&nbsp;• <em>ROI de las pruebas:</em> Con una inversión de $10,000 y un beneficio de $72,500, aplicando la fórmula $\text{ROI} = \frac{\text{Beneficio} - \text{Inversión}}{\text{Inversión}} \times 100$, el resultado es $\frac{72,500 - 10,000}{10,000} \times 100 = \mathbf{625\%}$. Significa que por cada $1 invertido, la empresa ahorró $7.25 en producción.<br>
+• <strong>Ejercicio 2: Plataforma de Comercio Electrónico (E-commerce)</strong><br>
+&nbsp;&nbsp;• <em>Enunciado:</em> Se resuelven 40 defectos en desarrollo. Costos por bug: Codificación $50, Sistema $250, Producción $1,500. El ingeniero de QA y las herramientas costaron $5,000 por el mes.<br>
+&nbsp;&nbsp;• <em>Ahorro por detección temprana:</em> Costo codificación ($40 \times \$50 = \$2,000$) vs. Costo producción ($40 \times \$1,500 = \$60,000$). $\text{Ahorro} = \$60,000 - \$2,000 = \mathbf{\$58,000}$. Se evitó una pérdida potencial logrando un ahorro neto de $58,000.<br>
+&nbsp;&nbsp;• <em>ROI de la estrategia:</em> Con una inversión de $5,000 y un beneficio de $58,000, aplicando la fórmula de retorno, el resultado es $\frac{58,000 - 5,000}{5,000} \times 100 = \mathbf{1060\%}$. Es decir, por cada $1 invertido en QA automatizado, la empresa evitó gastar $11.60 en parches de emergencia.
+</p>
+</div>
+          </ul>
+        </div>
+      </div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-purple">✏️</div><span class="c-section-title">Ejercicio 2: Selección del Tipo de Prueba [cite: 197]</span></div>
+        <div class="c-section-body">
+          <ul style="color:#C8C8E0; font-size:13px; padding-left:1.5rem; line-height: 1.6;">
+            <li><strong>A. Modificación módulo autenticación:</strong> Validar lo que ya funcionaba[cite: 200, 201]. <strong>Solución:</strong> Prueba de Regresión, verifica que cambios no rompen el sistema[cite: 202, 203].</li>
+            <li><strong>B. Cliente valida requerimientos:</strong> Antes de aceptar el proyecto[cite: 205]. <strong>Solución:</strong> Prueba de Aceptación (UAT), define si es entregable[cite: 206, 207].</li>
+            <li><strong>C. Verificar calcularDescuento():</strong> Retorna 15%[cite: 209]. <strong>Solución:</strong> Prueba Unitaria, aislada y rápida[cite: 210, 211].</li>
+            <li><strong>D. Soportar 10.000 usuarios concurrentes:</strong>[cite: 213]. <strong>Solución:</strong> Prueba de Carga/Estrés[cite: 214, 215].</li>
+          </ul>
+        </div>
+      </div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div>
+          <span class="c-section-title" style="color:#22c55e;">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+          <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;">
+• <strong>Tipos y Ejemplos de Pruebas de Software</strong><br>
+• <strong>A. Prueba de Regresión:</strong> Confirma que el código nuevo o modificaciones no hayan roto las funciones existentes del sistema. <em>Ejemplo:</em> Al añadir la función "Pagar con Apple Pay" en una app de comida, QA vuelve a verificar que procesos antiguos como "añadir al carrito", "aplicar cupones" o "cambiar dirección" sigan funcionando perfectamente.<br>
+• <strong>B. Prueba de Aceptación (UAT):</strong> Evaluaciones finales realizadas por usuarios reales para validar que el sistema cumple con el contrato y las necesidades del negocio. <em>Ejemplo:</em> Médicos y recepcionistas usan un nuevo sistema de gestión clínica simulando flujos reales para validar que sea intuitivo y cumpla lo acordado antes de autorizar el lanzamiento.<br>
+• <strong>C. Prueba Unitaria:</strong> Pruebas ultra rápidas ejecutadas por desarrolladores para verificar de forma aislada el comportamiento de una pequeña función de código. <em>Ejemplo:</em> Validar mediante una línea de código automática si la función <code>esUsuarioPremium()</code> devuelve correctamente <code>True</code> al recibir los datos de un usuario que pagó su suscripción.<br>
+• <strong>D. Prueba de Carga / Estrés:</strong> Simulación de volumen masivo de tráfico para analizar el rendimiento del servidor ante una alta demanda o identificar su punto de quiebre. <em>Ejemplo:</em> Usar un software como JMeter para simular a 15,000 estudiantes virtuales inscribiéndose al mismo tiempo en la plataforma web de una universidad para ver si el sistema se ralentiza o se cae por completo.
+</p>
+</div>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-blue">✏️</div><span class="c-section-title">Ejercicio 3: Análisis de Riesgo [cite: 216]</span></div>
+        <div class="c-section-body">
+          <p style="margin-bottom:10px;"><strong>Sistema Hospitalario:</strong> Priorizar Riesgo = Probabilidad × Impacto[cite: 218, 219].</p>
+          <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+              <tr style="background:var(--surface);">
+                <th style="padding:8px;border:1px solid var(--border);color:var(--accent2);">Módulo</th>
+                <th style="padding:8px;border:1px solid var(--border);color:var(--accent2);">P×I</th>
+                <th style="padding:8px;border:1px solid var(--border);color:var(--accent2);">Prioridad</th>
+                <th style="padding:8px;border:1px solid var(--border);color:var(--accent2);">Tipo [cite: 228]</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td style="padding:8px;border:1px solid var(--border);">Administración medicamentos [cite: 229]</td><td style="padding:8px;border:1px solid var(--border);">5×5=25 [cite: 230, 231, 232]</td><td style="padding:8px;border:1px solid var(--border);color:#ef4444;">🔴 1ª [cite: 233]</td><td style="padding:8px;border:1px solid var(--border);">Sist+Seg. [cite: 234]</td></tr>
+              <tr><td style="padding:8px;border:1px solid var(--border);">Historia clínica [cite: 235]</td><td style="padding:8px;border:1px solid var(--border);">3×5=15 [cite: 236, 237, 238]</td><td style="padding:8px;border:1px solid var(--border);color:#f97316;">🟠 2ª [cite: 239]</td><td style="padding:8px;border:1px solid var(--border);">Integ+UAT [cite: 240]</td></tr>
+              <tr><td style="padding:8px;border:1px solid var(--border);">Agenda citas [cite: 241]</td><td style="padding:8px;border:1px solid var(--border);">4×3=12 [cite: 242, 243, 244]</td><td style="padding:8px;border:1px solid var(--border);color:#eab308;">🟡 3ª [cite: 245]</td><td style="padding:8px;border:1px solid var(--border);">Sist+Carga [cite: 246]</td></tr>
+              <tr><td style="padding:8px;border:1px solid var(--border);">Facturación [cite: 247]</td><td style="padding:8px;border:1px solid var(--border);">2×4=8 [cite: 248, 249, 250]</td><td style="padding:8px;border:1px solid var(--border);color:#22c55e;">🟢 4ª [cite: 251]</td><td style="padding:8px;border:1px solid var(--border);">Integ. [cite: 252]</td></tr>
+              <tr><td style="padding:8px;border:1px solid var(--border);">Reportes [cite: 253]</td><td style="padding:8px;border:1px solid var(--border);">2×2=4 [cite: 254, 255, 256]</td><td style="padding:8px;border:1px solid var(--border);color:#3b82f6;">🔵 5ª [cite: 257]</td><td style="padding:8px;border:1px solid var(--border);">Unitaria [cite: 258]</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:10px; font-size: 13px; color: var(--green);"><strong>Conclusión:</strong> Medicamentos (Riesgo 25) es crítico para la seguridad y va primero[cite: 259, 260].</p>
+        </div>
+      </div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div>
+          <span class="c-section-title" style="color:#22c55e;">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <div class="c-section-body">
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px;">Módulo</th>
+        <th style="padding:8px; text-align:center;">Probabilidad (1-5)</th>
+        <th style="padding:8px; text-align:center;">Impacto (1-5)</th>
+        <th style="padding:8px; text-align:center;">Riesgo (P × I)</th>
+        <th style="padding:8px; text-align:center;">Prioridad</th>
+        <th style="padding:8px;">Tipo de Prueba Sugerido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>Pasarela de Transferencias e Inversiones</strong><br><small>(Movimiento de dinero real en tiempo real)</small></td>
+        <td style="padding:8px; text-align:center;">5</td>
+        <td style="padding:8px; text-align:center;">5</td>
+        <td style="padding:8px; text-align:center;"><strong>25</strong></td>
+        <td style="padding:8px; text-align:center;">🔴 1ª</td>
+        <td style="padding:8px;">Sistema + Seguridad</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>Inicio de Sesión y Autenticación Biométrica</strong><br><small>(Acceso seguro con huella/rostro y token)</small></td>
+        <td style="padding:8px; text-align:center;">3</td>
+        <td style="padding:8px; text-align:center;">5</td>
+        <td style="padding:8px; text-align:center;"><strong>15</strong></td>
+        <td style="padding:8px; text-align:center;">🟠 2ª</td>
+        <td style="padding:8px;">Seguridad + UAT</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>Consulta de Saldos e Historial de Cuenta</strong><br><small>(Pantalla principal, la más consultada)</small></td>
+        <td style="padding:8px; text-align:center;">4</td>
+        <td style="padding:8px; text-align:center;">3</td>
+        <td style="padding:8px; text-align:center;"><strong>12</strong></td>
+        <td style="padding:8px; text-align:center;">🟡 3ª</td>
+        <td style="padding:8px;">Rendimiento / Carga</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>Envío de Notificaciones y Alertas</strong><br><small>(Avisos automáticos por SMS o Email)</small></td>
+        <td style="padding:8px; text-align:center;">3</td>
+        <td style="padding:8px; text-align:center;">2</td>
+        <td style="padding:8px; text-align:center;"><strong>6</strong></td>
+        <td style="padding:8px; text-align:center;">🟢 4ª</td>
+        <td style="padding:8px;">Integración</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1);">
+        <td style="padding:8px;"><strong>Personalización de Perfil</strong><br><small>(Cambiar foto de usuario o activar "Modo Oscuro")</small></td>
+        <td style="padding:8px; text-align:center;">2</td>
+        <td style="padding:8px; text-align:center;">1</td>
+        <td style="padding:8px; text-align:center;"><strong>2</strong></td>
+        <td style="padding:8px; text-align:center;">⚪ 5ª</td>
+        <td style="padding:8px;">Funcional / UI</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="tema-block">
+      <div class="tema-number">CIERRE</div>
+      <div class="tema-title">Resumen de la Semana 6 [cite: 261]</div>
+      <div class="c-section">
+        <div class="c-section-header"><div class="c-icon ic-purple">💡</div><span class="c-section-title">Puntos clave</span></div>
+        <div class="c-section-body">
+          <ul style="color:#C8C8E0; font-size:14px; padding-left: 20px; line-height: 1.6;">
+            <li>Las pruebas no garantizan software perfecto, pero reducen el riesgo en producción[cite: 263].</li>
+            <li>Detectar en codificación es 25× más barato que en producción. Testing es inversión[cite: 265, 266].</li>
+            <li>Los 7 principios ISTQB dictan que las pruebas tempranas son más rentables[cite: 268].</li>
+            <li>Pirámide: 70% unitarias, 20% integración, 8% sistema, 2% aceptación[cite: 270].</li>
+            <li>El proceso de 5 fases no se debe saltar para evitar deuda técnica[cite: 272].</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border);">
+      <a class="btn-nav" href="semana5.html">← Semana 5</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana7.html">Semana 7 →</a>
+    </div>
+
+  </div>
+
 </body>
 </html>

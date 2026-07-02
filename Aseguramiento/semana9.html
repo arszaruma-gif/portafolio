@@ -1,40 +1,496 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>MATERIA2 - Semana 9</title>
-<link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aseguramiento de Calidad · Semana 9</title>
+  <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-<div class="contenido">
-<h1>MATERIA2 - Semana 9</h1>
 
-<h2>Tema</h2>
-<p>Escriba aquí el tema.</p>
+  <div class="page-topbar">
+    <div class="crumb">
+      <a href="../index.html">Inicio</a>
+      <span class="sep">/</span>
+      <a href="../index.html">Aseguramiento de Calidad de Software</a>
+      <span class="sep">/</span>
+      <span class="current">Semana 9</span>
+    </div>
+    <div class="page-nav">
+      <a class="btn-nav" href="semana8.html">← Sem 8</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana10.html">Sem 10 →</a>
+    </div>
+  </div>
 
-<h2>Objetivo</h2>
-<p>Escriba aquí el objetivo.</p>
+  <div class="semana-hero">
+    <div class="s-subject-label">Aseguramiento de Calidad de Software · IST YAVIRAC · Quinto Semestre</div>
+    <h1>Semana <span class="accent">09</span></h1>
+    <p style="color:var(--accent2);font-size:15px;margin-top:0.4rem;font-weight:600;">Aplicación de Pruebas de Software · Del plan a la ejecución: aplicar pruebas reales en proyectos reales</p>
+    <div class="semana-meta">
+       Alex Robinson Zaruma Suntasig &nbsp;·&nbsp; 5to "A" &nbsp;·&nbsp; IST YAVIRAC &nbsp;·&nbsp; 2025-2026
+    </div>
+  </div>
 
-<h2>Contenido</h2>
-<p>Escriba aquí toda la información de la semana.</p>
+  <div class="semana-wrap">
 
-<h2>Actividades realizadas</h2>
-<ul>
-<li>Actividad 1</li>
-<li>Actividad 2</li>
-<li>Actividad 3</li>
-</ul>
+    <div class="tema-block">
+      <div class="tema-number">TEMA 01</div>
+      <div class="tema-title">El Proceso Completo de Aplicación de Pruebas</div>
 
-<h2>Evidencias</h2>
-<img src="" alt="Imagen de evidencia">
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🔄</div>
+          <span class="c-section-title">Fases del Ciclo de Pruebas</span>
+        </div>
+        <div class="c-section-body">
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="background:rgba(255,255,255,0.02); padding:1rem; border-left:4px solid #a855f7; border-radius:4px;">
+              <strong style="color:#e2e8f0;">📋 1. PLANIFICACIÓN:</strong> Define alcance, objetivos, recursos y estimaciones. <em>(Entregable: Plan de Pruebas)</em>
+            </div>
+            <div style="background:rgba(255,255,255,0.02); padding:1rem; border-left:4px solid #3b82f6; border-radius:4px;">
+              <strong style="color:#e2e8f0;">✏️ 2. DISEÑO:</strong> Crear casos de prueba, definir datos de entrada y priorizar. <em>(Entregable: Casos de Prueba)</em>
+            </div>
+            <div style="background:rgba(255,255,255,0.02); padding:1rem; border-left:4px solid #eab308; border-radius:4px;">
+              <strong style="color:#e2e8f0;">⚙️ 3. PREPARACIÓN:</strong> Configurar ambiente, herramientas y ejecutar pruebas de humo. <em>(Entregable: Ambiente Listo)</em>
+            </div>
+            <div style="background:rgba(255,255,255,0.02); padding:1rem; border-left:4px solid #22c55e; border-radius:4px;">
+              <strong style="color:#e2e8f0;">▶️ 4. EJECUCIÓN:</strong> Ejecutar casos, registrar resultados, reportar bugs. <em>(Entregable: Defect Reports)</em>
+            </div>
+            <div style="background:rgba(255,255,255,0.02); padding:1rem; border-left:4px solid #ec4899; border-radius:4px;">
+              <strong style="color:#e2e8f0;">📊 5. ANÁLISIS y CIERRE:</strong> Calcular métricas, evaluar criterios Go/No-Go. <em>(Entregable: Informe de Calidad)</em>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<h2>Conclusión</h2>
-<p>Escriba aquí la conclusión.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div>
+          <span class="c-section-title" style="color:#22c55e;">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📌</span><span>Anota por qué es riesgoso saltarse la fase de diseño...</span></li>
+          </ul>
+        </div>
+      </div>
 
-<h2>Bibliografía</h2>
-<p>Escriba aquí las referencias.</p>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div>
+          <span class="c-section-title" style="color:#ec4899;">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📸</span><span>Diagrama del ciclo de vida del testing...</span></li>
+          </ul>
+        </div>
+      </div>
+    </div><div class="tema-block">
+      <div class="tema-number">TEMA 02</div>
+      <div class="tema-title">Plan de Pruebas — Estructura IEEE 829</div>
 
-<a href="../index.html">Volver al inicio</a>
-</div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📄</div>
+          <span class="c-section-title">Componentes Clave del Plan</span>
+        </div>
+        <div class="c-section-body">
+          <ul style="list-style-type: decimal; padding-left: 1.5rem; color:#C8C8E0; line-height:1.6;">
+            <li><strong style="color:#fff;">Identificador y Alcance:</strong> Funcionalidades incluidas (in-scope) y excluidas (out-of-scope).</li>
+            <li><strong style="color:#fff;">Estrategia de Prueba:</strong> Niveles, técnicas manuales/automáticas y herramientas.</li>
+            <li><strong style="color:#fff;">Criterios de Entrada/Salida:</strong> Cuándo empezar (ej. build estable) y cuándo terminar (ej. 0 críticos, 80% coverage).</li>
+            <li><strong style="color:#fff;">Recursos y Cronograma:</strong> Equipo QA, ambientes requeridos y fechas hito.</li>
+            <li><strong style="color:#fff;">Riesgos y Contingencias:</strong> Identificar posibles bloqueos y plan de mitigación.</li>
+            <li><strong style="color:#fff;">Entregables:</strong> Qué documentos se generarán al final (Test Closure Report).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div>
+          <span class="c-section-title" style="color:#22c55e;">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📌</span><span>Anotaciones sobre cómo definir criterios de salida estrictos...</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div>
+          <span class="c-section-title" style="color:#ec4899;">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📸</span><span>Foto o enlace al Plan de Pruebas de tu proyecto integrador...</span></li>
+          </ul>
+        </div>
+      </div>
+    </div><div class="tema-block">
+      <div class="tema-number">TEMA 03</div>
+      <div class="tema-title">Diseño y Ejecución de Casos de Prueba</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">📝</div>
+          <span class="c-section-title">Plantilla de Caso de Prueba</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);width:25%;">Campo</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Descripción / Valor de Ejemplo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">ID del Caso</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">TC-NOT-001</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">Nombre del Test</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Registrar nota válida para un estudiante existente</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">Prerrequisito</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Usuario docente autenticado · Estudiante 'Juan Pérez' existe en BD</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">Pasos de Ejecución</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">1) Ir a módulo Notas → 2) Seleccionar estudiante → 3) Ingresar 85 → 4) Click 'Guardar'</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">Resultado Esperado</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Sistema guarda nota 85.0 y muestra 'Nota registrada exitosamente'</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">Resultado Obtenido</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">✅ PASS — Nota registrada correctamente.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div>
+          <span class="c-section-title" style="color:#22c55e;">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📌</span><span>Importancia de definir pasos reproducibles...</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div>
+          <span class="c-section-title" style="color:#ec4899;">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📸</span><span>Captura de Excel o TestRail de tus casos de prueba...</span></li>
+          </ul>
+        </div>
+      </div>
+    </div><div class="tema-block">
+      <div class="tema-number">TEMA 04</div>
+      <div class="tema-title">Gestión de Defectos en la Práctica</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">🐛</div>
+          <span class="c-section-title">Clasificación de Defectos (Severidad)</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li style="margin-bottom:0.5rem"><strong style="color:#ef4444;">🔴 CRÍTICO:</strong> El sistema no funciona, pérdida de datos. Bloquea pruebas. No negociable.</li>
+            <li style="margin-bottom:0.5rem"><strong style="color:#f97316;">🟠 ALTO:</strong> Funcionalidad principal rota. Workaround posible pero difícil.</li>
+            <li style="margin-bottom:0.5rem"><strong style="color:#eab308;">🟡 MEDIO:</strong> Funcionalidad secundaria afectada. Workaround disponible y sencillo.</li>
+            <li><strong style="color:#22c55e;">🟢 BAJO:</strong> Problema cosmético, textos, o usabilidad menor. No impide el uso.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📋</div>
+          <span class="c-section-title">Ejemplo de Reporte (Bug Ticket)</span>
+        </div>
+        <div class="c-section-body">
+          <pre style="background:#111; padding:15px; border-radius:5px; font-size:13px; color:#e2e8f0; border: 1px solid #333; overflow-x:auto;">
+ID Defecto:  BUG-0042
+Título:      Nota mayor a 10 es aceptada en Registro de Notas
+Severidad:   🔴 CRÍTICO
+Prioridad:   P1 — Inmediata
+Pasos reproducir: 
+  1. Ingresar nota=11
+  2. Click Guardar
+Esperado:    Error: 'Nota debe estar entre 0 y 10'
+Obtenido:    Nota 11 guardada. Sin mensaje de error.
+Asignado a:  Dev: Carlos Mendoza</pre>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div>
+          <span class="c-section-title" style="color:#22c55e;">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📌</span><span>Diferencia clave entre severidad y prioridad...</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div>
+          <span class="c-section-title" style="color:#ec4899;">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📸</span><span>Captura de Jira o Trello mostrando un bug reportado...</span></li>
+          </ul>
+        </div>
+      </div>
+    </div><div class="tema-block">
+      <div class="tema-number">TEMA 05</div>
+      <div class="tema-title">Estrategias de Automatización y Métricas</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">🤖</div>
+          <span class="c-section-title">¿Qué automatizar y qué NO?</span>
+        </div>
+        <div class="c-section-body" style="display:flex; gap:20px; flex-wrap:wrap;">
+          <div style="flex:1;">
+            <strong style="color:#22c55e;">SÍ Automatizar:</strong>
+            <ul style="color:#C8C8E0; font-size:14px; margin-top:5px;">
+              <li>Tests repetitivos (Regresión).</li>
+              <li>Pruebas de carga y rendimiento.</li>
+              <li>Data-driven tests (múltiples datos).</li>
+            </ul>
+          </div>
+          <div style="flex:1;">
+            <strong style="color:#ef4444;">NO Automatizar:</strong>
+            <ul style="color:#C8C8E0; font-size:14px; margin-top:5px;">
+              <li>UX subjetiva y usabilidad.</li>
+              <li>Exploratory testing (requiere intuición).</li>
+              <li>Funciones que cambian constantemente.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">📊</div>
+          <span class="c-section-title">Métricas Clave de la Ejecución</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Métrica</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Fórmula</th>
+                  <th style="padding:10px 12px;text-align:left;border:1px solid var(--border);color:var(--accent2);">Meta Ideal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">Tasa de Ejecución</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">(Casos ejecutados / Total planificados) × 100</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#34d399;">> 95%</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">Tasa de Aprobación</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">(Casos PASS / Total ejecutados) × 100</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#34d399;">> 85%</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">Densidad de Defectos</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Defectos encontrados / KLOC</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#34d399;">&lt; 1</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);font-weight:600;">MTTR</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Tiempo promedio de corrección</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#34d399;">&lt; 48h</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div>
+          <span class="c-section-title" style="color:#22c55e;">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📌</span><span>Anotaciones sobre qué métricas me sirven más...</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div>
+          <span class="c-section-title" style="color:#ec4899;">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📸</span><span>Captura de dashboard de métricas o Selenium/Cypress...</span></li>
+          </ul>
+        </div>
+      </div>
+    </div><div class="tema-block">
+      <div class="tema-number">ACTIVIDADES</div>
+      <div class="tema-title">Ejercicios Prácticos Resueltos</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">✏️</div>
+          <span class="c-section-title">E1: Plan de Pruebas Sistema Biblioteca IST</span>
+        </div>
+        <div class="c-section-body">
+          <ul style="color:#C8C8E0; font-size:14px; list-style-type:square; padding-left:20px;">
+            <li><strong>Alcance:</strong> Módulos préstamo, devolución, multas (app móvil fuera de scope).</li>
+            <li><strong>Criterios de Entrada/Salida:</strong> Inicia con build estable; Termina con 0 críticos, >85% PASS y >80% coverage.</li>
+            <li><strong>Tipos:</strong> Unitarias (multas), Integración (flujo BD), Sistema (e2e), UAT (con bibliotecario).</li>
+            <li><strong>Riesgos:</strong> Requisitos incompletos (revisión temprana), Tiempo (priorizar casos críticos).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-blue">✏️</div>
+          <span class="c-section-title">E2: Casos de Prueba (Préstamo 0 días)</span>
+        </div>
+        <div class="c-section-body">
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead>
+                <tr style="background:var(--surface);">
+                  <th style="padding:10px 12px;border:1px solid var(--border);color:var(--accent2);">Tipo</th>
+                  <th style="padding:10px 12px;border:1px solid var(--border);color:var(--accent2);">Entrada</th>
+                  <th style="padding:10px 12px;border:1px solid var(--border);color:var(--accent2);">Resultado Esperado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">VÁLIDO</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">libro=101, est=202, dias=7</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Préstamo creado. Devolución: fecha+7</td>
+                </tr>
+                <tr style="background:rgba(255,255,255,0.02)">
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">LÍMITE</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">libro=101, est=202, dias=1</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">Préstamo creado. Mínimo 1 día aceptado</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">INVÁLIDO</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#C8C8E0;">libro=101, est=202, dias=0</td>
+                  <td style="padding:10px 12px;border:1px solid var(--border);color:#f87171;">Error: 'Días debe ser > 0'</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">✏️</div>
+          <span class="c-section-title">E3: Análisis Integral (Go / No-Go)</span>
+        </div>
+        <div class="c-section-body">
+          <p style="color:#C8C8E0; font-size:14px; margin-bottom:10px;"><em>Datos: Plan=80, Ejec=74, PASS=62, Críticos=3, Cov=71%</em></p>
+          <ul style="color:#C8C8E0; font-size:14px; padding-left:20px;">
+            <li><strong>Ejecución:</strong> 74/80 = 92.5% (Aceptable)</li>
+            <li><strong>Aprobación:</strong> 62/74 = 83.8% (⚠️ Requiere análisis)</li>
+            <li><strong>Cobertura:</strong> 71% (❌ Insuficiente, meta ≥80%)</li>
+            <li><strong>Decisión Go/No-Go: <span style="color:#ef4444; font-weight:bold;">NO-GO</span></strong> (Existen 3 defectos críticos abiertos).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">📝</div>
+          <span class="c-section-title" style="color:#22c55e;">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📌</span><span>Observaciones de los cálculos de métricas...</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">🖼️</div>
+          <span class="c-section-title" style="color:#ec4899;">Evidencias</span>
+        </div>
+        <div class="c-section-body">
+          <ul class="rec-list">
+            <li><span>📸</span><span>Capturas de ejecución de la actividad...</span></li>
+          </ul>
+        </div>
+      </div>
+    </div><div class="tema-block">
+      <div class="tema-number">CIERRE</div>
+      <div class="tema-title">Resumen de la Semana 9</div>
+
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-purple">💡</div>
+          <span class="c-section-title">Puntos clave</span>
+        </div>
+        <div class="c-section-body">
+          <ul>
+            <li>La aplicación de pruebas requiere disciplina en sus 5 fases. Saltar el diseño genera caos.</li>
+            <li>El Plan de Pruebas (IEEE 829) es el documento rector; sin él, no hay dirección.</li>
+            <li>Los defectos críticos bloquean entregas. La decisión Go/No-Go es basada en datos y métricas (≥85% PASS, 0 Críticos), no en intuición.</li>
+            <li>La automatización debe enfocarse en regresión, datos y rendimiento.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border);">
+      <a class="btn-nav" href="semana8.html">← Semana 8</a>
+      <a class="btn-nav" href="../index.html">⌂ Índice</a>
+      <a class="btn-nav" href="semana10.html">Semana 10 →</a>
+    </div>
+
+  </div>
+
+  <div id="lightbox" onclick="cerrarLightbox()" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:1.5rem;cursor:zoom-out;">
+    <img id="lb-img" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:10px;object-fit:contain;"/>
+    <button onclick="cerrarLightbox()" style="position:fixed;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#1A1A25;border:1px solid #2A2A3A;color:#E8E8F0;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">×</button>
+  </div>
+  
+  <script>
+    function abrirLightbox(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').style.display='flex';}
+    function cerrarLightbox(){document.getElementById('lightbox').style.display='none';}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrarLightbox();});
+  </script>
 </body>
 </html>

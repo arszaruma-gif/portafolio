@@ -89,7 +89,28 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Definición de Calidad de Software...</p>
+         <p style="color:var(--muted2);font-style:italic;">
+    <strong>Apuntes sobre Definición de Calidad de Software:</strong><br><br>
+    
+    <strong>ISO/IEC 25010 (SQuaRE):</strong> Este estándar se centra de manera exclusiva en el modelo de calidad del producto de software. No evalúa a la empresa ni a los pasos que se tomaron para programar, sino las características tangibles del resultado final mediante los siguientes criterios:<br>
+    • <strong>Funcionalidad:</strong> Requisito indispensable que define las tareas operativas que el software es capaz de ejecutar.<br>
+    • <strong>Rendimiento:</strong> Determina la eficiencia, velocidad y comportamiento del producto bajo carga de trabajo.<br>
+    • <strong>Seguridad:</strong> Garantiza la protección de la información y la resistencia del producto frente a accesos no autorizados.<br>
+    • <strong>Usabilidad:</strong> Evalúa la facilidad con la que los usuarios pueden entender, aprender y operar el software.<br>
+    • <strong>Mantenibilidad:</strong> Mide la capacidad del software para ser modificado, actualizado o corregido en el futuro sin complicaciones.<br><br>
+    
+    <strong>ISO 9001 (Gestión de Calidad):</strong> A diferencia del anterior, este estándar cambia el foco desde el producto hacia la estructura interna de la empresa.<br>
+    • <strong>Sistema Organizacional:</strong> Se establece como un sistema de gestión de calidad organizacional, lo que significa que estandariza las políticas, metodologías y el control de calidad de toda la institución por igual.<br>
+    • <strong>Adaptación Tecnológica:</strong> Cuenta con la flexibilidad necesaria para ser plenamente aplicable al desarrollo de software, regulando cómo los equipos gestionan sus flujos de trabajo cotidianos.<br><br>
+    
+    <strong>CMMI (Capability Maturity Model):</strong> Este es un modelo diseñado específicamente para medir y guiar la evolución técnica y operativa de los equipos de trabajo.<br>
+    • <strong>Modelo de Madurez:</strong> Utiliza un sistema jerárquico dividido exactamente en 5 niveles para catalogar qué tan ordenada y predecible es una organización.<br>
+    • <strong>Optimización Activa:</strong> Su finalidad absoluta es servir de herramienta estructurada para mejorar procesos de desarrollo, permitiendo escalar de un nivel a otro de forma progresiva.<br><br>
+    
+    <strong>IEEE 730 (SQA Plans):</strong> Este estándar es una guía normativa orientada a la documentación y planificación estratégica de la calidad.<br>
+    • <strong>Creación de Documentación:</strong> Funciona específicamente como el estándar para la elaboración de planes de aseguramiento de calidad de software.<br>
+    • <strong>Enfoque en SQA:</strong> Establece los lineamientos requeridos para confeccionar planes SQA (Software Quality Assurance), definiendo cómo se supervisará y garantizará el cumplimiento de la calidad a lo largo del ciclo de vida del proyecto.
+</p>
         </div>
       </div>
 
@@ -153,7 +174,31 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre los Grandes Errores de Software...</p>
+          <p style="color:var(--muted2);font-style:italic;">
+    <strong>Caso 1: Therac-25 (1985–1987)</strong><br>
+    • <strong>El Contexto:</strong> Se diseñó e implementó una máquina de radioterapia médica avanzada controlada por computadora, cuyo objetivo era administrar tratamientos de radiación dirigidos de forma segura a pacientes con cáncer.<br>
+    • <strong>El Desastre:</strong> Durante su uso en clínicas entre 1985 y 1987, el sistema falló de forma intermitente y silenciosa. En lugar de emitir rayos controlados, la máquina se configuraba incorrectamente y entregó dosis masivas de radiación 100 veces superiores a lo normal directamente sobre los cuerpos de los pacientes.<br>
+    • <strong>Las Consecuencias:</strong> Fue el desastre más trágico de la lista con un impacto humano directo, provocando la muerte de 6 personas debido a las severas quemaduras y sobredosis por radiación.<br>
+    • <strong>¿Por qué falló?:</strong> El colapso se debió a una Condición de carrera (Race Condition) en el software de control. Si el operador de la máquina modificaba los comandos demasiado rápido en el teclado, el software procesaba las instrucciones en un orden incorrecto, activando el haz de máxima potencia sin colocar los filtros de seguridad físicos en su lugar.<br><br>
+    
+    <strong>Caso 2: Ariane 5 (1996)</strong><br>
+    • <strong>El Contexto:</strong> La Agencia Espacial Europea buscaba lanzar con éxito su nuevo, más grande y potente cohete de transporte espacial, el Ariane 5, en su vuelo inaugural para poner satélites científicos en órbita.<br>
+    • <strong>El Desastre:</strong> El 4 de junio de 1996, apenas 37 segundos después del lanzamiento, el cohete empezó a desviarse abruptamente de su trayectoria debido a señales falsas de la computadora de a bordo. Al someterse a fuerzas aerodinámicas extremas, los sistemas automatizados activaron la autodestrucción y el cohete explotó en el aire.<br>
+    • <strong>Las Consecuencias:</strong> La destrucción total del cohete y de toda la carga científica de vanguardia supuso una pérdida económica inmediata de $370 millones de dólares.<br>
+    • <strong>¿Por qué falló?:</strong> Ocurrió un error de Desbordamiento de entero (Overflow). El software del sistema de navegación intentó convertir un dato de velocidad representado en formato flotante de 64 bits a un entero de 16 bits. Como el número era demasiado grande para caber en 16 bits, el sistema se desbordó, provocando una excepción de software que congeló las computadoras de guía principales.<br><br>
+    
+    <strong>Caso 3: Mars Climate Orbiter (1999)</strong><br>
+    • <strong>El Contexto:</strong> La NASA diseñó y lanzó una sonda espacial científica avanzada con el objetivo de viajar e insertarse en la órbita de Marte para estudiar su clima, atmósfera y los cambios en su superficie.<br>
+    • <strong>El Desastre:</strong> Al llegar a su destino en septiembre de 1999 y activar sus motores para entrar en órbita, la sonda se aproximó demasiado al planeta rojo. Debido a un cálculo de altitud erróneo, la nave entró en contacto con la atmósfera marciana a una velocidad extrema, lo que provocó que se desintegrara o se perdiera para siempre en el espacio.<br>
+    • <strong>Las Consecuencias:</strong> La misión fracasó por completo, resultando en la pérdida absoluta de la nave y una afectación financiera de $327.6 millones de dólares.<br>
+    • <strong>¿Por qué falló?:</strong> Por una inconsistencia crítica en las Unidades de medición y una falta de validación del sistema. Un equipo de ingenieros de una empresa externa programó los sistemas de empuje utilizando el sistema imperial (libras-fuerza), mientras que el equipo central de la NASA esperaba recibir los datos en el sistema métrico decimal (newtons). Nadie validó ni auditó la compatibilidad de los datos antes de cargarlos en vivo.<br><br>
+    
+    <strong>Caso 4: Bug Y2K (Año 2000)</strong><br>
+    • <strong>El Contexto:</strong> Con la llegada del nuevo milenio el 1 de enero del año 2000, los sistemas informáticos de todo el mundo debían seguir procesando fechas y transacciones de forma continua y correcta sin interrumpir la sociedad moderna.<br>
+    • <strong>El Desastre:</strong> Se generó una amenaza de apagón digital global. Al pasar del año 1999 al 2000, las computadoras antiguas interpretarían el año nuevo "00" no como el 2000, sino como el año 1900. Esto causaría un fallo masivo en cadena, deteniendo sistemas bancarios, cálculos de intereses, software médicos y de transporte que dependían de la cronología para operar.<br>
+    • <strong>Las Consecuencias:</strong> Aunque afortunadamente se evitaron fallas catastróficas mayores gracias al trabajo preventivo, el costo de mitigación fue histórico: el mundo tuvo que invertir la astronómica cifra de $300,000 millones de dólares ($300B) en correcciones de código a nivel global.<br>
+    • <strong>¿Por qué falló?:</strong> Se debió a un fallo de diseño en la Representación de los datos. En las primeras décadas de la informática, la memoria de las computadoras era sumamente costosa. Para ahorrar espacio, los desarrolladores tomaron la decisión de almacenar los años utilizando únicamente sus últimos dos dígitos (por ejemplo, guardaban "99" en lugar de "1999"), sin planificar adecuadamente el cambio de siglo.
+</p>
         </div>
       </div>
 

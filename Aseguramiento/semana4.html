@@ -177,7 +177,41 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre las métricas clave...</p>
+          <p style="color:var(--muted2);font-style:italic;">
+    <strong>Escenario Práctico: Auditoría del Módulo de Procesamiento de Pagos</strong><br>
+    Imagina que eres el Líder de Calidad de Software (QA Lead) y estás auditando el código del módulo de procesamiento de tarjetas de crédito antes de una gran actualización. El módulo tiene un tamaño total de 2,000 líneas de código (lo que equivale a 2 KLOC).<br>
+    Aquí tienes cómo se calculan, interpretan y aplican las 4 métricas de la imagen en este código:<br><br>
+    
+    <strong>1. Defect Density (Densidad de Defectos)</strong><br>
+    • Durante las pruebas de integración en este módulo de 2 KLOC, el equipo de QA encuentra un total de 3 errores (bugs) en el código.<br>
+    • <strong>Fórmula:</strong> DD = Nº defectos / KLOC<br>
+    • <strong>Cálculo:</strong> DD = 3 defectos / 2 KLOC = 1.5 defectos/KLOC<br>
+    • <strong>Interpretación:</strong> La referencia recomendada en la imagen es &lt; 1 defecto/KLOC. Como nuestro resultado es 1.5, la métrica está en alerta. Indica una concentración de errores alta, por lo que el código se considera de baja calidad y requiere revisión antes de liberarse.<br><br>
+    
+    <strong>2. Cobertura de Pruebas (Test Coverage)</strong><br>
+    • El módulo tiene un total de 2,000 líneas de código. Al ejecutar la suite de pruebas unitarias y automatizadas, el sistema reporta que las pruebas logran pasar y ejecutar eficazmente por 1,700 líneas.<br>
+    • <strong>Fórmula:</strong> COV = (Líneas ejecutadas / Total líneas) x 100<br>
+    • <strong>Cálculo:</strong> COV = (1700 / 2000) x 100 = 85%<br>
+    • <strong>Interpretación:</strong> La referencia recomendada es &gt; 80%. Al haber alcanzado un 85%, la métrica es exitosa. Significa que la gran mayoría de la lógica de pagos está respaldada y verificada automáticamente contra fallos.<br><br>
+    
+    <strong>3. Complejidad Ciclomática (CC)</strong><br>
+    • Analizamos la función principal que decide si aprueba o rechaza el pago. Esta función está llena de condicionales anidados (if/else) para verificar fraudes, saldo, país de origen, etc. El analizador de código detecta que la función tiene 24 aristas (E), 16 nodos (N) y pertenece a 1 solo componente (P = 1).<br>
+    • <strong>Fórmula:</strong> CC = E - N + 2P<br>
+    • <strong>Cálculo:</strong> CC = 24 - 16 + 2(1) = 8 + 2 = 10<br>
+    • <strong>Interpretación:</strong> La referencia indica que debe ser &le; 10 por módulo. Nuestra función está exactamente en el límite crítico (10). Mide los caminos independientes en el código; si se añade un solo if más, superará el límite, volviéndose una función demasiado compleja, difícil de probar y propensa a generar desastres como el del Ariane 5 o el Therac-25.<br><br>
+    
+    <strong>4. Acoplamiento entre Clases (CBO)</strong><br>
+    • Evaluamos la clase principal ProcesadorPagos. Para poder funcionar y completar una transacción, esta clase necesita conectarse y depender directamente de otras 4 clases: ValidadorTarjeta, GestorBaseDatos, ServicioNotificaciones y ConectorBancoExterno.<br>
+    • <strong>Fórmula:</strong> CBO = Nº de clases de las que depende una clase<br>
+    • <strong>Cálculo:</strong> CBO = 4<br>
+    • <strong>Interpretación:</strong> La referencia dice que el acoplamiento debe ser &le; 5. Con un resultado de 4, la métrica está en un rango saludable. Si el número fuera mayor a 5 (alto acoplamiento), cualquier cambio en el banco o la base de datos rompería el procesador en cascada, haciendo el mantenimiento una pesadilla.<br><br>
+    
+    <strong>Resumen del Reporte de Calidad:</strong><br>
+    • <strong>Defect Density:</strong> Valor Obtenido: 1.5 | Referencia Ideal: &lt; 1 | Estado: ❌ Mal | Acción Requerida: Refactorizar y corregir los bugs identificados.<br>
+    • <strong>Cobertura de Pruebas:</strong> Valor Obtenido: 85% | Referencia Ideal: &gt; 80% | Estado:  Bien | Acción Requerida: Mantener y seguir cubriendo código nuevo.<br>
+    • <strong>Complejidad Ciclomática:</strong> Valor Obtenido: 10 | Referencia Ideal: &le; 10 | Estado: ⚠️ Límite | Acción Requerida: No agregar más condicionales a esa función.<br>
+    • <strong>Acoplamiento (CBO):</strong> Valor Obtenido: 4 | Referencia Ideal: &le; 5 | Estado:  Bien | Acción Requerida: Ninguna.
+</p>
         </div>
       </div>
 
@@ -284,7 +318,24 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre CMMI y McCall...</p>
+          <p style="color:var(--muted2);font-style:italic;">
+    <strong>A. Operación del Producto (Cómo funciona en el día a día)</strong><br>
+    • <strong>Corrección:</strong> El grado en que el software cumple fielmente con las especificaciones del cliente y realiza las tareas asignadas sin errores.<br>
+    • <strong>Fiabilidad:</strong> La capacidad del programa de mantenerse operando de forma continua y correcta en condiciones normales durante un periodo de tiempo determinado.<br>
+    • <strong>Eficiencia:</strong> La optimización de los recursos de hardware (procesador, memoria, almacenamiento) y el tiempo que el software necesita para ejecutar sus funciones.<br>
+    • <strong>Integridad:</strong> El nivel de seguridad del sistema para controlar los accesos no autorizados y proteger los datos confidenciales de modificaciones o pérdidas.<br>
+    • <strong>Usabilidad:</strong> El esfuerzo requerido por el usuario final para aprender, entender, operar e interactuar con la interfaz del software.<br><br>
+    
+    <strong>B. Revisión del Producto (Cómo se le hace mantenimiento)</strong><br>
+    • <strong>Mantenibilidad:</strong> La facilidad que ofrece el código del software para ser inspeccionado, diagnosticado y reparado cuando se detecta un error.<br>
+    • <strong>Flexibilidad:</strong> El esfuerzo necesario para modificar el software operativo con el fin de añadir nuevas funcionalidades o realizar mejoras.<br>
+    • <strong>Facilidad de prueba:</strong> El grado de sencillez para diseñar y ejecutar pruebas unitarias o automatizadas que verifiquen que el programa funciona correctamente.<br><br>
+    
+    <strong>C. Transición del Producto (Cómo se adapta a nuevos entornos)</strong><br>
+    • <strong>Portabilidad:</strong> La capacidad del software para ser transferido y operar de manera correcta en diferentes plataformas de hardware, sistemas operativos o navegadores.<br>
+    • <strong>Reutilización:</strong> El grado en que los componentes, módulos o fragmentos de código del programa pueden ser aprovechados para construir otros sistemas de software diferentes.<br>
+    • <strong>Interoperabilidad:</strong> El esfuerzo necesario para lograr que este software se conecte, intercambie datos y opere de forma conjunta con otros sistemas independientes.
+</p>
         </div>
       </div>
 
@@ -403,7 +454,45 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Boehm, FURPS y Dromey...</p>
+          <p style="color:var(--muted2);font-style:italic;">
+    <strong>A. Utilidad General (Comportamiento del sistema en su operación)</strong><br>
+    • <strong>Exactitud:</strong> El nivel de precisión y fidelidad con el que el software calcula u ofrece los resultados esperados por el negocio.<br>
+    • <strong>Fiabilidad:</strong> La capacidad del sistema de mantenerse operando de forma continua y correcta sin fallas bajo los entornos estipulados.<br>
+    • <strong>Eficiencia:</strong> El nivel de optimización y el uso adecuado de los recursos de hardware (CPU, memoria) junto con la velocidad de respuesta del programa.<br>
+    • <strong>Integridad:</strong> Los mecanismos de seguridad encargados de controlar los accesos y resguardar los datos contra modificaciones o robos no autorizados.<br>
+    • <strong>Usabilidad:</strong> Qué tan intuitiva, cómoda y fácil resulta la interfaz del software para ser aprendida y operada por el usuario final.<br><br>
+    
+    <strong>B. Mantenibilidad (Facilidad para revisar y evolucionar el código)</strong><br>
+    • <strong>Comprensibilidad:</strong> Qué tan legible, estructurado y sencillo resulta el código fuente para ser interpretado por otros desarrolladores.<br>
+    • <strong>Modificabilidad:</strong> La cantidad de esfuerzo requerida para realizar correcciones directas, ajustes internos o reparar errores puntuales en el código.<br>
+    • <strong>Flexibilidad:</strong> La facilidad para extender el software actual, añadirle nuevas características y adaptarlo a requerimientos cambiantes sin dañar la estructura base.<br>
+    • <strong>Facilidad de prueba:</strong> Qué tan sencillo resulta el diseño, acoplamiento y ejecución de pruebas para comprobar que el código cumple con sus funciones.<br><br>
+    
+    <strong>C. Portabilidad (Adaptación a infraestructuras externas)</strong><br>
+    • <strong>Independencia del dispositivo:</strong> Atributo que permite al software funcionar de manera fluida y transparente sin requerir una máquina o hardware específico.<br>
+    • <strong>Auto-contenido:</strong> El grado en que el software contiene todos sus paquetes, archivos y dependencias esenciales por sí mismo, evitando depender de complementos externos.<br>
+    • <strong>Facilidad de instalación:</strong> El nivel de sencillez y la ausencia de pasos complejos a la hora de desplegar y configurar el sistema operativo en una plataforma nueva.
+    
+    <p style="color:var(--muted2);font-style:italic;">
+    <strong>Modelo FURPS+ (Hewlett-Packard, 1987)</strong><br>
+    Este modelo clasifica los requisitos de calidad utilizando un acrónimo basado en sus categorías principales, complementado por restricciones adicionales:<br>
+    • <strong>Functionality (Funcionalidad):</strong> Comprende el conjunto de características operativas, las capacidades del sistema y las funciones de seguridad indispensables del software.<br>
+    • <strong>Usability (Usabilidad):</strong> Evalúa los factores humanos que intervienen en el uso de la aplicación, así como la disponibilidad de materiales de ayuda y la documentación de soporte.<br>
+    • <strong>Reliability (Fiabilidad):</strong> Mide la robustez del programa evaluando la frecuencia y severidad de los fallos que presenta, sumado a su capacidad de recuperabilidad.<br>
+    • <strong>Performance (Rendimiento):</strong> Analiza aspectos críticos del comportamiento computacional como la velocidad de procesamiento, la eficiencia general y el nivel de consumo de recursos de hardware.<br>
+    • <strong>Supportability (Mantenibilidad / Soporte):</strong> Mide la facilidad para dar soporte técnico al sistema, incluyendo su adaptabilidad para realizar cambios, la mantenibilidad del código y su internacionalización para diferentes idiomas.<br>
+    • <strong>+ (Design/Impl/Interface/Physical):</strong> Representa el signo "más", el cual engloba todas las restricciones adicionales impuestas al sistema, ya sea a nivel de diseño, implementación, interfaces o elementos físicos.<br><br>
+    
+    <strong>2. Modelo Dromey (1995)</strong><br>
+    A diferencia de los enfoques tradicionales, este modelo está orientado a las propiedades de los componentes. Su concepto base consiste en partir del producto mismo (analizando directamente su código y diseño) para identificar las propiedades de calidad estructurándolas de abajo hacia arriba en tres niveles:<br>
+    • <strong>Propiedades del Módulo:</strong> Se enfoca en evaluar la corrección y la fiabilidad de cada módulo o componente de forma individual y aislada.<br>
+    • <strong>Propiedades del Producto:</strong> Examina el comportamiento global de la aplicación ensamblada a través de características integradas como su funcionalidad, eficiencia y mantenibilidad.<br>
+    • <strong>Propiedades de Calidad:</strong> Constituyen el nivel superior del análisis, midiendo directamente factores orientados al usuario final como la satisfacción del cliente y la facilidad de uso del sistema.
+</p>
+
+</p>
+
+
         </div>
       </div>
 
