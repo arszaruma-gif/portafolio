@@ -71,7 +71,240 @@
         </div>
         <div class="c-section-body">
           <ul class="rec-list">
-            <li><span>📌</span><span>Anota por qué es riesgoso saltarse la fase de diseño...</span></li>
+            <div class="c-section-body">
+  <!-- FASE 1: PLANIFICACIÓN -->
+  <p style="color:var(--muted2);font-style:italic;"><strong>• 1. Planificación (Planning) — Definición Estratégica</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 CONTEXTO:</strong> Fase inicial que establece el rumbo del proyecto de aseguramiento de calidad, respondiendo formalmente al "por qué", "qué", "cuándo" y "quién" de las pruebas.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:20%;">Entradas Adicionales</th>
+        <th style="padding:8px; width:45%;">Entregables Clave (Outputs)</th>
+        <th style="padding:8px; width:35%;">Estrategia y Valor Añadido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;">
+          <ul>
+            <li style="margin-bottom:4px;">Criterios de aceptación iniciales.</li>
+            <li>Acuerdos de nivel de servicio (SLA).</li>
+          </ul>
+        </td>
+        <td style="padding:8px;">
+          <ul>
+            <li style="margin-bottom:4px;"><strong>Plan de Pruebas (Test Plan):</strong> Estrategia, alcance, recursos y cronograma maestro.</li>
+            <li style="margin-bottom:4px;"><strong>Matriz de Estimación:</strong> Cálculo de horas/hombre requeridas.</li>
+            <li><strong>Matriz de Riesgos de Calidad:</strong> Planes de mitigación ante riesgos del producto.</li>
+          </ul>
+        </td>
+        <td style="padding:8px; color:green;">
+          <strong>Definición del Core de Pruebas:</strong> Se dictaminan los enfoques de prueba requeridos (manual, automatización, rendimiento, seguridad, etc.) alineándolos con los objetivos del negocio.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Definición conceptual de la Planificación del Proyecto<br>
+fase_planificacion = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"estrategia": "Establecer alcance, recursos, presupuesto y tiempos clave",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"entregable_maestro": "Test_Plan_v1.0.pdf",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"enfoques": ["Manual", "Automatizado", "Performance", "Security"]<br>
+}
+</code>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <!-- FASE 2: DISEÑO -->
+  <p style="color:var(--muted2);font-style:italic;"><strong>• 2. Diseño (Design) — Estructura Técnica de Pruebas</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 CONTEXTO:</strong> Fase encargada de materializar los requerimientos funcionales y de negocio en especificaciones técnicas de prueba detalladas que guiarán la ejecución.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:20%;">Entradas Adicionales</th>
+        <th style="padding:8px; width:45%;">Entregables Clave (Outputs)</th>
+        <th style="padding:8px; width:35%;">Estrategia y Valor Añadido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;">
+          <ul>
+            <li style="margin-bottom:4px;">Prototipos de UI/UX.</li>
+            <li>Arquitectura técnica del sistema.</li>
+          </ul>
+        </td>
+        <td style="padding:8px;">
+          <ul>
+            <li style="margin-bottom:4px;"><strong>Casos de Prueba:</strong> Paso a paso detallado con datos de entrada y resultados esperados.</li>
+            <li style="margin-bottom:4px;"><strong>Matriz de Trazabilidad (RTM):</strong> Mapeo exhaustivo Requisito-Caso.</li>
+            <li><strong>Escenarios de Prueba:</strong> Ideas de alto nivel sobre los flujos del sistema.</li>
+          </ul>
+        </td>
+        <td style="padding:8px; color:green;">
+          <strong>Garantía de Cobertura:</strong> La RTM asegura una cobertura lógica del 100% sobre las necesidades del negocio antes de iniciar código.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Estructura del diseño y cobertura del software<br>
+fase_diseno = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"casos_de_prueba": ["TC-001_LoginExitoso", "TC-002_LoginInvalido"],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"trazabilidad_rtm": "Requisito_Funcional_01 <---> TC-001",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"cobertura_esperada": "100% de especificaciones mapeadas"<br>
+}
+</code>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <!-- FASE 3: CONFIGURACIÓN DEL ENTORNO -->
+  <p style="color:var(--muted2);font-style:italic;"><strong>• 3. Preparación / Configuración del Entorno (Test Environment Setup)</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 CONTEXTO:</strong> Aprovisionamiento, estabilización y despliegue de la infraestructura donde se llevarán a cabo las pruebas de manera segura y controlada.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:20%;">Entradas Adicionales</th>
+        <th style="padding:8px; width:45%;">Entregables Clave (Outputs)</th>
+        <th style="padding:8px; width:35%;">Estrategia y Valor Añadido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;">
+          <ul>
+            <li style="margin-bottom:4px;">Manuales de despliegue de software.</li>
+            <li>Scripts de bases de datos relacionales/NoSQL.</li>
+          </ul>
+        </td>
+        <td style="padding:8px;">
+          <ul>
+            <li style="margin-bottom:4px;"><strong>Ambiente de Pruebas Listo:</strong> Redes, servidores e infraestructura estabilizada.</li>
+            <li style="margin-bottom:4px;"><strong>Datos de Prueba (Test Data):</strong> Base de datos sembrada con registros válidos.</li>
+            <li><strong>Reporte de Smoke Test:</strong> Validación rápida que confirma la estabilidad del ambiente.</li>
+          </ul>
+        </td>
+        <td style="padding:8px; color:green;">
+          <strong>Estabilidad de Fase:</strong> Mitiga falsos positivos causados por discrepancias infraestructurales frente a entornos de producción.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Verificación de integridad del entorno de QA<br>
+verificar_entorno = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"ambiente": "qa-env-v12",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"datos_cargados": ["UsuariosFicticios", "TarjetasPrueba", "StockInventario"],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"smoke_test": "PASSED (Ambiente listo para ejecución de pruebas)"<br>
+}
+</code>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <!-- FASE 4: EJECUCIÓN -->
+  <p style="color:var(--muted2);font-style:italic;"><strong>• 4. Ejecución (Execution) — Detección Activa de Fallos</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 CONTEXTO:</strong> Ciclo dinámico donde se corren los casos de prueba diseñados, contrastando el software contra el comportamiento esperado y documentando discrepancias.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:20%;">Entradas Adicionales</th>
+        <th style="padding:8px; width:45%;">Entregables Clave (Outputs)</th>
+        <th style="padding:8px; width:35%;">Estrategia y Valor Añadido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;">
+          <ul>
+            <li>Acceso a herramientas ALM o de defectos (Jira, Azure DevOps, Bugzilla).</li>
+          </ul>
+        </td>
+        <td style="padding:8px;">
+          <ul>
+            <li style="margin-bottom:4px;"><strong>Registro de Ejecución (Log):</strong> Evidencia histórica de corridas de prueba.</li>
+            <li style="margin-bottom:4px;"><strong>Reporte de Defectos (Bugs):</strong> Tickets estructurados con evidencias de fallos.</li>
+            <li><strong>Suite de Regresión:</strong> Selección de casos de prueba para mitigar efectos colaterales.</li>
+          </ul>
+        </td>
+        <td style="padding:8px; color:green;">
+          <strong>Localización de Errores:</strong> Los reportes detallados y categorizados permiten al equipo de desarrollo realizar depuraciones rápidas y precisas.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Reporte simplificado de un Defecto (Bug)<br>
+defecto_reportado = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"id": "BUG-2026-01",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"titulo": "Error 500 al procesar pago con saldo exacto",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"pasos": "1. Agregar producto de $100 -> 2. Pagar -> 3. Error en pasarela",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"evidencias": ["log_consola.txt", "captura_pantalla.png"]<br>
+}
+</code>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <!-- FASE 5: ANÁLISIS Y CIERRE -->
+  <p style="color:var(--muted2);font-style:italic;"><strong>• 5. Análisis y Cierre (Test Closure & Analysis) — Evaluación de Calidad</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 CONTEXTO:</strong> Fase de balance e informe final donde se consolidan métricas clave del proyecto para recomendar o autorizar el despliegue del producto a producción.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:20%;">Entradas Adicionales</th>
+        <th style="padding:8px; width:45%;">Entregables Clave (Outputs)</th>
+        <th style="padding:8px; width:35%;">Estrategia y Valor Añadido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;">
+          <ul>
+            <li>Acuerdos de "Definition of Done" (DoD).</li>
+          </ul>
+        </td>
+        <td style="padding:8px;">
+          <ul>
+            <li style="margin-bottom:4px;"><strong>Informe de Cierre (Test Summary):</strong> Reporte gerencial de calidad y dictamen.</li>
+            <li style="margin-bottom:4px;"><strong>Métricas de Calidad:</strong> Densidad de defectos, porcentaje de aprobación y DRE.</li>
+            <li><strong>Lecciones Aprendidas:</strong> Documento de mejora continua (Retrospectiva).</li>
+          </ul>
+        </td>
+        <td style="padding:8px; color:green;">
+          <strong>Toma de Decisiones Informadas:</strong> Transfiere datos objetivos sobre el nivel de riesgo del software al equipo de negocio para avalar el lanzamiento.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Métricas fundamentales de Calidad en Cierre<br>
+metricas_finales = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"porcentaje_aprobacion": "97.4%",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"densidad_defectos": "0.15 fallos por caso ejecutado",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"efectividad_remocion_dre": "92.0% (Defectos mitigados antes de producción)",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"recomendacion": "GO (Cumple criterios del DoD de Calidad)"<br>
+}
+</code>
+</div>
           </ul>
         </div>
       </div>
@@ -115,7 +348,126 @@
         </div>
         <div class="c-section-body">
           <ul class="rec-list">
-            <li><span>📌</span><span>Anotaciones sobre cómo definir criterios de salida estrictos...</span></li>
+            <div class="test-plan-ieee" style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px;">
+
+  <!-- SECCIÓN 1: IDENTIFICADOR Y ALCANCE -->
+  <div class="section" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+    <h2 style="color: #0d47a1; margin-bottom: 10px; font-size: 1.4em;">1. Identificador y Alcance</h2>
+    <p style="margin: 5px 0 15px 0;">
+      <strong>Detalle IEEE 829:</strong> Originalmente se dividía en <em>Test Plan Identifier</em>, <em>Introduction</em>, <em>Test Items</em> (módulos a probar) y <em>Features to be Tested / Features not to be Tested</em>.
+    </p>
+    <div style="background-color: #f8f9fa; border-left: 4px solid #0d47a1; padding: 12px; border-radius: 4px;">
+      <p style="margin: 0 0 8px 0; font-weight: bold; color: #1565c0;">Información para complementar:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li style="margin-bottom: 8px;">
+          <strong>Features NOT to be tested (Fuera de alcance):</strong> Es tan importante detallar lo que no se va a probar como lo que sí. Por ejemplo: <em>"No se probará la pasarela de pagos externa ya que depende de un proveedor tercero, ni se realizarán pruebas de rendimiento en esta fase"</em>. Esto evita falsas expectativas con los stakeholders.
+        </li>
+        <li>
+          <strong>Referencias:</strong> Incluir enlaces o versiones exactas de los documentos origen (Historias de Usuario, SRS, Diagramas de Arquitectura) para saber en qué nos basamos.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 2: ESTRATEGIA DE PRUEBA -->
+  <div class="section" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+    <h2 style="color: #0d47a1; margin-bottom: 10px; font-size: 1.4em;">2. Estrategia de Prueba</h2>
+    <p style="margin: 5px 0 15px 0;">
+      <strong>Detalle IEEE 829:</strong> Se conocía formalmente como la sección <em>Approach</em>.
+    </p>
+    <div style="background-color: #f8f9fa; border-left: 4px solid #0d47a1; padding: 12px; border-radius: 4px;">
+      <p style="margin: 0 0 8px 0; font-weight: bold; color: #1565c0;">Información para complementar:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li style="margin-bottom: 8px;">
+          <strong>Criterios de Priorización:</strong> Explicar cómo se decidirá qué probar primero (ej. técnicas basadas en riesgos o las funcionalidades más críticas del negocio).
+        </li>
+        <li>
+          <strong>Configuraciones de Entorno Soportadas (Matriz de Compatibilidad):</strong> Detallar los sistemas operativos, navegadores (Chrome, Safari, Edge) y dispositivos móviles específicos en los que se ejecutará la estrategia.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 3: CRITERIOS DE ENTRADA/SALIDA -->
+  <div class="section" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+    <h2 style="color: #0d47a1; margin-bottom: 10px; font-size: 1.4em;">3. Criterios de Entrada/Salida</h2>
+    <p style="margin: 5px 0 15px 0;">
+      <strong>Detalle IEEE 829:</strong> Se desglosaba en <em>Item Pass/Fail Criteria</em> y <em>Suspension Criteria and Resumption Requirements</em>.
+    </p>
+    <div style="background-color: #f8f9fa; border-left: 4px solid #0d47a1; padding: 12px; border-radius: 4px;">
+      <p style="margin: 0 0 8px 0; font-weight: bold; color: #1565c0;">Información para complementar:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li style="margin-bottom: 8px;">
+          <strong>Criterios de Suspensión:</strong> ¿Cuándo detenemos las pruebas por completo? Ejemplo: Si el módulo de login falla y bloquea el acceso a toda la aplicación, las pruebas se suspenden inmediatamente.
+        </li>
+        <li>
+          <strong>Criterios de Reanudación:</strong> ¿Qué debe pasar para volver a testear tras una suspensión? Ejemplo: Que el equipo de desarrollo entregue un parche que solucione el bloqueador y pase un Smoke Test exitoso.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 4: RECURSOS Y CRONOGRAMA -->
+  <div class="section" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+    <h2 style="color: #0d47a1; margin-bottom: 10px; font-size: 1.4em;">4. Recursos y Cronograma</h2>
+    <p style="margin: 5px 0 15px 0;">
+      <strong>Detalle IEEE 829:</strong> Incluía <em>Staffing and Training Needs</em>, <em>Responsibilities</em> y <em>Schedule</em>.
+    </p>
+    <div style="background-color: #f8f9fa; border-left: 4px solid #0d47a1; padding: 12px; border-radius: 4px;">
+      <p style="margin: 0 0 8px 0; font-weight: bold; color: #1565c0;">Información para complementar:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li style="margin-bottom: 8px;">
+          <strong>Necesidades de Capacitación (Training):</strong> Si el sistema requiere usar herramientas nuevas (ej. Playwright, JMeter) o entender un modelo de negocio complejo (ej. contabilidad bancaria), se debe agendar un tiempo previo de capacitación para los testers.
+        </li>
+        <li>
+          <strong>Matriz de Responsabilidades (RACI):</strong> Definir claramente quién aprueba los casos, quién los ejecuta, quién gestiona el entorno y quién prioriza los bugs.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 5: RIESGOS Y CONTINGENCIAS -->
+  <div class="section" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+    <h2 style="color: #0d47a1; margin-bottom: 10px; font-size: 1.4em;">5. Riesgos y Contingencias</h2>
+    <p style="margin: 5px 0 15px 0;">
+      <strong>Detalle IEEE 829:</strong> Se denominaba <em>Risks and Contingencies</em>.
+    </p>
+    <div style="background-color: #f8f9fa; border-left: 4px solid #0d47a1; padding: 12px; border-radius: 4px;">
+      <p style="margin: 0 0 8px 0; font-weight: bold; color: #1565c0;">Información para complementar:</p>
+      <p style="margin: 0 0 8px 0; font-weight: bold;">Riesgos Comunes de QA y su mitigación:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li style="margin-bottom: 10px;">
+          <strong>Riesgo:</strong> Retraso en la entrega del software por parte de desarrollo.<br>
+          <span style="color: #555;"><strong>Contingencia:</strong> Reducir el alcance de pruebas (probar solo flujos críticos) o automatizar casos clave para acelerar la ejecución.</span>
+        </li>
+        <li>
+          <strong>Riesgo:</strong> Indisponibilidad o inestabilidad del ambiente de pruebas.<br>
+          <span style="color: #555;"><strong>Contingencia:</strong> Tener un ambiente espejo (Staging) listo o usar mocks de servicios caídos.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 6: ENTREGABLES DEL TESTING -->
+  <div class="section" style="margin-bottom: 10px;">
+    <h2 style="color: #0d47a1; margin-bottom: 10px; font-size: 1.4em;">6. Entregables del Testing</h2>
+    <p style="margin: 5px 0 15px 0;">
+      <strong>Detalle IEEE 829:</strong> El estándar original no solo listaba los entregables, sino que definía formatos estructurales para cada uno de ellos (<em>Test Case Specification</em>, <em>Test Incident Report</em>, etc.).
+    </p>
+    <div style="background-color: #f8f9fa; border-left: 4px solid #0d47a1; padding: 12px; border-radius: 4px;">
+      <p style="margin: 0 0 8px 0; font-weight: bold; color: #1565c0;">Información para complementar:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li style="margin-bottom: 8px;">
+          <strong>Evidencias de Prueba:</strong> Especificar en qué formato y dónde se guardarán las evidencias (capturas de pantalla, grabaciones de video, logs de base de datos) para fines de auditoría.
+        </li>
+        <li>
+          <strong>Frecuencia de Reportes:</strong> Indicar cada cuánto se enviarán actualizaciones (ej. Reporte de avance diario de ejecución vía Slack/Correo y Reporte de Cierre final al terminar el ciclo).
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
           </ul>
         </div>
       </div>
@@ -187,7 +539,72 @@
         </div>
         <div class="c-section-body">
           <ul class="rec-list">
-            <li><span>📌</span><span>Importancia de definir pasos reproducibles...</span></li>
+            <div class="test-case-card" style="border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 8px; padding: 20px; background-color: #fff; margin-bottom: 20px; font-family: inherit;">
+  
+  <!-- CABECERA: ID, MÓDULO Y ESTADO -->
+  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #d9534f; padding-bottom: 10px; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+    <div>
+      <span style="background-color: #f5f5f5; border: 1px solid #ccc; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 10pt; color: #333;">TC-LOG-003</span>
+      <span style="margin-left: 10px; color: var(--muted2); font-size: 10.5pt; font-weight: 600;">Módulo: Autenticación y Login</span>
+    </div>
+    <div style="background-color: #fdf2f2; border: 1px solid #f5c2c2; color: #b91c1c; padding: 4px 12px; border-radius: 12px; font-weight: bold; font-size: 10pt; text-align: center;">
+      ESTADO: NO APROBADO ❌
+    </div>
+  </div>
+
+  <!-- NOMBRE DEL TEST -->
+  <h3 style="margin-top: 0; margin-bottom: 15px; color: #333; font-size: 13pt; font-weight: bold;">
+    Validar bloqueo de cuenta tras múltiples intentos fallidos
+  </h3>
+
+  <!-- DETALLES DEL CASO DE PRUEBA -->
+  <div style="display: flex; flex-direction: column; gap: 12px; font-size: 10.5pt;">
+    
+    <!-- PRERREQUISITO -->
+    <div style="border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 8px;">
+      <strong style="color: var(--muted2); display: block; margin-bottom: 2px;">Prerrequisito:</strong>
+      <span style="color: var(--muted1);">Usuario 'admin_yavirac' registrado y activo en el sistema</span>
+    </div>
+
+    <!-- DATOS DE ENTRADA -->
+    <div style="border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 8px;">
+      <strong style="color: var(--muted2); display: block; margin-bottom: 2px;">Datos de Entrada:</strong>
+      <span style="color: var(--muted1);">
+        Usuario: <code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 3px;">admin_yavirac</code> &middot; 
+        Contraseña errónea: <code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 3px;">'ClaveInco123'</code> (ingresada 5 veces consecutivas)
+      </span>
+    </div>
+
+    <!-- PASOS DE EJECUCIÓN -->
+    <div style="border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 8px;">
+      <strong style="color: var(--muted2); display: block; margin-bottom: 4px;">Pasos de Ejecución:</strong>
+      <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 6px; color: var(--muted1); padding-left: 5px;">
+        <span>1) Ir a la página de Login</span>
+        <span style="color: var(--muted2); font-weight: bold;">&rarr;</span>
+        <span>2) Digitar usuario y contraseña incorrecta</span>
+        <span style="color: var(--muted2); font-weight: bold;">&rarr;</span>
+        <span>3) Hacer click en 'Iniciar Sesión'</span>
+        <span style="color: var(--muted2); font-weight: bold;">&rarr;</span>
+        <span>4) Repetir el proceso 5 veces consecutivas</span>
+      </div>
+    </div>
+
+    <!-- RESULTADO ESPERADO -->
+    <div style="border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 8px;">
+      <strong style="color: var(--muted2); display: block; margin-bottom: 2px;">Resultado Esperado:</strong>
+      <span style="color: #2e7d32;">Al 5to intento fallido, el sistema bloquea la cuenta por 15 minutos y muestra el mensaje: <em style="font-weight: 500;">'Cuenta bloqueada temporalmente por seguridad'</em>.</span>
+    </div>
+
+    <!-- RESULTADO OBTENIDO -->
+    <div>
+      <strong style="color: var(--muted2); display: block; margin-bottom: 2px;">Resultado Obtenido:</strong>
+      <span style="color: #c62828; font-weight: 500;">
+        ❌ FAIL &mdash; El sistema permitió un 6to e infinito número de intentos sin bloquear el usuario, permitiendo ataques de fuerza bruta.
+      </span>
+    </div>
+
+  </div>
+</div>
           </ul>
         </div>
       </div>

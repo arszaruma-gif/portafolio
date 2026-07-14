@@ -52,7 +52,94 @@
           </ul>
         </div>
       </div>
+      <div class="c-section">
+        <div class="c-section-header">
+          <div class="c-icon ic-orange">📝</div>
+          <span class="c-section-title">Mis apuntes</span>
+        </div>
+        <div class="c-section-body">
+         <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;"><strong>• Enfoque Tradicional o "Cloud-Hosted" (Alojado en la Nube)</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 ENUNCIADO:</strong> Se analiza el comportamiento de una arquitectura de software heredada (monolito) cuando es migrada mediante una estrategia <em>Lift-and-Shift</em> hacia infraestructura virtualizada en proveedores de nube (AWS/Azure).
+  </p>
 
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:25%;">Criterio de Operación</th>
+        <th style="padding:8px; width:35%;">Comportamiento ante Alta Demanda</th>
+        <th style="padding:8px; width:40%;">Impacto en el Negocio / Limitación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Estrategia de Escalado</strong></td>
+        <td style="padding:8px;">Escalado vertical o réplicas de instancias completas. Es obligatorio duplicar todo el bloque del monolito.</td>
+        <td style="padding:8px;"><strong>Lento y Costoso:</strong> Las máquinas virtuales idénticas tardan minutos en inicializarse y consumen presupuesto excesivo.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Tolerancia a Fallos</strong></td>
+        <td style="padding:8px;">Acoplamiento fuerte en un único proceso y base de datos centralizada.</td>
+        <td style="padding:8px;"><strong>Punto Único de Fallo:</strong> Si un componente (ej. la base de datos) colapsa, toda la aplicación se cae para todos los usuarios.</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Representación conceptual de un despliegue Cloud-Hosted<br>
+infraestructura_virtual = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"instancia_aws_ec2": ["Autenticacion", "Buscador", "ReproductorVideo", "BaseDatosLocal"],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"escalado": "Duplicar instancia gigante completa (Tarda varios minutos)"<br>
+}
+</code>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <p style="color:var(--muted2);font-style:italic;"><strong>• Enfoque "Cloud-Native" (Nativo de la Nube)</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 ENUNCIADO:</strong> Se evalúa el desempeño de una arquitectura diseñada de forma nativa para la nube, distribuida en microservicios independientes dentro de contenedores (Docker) y gestionada dinámicamente por un orquestador (Kubernetes).
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:25%;">Ventaja Dinámica</th>
+        <th style="padding:8px; width:35%;">Mecanismo de Acción (Viernes por la noche)</th>
+        <th style="padding:8px; width:40%;">Resultado Técnico y Operativo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Escalado Horizontal Automático</strong></td>
+        <td style="padding:8px;">Ante saturación en la "Reproducción de video", el orquestador genera de forma aislada 20 copias del microservicio.</td>
+        <td style="padding:8px; color:green;"><strong>Eficiencia Financiera:</strong> Los pods se levantan en segundos. Módulos como "Perfil de usuario" mantienen su consumo intacto.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Aislamiento y Tolerancia a Fallos</strong></td>
+        <td style="padding:8px;">Un error crítico de código rompe o detiene el contenedor del módulo de "Recomendaciones".</td>
+        <td style="padding:8px; color:green;"><strong>Degradación Aceptable:</strong> El usuario deja de ver sugerencias, pero sigue reproduciendo su video. El sistema no sufre un apagón total.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Implementación Continua (CI/CD)</strong></td>
+        <td style="padding:8px;">Se realiza el despliegue y actualización del componente "Buscador" directamente en hora pico de tráfico.</td>
+        <td style="padding:8px; color:green;"><strong>Cero Downtime:</strong> Los usuarios siguen navegando sin interrupciones y se elimina el cartel de "En mantenimiento".</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Representación conceptual de una topología Cloud-Native<br>
+arquitectura_kubernetes = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"pod_auth": {"replicas": 1, "estado": "estable"},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"pod_buscador": {"replicas": 1, "estado": "actualizando_sin_caidas"},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"pod_reproductor": {"replicas": 20, "estado": "escalado_automatico_segundos"},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"pod_recomendaciones": {"replicas": 0, "estado": "error_aislado_no_afecta_al_resto"}<br>
+}
+</code>
+</div>
+        </div>
+      </div>
       <div class="c-section">
         <div class="c-section-header">
           <div class="c-icon ic-purple">📜</div>
@@ -113,7 +200,173 @@
               <img src="../imagenes/NOMBRE.png" alt="Cloud Native" onclick="abrirLightbox(this.src)"/>
               <div class="ev-caption">Cloud Native</div>
             </div> -->
-            <p style="color:var(--muted2);font-style:italic;font-size:13px;">Agrega aquí tus imágenes de evidencia.</p>
+           <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;"><strong>• 1. Contenedores (Aislamiento y Eficiencia)</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 CONTEXTO:</strong> Tecnología de empaquetado que encapsula una aplicación junto con sus dependencias, permitiendo su ejecución aislada sobre un único sistema operativo compartido.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:25%;">Capacidad Clave</th>
+        <th style="padding:8px; width:45%;">Mecanismo Operativo</th>
+        <th style="padding:8px; width:30%;">Impacto / Beneficio Directo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Portabilidad Absoluta</strong></td>
+        <td style="padding:8px;">Empaqueta el binario, dependencias y variables en una imagen inmutable e idéntica.</td>
+        <td style="padding:8px; color:green;">Elimina el clásico conflicto operativo de "en mi máquina sí funcionaba".</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Eficiencia de Recursos</strong></td>
+        <td style="padding:8px;">Comparte el núcleo (kernel) del S.O. anfitrión sin necesidad de emular un sistema completo.</td>
+        <td style="padding:8px; color:green;">Alta densidad: Más aplicaciones ejecutándose con menor consumo de RAM y CPU.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Consistencia de Entornos</strong></td>
+        <td style="padding:8px;">Mantiene configuraciones rígidas desde desarrollo hasta producción.</td>
+        <td style="padding:8px; color:green;">Mitiga fallos colaterales por disparidad de versiones de software.</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Manifiesto conceptual de un contenedor (Docker de ejemplo)<br>
+contenedor_app = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"base": "alpine-linux-shared-kernel",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"dependencias": ["python3.11", "libs_sistema"],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"ejecucion": "Garantizada idéntica en Local, Staging y Producción"<br>
+}
+</code>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <p style="color:var(--muted2);font-style:italic;"><strong>• 2. Microservicios (Desacoplamiento Funcional)</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 CONTEXTO:</strong> Estilo arquitectónico que divide un sistema de software en un conjunto de servicios autónomos, modulares y altamente enfocados en un dominio de negocio.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:25%;">Capacidad Clave</th>
+        <th style="padding:8px; width:45%;">Mecanismo Operativo</th>
+        <th style="padding:8px; width:30%;">Impacto / Beneficio Directo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Escalabilidad Granular</strong></td>
+        <td style="padding:8px;">Replica únicamente el componente de alta demanda (ej. Carrito de Compras) de forma independiente.</td>
+        <td style="padding:8px; color:green;">Optimización financiera extrema al no duplicar todo el sistema.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Tolerancia a Fallos Aislada</strong></td>
+        <td style="padding:8px;">Aísla los procesos de cada microservicio mediante fronteras de red claras (APIs/Mensajería).</td>
+        <td style="padding:8px; color:green;">Si un servicio colapsa, los demás continúan operando con normalidad.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Flexibilidad Tecnológica</strong></td>
+        <td style="padding:8px;">Desvincula el stack tecnológico global, asignando contratos independientes entre equipos.</td>
+        <td style="padding:8px; color:green;">Permite usar el lenguaje o base de datos óptima para cada tarea específica.</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Topología de microservicios distribuidos e independientes<br>
+servicios_autonomos = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"ms_carrito": {"lenguaje": "Go", "base_datos": "Redis", "escalas": 5},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"ms_usuarios": {"lenguaje": "Node.js", "base_datos": "PostgreSQL", "escalas": 1},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"ms_notificaciones": {"estado": "caído", "efecto": "no_afecta_a_los_demás_servicios"}<br>
+}
+</code>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <p style="color:var(--muted2);font-style:italic;"><strong>• 3. CI/CD Automatizado (Integración y Entrega Continuas)</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 CONTEXTO:</strong> Flujos automatizados (pipelines) encargados de compilar, probar y desplegar los cambios de código de manera ágil y segura.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:25%;">Capacidad Clave</th>
+        <th style="padding:8px; width:45%;">Mecanismo Operativo</th>
+        <th style="padding:8px; width:30%;">Impacto / Beneficio Directo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Velocidad de Lanzamiento</strong></td>
+        <td style="padding:8px;">Automatiza de manera integral las suites de compilación, empaquetado y ejecución de pruebas.</td>
+        <td style="padding:8px; color:green;">Despliegue de actualizaciones, parches y mejoras múltiples veces al día.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Reducción de Error Humano</strong></td>
+        <td style="padding:8px;">Sustituye por completo los procesos, configuraciones e inicios de sesión manuales en servidores externos.</td>
+        <td style="padding:8px; color:green;">Mitiga de raíz distracciones o configuraciones accidentales hechas a mano.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Feedback Inmediato</strong></td>
+        <td style="padding:8px;">Ejecuta pruebas unitarias e integrales inmediatamente tras cada confirmación de cambios (git push).</td>
+        <td style="padding:8px; color:green;">Notifica errores en minutos, permitiendo corregirlos antes de afectar a producción.</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Ejecución secuencial del pipeline automatizado<br>
+pipeline_cicd = ["1. Build Imagen", "2. Run PyTest (Falla -> Cancela / Pasa -> Sigue)", "3. Deploy Automático"]
+</code>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <p style="color:var(--muted2);font-style:italic;"><strong>• 4. DevOps y Herramientas Declarativas (Cultura e Infraestructura)</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 CONTEXTO:</strong> Convergencia de prácticas culturales, filosofías de trabajo colaborativo y automatización para gestionar la infraestructura como código modificable.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:25%;">Capacidad Clave</th>
+        <th style="padding:8px; width:45%;">Mecanismo Operativo</th>
+        <th style="padding:8px; width:30%;">Impacto / Beneficio Directo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Infraestructura como Código (IaC)</strong></td>
+        <td style="padding:8px;">Define topologías de red, servidores y bases de datos mediante archivos descriptivos de texto.</td>
+        <td style="padding:8px; color:green;">Reconstrucción e instanciación idéntica de la infraestructura en minutos por script.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Colaboración Unificada</strong></td>
+        <td style="padding:8px;">Sincroniza y fusiona las metas de los desarrolladores (Dev) con las del equipo de operaciones (Ops).</td>
+        <td style="padding:8px; color:green;">Alineación en estabilidad del sistema, velocidad de entrega y monitoreo.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px;"><strong>Auditoría y Control</strong></td>
+        <td style="padding:8px;">Almacena los archivos declarativos del sistema dentro de repositorios de versiones (ej. Git).</td>
+        <td style="padding:8px; color:green;">Trazabilidad histórica completa y posibilidad de realizar rollback inmediato.</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Archivo de configuración declarativa (Estado Deseado)<br>
+manifiesto_infraestructura = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"tipo": "Infraestructura_Como_Codigo_IaC",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"redes": ["subred-privada-vpc-1", "balanceador-carga-http"],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"historial_versiones": "Controlado en Git (Sencillo auditar o revertir cambios)"<br>
+}
+</code>
+</div>
           </div>
         </div>
       </div>
@@ -172,7 +425,117 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Patrones de Resiliencia...</p>
+         <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;"><strong>• 1. Máquinas Virtuales (VMs) — Aislamiento a Nivel de Hardware</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 CONTEXTO:</strong> Entornos de ejecución independientes que emulan un hardware físico completo mediante un hipervisor, cargando un Sistema Operativo (SO) invitado completo para cada instancia.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:15%;">Perspectiva</th>
+        <th style="padding:8px; width:45%;">Mecanismo Técnico y Operativo</th>
+        <th style="padding:8px; width:40%;">Impacto en la Infraestructura</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:green;"><strong>Ventaja</strong></td>
+        <td style="padding:8px;"><strong>Aislamiento robusto (Hardware):</strong> Separadas estrictamente por el hipervisor. Si una instancia colapsa o se infecta, el daño queda confinado.</td>
+        <td style="padding:8px; color:green;">Alta seguridad perimetral y blindaje del servidor físico anfitrión.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:green;"><strong>Ventaja</strong></td>
+        <td style="padding:8px;"><strong>Flexibilidad de SO:</strong> Cada VM empaqueta su propio núcleo. Permite cohabitar instancias de Windows y Linux en el mismo hardware.</td>
+        <td style="padding:8px; color:green;">Idóneo para ejecutar software heredado con dependencias nativas del sistema operativo.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:red;"><strong>Desventaja</strong></td>
+        <td style="padding:8px;"><strong>Consumo masivo:</strong> El almacenamiento se mide en Gigabytes (GB) al arrastrar archivos de sistema redundantes de un SO completo.</td>
+        <td style="padding:8px; color:red;">Saturación acelerada del almacenamiento físico en disco.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:red;"><strong>Desventaja</strong></td>
+        <td style="padding:8px;"><strong>Lentitud de arranque:</strong> El proceso de inicialización requiere minutos al cargar servicios y controladores desde cero.</td>
+        <td style="padding:8px; color:red;">Poca agilidad operativa ante picos repentinos de tráfico de usuarios.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:red;"><strong>Desventaja</strong></td>
+        <td style="padding:8px;"><strong>Asignación estática:</strong> Recursos prefijados (ej. reservar 8 GB de RAM bloquea los recursos aunque solo se consuma 1 GB).</td>
+        <td style="padding:8px; color:red;">Desperdicio presupuestario y baja eficiencia del hardware disponible.</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Representación conceptual de una Máquina Virtual (VM)<br>
+maquina_virtual = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"capa_aislamiento": "Hipervisor (Hardware dedicado)",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"sistema_operativo": "SO Invitado Completo (Kernel Propio)",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"peso_promedio": "Gigabytes (GB)",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"recursos": "Asignación estática rígida (Baja elasticidad)"<br>
+}
+</code>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <p style="color:var(--muted2);font-style:italic;"><strong>• 2. Contenedores (Docker) — Virtualización a Nivel de Sistema Operativo</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 CONTEXTO:</strong> Paquetes de software ligeros y portables que comparten el núcleo (Kernel) del sistema operativo anfitrión, aislando únicamente los binarios y dependencias de la aplicación.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:15%;">Perspectiva</th>
+        <th style="padding:8px; width:45%;">Mecanismo Técnico y Operativo</th>
+        <th style="padding:8px; width:40%;">Impacto en la Infraestructura</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:green;"><strong>Ventaja</strong></td>
+        <td style="padding:8px;"><strong>Ligereza extrema:</strong> El tamaño se cuantifica en Megabytes (MB). Contienen exclusivamente el código y las librerías del servicio.</td>
+        <td style="padding:8px; color:green;">Almacenamiento ultra optimizado y transferencia veloz por red.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:green;"><strong>Ventaja</strong></td>
+        <td style="padding:8px;"><strong>Arranque instantáneo:</strong> Inicio en milisegundos o pocos segundos al no requerir booteo de un sistema operativo.</td>
+        <td style="padding:8px; color:green;">Alta velocidad para escalar horizontalmente de forma reactiva ante tráfico masivo.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:green;"><strong>Ventaja</strong></td>
+        <td style="padding:8px;"><strong>Uso elástico:</strong> Consumo dinámico sobre el kernel compartido; solo absorbe RAM y CPU a demanda real.</td>
+        <td style="padding:8px; color:green;">Máxima densidad: Permite consolidar muchos más servicios por servidor.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:red;"><strong>Desventaja</strong></td>
+        <td style="padding:8px;"><strong>Menor aislamiento (SO):</strong> Si un agente malicioso explota una vulnerabilidad y compromete el Kernel compartido, afecta al nodo entero.</td>
+        <td style="padding:8px; color:red;">Requiere políticas de seguridad (SecOps) e imágenes base depuradas.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:red;"><strong>Desventaja</strong></td>
+        <td style="padding:8px;"><strong>Dependencia del Kernel base:</strong> La aplicación debe ser compatible con la arquitectura del sistema operativo hospedador.</td>
+        <td style="padding:8px; color:red;">No es posible correr binarios nativos de Windows directo en un Kernel Linux sin capas de traducción.</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Representación conceptual de un Contenedor (Docker)<br>
+contenedor_docker = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"capa_aislamiento": "Espacios de nombres / Cgroups (Nivel SO)",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"sistema_operativo": "Ninguno (Comparte el Kernel del Anfitrión)",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"peso_promedio": "Megabytes (MB)",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"recursos": "Uso elástico dinámico (Alta eficiencia corporativa)"<br>
+}
+</code>
+
+  <blockquote style="margin: 20px 0 0 0; padding: 10px 15px; color: var(--muted2); font-style: italic; border-left: 4px solid var(--muted2); background-color: rgba(0,0,0,0.02);">
+    <strong>💡 Criterio de Selección Estratégica:</strong> Seleccione <strong>Máquinas Virtuales</strong> cuando el requerimiento principal involucre aislamiento total por normativas de seguridad estricta o disparidad crítica de Sistemas Operativos. Seleccione <strong>Contenedores</strong> cuando requiera optimización de costos, velocidad de despliegue, flexibilidad y arquitecturas de microservicios modernas.
+  </blockquote>
+</div>
         </div>
       </div>
 
@@ -244,7 +607,101 @@
           <span class="c-section-title">Mis apuntes</span>
         </div>
         <div class="c-section-body">
-          <p style="color:var(--muted2);font-style:italic;">Escribe aquí tus apuntes sobre Kubernetes y 12-Factor Apps...</p>
+         <div class="c-section-body">
+  <p style="color:var(--muted2);font-style:italic;"><strong>• Ventajas de usar Kubernetes (Orquestación Inteligente)</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 CONTEXTO:</strong> Plataforma de código abierto para la automatización, el despliegue, el escalado y la gestión de aplicaciones contenedorizadas en clústeres de cómputo.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:25%;">Capacidad Nativa</th>
+        <th style="padding:8px; width:45%;">Mecanismo Técnico y Operativo</th>
+        <th style="padding:8px; width:30%;">Impacto / Beneficio Directo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:green;"><strong>Autoreparación<br>(Self-Healing)</strong></td>
+        <td style="padding:8px;">Monitorea continuamente el estado de salud de los pods. Reinicia o reemplaza instancias corruptas de inmediato.</td>
+        <td style="padding:8px; color:green;">Máxima disponibilidad; el cliente final no percibe la falla del contenedor.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:green;"><strong>Escalado Horizontal<br>Elástico</strong></td>
+        <td style="padding:8px;">Ajusta de manera automática el número de réplicas de los contenedores basándose en métricas de consumo de CPU/RAM.</td>
+        <td style="padding:8px; color:green;">Eficiencia de costos al eliminar el aprovisionamiento de recursos ociosos.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:green;"><strong>Enrutamiento y<br>Balanceo de Carga</strong></td>
+        <td style="padding:8px;">Asigna direccionamiento IP propio y nombres DNS únicos a los contenedores, distribuyendo el tráfico equitativamente.</td>
+        <td style="padding:8px; color:green;">Previene la saturación de pods individuales y simplifica el Service Discovery.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:green;"><strong>Cero Inactividad<br>(Zero-Downtime)</strong></td>
+        <td style="padding:8px;">Ejecuta actualizaciones progresivas (Rolling Updates). Ejecuta un Rollback automático inmediato si detecta anomalías.</td>
+        <td style="padding:8px; color:green;">Despliegues seguros en producción sin interrumpir el servicio.</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Estado Deseado gestionado por el plano de control (Control Plane)<br>
+estado_clúster_k8s = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"auto_reparacion": "Activa (Reemplazo de instancias en milisegundos)",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"politica_escalado": "Horizontal Pod Autoscaler (HPA) según tráfico",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"estrategia_despliegue": "RollingUpdate con Rollback automatizado"<br>
+}
+</code>
+
+  <hr style="border:0; border-top:1px dashed rgba(0,0,0,0.15); margin:25px 0;">
+
+  <p style="color:var(--muted2);font-style:italic;"><strong>• Desventajas de usar Kubernetes (Complejidad y Desafíos Operativos)</strong></p>
+  <p style="color:var(--muted2);font-style:italic;">
+    <strong>📝 CONTEXTO:</strong> Exigencias infraestructurales, técnicas y cognitivas requeridas para la implementación y el mantenimiento continuo de la plataforma.
+  </p>
+
+  <table style="width:100%; border-collapse:collapse; color:var(--muted2); font-style:italic; font-size:11pt; text-align:left; margin-top:10px; margin-bottom:15px;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--muted2);">
+        <th style="padding:8px; width:25%;">Factor Crítico</th>
+        <th style="padding:8px; width:45%;">Mecanismo Técnico y Operativo</th>
+        <th style="padding:8px; width:40%;">Impacto en la Infraestructura</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:red;"><strong>Curva de Aprendizaje</strong></td>
+        <td style="padding:8px;">Demanda el dominio profundo de redes abstractas, almacenamiento persistente distribuidor y definición declarativa en YAML.</td>
+        <td style="padding:8px; color:red;">Necesidad estricta de ingenieros especializados (DevOps / SRE).</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:red;"><strong>Sobrecarga Psicológica<br>y Técnica (Overkill)</strong></td>
+        <td style="padding:8px;">Aplicaciones de baja complejidad son forzadas a adoptar topologías de red clúster redundantes.</td>
+        <td style="padding:8px; color:red;">Desperdicio de tiempo, esfuerzo y presupuesto en proyectos pequeños.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:red;"><strong>Configuración Inicial</strong></td>
+        <td style="padding:8px;">Requiere el diseño manual de políticas de seguridad (RBAC), mallas de red y aprovisionamiento de volúmenes persistentes.</td>
+        <td style="padding:8px; color:red;">Fase inicial compleja y susceptible a errores humanos latentes.</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,0,0,0.1); vertical-align:top;">
+        <td style="padding:8px; color:red;"><strong>Costo de Gestión</strong></td>
+        <td style="padding:8px;">Los componentes del Control Plane (etcd, API server, scheduler) consumen hardware solo para coordinar los nodos.</td>
+        <td style="padding:8px; color:red;">Mantenimiento costoso y actualizaciones de versión rigurosas.</td>
+      </tr>
+    </tbody>
+  </table>
+
+<code>
+# Desgaste de recursos internos por gestión de infraestructura<br>
+gastos_mantenimiento = {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"overhead_sistema": "Consumo base de CPU/RAM en el Control Plane",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"formato_manifiestos": "Archivos YAML extensos y anidados",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"actualizaciones": "Ciclos de vida rápidos (Riesgo de deprecación de APIs)"<br>
+}
+</code>
+</div>
         </div>
       </div>
 
@@ -314,8 +771,161 @@
         </div>
         <div class="c-section-body">
           <div style="padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;">
-            <p style="color:var(--muted2);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Mi Dockerfile y configuración:</p>
-            <p style="color:var(--muted2);font-style:italic;">Escribe aquí tu solución al laboratorio práctico...</p>
+           <div class="c-section-body">
+  <div style="padding:1.5rem; background:var(--surface); border:1px solid var(--border); border-radius:8px;">
+    
+    <!-- Encabezado de la Solución -->
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; border-bottom:1px solid var(--border); padding-bottom:0.8rem;">
+      <div>
+        <p style="color:var(--muted2); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.08em; margin:0 0 0.2rem 0;">Solución del Laboratorio Práctico:</p>
+        <h4 style="margin:0; font-size:1.1rem; color:var(--text-color, #ffffff);">Microservicio de Matrículas (FastAPI + Docker Multi-Etapa)</h4>
+      </div>
+      <span style="background:rgba(33, 150, 243, 0.1); color:#2196f3; font-size:11px; font-weight:bold; padding:4px 8px; border-radius:12px; text-transform:uppercase; letter-spacing:0.05em;">Optimizado</span>
+    </div>
+
+    <!-- Menú de Navegación Interno (Tabs) -->
+    <div style="display:flex; gap:8px; margin-bottom:1rem; border-bottom:1px solid var(--border); padding-bottom:0.5rem; overflow-x:auto;">
+      <button class="lab-tab-btn active" onclick="switchLabTab(event, 'lab-estructura')" style="background:none; border:none; padding:6px 12px; font-size:12px; font-weight:600; color:var(--muted2); cursor:pointer; border-radius:4px; transition:0.3s;">1. Estructura</button>
+      <button class="lab-tab-btn" onclick="switchLabTab(event, 'lab-codigo')" style="background:none; border:none; padding:6px 12px; font-size:12px; font-weight:600; color:var(--muted2); cursor:pointer; border-radius:4px; transition:0.3s;">2. Código Python</button>
+      <button class="lab-tab-btn" onclick="switchLabTab(event, 'lab-dockerfile')" style="background:none; border:none; padding:6px 12px; font-size:12px; font-weight:600; color:var(--muted2); cursor:pointer; border-radius:4px; transition:0.3s;">3. Dockerfile</button>
+      <button class="lab-tab-btn" onclick="switchLabTab(event, 'lab-despliegue')" style="background:none; border:none; padding:6px 12px; font-size:12px; font-weight:600; color:var(--muted2); cursor:pointer; border-radius:4px; transition:0.3s;">4. Despliegue</button>
+    </div>
+
+    <!-- CONTENIDOS DE LAS PESTAÑAS -->
+
+    <!-- 1. Estructura de Carpetas -->
+    <div id="lab-estructura" class="lab-tab-content active" style="display:block;">
+      <p style="color:var(--muted2); font-size:13px; margin-bottom:0.8rem;">Distribución modular limpia para evitar acoplamientos y aislar las variables de entorno:</p>
+      <pre style="background:#151515; color:#d4d4d4; padding:12px; border-radius:6px; font-family:monospace; font-size:12px; line-height:1.5; overflow-x:auto; margin:0; border:1px solid rgba(255,255,255,0.05);">
+lab-docker-matriculas/
+│
+├── config/
+│   └── database.py        <span style="color:#6a9955;"># Configuración y lectura de variables de entorno</span>
+│
+├── app/
+│   ├── __init__.py        <span style="color:#6a9955;"># Inicializador del módulo Python</span>
+│   └── main.py            <span style="color:#6a9955;"># Endpoints y lógica de la API (FastAPI)</span>
+│
+├── Dockerfile             <span style="color:#6a9955;"># Instrucciones de construcción multi-etapa</span>
+└── requirements.txt       <span style="color:#6a9955;"># Dependencias del proyecto</span></pre>
+    </div>
+
+    <!-- 2. Código de Archivos -->
+    <div id="lab-codigo" class="lab-tab-content" style="display:none;">
+      
+      <!-- config/database.py -->
+      <div style="margin-bottom:1rem;">
+        <span style="font-size:11px; font-family:monospace; color:#858585; display:block; margin-bottom:0.2rem;">📂 config/database.py</span>
+        <pre style="background:#151515; color:#9cdcfe; padding:12px; border-radius:6px; font-family:monospace; font-size:12px; overflow-x:auto; margin:0;"><code style="color:#9cdcfe;"><span style="color:#569cd6;">import</span> os
+
+<span style="color:#569cd6;">class</span> <span style="color:#4ec9b0;">Settings</span>:
+    <span style="color:#6a9955;"># Captura variables nativas del contenedor o asigna un default</span>
+    DB_HOST: <span style="color:#4ec9b0;">str</span> = os.getenv(<span style="color:#ce9178;">"DB_HOST"</span>, <span style="color:#ce9178;">"localhost_default"</span>)
+    DB_USER: <span style="color:#4ec9b0;">str</span> = os.getenv(<span style="color:#ce9178;">"DB_USER"</span>, <span style="color:#ce9178;">"root"</span>)
+    DB_NAME: <span style="color:#4ec9b0;">str</span> = os.getenv(<span style="color:#ce9178;">"DB_NAME"</span>, <span style="color:#ce9178;">"matriculas_db"</span>)
+
+settings = Settings()</code></pre>
+      </div>
+
+      <!-- app/main.py -->
+      <div>
+        <span style="font-size:11px; font-family:monospace; color:#858585; display:block; margin-bottom:0.2rem;">📂 app/main.py</span>
+        <pre style="background:#151515; color:#9cdcfe; padding:12px; border-radius:6px; font-family:monospace; font-size:12px; overflow-x:auto; margin:0;"><code style="color:#9cdcfe;"><span style="color:#569cd6;">from</span> fastapi <span style="color:#569cd6;">import</span> FastAPI
+<span style="color:#569cd6;">from</span> config.database <span style="color:#569cd6;">import</span> settings
+
+app = FastAPI(title=<span style="color:#ce9178;">"Microservicio de Matrículas"</span>)
+
+<span style="color:#dcdcaa;">@app.get</span>(<span style="color:#ce9178;">"/"</span>)
+<span style="color:#569cd6;">def</span> <span style="color:#dcdcaa;">inicio</span>():
+    <span style="color:#569cd6;">return</span> {
+        <span style="color:#ce9178;">"mensaje"</span>: <span style="color:#ce9178;">"API de Matrículas Operativa (Estructura Limpia)"</span>,
+        <span style="color:#ce9178;">"infraestructura_cloud"</span>: {
+            <span style="color:#ce9178;">"base_de_datos_host"</span>: settings.DB_HOST,
+            <span style="color:#ce9178;">"usuario_db"</span>: settings.DB_USER,
+            <span style="color:#ce9178;">"nombre_db"</span>: settings.DB_NAME
+        }
+    }</code></pre>
+      </div>
+    </div>
+
+    <!-- 3. Dockerfile Multi-Etapa -->
+    <div id="lab-dockerfile" class="lab-tab-content" style="display:none;">
+      <p style="color:var(--muted2); font-size:13px; margin-bottom:0.8rem;">Compilación optimizada mediante <strong>Multi-Stage Builds</strong> para reducir el tamaño final de la imagen:</p>
+      <pre style="background:#151515; color:#b5cea8; padding:12px; border-radius:6px; font-family:monospace; font-size:12px; overflow-x:auto; margin:0;"><code style="color:#d4d4d4;"><span style="color:#6a9955;"># --- ETAPA 1: Constructor (Builder) ---</span>
+<span style="color:#569cd6;">FROM</span> python:3.11-slim <span style="color:#569cd6;">AS</span> builder
+<span style="color:#569cd6;">WORKDIR</span> /app
+<span style="color:#569cd6;">COPY</span> requirements.txt .
+<span style="color:#569cd6;">RUN</span> pip install --no-cache-dir --user -r requirements.txt
+
+<span style="color:#6a9955;"># --- ETAPA 2: Imagen Final Ejecutable ---</span>
+<span style="color:#569cd6;">FROM</span> python:3.11-slim <span style="color:#569cd6;">AS</span> final
+<span style="color:#569cd6;">WORKDIR</span> /app
+
+<span style="color:#6a9955;"># Copia dependencias aisladas desde la etapa builder</span>
+<span style="color:#569cd6;">COPY</span> --from=builder /root/.local /root/.local
+<span style="color:#569cd6;">COPY</span> ./config ./config
+<span style="color:#569cd6;">COPY</span> ./app ./app
+
+<span style="color:#569cd6;">ENV</span> PATH=/root/.local/bin:$PATH
+<span style="color:#569cd6;">ENV</span> PYTHONPATH=/app
+<span style="color:#569cd6;">EXPOSE</span> 8000
+
+<span style="color:#569cd6;">CMD</span> [<span style="color:#ce9178;">"uvicorn"</span>, <span style="color:#ce9178;">"app.main:app"</span>, <span style="color:#ce9178;">"--host"</span>, <span style="color:#ce9178;">"0.0.0.0"</span>, <span style="color:#ce9178;">"--port"</span>, <span style="color:#ce9178;">"8000"</span>]</code></pre>
+    </div>
+
+    <!-- 4. Despliegue y Pruebas -->
+    <div id="lab-despliegue" class="lab-tab-content" style="display:none;">
+      <p style="color:var(--muted2); font-size:13px; margin-bottom:0.8rem;">Comandos para construir y ejecutar el contenedor inyectando variables dinámicamente:</p>
+      <pre style="background:#151515; color:#9cdcfe; padding:12px; border-radius:6px; font-family:monospace; font-size:12px; overflow-x:auto; margin:0;"><code style="color:#d4d4d4;"><span style="color:#6a9955;"># 1. Construir la imagen optimizada</span>
+docker build -t api-matriculas .
+
+<span style="color:#6a9955;"># 2. Levantar el contenedor inyectando credenciales de prueba</span>
+docker run -d -p 8000:8000 \
+  -e DB_HOST="produccion-yavirac-db" \
+  -e DB_USER="admin_matriculas" \
+  -e DB_NAME="yavirac_db" \
+  --name app-matriculas api-matriculas</code></pre>
+    </div>
+
+  </div>
+</div>
+
+<!-- ESTILOS Y SCRIPTS DE CONTROL -->
+<style>
+  /* Efecto de foco y hover en botones de pestañas usando variables de portafolio */
+  .lab-tab-btn {
+    opacity: 0.7;
+    border-bottom: 2px solid transparent !important;
+  }
+  .lab-tab-btn:hover {
+    opacity: 1;
+    color: var(--text-color, #ffffff) !important;
+  }
+  .lab-tab-btn.active {
+    opacity: 1;
+    color: #2196f3 !important;
+    border-bottom: 2px solid #2196f3 !important;
+  }
+</style>
+
+<script>
+  function switchLabTab(event, tabId) {
+    // Buscar el contenedor padre más cercano para evitar interferencias con otras pestañas del portafolio
+    const container = event.target.closest('.c-section-body');
+    
+    // Desactivar todos los botones de esta sección
+    const buttons = container.querySelectorAll('.lab-tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    // Ocultar todos los paneles de esta sección
+    const contents = container.querySelectorAll('.lab-tab-content');
+    contents.forEach(content => content.style.display = 'none');
+    
+    // Activar pestaña seleccionada
+    event.target.classList.add('active');
+    container.querySelector('#' + tabId).style.display = 'block';
+  }
+</script>
           </div>
         </div>
       </div>
